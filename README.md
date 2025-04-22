@@ -1,4 +1,4 @@
-# Ebinaa
+# EB
 
 ## Rules
 
