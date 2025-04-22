@@ -1,0 +1,15 @@
+@keyframes context-appear {
+    from {
+        transform: translateY(-10px);
+        opacity: .5;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.context-appear {
+    animation: context-appear .2s cubic-bezier(.175, .885, .32, 1.275);
+}

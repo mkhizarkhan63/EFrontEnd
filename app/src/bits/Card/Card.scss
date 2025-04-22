@@ -1,0 +1,170 @@
+.card {
+    @include block;
+    padding: 2rem 2rem 1.5rem;
+    margin-bottom: 2rem;
+
+    &.checklist-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    > .top {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: .2rem;
+
+        .title {
+            font-size: 1.29rem;
+            font-weight: 600;
+        }
+
+        .optional {
+            font-size: 1.07rem;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .picture {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        &[data-picture="supervision"] {
+            background-image: url("/assets/graphics/supervision.svg");
+            width: 7.75rem;
+            height: 7.74rem;
+            margin: 3.5rem auto 1.8rem;
+        }
+
+        &[data-picture="insureHome"] {
+            background-image: url("/assets/graphics/insure_home.jpg");
+            width: 11.21rem;
+            height: 10.43rem;
+            margin: auto;
+        }
+
+        &[data-picture="material"] {
+            background-image: url("/assets/graphics/material.svg");
+            width: 4.64rem;
+            height: 9rem;
+            margin: auto 3.8rem;
+        }
+
+        &[data-picture="loan"] {
+            background-image: url("/assets/graphics/loan.svg");
+            width: 9.32rem;
+            height: 8.07rem;
+            margin: auto 1.4rem;
+        }
+    }
+
+    .tip {
+        font-size: 1.07rem;
+        text-align: center;
+        margin-bottom: 1.7rem;
+        font-weight: 500;
+    }
+}
+
+.checklist-card {
+    > .content {
+        display: flex;
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-top: .6rem;
+        min-height: 5.07rem;
+
+        .btn--main {
+            font-size: 1.07rem;
+            box-shadow: 0 4px 12px #00000012;
+        }
+
+        &__by {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &__text {
+            font-size: .94rem;
+        }
+
+        &__logo {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+            &[data-logo="omanInsurance"] {
+                background-image: url("/assets/graphics/oman_insurance.jpg");
+                width: 5.29rem;
+                height: 4.14rem;
+            }
+
+            &[data-logo="assas"] {
+                background-image: url("/assets/graphics/conducted.svg");
+                width: 5.07rem;
+                height: 5.07rem;
+            }
+
+            &[data-logo="bank"] {
+                background-image: url("/assets/graphics/bank.svg");
+                width: 4.85rem;
+                height: 4.85rem;
+            }
+        }
+    }
+
+    .checklist {
+        flex: 1;
+
+        .subtitle {
+            font-size: 1.07rem;
+            margin: 2.7rem 0 1.4rem;
+            max-width: 83%;
+            line-height: 1.35rem;
+        }
+
+        .feature {
+            font-size: .94rem;
+            margin-bottom: 1.45rem;
+            position: relative;
+            padding-left: 1.8rem;
+            color: $brighter-main-text-color;
+            line-height: 1.14rem;
+
+            &:after {
+                position: absolute;
+                left: 0;
+                content: "";
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                background-image: url("/assets/graphics/grey_tick.svg");
+                width: 1.14rem;
+                height: 1.14rem;
+            }
+        }
+    }
+}
+
+.invite-card {
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 1.8rem;
+
+        .btn--main {
+            font-size: 1.07rem;
+            box-shadow: 0 4px 12px #00000012;
+        }
+    }
+}

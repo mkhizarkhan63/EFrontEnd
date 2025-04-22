@@ -1,0 +1,65 @@
+.input-counter {
+    width: 13.57rem;
+    height: 3.5rem;
+    padding: .95rem;
+    margin-top: 1rem;
+    font-size: .86rem;
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: .3rem;
+    border: 1px solid $input-border-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFF;
+
+    &__input {
+        width: 60%;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    &-container {
+        label {
+            font-weight: 500;
+        }
+    }
+
+    .btn[data-color="blue"] {
+        width: 1.57rem;
+        height: 1.57rem;
+        background-color: #E8EBF3;
+        box-shadow: none;
+
+        .icon {
+            filter: var(--icon-blue);
+
+            &[data-icon-name="minus"] {
+                svg, image {
+                    width: 10px;
+                    height: 1px;
+                }
+            }
+
+            &[data-icon-name="add"] {
+                svg, image {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: var(--blue);
+
+            .icon {
+                filter: var(--icon-white);
+            }
+        }
+    }
+}

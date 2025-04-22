@@ -1,0 +1,102 @@
+.vertical-progress-line {
+    &__step {
+        display: flex;
+        gap: 2rem;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: .5rem;
+            top: calc(2.79rem + .5rem);
+            bottom: .5rem;
+            left: calc(2.79rem / 2 - .5rem / 2);
+            background-color: #ECECEF;
+        }
+
+        &:nth-child(6) {
+            &:after {
+                display: none;
+            }
+        }
+
+        &-icon {
+            width: 2.79rem;
+            height: 2.79rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+
+            &[data-icon="true"] {
+                background-color: $green-text;
+
+                svg, image {
+                    width: 1.36rem;
+                    height: 1.36rem;
+                }
+            }
+
+            &[data-icon="false"] {
+                background-color: $yellow-text;
+
+                svg, image {
+                    width: 1.36rem;
+                    height: 1.36rem;
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        &-title {
+            font-weight: 600;
+        }
+
+        &-date {
+            margin: .64rem 0 3rem;
+            color: $brighter-main-text-color;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        &-status {
+            width: fit-content;
+            font-size: .93rem;
+            padding: .43rem .57rem .36rem;
+            margin: .64rem 0 2.32rem;
+            border-radius: 3px;
+            background-color: rgba($yellow-text, .15);
+            color: $yellow-text;
+        }
+
+        &-btn {
+            margin: .64rem 0 2.5rem;
+
+            .btn {
+                font-size: 1.07rem;
+                padding-right: 1.3rem;
+            }
+        }
+    }
+
+    .goto-btn {
+        padding-top: 2rem;
+        border-top: 1px solid $border-color;
+
+        &-container {
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            right: 0;
+            background: #FFF;
+            padding: .7rem 0 2rem;
+        }
+
+        .btn {
+            margin: 0 0 0 auto;
+        }
+    }
+}

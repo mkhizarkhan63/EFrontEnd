@@ -1,0 +1,57 @@
+.side-modal[data-variant="sow-item"] {
+    width: 47.7rem;
+
+    .side-modal {
+        &__header {
+            margin: 0 2.21rem .5rem 2.28rem;
+            word-break: break-word;
+        }
+
+        &__content {
+            flex: 1;
+            padding: .5rem 1.5rem 1rem 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+
+            .table {
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+                margin-top: -.3rem;
+
+                &__body {
+                    .table__row {
+                        align-items: flex-start;
+                        border-bottom: 1px solid #E3E3E3;
+                    }
+
+                    .table__cell {
+                        padding-top: 1.3rem;
+                    }
+
+                    .title {
+                        font-weight: 600;
+                        line-height: 1.2rem;
+                        margin-bottom: .8rem;
+                    }
+
+                    .desc {
+                        font-size: .86rem;
+                        line-height: 1.4rem;
+                        color: $brighter-main-text-color;
+                        margin-bottom: 1.1rem;
+                    }
+
+                    .info {
+                        font-weight: 600;
+                        margin-bottom: .5rem;
+
+                        &__details {
+                            color: $navy-blue-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.contractor-bid-contract {
+    ::-webkit-scrollbar {
+        width: .79rem;
+        height: .79rem;
+    }
+
+    .subheader {
+        padding: 1.07rem 2.5rem 0 3rem;
+        align-items: initial;
+        min-height: 9.4rem;
+
+        &__left {
+            width: 100%;
+            height: auto;
+        }
+
+        &__bottom {
+            padding-left: 3.9rem;
+            font-size: .93rem;
+            margin-top: -.71rem;
+
+            @include is-tablet {
+                padding-left: 2.9rem;
+            }
+        }
+    }
+
+    ~ .footer {
+        display: none;
+    }
+}
+
+.contract-container-view {
+    .loading-container {
+        background-color: #DEDEDE;
+    }
+}

@@ -1,0 +1,31 @@
+.side-modal[data-variant="invite-company"] {
+    max-width: 37.14rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__graphic {
+            width: 17.14rem;
+            height: 14.42rem;
+            margin: 2.3rem auto 3rem;
+            display: flex;
+            transform: translateX(-8%);
+        }
+
+        &__content {
+            padding: 0 2.28rem;
+
+            .btn--main[data-color="blue"] {
+                margin: 0 0 0 auto;
+            }
+
+            .input-text {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

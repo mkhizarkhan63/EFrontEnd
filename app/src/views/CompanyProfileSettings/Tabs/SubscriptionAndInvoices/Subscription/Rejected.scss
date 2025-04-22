@@ -1,0 +1,16 @@
+.contractor-settings--subscription {
+    .subscription {
+        &__profile-info {
+            &--rejected {
+                color: $red-text;
+                background-color: $red-text-bg;
+            }
+        }
+    }
+
+    .rejected {
+        .btn {
+            margin: 2.7rem 0 3.8rem;
+        }
+    }
+}

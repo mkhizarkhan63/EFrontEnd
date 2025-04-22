@@ -1,0 +1,223 @@
+.page[data-name="client build-tab"] {
+    .client-nav-banner {
+        &__left {
+            background-image: url("/assets/graphics/build_image.png");
+
+            &-desc {
+                max-width: 40rem;
+            }
+        }
+
+        &__right {
+            &-icon {
+                width: 30px;
+                height: 36px;
+
+                @include is-tablet {
+                    width: 3.07rem;
+                    height: 3.71rem;
+                }
+
+                svg, image {
+                    width: 30px;
+                    height: 36px;
+
+                    @include is-tablet {
+                        width: 3.07rem;
+                        height: 3.71rem;
+                    }
+                }
+            }
+
+            .btn {
+                .icon {
+                    width: 13px;
+                    height: 15px;
+
+                    @include is-tablet {
+                        width: 1.29rem;
+                        height: 1.5rem;
+                    }
+
+                    svg, image {
+                        width: 13px;
+                        height: 15px;
+
+                        @include is-tablet {
+                            width: 1.29rem;
+                            height: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .form {
+        width: 95%;
+        max-width: 83.2rem;
+        margin: 5rem auto 1rem;
+
+        @include is-pc {
+            width: 90%;
+        }
+
+        &__section {
+            width: 100%;
+            margin-bottom: 3rem;
+
+            &-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 1.43rem;
+            }
+
+            &-box {
+                @include block;
+                padding: 2rem;
+                gap: 1.71rem;
+
+                @include is-tablet {
+                    display: flex;
+                }
+
+                .input-text .input-text-input {
+                    height: 3.3rem;
+                }
+            }
+
+            &-col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                &.land {
+                    flex: 1.2;
+                }
+
+                &.uploader-col {
+                    flex: 1.95;
+
+                    .dropzone {
+                        padding: 3.3rem 4.3rem;
+                        flex-direction: initial;
+                        justify-content: center;
+
+                        &__img {
+                            margin: 0 1rem 0 0;
+                        }
+                    }
+
+                    .file-list {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &-title {
+                    width: 100%;
+                    color: $dark-grey-text;
+                    font-size: 11px;
+                    font-weight: 500;
+                    line-height: 12px;
+                    margin-bottom: .97rem;
+
+                    @include is-tablet {
+                        font-size: 1rem;
+                        line-height: 1.36rem;
+                    }
+                }
+            }
+
+            &-info {
+                font-size: .86rem;
+                line-height: 1.36rem;
+                color: $brighter-main-text-color;
+                margin-top: 1.2rem;
+            }
+
+            &-subheader {
+                width: 100%;
+                color: $dark-grey-text;
+                font-size: 11px;
+                font-weight: 500;
+                line-height: 12px;
+                margin-bottom: .97rem;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                    line-height: 1.36rem;
+                }
+            }
+
+            &.designs {
+                .form__row {
+                    margin-top: 2.5rem;
+
+                    @include is-tablet {
+                        margin-bottom: 0;
+                    }
+
+                    > .input-text {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.construction {
+                justify-content: center;
+            }
+
+            .tiles {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+                flex-wrap: wrap;
+
+                .requirement-tile {
+                    width: initial;
+                    max-width: 38.6rem;
+                    min-width: 20rem;
+                    flex: 1;
+                    margin: 0 auto;
+
+                    @include is-tablet {
+                        min-width: 30rem;
+                    }
+                }
+            }
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 17px;
+
+            @include is-tablet {
+                margin-bottom: 1.75rem;
+            }
+
+            > .input-text {
+                width: calc(50% - .5rem);
+            }
+
+            &--last {
+                margin-bottom: 17px;
+
+                @include is-tablet {
+                    margin-bottom: 0;
+                }
+            }
+
+            &--subsection {
+                .input-text-input {
+                    width: 77%;
+                }
+            }
+        }
+
+        .btn {
+            margin-left: auto;
+        }
+    }
+}

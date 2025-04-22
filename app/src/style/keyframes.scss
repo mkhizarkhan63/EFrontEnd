@@ -1,0 +1,33 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes tabChange { // settings page menu tabs
+    0% {
+        border: 1px solid transparent;
+        background-color: transparent;
+        color: $main-text-color;
+    }
+
+    100% {
+        border: 1px solid $border-color;
+        background-color: #FFF;
+        color: $navy-blue-text;
+    }
+}

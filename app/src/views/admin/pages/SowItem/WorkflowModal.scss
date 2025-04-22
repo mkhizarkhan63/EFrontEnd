@@ -1,0 +1,191 @@
+.side-modal[data-variant="workflow"] {
+    max-width: 47.57rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 47.57rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: 2.4rem;
+        }
+
+        &__content {
+            flex: 1;
+            padding: 0 1.6rem 0 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+        }
+    }
+
+    .workflow {
+        margin-top: 2.7rem;
+
+        &__row {
+            width: 100%;
+            display: flex;
+            gap: 2rem;
+            margin-bottom: .5rem;
+        }
+
+        &__col {
+            flex: 1;
+            max-width: 50%;
+
+            &--ar {
+                direction: rtl;
+            }
+
+            &-title {
+                font-size: .78rem;
+                color: $brighter-main-text-color;
+                margin-bottom: 1.35rem;
+            }
+
+            &-text {
+                font-size: .93rem;
+                font-weight: 500;
+                line-height: 1.55rem;
+                word-break: break-word;
+            }
+
+            &-desc {
+                font-size: .86rem;
+                line-height: 1.5rem;
+            }
+        }
+
+        &__details {
+            border-bottom: 1.5px solid #E5E5E5;
+            padding-bottom: 1.8rem;
+        }
+
+        &__tasks {
+            margin: 2.35rem 0;
+
+            .input-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1.8rem;
+                gap: 1.2rem;
+                margin-top: 1.2rem;
+
+                &:first-of-type {
+                    margin-top: 1.4rem;
+                }
+
+                .input-text-header {
+                    display: none;
+                }
+
+                .btn {
+                    justify-content: flex-end;
+
+                    svg, image {
+                        height: .86rem;
+                        width: .93rem;
+                    }
+                }
+            }
+
+            .btn-add-row {
+                .btn--main {
+                    font-size: 1.07rem;
+                    font-weight: 500;
+                    margin: .8rem 3rem 0 auto;
+                    padding: 0;
+                    box-shadow: none;
+                    border: none;
+
+                    &:hover {
+                        .icon-box {
+                            box-shadow: 0 2px 6px #00000029;
+                        }
+                    }
+
+                    .icon {
+                        border: 1px solid #E8E8E8;
+                        border-radius: 50%;
+                        padding: .5rem;
+                        background: #FFF;
+                        transition: all .12s ease-in;
+                        filter: none;
+                    }
+
+                    .icon-box {
+                        filter: var(--icon-blue);
+
+                        svg, image {
+                            width: 1rem;
+                            height: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__task {
+            margin-bottom: 2.35rem;
+            border-bottom: 1px solid #E3E3E3;
+            padding-bottom: 2.1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &[data-is-checklist="true"] {
+                padding-bottom: 1rem;
+            }
+
+            &-header {
+                margin-bottom: 1.4rem;
+                display: flex;
+                justify-content: space-between;
+                gap: 2.6rem;
+            }
+
+            &-title {
+                font-weight: 600;
+                flex-shrink: 0;
+            }
+
+            &-details {
+                font-size: .79rem;
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 2.6rem;
+                margin-top: .2rem;
+
+                &-item {
+                    color: $brighter-main-text-color;
+                    display: flex;
+                    gap: .3rem;
+                }
+
+                &-text {
+                    font-weight: 500;
+                    color: $main-text-color;
+                    word-break: break-word;
+                }
+            }
+        }
+
+        &__block {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+            margin-top: 1.4rem;
+
+            &-type {
+                color: $main-text-color;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .btn-add {
+        .btn {
+            margin: 2.7rem 0 0 auto;
+        }
+    }
+}

@@ -1,0 +1,372 @@
+.questions-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__heading {
+        font-size: 1.07rem;
+        font-weight: 600;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+
+        .search {
+            svg,
+            image {
+                width: 1.3rem;
+                height: 1.3rem;
+            }
+        }
+
+        .filter {
+            margin: 0 0 0 2.8rem;
+
+            svg,
+            image {
+                width: 1.26rem;
+                height: 1.16rem;
+            }
+        }
+    }
+}
+
+.questions-add {
+    form {
+        width: 100%;
+        margin-bottom: 2.36rem;
+    }
+
+    &__input {
+        padding: 0;
+        margin-top: 1.07rem;
+        position: relative;
+
+        .input-text {
+            &-header {
+                display: none;
+            }
+
+            &-input {
+                height: 4.8rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 2.16rem;
+    }
+}
+
+.question-list {
+    @include block;
+    margin: 2.67rem 0 0;
+    padding: 1.86rem 2.07rem 2.43rem;
+
+    .question-item {
+        @include block;
+        @include box-shadow-on-hover;
+        border: 1px solid #D9D9D9;
+        margin-bottom: 1.64rem;
+        padding: 1.1rem 1.71rem 0;
+        background-color: #FBFBFD;
+        position: relative;
+        animation: fade-in .12s ease-in;
+
+        .form {
+            margin: 0;
+        }
+
+        &__heading {
+            display: flex;
+            margin-bottom: 1.5rem;
+            position: relative;
+
+            &-img {
+                width: 3.07rem;
+                height: 3.07rem;
+                border-radius: 50%;
+                margin: .2rem 1.14rem 0 0;
+                box-shadow: 0 2px 6px #0000002F;
+                object-fit: cover;
+                position: relative;
+                overflow: hidden;
+
+                &[src=""],
+                &:not([src]) {
+                    @include empty-img("/assets/graphics/blue_avatar.svg");
+                }
+            }
+
+            &-date {
+                margin: .5rem 0 0;
+                color: $brighter-main-text-color;
+                font-size: .86rem;
+                flex-grow: 1;
+            }
+
+            &-text {
+                width: 100%;
+            }
+
+            &-question {
+                font-size: 1.07rem;
+                font-weight: 600;
+                margin-top: 1.3rem;
+                position: relative;
+                max-width: calc(100% - 9rem);
+                word-break: break-word;
+
+                &-text {
+                    width: fit-content;
+                    position: relative;
+                    animation: fade-in .12s ease-in;
+                }
+            }
+
+            &-row {
+                display: flex;
+            }
+
+            &-new {
+                margin: 0;
+                margin-right: .86rem;
+                padding: .5rem .64rem .36rem .71rem;
+                color: $red-text;
+                background: $red-text-bg;
+                font-size: .79rem;
+                font-weight: 600;
+                border-radius: .21rem;
+            }
+
+            &-assign {
+                margin-top: 1.07rem;
+                margin-right: 1.93rem;
+                font-size: .86rem;
+                color: $brighter-main-text-color;
+
+                span {
+                    font-weight: 600;
+                    color: $navy-blue-text;
+                }
+            }
+        }
+
+        &__answer {
+            &-text {
+                margin: 0 1.93rem 1.4rem 0;
+                color: $brighter-main-text-color;
+                font-size: .86rem;
+                position: relative;
+                animation: fade-in .12s ease-in;
+                word-break: break-word;
+            }
+
+            &-date {
+                font-size: .86rem;
+                margin-bottom: .6rem;
+                font-weight: 500;
+                animation: fade-in .12s ease-in;
+
+                span {
+                    color: $brighter-main-text-color;
+                    margin-left: .3rem;
+                }
+            }
+        }
+
+        &__input {
+            position: relative;
+            margin: 1.8rem 0 2.5rem;
+            animation: fade-in .12s ease-in;
+
+            .input-text-input {
+                min-height: 4.79rem;
+                padding-right: 4.5rem;
+                text-overflow: ellipsis;
+            }
+
+            &--editable {
+                width: 100%;
+                animation: fade-in .12s ease-in;
+                margin-bottom: .8rem;
+            }
+        }
+
+        &__btn {
+            background: none;
+            border: none;
+            outline: none;
+            padding: 0;
+            cursor: pointer;
+
+            &--send {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 2rem;
+
+                .btn {
+                    svg,
+                    image {
+                        width: 1.25rem;
+                        height: 1.25rem;
+                    }
+                }
+            }
+
+            &--answer {
+                .btn {
+                    margin: 1.8rem 0;
+                    font-weight: 500;
+                }
+            }
+
+            &--edit {
+                position: absolute;
+                top: 0;
+                right: -2rem;
+
+                .btn {
+                    svg,
+                    image {
+                        width: 1.23rem;
+                        height: 1.23rem;
+                    }
+                }
+            }
+
+            &--delete {
+                position: absolute;
+                top: 1rem;
+                right: 0;
+
+                .btn {
+                    svg,
+                    image {
+                        width: 1.3rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.post-question {
+    &__search {
+        position: absolute;
+        right: 2.3rem;
+        top: 2.2rem;
+        cursor: pointer;
+
+        svg,
+        image {
+            width: 1.29rem;
+            height: 1.29rem;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        margin-right: .71rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: .79rem;
+        }
+
+        .post {
+            padding: 1.79rem 1.71rem 1.93rem;
+            margin-bottom: .93rem;
+            @include block;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__date {
+                color: $brighter-main-text-color;
+                font-size: .86rem;
+                margin-bottom: .86rem;
+            }
+
+            &__question {
+                font-size: 1.07rem;
+                font-weight: 600;
+                line-height: 1.93rem;
+                margin-bottom: .86rem;
+                word-break: break-word;
+            }
+
+            &__answer {
+                font-size: .86rem;
+                line-height: 1.57rem;
+                color: $brighter-main-text-color;
+                margin-bottom: .79rem;
+                word-break: break-word;
+
+                &-date {
+                    font-size: .86rem;
+                    margin-bottom: 1.93rem;
+
+                    &-num {
+                        color: $brighter-main-text-color;
+                        margin-left: .3rem;
+                    }
+                }
+
+                &-waiting {
+                    font-size: .86rem;
+                    color: $green-text;
+                }
+            }
+
+            &__btn {
+                .btn {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    &__input {
+        padding: 0 2.3rem;
+        margin-top: 1.07rem;
+        position: relative;
+
+        .input-text {
+            &-header {
+                display: none;
+            }
+
+            &-input {
+                height: 4.8rem;
+                padding: 2rem 5rem 2rem 2rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .btn {
+            position: absolute;
+            right: 4.57rem;
+            top: 50%;
+            transform: translateY(-50%);
+
+            svg,
+            image {
+                width: 1.29rem;
+                height: 1.29rem;
+            }
+        }
+    }
+}

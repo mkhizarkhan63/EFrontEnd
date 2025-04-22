@@ -1,0 +1,66 @@
+.side-modal[data-variant="view-costs"] {
+    max-width: 37.14rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: 1.5rem;
+        }
+
+        &__subheader {
+            color: $navy-blue-text;
+            font-weight: 500;
+            margin: .45rem 0 1.2rem;
+            @include left-line(5px, 2.5rem, 2.3rem, $navy-blue-text);
+        }
+
+        &__content {
+            flex: 1;
+            padding: .5rem 1.5rem 1rem 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+
+            .table {
+                border: none;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 3.07rem;
+
+                &__header {
+                    border-bottom: 1px solid #F2F2F2;
+
+                    .table__cell {
+                        padding-top: 1rem;
+                        padding-bottom: 1rem;
+                    }
+                }
+
+                &__body {
+                    .table__cell {
+                        padding-top: 1.5rem;
+                        padding-bottom: 1.5rem;
+
+                        .name {
+                            font-weight: 600;
+                            font-size: .93rem;
+                        }
+
+                        .cost {
+                            color: $navy-blue-text;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                &__row {
+                    border-bottom: 1px solid #F2F2F2;
+                }
+            }
+        }
+    }
+}

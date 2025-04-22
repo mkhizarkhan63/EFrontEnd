@@ -1,0 +1,150 @@
+.bid {
+    .project-left {
+        @include block;
+        padding: 2.43rem 1.93rem 0;
+    }
+
+    .project-right__item {
+        &:first-child {
+            margin-bottom: .93rem;
+        }
+    }
+
+    .table {
+        border: none;
+        padding: 0;
+        margin-bottom: 3.75rem;
+
+        &:last-child {
+            margin-bottom: 1.46rem;
+        }
+
+        &__body {
+            .table__cell {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                &-text {
+                    font-weight: 600;
+                }
+
+                &:first-of-type {
+                    padding-right: 0;
+                }
+
+                &:nth-of-type(4) {
+                    min-width: 8rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    min-width: 9rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                .stage-name {
+                    padding-left: 0;
+                    word-break: break-word;
+                }
+
+                .stage-in-proc {
+                    display: flex;
+                    align-items: center;
+
+                    .input-text-input {
+                        width: 5.5rem;
+                    }
+                }
+
+                .stage-in-omr {
+                    color: $green-text;
+
+                    .input-text-input {
+                        width: 6rem;
+
+                        @include is-pc {
+                            width: 8rem;
+                        }
+                    }
+                }
+
+                .stage-in-proc,
+                .stage-in-omr {
+                    .input-text-input {
+                        pointer-events: none;
+                        background-color: #F5F5F5;
+                    }
+                }
+
+                .time-of-stage {
+                    display: flex;
+                    align-items: center;
+
+                    &__days {
+                        color: $brighter-main-text-color;
+                    }
+                }
+
+                .input-text {
+                    margin-right: .86rem;
+
+                    &-header {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .table__row {
+                border-bottom: 1px solid $border-color;
+            }
+        }
+
+        &__header {
+            .table__cell {
+                &:first-of-type {
+                    padding-right: 0;
+                }
+
+                &:nth-of-type(4) {
+                    min-width: 8rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    min-width: 9rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                .stage-name {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .input-text-input {
+            width: 4.36rem;
+        }
+    }
+
+    .project__title {
+        &--main {
+            &:after {
+                top: 50%;
+                transform: translateY(-50%);
+                height: 2.5rem;
+            }
+        }
+    }
+}

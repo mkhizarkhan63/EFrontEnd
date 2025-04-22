@@ -1,0 +1,142 @@
+.contractor-settings--subscription {
+    .subscription {
+        width: 100%;
+
+        &__profile-info {
+            &--approved {
+                color: $green-text;
+                background-color: $green-text-bg;
+                margin: 2rem 0 .3rem;
+            }
+        }
+
+        &__box {
+            @include block;
+            padding: 1.5rem;
+            margin: .4rem 0 0;
+
+            @include is-tablet {
+                width: 27.92rem;
+            }
+
+            &-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &-title {
+                font-size: 1.07rem;
+                font-weight: 600;
+                color: $dark-grey-text;
+                margin: 0;
+            }
+
+            &-date {
+                font-size: .86rem;
+                color: $brighter-main-text-color;
+                margin: 0;
+                // &--end {
+                // }
+            }
+
+            .progress-bar {
+                height: .57rem;
+                border-radius: 5px;
+                background-color: #E8E5E5;
+                margin: 1rem 0 1.21rem;
+
+                &-value {
+                    height: .57rem;
+                    border-radius: 5px;
+                    background-color: $navy-blue-text;
+                }
+            }
+        }
+
+        &__invoices {
+            &-title {
+                font-size: 1.07rem;
+                font-weight: 600;
+                margin: 2.8rem 0 1.7rem;
+            }
+
+            &-number {
+                font-size: .93rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+            }
+        }
+
+        &__title {
+            &-main {
+                &--approved {
+                    margin: 2rem 0 1rem;
+                }
+            }
+
+            &-activesub {
+                font-size: .93rem;
+                line-height: 1.07rem;
+                margin-bottom: 1.9rem;
+                color: $brighter-main-text-color;
+            }
+        }
+
+        .table {
+            margin-bottom: .1rem;
+            padding: 0 1.6rem 0 1.7rem;
+
+            &__header {
+                .table__cell {
+                    font-size: .79rem;
+                }
+            }
+
+            &__body {
+                font-size: .86rem;
+
+                .name {
+                    font-size: .93rem;
+                    font-weight: 600;
+                    padding-bottom: .5rem;
+                    word-break: break-word;
+                }
+
+                .desc {
+                    color: $brighter-main-text-color;
+                    word-break: break-word;
+                }
+
+                .date {
+                    color: $brighter-main-text-color;
+
+                    &--end {
+                        color: $red-text;
+                    }
+                }
+
+                .price {
+                    word-break: break-word;
+                }
+
+                .status {
+                    &--paid {
+                        color: $green-text;
+                    }
+
+                    &--unpaid {
+                        color: $red-text;
+                    }
+                }
+
+                .action {
+                    text-decoration: none;
+                    color: $navy-blue-text;
+                    font-weight: 500;
+                    @include text-button-on-hover;
+                }
+            }
+        }
+    }
+}

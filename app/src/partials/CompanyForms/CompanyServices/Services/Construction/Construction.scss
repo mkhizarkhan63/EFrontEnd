@@ -1,0 +1,127 @@
+.company-construction {
+    padding-top: 2rem;
+
+    .form {
+
+        &__body {
+
+            .location {
+                .section-title {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 2rem;
+                    position: relative;
+
+                    .title {
+                        font-weight: 600;
+                    }
+
+                    .modal {
+                        position: absolute;
+                        top: -0.29rem;
+                        right: 32.71rem;
+
+                        .modal-box {
+                            width: 438px;
+                            height: 87px;
+                            background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+                            background: #FFFFFF 0% 0% no-repeat padding-box;
+                            box-shadow: 0px 1px 11px #0000002C;
+                            border-radius: 6px;
+                            opacity: 1;
+                            display: flex;
+                            align-items: center;
+                            column-gap: 2rem;
+                            padding: 13px;
+                            text-align: center;
+
+                            .input-text {
+                                flex: 1;
+                            }
+
+                            .btn {
+                                margin-top: 1rem;
+                            }
+                        }
+
+                    }
+                }
+
+                .section-content {
+                    padding-top: 2rem;
+                    color: $brighter-main-text-color;
+
+                    .willaya-section {
+                        padding-top: 2rem;
+                        display: flex;
+                        column-gap: 2rem;
+
+                        .card {
+                            width: 428px;
+                            height: 326px;
+                            background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+                            background: #FFFFFF 0% 0% no-repeat padding-box;
+                            border: 1px solid #DBDADA;
+                            border-radius: 6px;
+                            opacity: 1;
+                            padding-bottom: 2rem;
+
+                            &__title {
+                                text-align: left;
+                                font: normal normal 600 14px/19px Axiforma;
+                                letter-spacing: 0px;
+                                color: $navy-blue-text;
+                                opacity: 1;
+                            }
+
+                            &__grid-header-container {
+                                display: grid;
+                                grid-template-columns: 4fr;
+                                padding: 1rem 0 1rem 0;
+
+                                .grid-item {
+                                    font-size: 13px;
+                                    font-weight: 600;
+                                    color: $main-text-color;
+
+                                    .light {
+                                        color: $brighter-main-text-color;
+                                        font-weight: 100;
+                                    }
+                                }
+                            }
+
+                            &__grid-container {
+                                display: grid;
+                                grid-template-columns: 4fr;
+                                border-radius: 5px;
+                                border: 1px solid $input-border-color;
+
+                                .grid-item {
+                                    color: $main-text-color;
+                                    padding: 4px;
+                                    font-size: 13px;
+                                    background: #FFFFFF 0% 0% no-repeat padding-box;
+                                    border-bottom: 1px solid $input-border-color;
+                                    opacity: 1;
+                                    text-align: start;
+                                    height: 50px;
+
+                                    .checkbox-container {
+                                        padding: 1rem 0 0 1rem;
+                                        font-weight: 300;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+
+        }
+    }
+}

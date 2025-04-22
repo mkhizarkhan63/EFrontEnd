@@ -1,0 +1,47 @@
+.contract-view {
+    min-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 9.4rem auto 0;
+    height: calc(100vh - $header-height - 9.4rem);
+    overflow: hidden;
+
+    @include is-tablet {
+        min-width: initial;
+    }
+
+    .left-panel {
+        width: 18.5%;
+        max-width: 24.9rem;
+        min-width: 14rem;
+        background-color: #FFF;
+        border-right: 1px solid #E8E8E8;
+    }
+
+    .center-panel {
+        overflow-x: auto;
+        height: calc(100vh - $header-height - 9.4rem);
+        position: relative;
+        flex: 1;
+        background: #F5F5FA;
+
+        ::-webkit-scrollbar {
+            width: .79rem;
+            height: .79rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #D6D6D6;
+        }
+    }
+
+    .right-panel {
+        width: 25%;
+        max-width: 28.6rem;
+        min-width: 23rem;
+        height: 100%;
+        background-color: #FFF;
+        border-left: 1px solid #E8E8E8;
+    }
+}

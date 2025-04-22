@@ -1,0 +1,205 @@
+// // Defining variables
+$box-selected-color: #1E428A;
+$box-unselected-color: #DBDADA;
+
+
+.buyproject-cards-container_body {
+
+    &_content {
+
+        .infotitle {
+            line-height: 1em;
+            margin-top: 1em;
+            padding-top: 1em;
+        }
+
+        .infofieldgroup {
+            width: 54%;
+
+            .projectinfo_field {
+                padding-top: 1em;
+
+                &_flex {
+                    display: flex;
+                    justify-content: space-between;
+                    column-gap: 4px;
+
+                    .input-text {
+                        flex: 1;
+
+                        .input-text-header {
+                            label {
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        .infoselect {
+            cursor: pointer;
+            position: relative;
+            padding-top: 1em;
+
+            .tick {
+                display: none;
+            }
+
+            .icon-box {
+                position: absolute;
+                top: 4.5em;
+                right: 1em;
+                width: 8px;
+                height: 7px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+
+                &__image {
+                    width: 14px;
+
+                    @include is-tablet {
+
+                        width: 12px;
+                    }
+                }
+
+                @include is-pc {
+                    top: 4.8em;
+                    right: 1em;
+                }
+
+                @include is-tablet {
+                    width: .55rem;
+                    height: .3rem;
+                    top: 4.8em;
+                    right: 1em;
+                    width: 14px;
+                }
+
+            }
+        }
+
+
+
+        .inforadios {
+            padding-top: 1em;
+            padding-bottom: 2em;
+            white-space: nowrap;
+
+            .checkbox-radio-input {
+                position: relative;
+                top: 2px;
+
+            }
+
+            .checkbox-radio-title {
+                padding: 0 15px 0 4px;
+            }
+        }
+
+        .info_developOrArchiContainer {
+            display: flex;
+            justify-content: space-between;
+            padding: 27px 0px 4px 0px;
+            // width: 40em;
+            width: 38.7em;
+            column-gap: 10px;
+
+            &__Box {
+
+                // width: 49%;
+                width: 253px;
+                max-width: 253px;
+                height: 197px;
+                border: 2px solid var(--unnamed-color-1e428a);
+                background: #FFFFFF 0% 0% no-repeat padding-box;
+                border: 2px solid $box-unselected-color;
+
+                border-radius: 6px;
+                opacity: 1;
+                cursor: pointer;
+
+                &__Body {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 7px 31px 11px 18px;
+
+                    &__icon {
+                        width: 30px;
+                        height: 45px;
+                        background: var(--unnamed-color-333333) 0% 0% no-repeat padding-box;
+                        opacity: 1;
+                        text-align: center;
+                    }
+
+                    &__title {
+                        width: 130px;
+                        height: 15px;
+                        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 15px/16px var(--unnamed-font-family-axiforma);
+                        letter-spacing: var(--unnamed-character-spacing-0);
+                        color: var(--unnamed-color-464646);
+                        text-align: center;
+                        font: normal normal 600 15px/16px Axiforma;
+                        letter-spacing: 0px;
+                        color: #464646;
+                        opacity: 1;
+                        flex-grow: 1;
+                        text-align: center;
+                    }
+
+
+                }
+
+                &__Content {
+                    width: 196px;
+                    height: 109px;
+                    /* UI Properties */
+                    font-size: 12px;
+                    font-family: 'Axiforma';
+                    letter-spacing: 0px;
+                    color: #898989;
+                    opacity: 1;
+                    padding: 3px 9px 0 23px;
+                    line-height: 19px;
+
+                    .box-list {
+                        padding: 0 0 0 23px;
+                        line-height: 1.5;
+                    }
+
+                    li {
+                        list-style-type: none; // Remove the default bullet
+                        position: relative; // To position the icon relative to the li
+
+                        &::before {
+                            content: ''; // Required for the pseudo-element
+                            background-image: url(/assets/graphics/grey_tick.svg); // Your custom icon
+                            width: 12px; // Adjust size as needed
+                            height: 12px;
+                            position: absolute;
+                            left: -20px; // Adjust position relative to the text
+                            top: 50%;
+                            transform: translateY(-50%); // Center vertically
+                            background-size: cover; // Ensure the icon scales properly
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+
+                &[data-is-active="true"] {
+                    border-color: $box-selected-color;
+                }
+
+                &[data-is-active="false"] {
+                    border-color: $box-unselected-color;
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.services-tip {
+    max-width: 100%;
+    margin: 4rem auto 2.1rem;
+    font-size: 1.29rem;
+    font-weight: 600;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+    grid-gap: 0 1.9rem;
+    flex-wrap: wrap;
+}

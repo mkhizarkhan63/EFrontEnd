@@ -1,0 +1,71 @@
+.notifications-page {
+    width: 104.6rem;
+    max-width: 85%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.1rem;
+    flex: 1;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: 0 .5rem;
+        font-size: 1.93rem;
+        font-weight: 600;
+
+        &-num {
+            color: $brighter-main-text-color;
+            font-size: 1.29rem;
+            font-weight: 500;
+        }
+    }
+
+    &__list {
+        @include block;
+        margin-top: 2rem;
+        padding: .5rem 2.5rem .8rem;
+
+        .notification {
+            padding: 1.9rem 0 1.8rem;
+
+            &__text {
+                display: flex;
+                justify-content: space-between;
+                gap: 0 1rem;
+            }
+
+            &__message {
+                margin-bottom: 0;
+            }
+
+            &__time {
+                padding-top: .25rem;
+                flex-shrink: 0;
+            }
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    ~ .paging {
+        width: 104.6rem;
+        max-width: 85%;
+        margin: 2.5rem auto 0;
+    }
+
+    ~ .footer {
+        width: 104.6rem;
+        max-width: 85%;
+        padding-top: 2.4rem;
+    }
+}

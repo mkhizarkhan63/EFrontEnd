@@ -1,0 +1,43 @@
+.notifications {
+    overflow: auto;
+    overflow-x: hidden;
+    margin-right: .6rem;
+
+    ::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    &__elements {
+        max-height: 26rem;
+        padding: 0 0 0 1.4rem;
+        width: calc(25.8rem - 1.4rem);
+    }
+
+    &__see-all {
+        .btn {
+            border: none;
+            width: 100%;
+            font-size: .97rem;
+            font-weight: 500;
+            box-shadow: none;
+            border-radius: 0;
+            position: relative;
+            @include background-on-hover;
+
+            &:hover {
+                color: inherit;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - 2.8rem);
+                height: 1px;
+                background-color: #F5F5F5;
+            }
+        }
+    }
+}

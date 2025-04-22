@@ -1,0 +1,282 @@
+.project-detail-container {
+    margin: 2.42rem 0 0;
+
+    &[data-is-edit="true"] {
+        .project-detail {
+            &__row {
+                padding-right: 25rem;
+                position: relative;
+            }
+
+            &__header {
+                margin-bottom: 1.7rem;
+            }
+        }
+    }
+
+    .project-detail {
+        @include block;
+        padding: 2.25rem 2rem .7rem;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+
+            &-right {
+                display: flex;
+                align-items: center;
+
+                .btn {
+                    margin-left: 2rem;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.07rem;
+            font-weight: 600;
+            align-self: flex-start;
+            @include left-line(5px, 2.25rem, 2rem, $brighter-main-text-color);
+        }
+
+        &__top {
+            padding-bottom: 3.2rem;
+            margin-bottom: 2.3rem;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -2rem;
+                right: -2rem;
+                height: 1px;
+                background-color: $border-color;
+            }
+        }
+
+        &__row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .textarea {
+            width: 23rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+
+            &__header {
+                color: $brighter-main-text-color;
+                margin-bottom: 1.1rem;
+            }
+
+            &__input {
+                max-height: 6rem;
+            }
+        }
+
+        &__subtitle {
+            color: $brighter-main-text-color;
+            font-weight: 500;
+            margin-bottom: 1.1rem;
+            width: 100%;
+        }
+
+        &__choice {
+            font-size: 1.71rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        &__project {
+            min-width: 25rem;
+            max-width: 30.5rem;
+            flex: 1;
+            margin: 0 3% 1rem 0;
+        }
+
+        &__person {
+            &-container {
+                display: flex;
+                width: 100%;
+                gap: 3rem;
+                flex: 1;
+            }
+
+            &--consultant {
+                min-width: 15rem;
+            }
+
+            &--architect {
+                min-width: 15rem;
+            }
+
+            &-col {
+                display: flex;
+            }
+
+            &-desc {
+                margin-top: .6rem;
+            }
+
+            &-name {
+                margin-bottom: .5rem;
+                font-weight: 500;
+                font-size: 1.07rem;
+                word-break: break-word;
+            }
+
+            &-img {
+                display: block;
+                width: 3.5rem;
+                height: 3.5rem;
+                object-fit: cover;
+                border-radius: 50%;
+                overflow: hidden;
+                box-shadow: 0 3px 6px #00000029;
+                position: relative;
+                flex-shrink: 0;
+                margin-right: .7rem;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/blue_avatar.svg");
+                }
+            }
+
+            &-mobile {
+                color: $brighter-main-text-color;
+                text-decoration: none;
+                font-size: .93rem;
+                font-weight: 600;
+                word-break: break-word;
+                display: block;
+                min-height: .93rem;
+                transition: color .12s ease-in;
+
+                &:hover {
+                    color: $green-text;
+                }
+
+                &:empty {
+                    pointer-events: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .land-details {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+
+        &__title {
+            width: 100%;
+            font-size: 1.07rem;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-bottom: 2.5rem;
+            @include left-line(5px, 2.25rem, 2rem, $brighter-main-text-color);
+        }
+
+        &__info {
+            margin: 0 5.5% 2.5rem 0;
+
+            &-file {
+                display: flex;
+                align-items: center;
+
+                &-name {
+                    color: $navy-blue-text;
+                    word-break: break-word;
+                    font-size: 1.14rem;
+                    font-weight: 500;
+                    max-width: 16rem;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+
+                &-img {
+                    width: 1rem;
+                    height: auto;
+                    cursor: pointer;
+                    margin-left: 1rem;
+                    transition: all .12s ease-in;
+
+                    &:hover {
+                        filter: brightness(2);
+                    }
+                }
+            }
+
+            &-value {
+                font-size: 1.14rem;
+                font-weight: 500;
+                margin: 0;
+            }
+
+            &-label {
+                font-size: 1.23rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+                margin-top: .5rem;
+            }
+        }
+    }
+
+    .project-sow {
+        @include block;
+        padding: 1.9rem 1.75rem;
+        margin-top: 2rem;
+
+        .project-detail__title {
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            font-size: 1.14rem;
+            @include left-line(5px, 2.25rem, 1.75rem, $brighter-main-text-color);
+        }
+
+        &__name {
+            font-size: 1.86rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            word-break: break-word;
+        }
+
+        &__label {
+            color: $green-text;
+            background-color: $green-text-bg;
+            padding: .8rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.4rem;
+            width: fit-content;
+        }
+
+        .table {
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+
+            &__row:not(:last-child),
+            &__header:not(:last-child) {
+                border-bottom: 1px solid #F2F2F2;
+            }
+
+            .name {
+                font-size: .97rem;
+                font-weight: 600;
+                word-break: break-word;
+            }
+
+            .items, .suggested {
+                color: $navy-blue-text;
+            }
+        }
+    }
+}

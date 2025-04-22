@@ -1,0 +1,174 @@
+.project-design {
+    .subheader {
+        padding: 0;
+        flex-wrap: initial;
+
+        @include is-tablet {
+            padding: 0 2.14rem 0 3.14rem;
+        }
+
+        &__right {
+            display: none;
+
+            @include is-tablet {
+                display: flex;
+                width: initial;
+            }
+        }
+
+        &__left {
+            width: 94%;
+            margin: 0 auto;
+
+            @include is-tablet {
+                width: initial;
+                margin: initial;
+            }
+
+            .left__return {
+                margin-right: 0;
+                width: 1.33rem;
+                height: .93rem;
+
+                @include is-tablet {
+                    margin: 0 1.2rem 0 0;
+                }
+            }
+        }
+    }
+
+    .buttons-menu {
+        margin-top: 0;
+        height: 100%;
+        flex-wrap: initial;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 14px;
+
+            @include is-tablet {
+                margin-right: 2.8vw;
+            }
+
+            &:after {
+                bottom: -1px;
+            }
+
+            &[data-is-active="false"] {
+                .btn {
+                    color: $brighter-main-text-color;
+                }
+            }
+
+            &:hover {
+                .btn {
+                    color: $main-text-color;
+                }
+            }
+        }
+
+        .btn {
+            font-size: 14px;
+            padding: 0;
+            margin-right: 0;
+
+            @include is-tablet {
+                font-size: 1.43rem;
+            }
+
+            @include is-pc {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__properties {
+        display: flex;
+        align-items: center;
+
+        .need-help {
+            margin-left: 2.1rem;
+            color: $brighter-main-text-color;
+            font-size: 1.07rem;
+        }
+
+        .property {
+            margin-left: 2.7rem;
+            /*!rtl:ignore*/
+            text-align: right;
+
+            &__name {
+                font-weight: 600;
+                font-size: 1.14rem;
+            }
+
+            &__value {
+                font-size: .94rem;
+                color: $brighter-main-text-color;
+                margin-top: .3rem;
+                word-break: break-word;
+            }
+
+            &:last-of-type {
+                border-right: 1px solid #E8E8E8;
+                padding-right: 2.5rem;
+            }
+        }
+
+        .btn {
+            margin-left: 1.5rem;
+            padding: .5rem .7rem .5rem 1.3rem;
+
+            [data-icon-name="play"] {
+                margin-right: .5rem;
+                filter: initial;
+
+                svg, image {
+                    width: 1.64rem;
+                    height: 1.64rem;
+                }
+            }
+        }
+    }
+
+    .container {
+        width: 90%;
+        max-width: 83.3rem;
+        margin: 5.5rem auto 0;
+
+        @include is-tablet {
+            margin: 8.86rem auto 0;
+        }
+    }
+
+    .paging {
+        width: 90%;
+        max-width: 83.3rem;
+        margin: 2.5rem auto 0;
+    }
+
+    .footer {
+        width: 90%;
+        max-width: 83.3rem;
+    }
+
+    &[data-architect-list="true"] {
+        .view-content {
+            overflow-x: auto;
+
+            @include is-tablet {
+                overflow-x: hidden;
+            }
+
+            &__scroll {
+                min-width: 750px;
+
+                @include is-tablet {
+                    min-width: initial;
+                }
+            }
+        }
+    }
+}

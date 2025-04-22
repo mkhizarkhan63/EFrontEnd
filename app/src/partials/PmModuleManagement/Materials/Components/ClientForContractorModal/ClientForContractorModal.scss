@@ -1,0 +1,393 @@
+.side-modal[data-variant="quantity-submission"] {
+    max-width: 500px;
+    width: 100%;
+    padding-bottom: 0;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: .8rem;
+            padding-right: 2.3rem;
+
+            &-title {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+                position: relative;
+
+                @include is-tablet {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                }
+
+                &-status {
+                    font-size: 12px;
+                    width: fit-content;
+                    padding: 8px 14px;
+                    margin-top: 18px;
+                    font-weight: 400;
+                    border-radius: 3px;
+                    color: $navy-blue-text;
+                    background-color: $navy-blue-text-bg;
+                    display: flex;
+                    align-items: center;
+
+                    @include is-tablet {
+                        font-size: .86rem;
+                        padding: .57rem 1rem;
+                        margin: -.5rem 0 0 1rem;
+                    }
+
+                    &:before {
+                        margin-right: 8px;
+
+                        @include is-tablet {
+                            margin-right: .5rem;
+                        }
+
+                        &:empty {
+                            margin-right: 0;
+                        }
+                    }
+
+                    &[data-status="pending"],
+                    &[data-status="due"] {
+                        color: $yellow-text;
+                        background-color: $yellow-text-bg;
+                        @include before-icon("/assets/graphics/clock.svg");
+
+                        &:before {
+                            filter: invert(63%) sepia(46%) saturate(1421%) hue-rotate(8deg) brightness(98%) contrast(99%);
+                        }
+                    }
+
+                    &[data-status="completed"] {
+                        color: $green-text;
+                        background-color: $green-text-bg;
+                        @include before-icon("/assets/graphics/tick.svg");
+                    }
+
+                    &[data-status="delay"],
+                    &[data-status="inDelay"] {
+                        color: $red-text;
+                        background-color: $red-text-bg;
+                        @include before-icon("/assets/graphics/in_delay_icon.svg");
+                    }
+
+                    &[data-status="upComing"] {
+                        background-color: rgba($brighter-main-text-color, .1);
+                        color: $brighter-main-text-color;
+                        @include before-icon("/assets/graphics/upcoming_icon.svg");
+                    }
+
+                    &[data-status="none"] {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            flex: 1;
+            margin: .8rem 0 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        &__top {
+            padding: 0 2.2rem 0 2rem;
+        }
+
+        &__row {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: 13px;
+            margin-bottom: .8rem;
+            word-break: break-word;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+
+            &-title {
+                color: $brighter-main-text-color;
+                margin-right: 8px;
+
+                @include is-tablet {
+                    margin-right: .3rem;
+                }
+            }
+
+            &-value {
+                font-weight: 500;
+            }
+
+            &-days-left {
+                color: $navy-blue-text;
+                word-break: break-word;
+
+                &[data-status="pending"],
+                &[data-status="due"] {
+                    color: $yellow-text;
+                }
+
+                &[data-status="completed"] {
+                    color: $green-text;
+                }
+
+                &[data-status="delay"],
+                &[data-status="inDelay"] {
+                    color: $red-text;
+                }
+            }
+        }
+
+        &__section {
+            width: 100%;
+            min-height: 5.2rem;
+            padding: 1.3rem 2.2rem 1.3rem 2rem;
+            margin-top: 1.8rem;
+            border-top: 1px solid #E8E8E8;
+            border-bottom: 1px solid #E8E8E8;
+            background: #FAFBFF;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+
+            &-img {
+                max-width: 100%;
+                max-height: 2.86rem;
+                height: auto;
+                object-fit: contain;
+
+                &-container {
+                    flex-shrink: 0;
+                    width: 2.14rem;
+                    display: flex;
+                    justify-content: center;
+                    margin-right: .5rem;
+
+                    &[data-is-empty="true"] {
+                        display: none;
+                    }
+                }
+            }
+
+            &-left {
+                display: flex;
+                align-items: center;
+            }
+
+            &-name {
+                font-size: 14px;
+                font-weight: 500;
+                word-break: break-word;
+
+                @include is-tablet {
+                    font-size: 1.14rem;
+                }
+            }
+
+            &-right {
+                padding-left: 1.35rem;
+                margin-left: 1.35rem;
+                border-left: 1px solid #E8E8E8;
+                font-size: 12px;
+                color: $brighter-main-text-color;
+                word-break: break-word;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+        }
+
+        &__details {
+            padding: 1.8rem 0 0;
+            margin: 0 2.21rem 0 2rem;
+
+            &-form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2.2rem;
+
+                .input-text-header {
+                    font-size: .93rem;
+                    margin-bottom: .5rem;
+                }
+            }
+
+            &-box {
+                margin: 2.1rem 0 0;
+
+                .textarea {
+                    &__header {
+                        font-weight: 500;
+                    }
+
+                    &__input {
+                        border: none;
+                        min-height: 85px;
+                        padding: 1.65rem 1.5rem 0;
+                        font-size: 11px;
+
+                        &:focus {
+                            border: none;
+                            box-shadow: none;
+                        }
+
+                        @include is-tablet {
+                            min-height: 6.5rem;
+                            font-size: .86rem;
+                        }
+                    }
+
+                    &__container {
+                        @include block;
+                        border-radius: 6px 6px 0 0;
+                        border-bottom: none;
+                    }
+
+                    &__placeholder {
+                        left: 1.5rem;
+                        top: 1.65rem;
+                        font-size: 12px;
+
+                        @include is-tablet {
+                            font-size: .93rem;
+                        }
+                    }
+                }
+
+                .input-placeholder {
+                    font-size: 12px;
+
+                    @include is-tablet {
+                        font-size: .86rem;
+                    }
+                }
+
+                &-btns {
+                    @include block;
+                    border-radius: 0 0 6px 6px;
+                    border-top: none;
+                    width: 100%;
+                    padding: 0 1.2rem 1rem;
+                    display: flex;
+                    position: relative;
+
+                    .dropzone {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        &__subtitle {
+            font-size: 1.14rem;
+            font-weight: 500;
+            margin-bottom: .6rem;
+        }
+
+        &__text {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+        }
+
+        &__submit {
+            display: flex;
+            flex-direction: column;
+            margin: 1.7rem 2.2rem 1rem 2rem;
+
+            &-text {
+                color: $brighter-main-text-color;
+                font-size: 13px;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+
+            .checkbox-container {
+                color: $brighter-main-text-color;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 16px;
+                margin-bottom: 1.8rem;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                    line-height: 1.43rem;
+                }
+
+                &-option {
+                    align-items: flex-start;
+                }
+
+                &-input {
+                    flex-shrink: 0;
+                    margin-right: 1.3rem;
+                }
+            }
+
+            .btn[data-color="blue"] {
+                margin: 0 0 0 auto;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+            }
+
+            &-btns {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .btn[data-color="white"] {
+                    margin-right: 1rem;
+
+                    @include is-tablet {
+                        font-size: 1.07rem;
+                    }
+
+                    [data-icon-name="close-red"] {
+                        filter: var(--icon-red);
+
+                        &.left {
+                            margin-right: .3rem;
+                        }
+
+                        svg, image {
+                            width: 1.64rem;
+                            height: 1.64rem;
+                        }
+                    }
+
+                    &:hover {
+                        color: $red-text;
+                    }
+
+                    &:disabled {
+                        background-color: #FFF;
+                        color: $brighter-main-text-color;
+
+                        .icon {
+                            filter: invert(.5) brightness(1);
+                        }
+
+                        &:hover {
+                            color: $brighter-main-text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

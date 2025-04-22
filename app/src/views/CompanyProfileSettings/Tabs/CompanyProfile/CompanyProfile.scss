@@ -1,0 +1,121 @@
+.contractor-settings--company-profile {
+    .profile-company {
+        padding: 0 0 2.7rem;
+    }
+
+    .contractor-settings {
+        &__top {
+            &-btns {
+                display: flex;
+                flex-direction: column;
+
+                @include is-tablet {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 1.5rem;
+                }
+
+                .btn {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &__info {
+            max-width: 46.5rem;
+            width: 100%;
+            padding-top: 2.8rem;
+        }
+    }
+
+    .two-columns {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+
+        > div {
+            width: calc(50% - .8rem);
+        }
+
+        .contractor-settings__subheader {
+            margin: 0 0 1.4rem;
+        }
+
+        .details-list__header {
+            font-size: 1.07rem;
+            font-weight: 600;
+        }
+    }
+
+    .list-type-tick {
+        li {
+            font-size: 1rem;
+            font-weight: 600;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+    }
+
+    .resources {
+        margin-bottom: 4.2rem;
+
+        &__header {
+            font-size: 1.07rem;
+            margin: 0 0 1rem;
+        }
+
+        &__name {
+            font-size: 1rem;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+    }
+
+    .products {
+        .contractor-settings__subheader {
+            margin: 0 0 1.3rem;
+        }
+    }
+
+    .info-additional {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-weight: 500;
+        padding-top: 3.3rem;
+        border-top: 1px solid $border-color;
+
+        &__items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1.8rem 5.5rem;
+            padding-bottom: 4rem;
+        }
+
+        &__item {
+            font-size: 1rem;
+            margin-top: .8rem;
+            line-height: 1.64rem;
+
+            @include is-tablet {
+                font-size: .95rem;
+            }
+
+            &-title {
+                color: $brighter-main-text-color;
+                margin: 0 0 .5rem;
+            }
+
+            &-answer {
+                word-break: break-word;
+            }
+        }
+    }
+}

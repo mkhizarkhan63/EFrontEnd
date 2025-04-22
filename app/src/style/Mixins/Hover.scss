@@ -1,0 +1,56 @@
+@mixin background-on-hover {
+    transition: background-color .1s ease-in;
+
+    &:hover {
+        background-color: $hover-bg-color;
+    }
+}
+
+@mixin background-on-focus {
+    transition: background-color .1s ease-in;
+
+    &:focus,
+    &[data-is-focused="true"] {
+        background-color: $hover-bg-color;
+    }
+}
+
+@mixin box-shadow-on-hover {
+    transition: box-shadow .15s ease-in;
+
+    &:hover {
+        box-shadow: 0 2px 8px 0 #0000001F;
+    }
+}
+
+@mixin green-text-on-hover {
+    transition: color .12s ease-in;
+
+    &:hover {
+        color: $green-text;
+    }
+}
+
+@mixin text-button-on-hover {
+    position: relative;
+    display: inline;
+    cursor: pointer;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: -2px;
+        background-color: $navy-blue-text;
+        transition: all .2s ease-in-out;
+        opacity: 0;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+}

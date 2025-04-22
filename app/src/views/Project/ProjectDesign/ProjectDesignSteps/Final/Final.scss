@@ -1,0 +1,25 @@
+.design-flow__container {
+    .final {
+        padding: 6rem 2rem;
+
+        &__icon {
+            margin-bottom: 2.6rem;
+
+            svg, image {
+                width: 4.29rem;
+                height: 4.29rem;
+            }
+        }
+
+        &__text {
+            font-size: 1.14rem;
+            text-align: center;
+            color: $brighter-main-text-color;
+            margin-bottom: 1.3rem;
+        }
+
+        .design-flow__box-title {
+            margin-bottom: 1.65rem;
+        }
+    }
+}

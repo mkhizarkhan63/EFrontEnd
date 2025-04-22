@@ -1,0 +1,106 @@
+.project-docs-container {
+    margin: 2.42rem 0 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.6rem;
+
+    .project-docs {
+        @include block;
+        padding: 1.9rem .5rem 1.9rem 1.75rem;
+        max-height: 37rem;
+        width: calc((100% - 1.6rem) / 2);
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            font-size: 1.07rem;
+            font-weight: 600;
+            @include left-line(5px, 2.25rem, 1.75rem, $brighter-main-text-color);
+            margin-bottom: 2.4rem;
+
+            &-num {
+                color: $brighter-main-text-color;
+                font-weight: 400;
+                font-size: .93rem;
+            }
+        }
+
+        &__select-all {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            &-btn {
+                .btn--main[data-color="white"] {
+                    box-shadow: none;
+                    border: none;
+                    padding: 0;
+                    font-size: .86rem;
+                    font-weight: 500;
+                    min-height: auto;
+
+                    .icon {
+                        padding: 0;
+                    }
+
+                    svg, image {
+                        width: .85rem;
+                        height: 1.2rem;
+                    }
+
+                    svg image {
+                        filter: initial;
+                    }
+
+                    &:hover {
+                        color: $main-text-color;
+
+                        svg image {
+                            filter: brightness(0) saturate(100%) invert(53%) sepia(43%) saturate(7%)
+                                hue-rotate(324deg) brightness(94%) contrast(94%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .reviews-files {
+            display: flex;
+            flex-direction: column-reverse;
+            margin: 0 .5rem 0 0;
+            padding: .5rem .5rem 0 0;
+            flex: 1;
+            overflow-y: auto;
+
+            &__container {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 0;
+                padding-top: .9rem;
+            }
+
+            &__item {
+                margin-bottom: 1.15rem;
+                padding-bottom: 1.2rem;
+                border-bottom: 1px solid #F2F2F2;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                &-doc-icon {
+                    display: none;
+                }
+            }
+
+            &__name {
+                color: $main-text-color;
+                font-weight: 500;
+            }
+
+            &__btn {
+                display: none;
+            }
+        }
+    }
+}

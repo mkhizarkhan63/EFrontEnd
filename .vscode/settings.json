@@ -1,0 +1,21 @@
+{
+	"files.associations": {
+		"*.tss": "typescript"
+	},
+	"taskManager.exclude": "^__",
+	"todo-tree.filtering.excludeGlobs": [
+		"**/node_modules"
+	],
+	"todo-tree.tree.showBadges": false,
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"stylelint.validate": [
+		"scss"
+	],
+	"stylelint.configBasedir": "./app",
+	"stylelint.ignoreDisables": true,
+	"eslint.rules.customizations": [
+		{ "rule": "*import*", "severity": "off" }
+	]
+}

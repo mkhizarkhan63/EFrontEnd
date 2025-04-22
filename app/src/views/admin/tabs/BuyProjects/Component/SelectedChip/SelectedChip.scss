@@ -1,0 +1,144 @@
+.selectedChips-multiple {
+    // white-space: nowrap;
+    background: $white-bg 0% 0% no-repeat padding-box;
+    border: 1px solid $navy-blue-text;
+    border-radius: 4px;
+    opacity: 1;
+    height: 40px;
+    width: 35%;
+    position: relative;
+
+    &_content {
+        display: flex;
+        align-items: center;
+        font: normal normal medium 14px/25px Axiforma;
+        color: $navy-blue-text;
+        opacity: 1;
+        position: relative;
+        height: 40px;
+
+        .icon-setting {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .selectedOption {
+            position: absolute;
+            left: 1em;
+        }
+
+        .input-text,
+        .input-text-header {
+            width: 8em;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+
+
+        }
+
+        .input-text-input {
+            border: 0;
+            height: 20px;
+            padding: 0px 0px 0 6px;
+
+            @include is-tablet {
+                height: 40px;
+
+            }
+
+            .input-placeholder {
+                color: $navy-blue-text;
+            }
+
+            .tick {
+                display: none;
+                left: 7.3em;
+
+                @include is-tablet {
+                    left: 9.5em;
+                }
+            }
+        }
+
+        .input-text .input-text-input:focus {
+            border: 0;
+            box-shadow: none;
+        }
+
+        .icon-setting {
+            margin-inline: auto;
+
+            .icon-box {
+                //  padding: 4px !important;
+                padding-top: 2px;
+
+                @include is-tablet {
+                    padding-top: 0;
+                }
+
+                &__svg {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                &__image {
+                    width: 9px;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+.selected-chips-single {
+    background: $white-bg 0% 0% no-repeat padding-box;
+    border: 1px solid $navy-blue-text;
+    border-radius: 4px;
+    opacity: 1;
+    height: 40px;
+
+    &_content {
+
+        display: flex;
+        align-items: center;
+        font: normal normal medium 14px/25px Axiforma;
+        color: $navy-blue-text;
+        opacity: 1;
+        position: relative;
+        column-gap: 2px;
+        padding: 10px;
+
+        &_selectedOption {
+            white-space: nowrap;
+            position: absolute;
+            left: 2em;
+        }
+    }
+
+    .singleValueTag {
+        position: relative;
+        padding-right: 1em;
+
+        .icon-setting {
+            cursor: pointer;
+            position: absolute;
+            padding: 2.5px 0 0 7px;
+
+            .icon-box {
+                &__svg {
+                    width: 10px;
+                    height: 10px;
+                }
+
+                &__image {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+
+        }
+    }
+}

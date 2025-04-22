@@ -1,0 +1,153 @@
+.client-nav-banner {
+    display: flex;
+    width: 100%;
+    min-height: 25rem;
+    border-bottom: 1px solid $brighter-main-text-color;
+
+    @include is-tablet {
+        margin-top: $client-nav-height;
+    }
+
+    &__left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: .6rem 1.2rem;
+        color: #FFF;
+        background-image: url("/assets/graphics/design_image.png");
+        min-width: 50%;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+
+        @include is-tablet {
+            padding: .6rem 2.15rem .6rem 2.5rem;
+        }
+
+        &-title {
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            max-width: 33rem;
+
+            @include is-tablet {
+                font-size: 3rem;
+                line-height: 3.64rem;
+            }
+        }
+
+        &-desc {
+            font-size: 12px;
+            line-height: 14px;
+            max-width: 32rem;
+            margin-bottom: 2.25rem;
+
+            @include is-tablet {
+                font-size: 1.28rem;
+                line-height: 1.71rem;
+            }
+        }
+
+        .btn[data-color="transparent"] {
+            color: #FFF;
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: .75rem;
+
+            .icon {
+                filter: brightness(0) invert(1);
+            }
+
+            .text {
+                text-decoration: underline;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__right {
+        max-width: 27.2rem;
+        width: 100%;
+        background-color: $main-text-color;
+        color: #FFF;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include is-tablet {
+            width: 27.2rem;
+        }
+
+        &-icon {
+            filter: brightness(0) invert(1);
+            width: 30px;
+            height: 30px;
+            margin-bottom: 1rem;
+
+            @include is-tablet {
+                width: 4.36rem;
+                height: 4.36rem;
+            }
+
+            svg, image {
+                width: 30px;
+                height: 30px;
+
+                @include is-tablet {
+                    width: 4.36rem;
+                    height: 4.36rem;
+                }
+            }
+        }
+
+        &-title {
+            font-size: 1.29rem;
+            line-height: 1.57rem;
+            padding: 0 3rem;
+            margin-bottom: 1rem;
+        }
+
+        &-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding: 0 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            max-width: 140px;
+
+            @include is-tablet {
+                max-width: initial;
+            }
+
+            .icon {
+                width: 15px;
+                height: 15px;
+
+                @include is-pc {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+
+                svg, image {
+                    width: 15px;
+                    height: 15px;
+
+                    @include is-pc {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

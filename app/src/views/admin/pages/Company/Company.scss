@@ -1,0 +1,387 @@
+.company-management-view {
+    &[data-status="draft"],
+    &[data-status="adminReview"] {
+        .container {
+            grid-column: 1/2;
+        }
+
+        .footer {
+            grid-area: 4/1;
+        }
+    }
+
+    .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+
+        .page-with-sidebar {
+            min-width: 550px;
+
+            @include is-tablet {
+                min-width: initial;
+            }
+        }
+    }
+
+    .page-with-sidebar[data-page="company-creating"] {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 17.79rem;
+        grid-template-rows: fit-content(100%) auto auto;
+
+        @include is-tablet {
+            grid-template-columns: minmax(0, 1fr) 27.79rem;
+        }
+    }
+
+    .subheader {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 1rem;
+        padding: 1rem 2.2rem 1rem 1.2rem;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        position: static;
+
+        @include is-tablet {
+            position: fixed;
+            grid-template-columns: minmax(25rem, 1fr) auto;
+            grid-gap: 0 5rem;
+        }
+
+        &__left {
+            width: auto;
+            height: auto;
+            overflow: hidden;
+            padding-left: 1.5rem;
+            word-break: break-word;
+
+            .left__name {
+                text-transform: initial;
+                white-space: initial;
+                word-break: break-word;
+            }
+
+            .company {
+                display: inline-flex;
+                align-items: center;
+                margin-left: .7rem;
+
+                &__image {
+                    width: 4.86rem;
+                    height: 4.86rem;
+                    object-fit: cover;
+                    box-shadow: 0 2px 6px #0000002E;
+                    border-radius: 50%;
+                    display: block;
+                    overflow: hidden;
+                    flex-shrink: 0;
+                    position: relative;
+                    margin-right: 1.4rem;
+
+                    &[src=""],
+                    &:not([src]) {
+                        @include empty-img("/assets/graphics/blue_avatar.svg");
+                    }
+                }
+
+                &__name {
+                    margin-bottom: .3rem;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                .status {
+                    width: fit-content;
+                    font-size: .79rem;
+                    font-weight: 500;
+                    text-align: center;
+                    padding: .64rem .64rem .36rem .71rem;
+                    border-radius: 3px;
+                    margin: -.35rem 0 0 .2rem;
+                    color: $brighter-main-text-color;
+                    background-color: #89898921;
+
+                    &[data-status="approved"] {
+                        color: $green-text;
+                        background-color: $green-text-bg;
+                    }
+
+                    &[data-status="reviewing"] {
+                        color: $navy-blue-text;
+                        background-color: $navy-blue-text-bg;
+                    }
+
+                    &[data-status="draft"],
+                    &[data-status="none"] {
+                        color: $brighter-main-text-color;
+                        background-color: #89898921;
+                    }
+
+                    &[data-status="adminReview"] {
+                        color: $red-text;
+                        background-color: $red-text-bg;
+                    }
+                }
+            }
+        }
+
+        &__right {
+            width: auto;
+            height: auto;
+
+            .subheader-item {
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                margin-left: 3rem;
+
+                @include is-pc {
+                    margin: 0 3.5rem .3rem 0;
+                }
+
+                &--contact {
+                    flex-shrink: 0;
+                }
+
+                &__title {
+                    font-size: .93rem;
+                    color: $brighter-main-text-color;
+                    margin: 0 0 .43rem;
+                }
+
+                &__text {
+                    color: $main-text-color;
+                    text-decoration: none;
+                    font-weight: 600;
+                    word-break: break-word;
+                }
+
+                a {
+                    transition: color .12s ease-in;
+                    display: block;
+                    min-height: 1rem;
+
+                    &:hover {
+                        color: $green-text;
+                    }
+
+                    &:empty {
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+            }
+
+            .dropped {
+                width: 7.8rem;
+                top: 2rem;
+                right: .6rem;
+                box-shadow: 0 1px 11px #0000002C;
+                border-radius: 6px;
+
+                .btn {
+                    border: none;
+                    width: 100%;
+                    font-size: .97rem;
+                    font-weight: 500;
+                    box-shadow: none;
+                    border-radius: 0;
+                    @include background-on-hover;
+
+                    &:hover {
+                        color: inherit;
+                    }
+                }
+
+                .btn--main[data-color="white"] {
+                    padding: 1.35rem 1.15rem;
+                }
+            }
+
+            .dropdown-dots-btn {
+                .btn {
+                    margin: 0 0 .5rem 3rem;
+                    padding: .5rem;
+                    cursor: pointer;
+                    transition: filter .15s ease-in;
+
+                    @include is-pc {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        filter: brightness(.5);
+                    }
+                }
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 89.29rem;
+        width: 90%;
+        grid-column: 1 / span 2;
+
+        @include is-tablet {
+            padding-top: 8.86rem;
+        }
+    }
+
+    .buttons-menu {
+        padding: 0;
+        margin-top: 2.9rem;
+
+        .btn {
+            padding: .5rem 1.07rem;
+            margin: 0 1.7rem 1rem 0;
+        }
+
+        .text-number {
+            font-weight: 400;
+        }
+    }
+
+    .reviews {
+        &__top {
+            margin-top: 3.7rem;
+        }
+
+        &-item__project {
+            flex-wrap: wrap;
+
+            @include is-pc {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 1rem;
+            }
+
+            &-properties {
+                width: 100%;
+
+                @include is-pc {
+                    width: initial;
+                }
+
+                .property {
+                    text-align: left;
+
+                    @include is-pc {
+                        /*!rtl:ignore*/
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+
+    .company-sidebar {
+        width: 17.79rem;
+        right: 0;
+        grid-row: 2/5;
+        grid-column: 2/-1;
+        background-color: #FFF;
+        display: flex;
+        flex-direction: column;
+
+        @include is-tablet {
+            width: 27.79rem;
+            height: calc(100vh - 8.86rem - $header-height);
+            margin-top: 8.86rem;
+            position: fixed;
+            grid-row: 2/-1;
+        }
+
+        &__checkboxes {
+            @include is-tablet {
+                flex: 1;
+                overflow-y: auto;
+            }
+        }
+
+        &__checkbox {
+            &[data-is-checked="true"] {
+                .checkbox-container-option {
+                    background-color: $dark-bg-color;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        width: 4px;
+                        background-color: $navy-blue-text;
+                        animation: fade-in .2s ease-in;
+                    }
+                }
+            }
+
+            &[data-is-checked="false"] {
+                &:hover {
+                    background-color: $hover-bg-color;
+                }
+            }
+        }
+
+        .checkbox-container {
+            &-option {
+                width: 100%;
+                padding: 2rem 1.5rem 2rem 2.2rem;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                transition: .15s ease-in;
+            }
+
+            &-text {
+                font-size: 1.07rem;
+                color: $brighter-main-text-color;
+                transition: .15s ease-in;
+            }
+
+            input:checked ~ .checkbox-container-text {
+                color: $main-text-color;
+            }
+        }
+
+        &__buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .7rem;
+            margin-bottom: 2.2rem;
+            padding: 1rem 2.4rem 0 2rem;
+
+            .btn[data-color="white"] {
+                .icon {
+                    filter: none;
+                }
+
+                svg,
+                image {
+                    width: 1.64rem;
+                    height: 1.64rem;
+                }
+
+                &:hover {
+                    color: $red-text;
+                }
+            }
+        }
+    }
+
+    .footer {
+        grid-area: 4 / 1 / auto / span 2;
+        align-self: flex-end;
+        max-width: 89.29rem;
+        width: 90%;
+    }
+}

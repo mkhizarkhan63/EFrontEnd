@@ -1,0 +1,36 @@
+.project-step-biding.bids {
+    height: 100%;
+    justify-content: center;
+
+    .tick {
+        margin: 0 0 1rem;
+    }
+
+    .what-will-happen {
+        margin: 2rem 0;
+
+        &.no-bids {
+            margin: 1rem 0;
+        }
+
+        .btn {
+            margin: 2.5rem auto 0;
+        }
+    }
+
+    .buttons {
+        margin: 1rem 0 2.5rem;
+    }
+
+    .choose-tip {
+        margin: 0;
+    }
+
+    .logo-list-previous {
+        margin: 1.5rem 0;
+    }
+
+    .project-step-biding__participated {
+        margin-bottom: 2rem;
+    }
+}

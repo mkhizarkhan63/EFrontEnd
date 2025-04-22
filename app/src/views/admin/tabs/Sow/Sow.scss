@@ -1,0 +1,151 @@
+.sow-management {
+    width: 85%;
+    max-width: 89.3rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include show-page-animation;
+
+    .table {
+        &__header {
+            font-weight: 500;
+            border-bottom: none;
+
+            .table__cell {
+                &:nth-of-type(6) {
+                    min-width: 6.43rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    padding-left: 0;
+                    min-width: 3.5rem;
+
+                    @include is-pc {
+                        padding-left: 1rem;
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            font-size: .86rem;
+
+            .table__row:first-of-type {
+                border-top: 1px solid $border-color;
+            }
+
+            .table__cell {
+                padding: 1.7rem 1rem 1.3rem;
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:nth-of-type(3) {
+                    word-break: break-word;
+                }
+
+                &:last-of-type {
+                    padding: .8rem 0 .5rem;
+                    min-width: 3.5rem;
+
+                    @include is-pc {
+                        padding: .8rem 0 .5rem 1rem;
+                        min-width: auto;
+                    }
+                }
+
+                .title {
+                    font-weight: 600;
+                    font-size: .93rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: .3rem 1rem;
+                    align-items: center;
+                    word-break: break-word;
+
+                    .master-sow-label {
+                        width: fit-content;
+                        min-width: 6.2rem;
+                        padding: .46rem .65rem;
+                        border-radius: 5px;
+                        font-size: .79rem;
+                        font-weight: 500;
+                        color: #FFF;
+                        background-color: $navy-blue-text;
+                    }
+                }
+
+                .date {
+                    word-break: break-word;
+                }
+
+                .signed {
+                    color: $brighter-main-text-color;
+                }
+
+                .status {
+                    width: fit-content;
+                    padding: .5rem .6rem;
+                    border-radius: 5px;
+                    font-size: .79rem;
+                    min-width: 4.43rem;
+                    margin: -1rem 0 -1rem auto;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-weight: 500;
+
+                    &[data-status="live"] {
+                        color: $green-text;
+                        background-color: $green-text-bg;
+                    }
+
+                    &[data-status="inactive"] {
+                        color: $brighter-main-text-color;
+                        background-color: #89898921;
+                    }
+
+                    &[data-status="drafted"] {
+                        color: $navy-blue-text;
+                        background-color: $navy-blue-text-bg;
+                    }
+                }
+
+                .action {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: .2rem 0;
+
+                    &__item {
+                        .btn {
+                            font-size: .86rem;
+                            font-weight: 500;
+                            margin: 0 0 0 auto;
+
+                            .text {
+                                text-align: end;
+                            }
+                        }
+
+                        &--red {
+                            .btn {
+                                color: $red-text;
+
+                                .text:after {
+                                    background-color: $red-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

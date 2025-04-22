@@ -1,0 +1,29 @@
+include:  
+  ## import typechecks
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-type-check.yml'
+
+  ## import linter
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-lint.yml'
+
+  ## import sonar checks
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-sonar-analysis.yml'
+ 
+  ## import cypress tests
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-cypress-unit-tests.yml'
+
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-cypress-e2e-tests.yml'
+    
+## import dtos update and verification
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-dto-updates-verification.yml'

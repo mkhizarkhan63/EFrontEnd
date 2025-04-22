@@ -1,0 +1,55 @@
+.footer {
+    font-size: 12px;
+    line-height: 22px;
+    color: $brighter-main-text-color;
+    gap: 1.7rem;
+    align-items: center;
+    width: 77%;
+    padding: 3rem 0 0;
+    margin: auto auto 0;
+
+    @include is-tablet {
+        font-size: .94rem;
+        line-height: initial;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 3rem 0;
+        margin: auto auto 0;
+    }
+
+    .copyrights {
+        text-align: center;
+
+        @include is-tablet {
+            text-align: initial;
+        }
+    }
+
+    > .links {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+
+        @include is-tablet {
+            margin-left: 2rem;
+            padding: 0;
+            justify-content: initial;
+        }
+
+        > .link {
+            color: $brighter-main-text-color;
+            text-decoration: none;
+            transition: color .12s ease-in;
+            margin-left: 2.6rem;
+
+            @include is-tablet {
+                margin-left: 2rem;
+            }
+
+            &:not([href="#"]):hover {
+                color: $navy-blue-text;
+            }
+        }
+    }
+}

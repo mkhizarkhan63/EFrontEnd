@@ -1,0 +1,153 @@
+.page-with-sidebar[data-page="page-profile-settings"] {
+    .client-settings--general-info {
+        .client-settings {
+            &__content {
+                width: 100%;
+                display: flex;
+            }
+
+            &__avatar {
+                width: 9rem;
+                height: 9rem;
+                margin: .4rem 7.5% 0 0;
+                position: relative;
+                border: 1px solid $input-border-color;
+                border-radius: 50%;
+                flex-shrink: 0;
+
+                @include is-tablet {
+                    width: 13rem;
+                    height: 13rem;
+                }
+
+                .uploader {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+
+                    .dropzone {
+                        height: 100%;
+                        padding: 0;
+
+                        &__img {
+                            display: none;
+                        }
+
+                        &__desc {
+                            position: absolute;
+                            bottom: 0;
+                            right: 14%;
+                            width: 2.29rem;
+                            height: 2.29rem;
+                            background-color: $navy-blue-text;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: .25s ease-in-out;
+                            flex-shrink: 0;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #3060C1;
+                            }
+                        }
+
+                        &__btn {
+                            width: 100%;
+                            height: 100%;
+                            background-image: url("/assets/graphics/edit.svg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 1.09rem 1.09rem;
+                            filter: brightness(0) invert(1);
+                            font-size: 0;
+                            color: transparent;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                &-close {
+                    position: absolute;
+                    bottom: 0;
+                    right: 14%;
+                }
+
+                &-img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .supplier {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    image, svg {
+                        width: 4.38rem;
+                        height: 5.25rem;
+                    }
+
+                    svg image {
+                        filter: invert(65%) sepia(8%) saturate(0%) hue-rotate(142deg) brightness(82%) contrast(83%);
+                    }
+                }
+            }
+
+            &__form {
+                flex-grow: 1;
+
+                .input-text {
+                    max-width: 27.3rem;
+                    margin-bottom: 2.5rem;
+
+                    &:last-of-type {
+                        margin-bottom: 1.55rem;
+                    }
+
+                    &-input {
+                        font-size: .93rem;
+                        color: $main-text-color;
+                    }
+                }
+
+                .input-text-input:disabled {
+                    background-color: $dark-bg-color;
+                    color: $brighter-main-text-color;
+                }
+            }
+
+            &__phone-text {
+                color: $brighter-main-text-color;
+                font-size: .93rem;
+                display: flex;
+                align-items: center;
+                gap: 0 .3rem;
+                flex-wrap: wrap;
+
+                .btn {
+                    color: $navy-blue-text;
+                    font-weight: 400;
+                    font-size: .93rem;
+                }
+            }
+
+            &__btn {
+                margin: 5.05rem 0 0 auto;
+
+                .btn {
+                    padding: .5rem 1.28rem .5rem 1.64rem;
+
+                    image, svg {
+                        width: 1.33rem;
+                        height: .93rem;
+                    }
+                }
+            }
+        }
+    }
+}

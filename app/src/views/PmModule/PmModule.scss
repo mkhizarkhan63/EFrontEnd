@@ -1,0 +1,257 @@
+.pm-module-view {
+    &[data-active-tab="dashboard"] {
+        .left-panel, .right-panel {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+            }
+        }
+
+        .footer {
+            padding-bottom: 80px;
+
+            @include is-tablet {
+                padding: 3rem 0;
+            }
+        }
+    }
+
+    &[data-active-tab="logs"] {
+        .center-panel, .right-panel {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+            }
+        }
+
+        .footer {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+            }
+        }
+    }
+
+    &[data-active-tab="tools"] {
+        .left-panel {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+            }
+        }
+
+        .center-panel {
+            .buttons-menu, .pm-module-view__content {
+                display: none;
+
+                @include is-tablet {
+                    display: block;
+                }
+            }
+        }
+
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+            }
+        }
+    }
+
+    .buttons-menu {
+        background-color: #FAFBFF;
+        width: 100%;
+        margin: 0 0 7px;
+        padding: 1.1rem 0 .79rem;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include is-tablet {
+            overflow-x: initial;
+            border-bottom: .3rem solid #ECECEF;
+            padding: 1.1rem 0 0;
+            margin: 0 0 1.7rem;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            min-height: min-content;
+
+            @include is-tablet {
+                min-height: initial;
+            }
+
+            @media screen and (min-width: 1150px) {
+                margin-right: 2.15rem;
+            }
+
+            &:first-child {
+                margin-left: 6%;
+
+                @include is-tablet {
+                    margin-left: initial;
+                }
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+        .btn {
+            font-size: 16px;
+            margin: 0;
+
+            @include is-tablet {
+                font-size: 1.07rem;
+            }
+
+            @include is-pc {
+                font-size: 1.28rem;
+            }
+
+            &:disabled {
+                background-color: initial;
+            }
+
+            .text {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        @include is-tablet {
+            position: sticky;
+            top: 0;
+            z-index: 35;
+        }
+
+        @include is-pc {
+            font-size: 1.29rem;
+        }
+    }
+
+    &__content {
+        width: 88%;
+        margin: 0 auto;
+        animation: fade-in .15s ease-in-out;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        @include is-tablet {
+            width: initial;
+            margin: .7rem 0 0;
+        }
+    }
+
+    &__mobile-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        border-top: 1px solid #E8E8E8;
+        background-color: #FFF;
+        z-index: $zindex-header;
+
+        &-item {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            flex: 1;
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: .3rem;
+                background-color: $navy-blue-text;
+                top: -1px;
+                left: 0;
+                transition: width .3s ease-in-out;
+            }
+
+            &[data-is-active="true"] {
+                &:after {
+                    width: 100%;
+                    height: .3rem;
+                }
+
+                .btn .icon {
+                    filter: var(--icon-blue);
+                }
+            }
+
+            .btn {
+                background-color: transparent;
+                color: $main-text-color;
+                box-shadow: none;
+                border-radius: 0;
+                display: inline-flex;
+                font-weight: 600;
+                font-size: 14px;
+                padding: 20px 10px;
+                min-height: initial;
+                width: 100%;
+
+                @media screen and (min-width: 350px) {
+                    font-size: 16px;
+                }
+
+                .icon {
+                    filter: invert(.5) brightness(.9);
+                    transition: all .2s ease-in-out;
+                }
+
+                .icon.left {
+                    margin-right: 6px;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                [data-icon-name="dashboard"] {
+                    svg, image {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                [data-icon-name="log-icon"] {
+                    svg, image {
+                        width: 17px;
+                        height: 13px;
+                    }
+                }
+
+                [data-icon-name="tools-icon"] {
+                    svg, image {
+                        width: 27px;
+                        height: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    .side-modal {
+        max-height: initial;
+    }
+}

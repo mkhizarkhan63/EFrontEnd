@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "jsx": "react",
+        "jsxFactory": "h",
+        "jsxFragmentFactory": "Hfrag",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "useDefineForClassFields": true,
+        "paths": {
+            "~/*": ["./src/*"],
+            "~cypress": ["./spec/cypress.ts"]
+        }
+    },
+    "include": [
+        "./make.ts",
+        "./src",
+        "./spec",
+        "./makelib",
+        "./shims/*.d.ts"
+    ],
+    "exclude": [
+        "./**/*.dtos.ts",
+        "./spec"
+    ],
+    "ts-node": {
+        "transpileOnly": true,
+    }
+}

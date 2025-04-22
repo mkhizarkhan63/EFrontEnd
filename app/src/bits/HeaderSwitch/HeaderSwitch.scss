@@ -1,0 +1,131 @@
+.table-switch {
+    width: 100%;
+    max-width: 82rem;
+    margin-bottom: 1.43rem;
+
+    &__heading {
+        @include block;
+        border: 1px solid #E8E8E8;
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        padding: 14px 22px 14px 20px;
+
+        @include is-tablet {
+            padding: .85rem 1.56rem 1.06rem 1.1rem;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background-color: $yellow-text;
+            opacity: 1;
+            animation: fade-in .2s ease-in;
+        }
+
+        &[data-border-color="completed"]:after {
+            background-color: $green-text;
+        }
+
+        &[data-border-color="inDelay"]:after {
+            background-color: $red-text;
+        }
+
+        &[data-border-color="upcoming"]:after {
+            background-color: $brighter-main-text-color;
+        }
+
+        &[data-border-color="currentStage"]:after {
+            background-color: $yellow-text;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-top: .3rem;
+
+        .btn {
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            width: initial;
+            height: initial;
+            padding: .3rem;
+            margin: .3rem 8px 0 0;
+            align-self: flex-start;
+            background-color: transparent;
+            transform: rotateZ(90deg);
+
+            @include is-tablet {
+                margin: .3rem 1.1rem 0 0;
+            }
+
+            .icon {
+                filter: var(-icon-dark-gray);
+
+                svg, image {
+                    width: 11px;
+                    height: 6px;
+
+                    @include is-tablet {
+                        width: .79rem;
+                        height: .43rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__details {
+        display: initial;
+        padding: .3rem 0;
+        animation: fade-in .2s ease-in;
+
+        &[data-is-hidden="true"] {
+            display: none;
+        }
+    }
+
+    &__extended {
+        animation: fade-in .2s ease-in;
+        margin-top: 12px;
+
+        @include is-tablet {
+            margin-top: initial;
+        }
+    }
+
+    &[data-is-collapsed="true"] {
+        .table-switch__col {
+            margin-right: 1rem;
+        }
+    }
+
+    &[data-is-collapsed="false"] {
+        .table-switch__title {
+            .btn {
+                transform: rotateZ(180deg);
+            }
+        }
+
+        .table-switch__heading {
+            border: 1px solid transparent;
+            background-color: transparent;
+
+            &:after {
+                opacity: 0;
+            }
+        }
+
+        .stage-header__item {
+            display: none;
+        }
+    }
+}

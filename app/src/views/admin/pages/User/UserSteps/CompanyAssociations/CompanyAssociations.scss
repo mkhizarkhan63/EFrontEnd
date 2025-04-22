@@ -1,0 +1,143 @@
+.company-associations {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    &__header {
+        font-size: 2rem;
+        font-weight: 600;
+
+        &-num {
+            font-size: 1.29rem;
+            font-weight: 500;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .companies {
+        @include block;
+        padding: 1.93rem 2.1rem;
+
+        &:empty {
+            display: none;
+        }
+
+        &__item {
+            width: 100%;
+            display: flex;
+            border-bottom: 1px solid rgba(#707070, .1);
+            margin-bottom: 1.2rem;
+            padding-bottom: 2rem;
+
+            &-img {
+                width: 4.43rem;
+                height: 4.43rem;
+                object-fit: cover;
+                box-shadow: 0 2px 6px #0000002F;
+                border-radius: 50%;
+                display: block;
+                position: relative;
+                overflow: hidden;
+                flex-shrink: 0;
+                margin-right: 1rem;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/example_logo.jpg");
+                }
+            }
+
+            &-desc {
+                margin-top: .4rem;
+            }
+
+            &-title {
+                font-size: 1.14rem;
+                font-weight: 600;
+                margin-bottom: .5rem;
+                word-break: break-word;
+            }
+
+            &-role {
+                font-size: .93rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+                margin-bottom: 1.3rem;
+            }
+
+            &-labels {
+                display: flex;
+            }
+
+            &-label {
+                font-size: .93rem;
+                font-weight: 500;
+                padding: .43rem .57rem .36rem .64rem;
+                margin-right: 1.2rem;
+                border-radius: 3px;
+
+                &[data-role="contractor"] {
+                    color: $navy-blue-text;
+                    background-color: $navy-blue-text-bg;
+                }
+
+                &[data-role="consultant"] {
+                    color: $green-text;
+                    background-color: $green-text-bg;
+                }
+
+                &[data-role="supplier"] {
+                    color: $yellow-text;
+                    background-color: $yellow-text-bg;
+                }
+
+                &--gray {
+                    color: $brighter-main-text-color;
+                    background-color: rgba($brighter-main-text-color, .15);
+                }
+            }
+        }
+    }
+
+    .side-modal[data-variant="company-association"] {
+        max-width: 37.14rem;
+        width: 100%;
+
+        @include is-tablet {
+            max-width: initial;
+            width: 37.14rem;
+        }
+
+        .side-modal {
+            &__header {
+                margin-bottom: 1.5rem;
+            }
+
+            &__content {
+                flex: 1;
+                padding: .5rem 1.5rem 1rem 2.3rem;
+                margin-right: .71rem;
+                overflow-y: auto;
+            }
+        }
+
+        .input-text-header {
+            display: none;
+        }
+
+        .radio-multiple {
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+
+            &-option {
+                margin: 0 2.5rem 1.5rem 0;
+            }
+        }
+
+        .btn[data-color="blue"] {
+            margin: 4rem 0 0 auto;
+        }
+    }
+}

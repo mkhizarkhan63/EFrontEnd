@@ -1,0 +1,55 @@
+.side-modal[data-variant="modify-contract"] {
+    width: 25%;
+    max-width: 28.6rem;
+    min-width: 23rem;
+    height: calc(100vh - $header-height - 9.4rem);
+    top: calc($header-height + 9.4rem);
+
+    .modify-contract {
+        &__content {
+            padding: 0 2.25rem;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.79rem;
+            margin-bottom: 2.29rem;
+        }
+
+        &__email {
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+
+            svg, image {
+                width: 1.5rem;
+                height: 1.59rem;
+            }
+
+            &-text {
+                font-size: 1.07rem;
+                text-decoration: none;
+                margin: 0 1.43rem 0 0;
+                color: $main-text-color;
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+                transition: .2s ease-in;
+
+                &:hover {
+                    color: $green-text;
+                }
+            }
+        }
+    }
+
+    + .footer {
+        display: none;
+    }
+}

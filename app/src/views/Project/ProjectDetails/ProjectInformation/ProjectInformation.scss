@@ -1,0 +1,41 @@
+.project-info {
+    @include block;
+    margin-top: 11rem;
+
+    &__header {
+        font-size: 1.27rem;
+        font-weight: 600;
+        margin: 2rem 2rem .5rem;
+        @include left-line(4px, 2.5rem, 2rem, $navy-blue-text);
+    }
+
+    &-grid {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+
+        &__item {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            min-width: 10.5rem;
+            width: 12%;
+
+            &-label {
+                font-size: .93rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+                margin-top: .7rem;
+            }
+
+            &-value {
+                font-size: 1.07rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

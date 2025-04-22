@@ -1,0 +1,53 @@
+.company-detail-box--services {
+    .title {
+        margin-bottom: 0;
+    }
+
+    .company-detail-services {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        margin-top: 3.15rem;
+
+        @include is-pc {
+            gap: 1rem;
+        }
+
+        &[data-is-empty="true"] {
+            margin-top: 0;
+        }
+
+        &__col {
+            flex: 1;
+            min-width: 10rem;
+
+            @include is-pc {
+                flex: initial;
+                width: 34.4%;
+                min-width: 10rem;
+            }
+        }
+
+        .details-list {
+            &__header {
+                margin-bottom: 1.2rem;
+                font-size: 1.07rem;
+                font-weight: 600;
+            }
+
+            &__items li {
+                margin-bottom: .9rem;
+            }
+        }
+    }
+
+    .services {
+        margin: 0;
+        width: 100%;
+
+        &__container {
+            max-width: 45.86rem;
+            width: 100%;
+        }
+    }
+}

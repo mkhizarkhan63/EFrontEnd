@@ -1,0 +1,262 @@
+.stage-list {
+    .stage-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .3rem 0;
+
+        @include is-tablet {
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        &__title {
+            font-size: 16px;
+            font-weight: 600;
+            word-break: break-word;
+            position: relative;
+            margin: 0 10px 10px 0;
+            cursor: pointer;
+
+            @include is-tablet {
+                font-size: 1.14rem;
+                margin: 0 1rem .35rem 0;
+            }
+
+            &:after {
+                opacity: 0;
+                position: absolute;
+                content: "";
+                width: 100%;
+                left: 0;
+                bottom: -2px;
+                height: 1px;
+                background-color: $main-text-color;
+                transition: all .2s ease-in-out;
+            }
+
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            animation: fade-in .2s ease-in;
+            margin-top: 10px;
+
+            @include is-tablet {
+                display: none;
+                margin-top: 0;
+            }
+
+            &-title {
+                color: $brighter-main-text-color;
+                font-size: 11px;
+                margin-bottom: .5rem;
+            }
+
+            &-value {
+                font-size: 12px;
+                font-weight: 500;
+                text-align: left;
+                /*!rtl:ignore*/
+                direction: ltr;
+            }
+        }
+
+        &__status {
+            font-size: 11px;
+            color: $yellow-text;
+            background-color: $yellow-text-bg;
+            border-radius: 3px;
+            padding: 6px 10px 7px 9px;
+
+            @include is-tablet {
+                font-size: .79rem;
+                padding: .57rem .64rem .36rem;
+            }
+
+            &:empty {
+                display: none;
+            }
+
+            &[data-status="completed"] {
+                background-color: $green-text-bg;
+                color: $green-text;
+            }
+
+            &[data-status="inDelay"] {
+                background-color: $red-text-bg;
+                color: $red-text;
+            }
+
+            &[data-status="upcoming"] {
+                background-color: rgba($brighter-main-text-color, .1);
+                color: $brighter-main-text-color;
+            }
+
+            &[data-status="currentStage"] {
+                background-color: $yellow-text-bg;
+                color: $yellow-text;
+            }
+        }
+    }
+
+    .stage-desc {
+        padding-left: 2.6rem;
+        margin-top: 10px;
+        font-size: 12px;
+        color: $brighter-main-text-color;
+        animation: fade-in .2s ease-in;
+
+        @include is-tablet {
+            margin-top: 0;
+            font-size: .86rem;
+        }
+    }
+
+    .stage-details {
+        display: grid;
+        grid-template-columns: auto auto;
+        animation: fade-in .2s ease-in;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+
+            &.on-tablet {
+                display: none;
+
+                @include is-tablet {
+                    display: flex;
+                }
+            }
+
+            &-title {
+                color: $brighter-main-text-color;
+                font-size: 11px;
+                margin-bottom: .5rem;
+
+                @include is-tablet {
+                    font-size: .79rem;
+                }
+
+                @include is-pc {
+                    margin-bottom: 1.4rem;
+                }
+            }
+
+            &-value {
+                font-size: 12px;
+                font-weight: 500;
+                /*!rtl:ignore*/
+                direction: ltr;
+
+                @include is-tablet {
+                    font-size: .86rem;
+                }
+            }
+
+            &--bar {
+                @include is-tablet {
+                    margin-left: 2rem;
+                }
+
+                @media screen and (min-width: 1300px) {
+                    margin-left: 7rem;
+                }
+
+                .stage-details__item-title {
+                    display: none;
+                    margin-bottom: .8rem;
+
+                    @include is-tablet {
+                        display: block;
+                    }
+                }
+            }
+
+            .progress-bar {
+                width: 70px;
+                height: 20px;
+                background-color: $brighter-main-text-color;
+                margin-top: 5px;
+
+                @include is-tablet {
+                    margin-top: 0;
+                }
+
+                @include is-pc {
+                    width: 5rem;
+                    height: 1.5rem;
+                }
+
+                &-value {
+                    height: 20px;
+
+                    @include is-pc {
+                        height: 1.5rem;
+                    }
+
+                    &[data-is-color="orange"] {
+                        background-color: $yellow-text;
+                    }
+                }
+            }
+        }
+    }
+
+    .table-switch__table {
+        &-header {
+            width: 100%;
+            display: none;
+            padding: 0 1.56rem 1.21rem 1.65rem;
+
+            @include is-tablet {
+                display: flex;
+            }
+
+            .table-switch__table-cell {
+                flex: 1;
+                font-size: .79rem;
+
+                &--task {
+                    flex: 3.8;
+                }
+
+                &--action {
+                    flex: 1.55;
+                    padding: 0 .8rem;
+                }
+
+                &--completed {
+                    flex: .75;
+                    text-align: end;
+                    padding: 0 .8rem;
+                    /*!rtl:ignore*/
+                    direction: ltr;
+                }
+
+                &--date {
+                    flex: .75;
+                    text-align: end;
+                    padding: 0 .8rem;
+                    /*!rtl:ignore*/
+                    direction: ltr;
+                }
+
+                &--status {
+                    flex: .6;
+                    text-align: end;
+                    min-width: 6rem;
+                }
+            }
+        }
+    }
+}

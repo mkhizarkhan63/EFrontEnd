@@ -1,0 +1,312 @@
+.project-prices {
+    &-item {
+        @include block;
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+            margin-bottom: .29rem;
+        }
+
+        .table {
+            border: none;
+            padding: 0 1.93rem;
+
+            &__row {
+                border: none;
+                animation: fade-in .12s ease-in;
+
+                &:last-child {
+                    border-bottom: 1px solid #F2F2F2;
+                    padding-bottom: 2.79rem;
+                }
+            }
+
+            &__header {
+                border-bottom: 1px solid $border-color;
+
+                .table__cell:last-of-type {
+                    padding-right: 1rem;
+                }
+            }
+
+            &__body {
+                row-gap: 1.43rem;
+                max-height: 99rem;
+                overflow: auto;
+
+                &:not(:empty) {
+                    padding-top: 1.18rem;
+                }
+
+                .table__cell {
+                    padding-top: 0;
+                    padding-bottom: 0;
+
+                    .name {
+                        font-weight: 700;
+                        font-size: 1.07rem;
+                    }
+
+                    &:last-of-type {
+                        padding-right: 1rem;
+                    }
+                }
+            }
+
+            .input-text {
+                &-header {
+                    margin-bottom: 0;
+                }
+            }
+
+            .btn[data-color="white"] {
+                box-shadow: none;
+
+                svg, image {
+                    width: .6rem;
+                    height: .6rem;
+                }
+
+                .icon {
+                    filter: initial;
+                    transition: filter .12s ease-in;
+                }
+
+                &:hover {
+                    .icon {
+                        filter: brightness(.4);
+                    }
+                }
+            }
+        }
+
+        &__header {
+            padding: 1.8rem 1.8rem 2rem;
+            border-bottom: 1px solid rgba(112, 112, 112, .1);
+        }
+
+        .table-toggle {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(5, auto);
+
+            .toggle {
+                flex-shrink: 0;
+                width: 3rem;
+                height: 1.71rem;
+                margin: 1.1rem .4rem 1.1rem .65rem;
+
+                .checkbox-toggle {
+                    background-color: #EAEAEB;
+                    border: none;
+
+                    &:after {
+                        height: 1.29rem;
+                        width: 1.29rem;
+                        background-color: $navy-blue-text;
+                        left: .21rem;
+                        bottom: .21rem;
+                    }
+                }
+
+                input:checked ~ .checkbox-toggle {
+                    border: none;
+                }
+
+                input:checked ~ .checkbox-toggle:after {
+                    transform: translateX(1.29rem);
+                }
+
+                input:focus ~ .checkbox-toggle {
+                    box-shadow: none;
+                }
+
+                input:disabled ~ .checkbox-toggle {
+                    border: none;
+                }
+            }
+
+            .input-text {
+                margin-right: 1.57rem;
+                width: 12.43rem;
+
+                &-header {
+                    margin-bottom: 0;
+                }
+
+                &-input {
+                    font-weight: 600;
+                    font-size: .98rem;
+                }
+            }
+
+            .price-info {
+                font-size: .86rem;
+                color: #898989;
+                font-weight: 400;
+                margin-top: -.2rem;
+                grid-row: 2;
+                grid-column: 5;
+            }
+        }
+
+        &__optional {
+            padding: 1.8rem 1.8rem 1.64rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 1rem;
+
+            &-right {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &__btn-tick {
+            margin-left: 1rem;
+            transition: transform .25s ease-in-out;
+
+            &[data-is-closed="true"] {
+                transform: rotateZ(0);
+            }
+
+            &[data-is-closed="false"] {
+                transform: rotateZ(180deg);
+            }
+
+            .btn {
+                box-shadow: none;
+
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                svg, image {
+                    width: .76rem;
+                    height: .43rem;
+                }
+            }
+        }
+
+        &__form {
+            max-height: 110rem;
+            overflow: auto hidden;
+            transform-origin: top;
+            transition: max-height .4s ease-in-out;
+
+            > * {
+                opacity: 1;
+                transition: opacity .4s ease-in-out;
+            }
+
+            &[data-is-closed="false"] {
+                max-height: 0;
+                overflow: hidden;
+
+                > * {
+                    opacity: 0;
+                }
+            }
+
+            .table {
+                &__body .table__cell {
+                    padding: 5px;
+
+                    @include is-tablet {
+                        padding: 0 1rem;
+                    }
+                }
+
+                &__header .table__cell {
+                    padding: 10px 5px;
+
+                    @include is-tablet {
+                        padding: 1.45rem 1rem 1.15rem;
+                    }
+                }
+
+                .input-text-input {
+                    padding: 1.25rem 8px;
+
+                    @include is-tablet {
+                        padding: 1.25rem;
+                    }
+                }
+
+                .input-text-and-select {
+                    .input-text-input {
+                        padding: 8px;
+
+                        @include is-tablet {
+                            padding: 1.25rem .5rem 1.25rem 1.25rem;
+                        }
+                    }
+
+                    .input-text--select {
+                        .input-text-input {
+                            padding: 5px 5px 5px 0;
+
+                            @include is-tablet {
+                                padding: 1.25rem 1.25rem 1.25rem .5rem;
+                            }
+                        }
+
+                        .input-text__option {
+                            padding-right: 18px;
+
+                            @include is-tablet {
+                                padding-right: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__btn-add {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn[data-color="white"] {
+                font-size: 1.07rem;
+                border: none;
+                box-shadow: none;
+                width: 100%;
+                padding: 1.2rem 0;
+                @include background-on-hover;
+
+                &:hover {
+                    color: var(--dark-gray);
+                }
+
+                .icon {
+                    border: 1px solid #E8E8E8;
+                    background-color: #FFF;
+                    width: 2.14rem;
+                    height: 2.14rem;
+                    border-radius: 50%;
+                    box-shadow: none;
+                    margin-right: .66rem;
+                    justify-content: center;
+                    align-items: center;
+                    filter: none;
+
+                    &-box {
+                        width: 1rem;
+                        height: 1rem;
+                        filter: var(--icon-blue);
+                    }
+
+                    svg, image {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

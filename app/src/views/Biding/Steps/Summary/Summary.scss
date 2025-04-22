@@ -1,0 +1,150 @@
+.bid-summary {
+    max-width: 89.3rem;
+    flex-grow: 1;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__top {
+        margin-top: 1.45rem;
+        margin-bottom: 3.16rem;
+        display: flex;
+
+        .icon-box {
+            margin-right: 1.4rem;
+        }
+
+        svg, image {
+            width: 3.43rem;
+            height: 3.43rem;
+        }
+
+        &-thanks {
+            margin-bottom: .88rem;
+            font-size: 1.14rem;
+            font-weight: 400;
+            color: $brighter-main-text-color;
+        }
+
+        &-text {
+            font-weight: 600;
+            font-size: 1.29rem;
+
+            &--small {
+                font-size: 1.14rem;
+                margin-top: .86rem;
+            }
+        }
+    }
+
+    &__detail {
+        width: 100%;
+        min-height: 9.64rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 6px;
+        background: $navy-blue-text;
+        padding: 1.36rem 1.64rem 1.36rem 1.93rem;
+        margin-bottom: 1.4rem;
+        color: #FFF;
+        position: relative;
+
+        &-title {
+            font-size: 1.29rem;
+            margin-right: 2rem;
+        }
+
+        &-info {
+            min-width: 39.8rem;
+            width: 46.5%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0 4.4rem;
+            padding: 1rem 1.3rem 1rem 3.76rem;
+            margin-right: 27%;
+            background-color: #173777;
+            border-radius: 6px;
+        }
+
+        &-name {
+            min-width: 47%;
+            border-right: 1px solid rgba(#707070, .2);
+            padding: .7rem 1.7rem .7rem 0;
+            font-size: 1.29rem;
+            display: flex;
+            align-items: center;
+            gap: 0 1.1rem;
+
+            svg, image {
+                width: 1.71rem;
+                height: 2.07rem;
+                filter: brightness(0) saturate(100%) invert(74%) sepia(68%)
+                    saturate(2824%) hue-rotate(87deg) brightness(92%) contrast(98%);
+            }
+        }
+
+        &-contact {
+            min-height: 3.86rem;
+            font-size: 1.43rem;
+            text-decoration: none;
+            color: #FFF;
+            padding-right: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0 .5rem;
+
+            svg, image {
+                width: 1.43rem;
+                height: 1.43rem;
+                filter: brightness(0) saturate(100%) invert(74%) sepia(68%)
+                    saturate(2824%) hue-rotate(87deg) brightness(92%) contrast(98%);
+            }
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 1.29rem;
+            right: 1.57rem;
+            background-image: url("/assets/graphics/client_detail.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 13.4rem;
+            height: 7.07rem;
+        }
+    }
+
+    .project {
+        width: 100%;
+        margin: 0;
+
+        &-left {
+            padding-top: 2.8rem;
+        }
+
+        &__title {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .table__body {
+        .table__cell {
+            padding-top: 1.5rem;
+            padding-bottom: 1.2rem;
+
+            .time-of-stage {
+                text-align: right;
+                color: $navy-blue-text;
+
+                &__days {
+                    color: $navy-blue-text;
+                    margin-left: .3rem;
+                }
+            }
+        }
+    }
+}

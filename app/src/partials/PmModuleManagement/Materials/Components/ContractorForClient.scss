@@ -1,0 +1,35 @@
+.pm-materials {
+    .contractor-for-client {
+        .materials-table .table {
+            &__header, &__body {
+                .table__cell:last-of-type {
+                    @include is-tablet {
+                        min-width: 6rem;
+                    }
+                }
+            }
+
+            .status {
+                box-shadow: 0 2px 6px #00000029;
+                cursor: pointer;
+                transition: all .25s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 4px 6px #00000029;
+
+                    &[data-status="pending"] {
+                        background-color: rgba($yellow-text, .15);
+                    }
+
+                    &[data-status="delay"] {
+                        background-color: rgba($red-text, .15);
+                    }
+
+                    &[data-status="completed"] {
+                        background-color: rgba($green-text, .15);
+                    }
+                }
+            }
+        }
+    }
+}

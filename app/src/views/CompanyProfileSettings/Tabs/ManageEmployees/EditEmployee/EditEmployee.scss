@@ -1,0 +1,85 @@
+.side-modal[data-variant="edit-employee"] {
+    width: 37.14rem;
+
+    .side-modal {
+        &__header {
+            margin-bottom: 1.5rem;
+        }
+
+        &__subheader {
+            color: $navy-blue-text;
+            font-weight: 500;
+            margin: .45rem 0 1.2rem;
+            @include left-line(5px, 2.5rem, 2.3rem, $navy-blue-text);
+        }
+
+        &__content {
+            flex: 1;
+            padding: .5rem 1.5rem 1rem 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+        }
+
+        &__form {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex: 1;
+
+            .input-text {
+                width: 100%;
+                margin-bottom: 2.5rem;
+
+                &-input {
+                    text-overflow: ellipsis;
+                }
+
+                .description {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .employee-box {
+        @include block;
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.8rem;
+        margin-bottom: 2rem;
+
+        &__data {
+            margin-left: 1rem;
+        }
+
+        &__img {
+            width: 4.43rem;
+            height: 4.43rem;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+
+            &[src=""],
+            &:not([src]) {
+                @include empty-img("/assets/graphics/blue_avatar.svg");
+            }
+        }
+
+        &__name {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+            margin-bottom: .5rem;
+        }
+
+        &__role {
+            font-size: 1.29rem;
+            font-weight: 600;
+        }
+    }
+
+    .btn[data-color="blue"] {
+        margin: 4rem 0 0 auto;
+    }
+}

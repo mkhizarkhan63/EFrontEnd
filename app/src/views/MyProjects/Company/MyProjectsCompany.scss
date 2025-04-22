@@ -1,0 +1,209 @@
+.my-projects-company {
+    .page .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+    }
+
+    .page-with-thin-sidebar {
+        grid-template-columns: 20rem 1fr;
+
+        @media screen and (min-width: 401px) {
+            min-width: 600px;
+        }
+
+        @include is-tablet {
+            grid-template-columns: 25.6rem 1fr;
+        }
+    }
+
+    .sidebar-container {
+        grid-area: 1/1/4/2;
+        border-right: 1px solid $border-color;
+        background-color: #FFF;
+        width: 20rem;
+
+        @include is-tablet {
+            position: fixed;
+            height: calc(100vh - $header-height);
+            top: $header-height;
+            bottom: 0;
+            left: 0;
+            width: 25.6rem;
+        }
+    }
+
+    &__container {
+        grid-area: 2/2/1/2;
+        width: calc(100vw - .79rem);
+
+        @media screen and (min-width: 401px) {
+            width: auto;
+        }
+    }
+
+    &__main {
+        width: 92%;
+        max-width: 89.3rem;
+        margin: 0 auto;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 3.9rem 0 2.45rem;
+
+        @include is-tablet {
+            margin: 3.9rem 0 3.45rem;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        display: flex;
+
+        p {
+            color: $brighter-main-text-color;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1.6;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        position: relative;
+        top: -.5rem;
+
+        .search {
+            svg, image {
+                width: 1.28rem;
+                height: 1.28rem;
+            }
+        }
+
+        .filter {
+            position: relative;
+            margin-left: 1.87rem;
+
+            svg, image {
+                width: 1.28rem;
+                height: 1.14rem;
+            }
+
+            &[data-is-filter="true"] {
+                @include filter-active;
+            }
+        }
+    }
+
+    &__menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 2.4rem;
+        font-size: 1rem;
+
+        @include is-tablet {
+            display: flex;
+            font-size: .93rem;
+        }
+
+        &-step {
+            margin-right: 3.2rem;
+            margin-bottom: 6px;
+            padding-bottom: .79rem;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            cursor: pointer;
+            width: fit-content;
+
+            @include is-tablet {
+                margin-bottom: 0;
+            }
+
+            &-name {
+                margin-right: .2rem;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: .21rem;
+                background-color: $navy-blue-text;
+                bottom: .4rem;
+                left: 0;
+                transition: width .3s ease-in-out;
+
+                @include is-tablet {
+                    bottom: -.21rem;
+                }
+            }
+
+            &-num {
+                color: $brighter-main-text-color;
+            }
+
+            &[data-is-active="true"] {
+                font-weight: 600;
+
+                &:after {
+                    width: 100%;
+                }
+
+                .my-projects-company__menu-step-num {
+                    color: $main-text-color;
+                }
+            }
+        }
+    }
+
+    &__grid {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 28.4rem);
+        grid-auto-rows: minmax(13.85rem, auto);
+        grid-gap: 3.5rem 2rem;
+        justify-content: center;
+
+        @include is-tablet {
+            grid-gap: 2.5rem 2rem;
+        }
+    }
+
+    .infinite-scroll-component {
+        padding-bottom: 6rem;
+        overflow: visible !important;
+    }
+
+    .loading-container {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin-top: 8rem;
+
+        &__loader {
+            top: 0;
+        }
+    }
+
+    .paging {
+        grid-area: 2/2;
+        width: 92%;
+        max-width: 89.3rem;
+        margin: 2.5rem auto 0;
+    }
+
+    .footer {
+        width: 92%;
+        max-width: 89.3rem;
+        margin: 0 auto;
+        grid-area: 3/2;
+    }
+}

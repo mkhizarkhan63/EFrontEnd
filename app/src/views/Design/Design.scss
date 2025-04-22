@@ -1,0 +1,413 @@
+.design-detail-view {
+    .page-with-thin-sidebar {
+        display: flex;
+        flex-direction: column;
+
+        @include is-tablet {
+            display: grid;
+            grid-template-columns: 1fr 40%;
+            grid-template-rows: fit-content(100%) auto auto;
+        }
+
+        @include is-pc {
+            grid-template-columns: minmax(52.5rem, 1fr) minmax(15.5rem, 44.5rem);
+        }
+    }
+
+    .services__container {
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        max-width: 39.86rem;
+        width: auto;
+
+        @include is-pc {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .design-card__right {
+        .design-levels {
+            left: -1.65rem;
+            right: -1.65rem;
+            width: initial;
+
+            @include is-tablet {
+                left: -20rem;
+                right: -30rem;
+            }
+
+            @media screen and (min-width: 1500px) {
+                left: -45%;
+                right: initial;
+                width: 220%;
+            }
+
+            @media screen and (min-width: 1700px) {
+                width: 200%;
+            }
+
+            @media screen and (min-width: 1920px) {
+                right: initial;
+            }
+        }
+    }
+
+    .engineers__grid {
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        max-width: 39.86rem;
+    }
+
+    .footer {
+        grid-area: 3/1;
+        width: 90%;
+        max-width: 82.71rem;
+        align-self: flex-end;
+        order: 2;
+
+        @include is-tablet {
+            order: initial;
+        }
+    }
+}
+
+.details--design {
+    padding: 0 0 13rem;
+
+    .design-company {
+        display: grid;
+        grid-template-columns: auto minmax(auto, 1fr) auto;
+        align-items: center;
+        gap: .75rem;
+        border-bottom: 1px solid rgba(#707070, .2);
+        padding: 1.5rem 1.25rem .6rem;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: .57rem;
+            width: 100%;
+            background-color: $green-text;
+        }
+
+        &__logo {
+            width: 2.78rem;
+            height: 2.78rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px #0000002F;
+            object-fit: cover;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            flex-shrink: 0;
+
+            &[src=""], &:not([src]) {
+                @include empty-img("/assets/graphics/example_logo.jpg");
+            }
+        }
+
+        &__type {
+            font-size: .93rem;
+            margin-bottom: .43rem;
+            color: $brighter-main-text-color;
+        }
+
+        .btn {
+            max-width: 100%;
+            text-align: left;
+            font-size: .93rem;
+            font-weight: 600;
+            display: inline-block;
+            flex-shrink: 0;
+            color: $main-text-color;
+
+            .text {
+                word-break: break-word;
+                display: -webkit-box;
+                line-clamp: 2;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                white-space: initial;
+                overflow: hidden;
+
+                &:after {
+                    background-color: $main-text-color;
+                }
+            }
+        }
+
+        &__btn-like {
+            flex-shrink: 0;
+            margin-left: auto;
+
+            .btn {
+                border: 0;
+                font-size: 1rem;
+                color: $main-text-color;
+                display: flex;
+                align-items: center;
+
+                svg, image {
+                    width: 1.21rem;
+                    height: 1.07rem;
+                    margin-right: .45rem;
+                }
+
+                .icon {
+                    transition: none;
+                }
+
+                .text:after {
+                    display: none;
+                }
+
+                &:hover {
+                    box-shadow: none;
+
+                    .icon {
+                        filter: none;
+                    }
+                }
+            }
+
+            &[data-liked="false"] {
+                &:hover {
+                    .icon {
+                        transition: .12s ease-in-out;
+                        filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+                    }
+                }
+            }
+        }
+
+        &[data-is-developer="true"] {
+            .design-company {
+                &:after {
+                    background-color: $navy-blue-text;
+                }
+            }
+        }
+    }
+
+    .project-desc {
+        margin: 1.43rem 1.7rem 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(#707070, .2);
+
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        &__row {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem 1rem 0;
+            font-weight: 500;
+        }
+
+        &__icon {
+            flex-shrink: 0;
+            margin-right: .3rem;
+            width: 1.57rem;
+            max-height: 1.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg, image {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.calendar {
+                svg, image {
+                    width: 1.21rem;
+                }
+            }
+
+            &.location {
+                svg, image {
+                    width: 1.29rem;
+                }
+            }
+
+            &.built {
+                svg, image {
+                    width: 1.29rem;
+                }
+            }
+
+            &.home {
+                svg, image {
+                    filter: brightness(0) saturate(100%) invert(53%) sepia(43%)
+                        saturate(7%) hue-rotate(324deg) brightness(94%) contrast(94%);
+                }
+            }
+        }
+
+        &__text {
+            line-height: 1.57rem;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .project-area {
+        margin: 1.43rem 1.7rem 0;
+        border-bottom: 1px solid rgba(#707070, .2);
+
+        &__title {
+            font-size: 1.28rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+        }
+
+        &__row {
+            display: flex;
+            margin-bottom: 1.2rem;
+
+            &-title {
+                color: $brighter-main-text-color;
+                margin-right: .3rem;
+            }
+
+            &-value {
+                color: $navy-blue-text;
+                font-weight: 500;
+                word-break: break-word;
+            }
+        }
+
+        .design-levels {
+            .design-item {
+                display: block;
+                margin: 1rem 0;
+
+                &__left {
+                    font-size: 1rem;
+                    display: flex;
+                    flex-direction: initial;
+                    justify-content: initial;
+                    margin-bottom: 1.2rem;
+                }
+
+                &__floor-type {
+                    margin-bottom: 0;
+                    margin-right: .3rem;
+                }
+
+                &__room {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    padding: .7rem;
+                    margin: 0 .5rem .8rem 0;
+                }
+            }
+        }
+    }
+
+    .project-features {
+        margin: 1.43rem 1.7rem 1rem;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+        }
+
+        &__title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            margin-right: .5rem;
+        }
+
+        &__play {
+            display: flex;
+
+            &-link {
+                margin-right: 1rem;
+                font-size: 1rem;
+                font-weight: 400;
+
+                .icon-play {
+                    svg, image {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                    }
+                }
+            }
+        }
+
+        &__view-link {
+            display: flex;
+            color: $navy-blue-text;
+            align-items: center;
+
+            .icon-next {
+                margin-left: .5rem;
+
+                svg, image {
+                    filter: $blue-svg;
+                    width: 1.15rem;
+                    height: .81rem;
+                }
+            }
+        }
+
+        &__tick {
+            display: flex;
+            color: $brighter-main-text-color;
+            font-size: .93rem;
+            margin-bottom: 1rem;
+
+            .icon-box {
+                flex-shrink: 0;
+                margin-right: .5rem;
+
+                svg, image {
+                    width: 1.14rem;
+                    height: 1.14rem;
+                }
+            }
+        }
+    }
+
+    .design-bottom-info {
+        width: 29rem;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: #FFF;
+        padding: 0 1.71rem 1.5rem;
+
+        &__price {
+            padding: 1.5rem 0 1.1rem;
+            border-top: 1px solid #E3E3E3;
+
+            &-title {
+                color: $brighter-main-text-color;
+                margin-bottom: .4rem;
+            }
+
+            &-value {
+                font-size: 1.57rem;
+                font-weight: 600;
+                color: $navy-blue-text;
+                word-break: break-word;
+                margin-bottom: .5rem;
+            }
+
+            &-text {
+                font-size: .86rem;
+                color: $brighter-main-text-color;
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

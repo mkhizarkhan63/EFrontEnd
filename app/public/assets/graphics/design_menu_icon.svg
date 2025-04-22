@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59.8" height="29" viewBox="0 0 59.8 29">
+  <g id="Group_1423" data-name="Group 1423" transform="translate(-267.2 -257)">
+    <g id="Group_1422" data-name="Group 1422">
+      <g id="Group_1421" data-name="Group 1421">
+        <g id="Path_2147" data-name="Path 2147" transform="translate(267.2 276)" fill="none">
+          <path d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" stroke="none"/>
+          <path d="M 5 2.5 C 3.621500015258789 2.5 2.5 3.621500015258789 2.5 5 C 2.5 6.378499984741211 3.621500015258789 7.5 5 7.5 C 6.378499984741211 7.5 7.5 6.378499984741211 7.5 5 C 7.5 3.621500015258789 6.378499984741211 2.5 5 2.5 M 5 0 C 7.761420249938965 0 10 2.238580226898193 10 5 C 10 7.761420249938965 7.761420249938965 10 5 10 C 2.238580226898193 10 0 7.761420249938965 0 5 C 0 2.238580226898193 2.238580226898193 0 5 0 Z" stroke="none" fill="#1e428a"/>
+        </g>
+        <g id="Ellipse_72" data-name="Ellipse 72" transform="translate(297.8 276)" fill="none" stroke="#1e428a" stroke-width="2.5">
+          <circle cx="5" cy="5" r="5" stroke="none"/>
+          <circle cx="5" cy="5" r="3.75" fill="none"/>
+        </g>
+        <g id="Ellipse_73" data-name="Ellipse 73" transform="translate(317 257)" fill="none" stroke="#1e428a" stroke-width="2.5">
+          <circle cx="5" cy="5" r="5" stroke="none"/>
+          <circle cx="5" cy="5" r="3.75" fill="none"/>
+        </g>
+        <line id="Line_101" data-name="Line 101" x1="13" y2="13.25" transform="translate(305.5 265.25)" fill="none" stroke="#1e428a" stroke-width="2.5"/>
+        <path id="Path_2144" data-name="Path 2144" d="M0,0,10,10" transform="translate(290.5 268.5)" fill="none" stroke="#1e428a" stroke-width="2.5"/>
+        <path id="Path_2146" data-name="Path 2146" d="M0,9.5,9,0" transform="translate(275.5 268)" fill="none" stroke="#1e428a" stroke-width="2.5"/>
+        <g id="Path_2145" data-name="Path 2145" transform="translate(282.3 260.8)" fill="none">
+          <path d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" stroke="none"/>
+          <path d="M 5 2.5 C 3.621500015258789 2.5 2.5 3.621500015258789 2.5 5 C 2.5 6.378499984741211 3.621500015258789 7.5 5 7.5 C 6.378499984741211 7.5 7.5 6.378499984741211 7.5 5 C 7.5 3.621500015258789 6.378499984741211 2.5 5 2.5 M 5 0 C 7.761420249938965 0 10 2.238580226898193 10 5 C 10 7.761420249938965 7.761420249938965 10 5 10 C 2.238580226898193 10 0 7.761420249938965 0 5 C 0 2.238580226898193 2.238580226898193 0 5 0 Z" stroke="none" fill="#1e428a"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

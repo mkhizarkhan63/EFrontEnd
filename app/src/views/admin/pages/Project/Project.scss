@@ -1,0 +1,138 @@
+@mixin project-title {
+    position: relative;
+    font-size: 1.07rem;
+    font-weight: 600;
+    width: 100%;
+    margin: .45rem 0 1.2rem;
+
+    @include left-line(5px, 2.28rem, 2.07rem, $brighter-main-text-color);
+}
+
+.project-management {
+    .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+
+        &__scroll {
+            min-width: 800px;
+
+            @include is-tablet {
+                min-width: initial;
+            }
+        }
+    }
+
+    .subheader-with-wizard {
+        background: #FFF;
+        border-bottom: .36rem solid #ECECEF;
+
+        .subheader {
+            width: 114rem;
+            max-width: 95%;
+            margin: 0 auto;
+            border-bottom: none;
+
+            @include is-tablet {
+                max-width: 85%;
+            }
+
+            &__left {
+                padding-left: 0;
+            }
+
+            &__right {
+                padding: .2rem 0 0;
+
+                .btn {
+                    margin: 0;
+                }
+
+                .dropped {
+                    width: 7.8rem;
+                    top: 2rem;
+                    right: .6rem;
+                    box-shadow: 0 1px 11px #0000002C;
+                    border-radius: 6px;
+                    z-index: 2;
+
+                    .btn {
+                        border: none;
+                        border-bottom: 1px solid #F5F5F5;
+                        width: 100%;
+                        font-size: .97rem;
+                        font-weight: 500;
+                        box-shadow: none;
+                        border-radius: 0;
+                        @include background-on-hover;
+
+                        &:last-of-type {
+                            border-bottom: none;
+                        }
+
+                        &:hover {
+                            color: inherit;
+                            filter: initial;
+                        }
+                    }
+
+                    .btn--main[data-color="white"] {
+                        padding: 1.35rem .75rem;
+                    }
+                }
+
+                .dropdown-dots-btn {
+                    .btn {
+                        margin: 0 0 .5rem 1.8rem;
+                        padding: .5rem;
+                        cursor: pointer;
+                        transition: filter .15s ease-in;
+
+                        &:hover {
+                            filter: brightness(.5);
+                        }
+                    }
+                }
+            }
+
+            &__bottom {
+                padding: 0;
+            }
+        }
+    }
+
+    &--construction {
+        .wizard__step {
+            width: initial;
+            flex: 1;
+
+            &:last-child {
+                width: initial;
+                flex: .54;
+            }
+        }
+    }
+
+    &__container {
+        width: 114rem;
+        max-width: 95%;
+        margin: 0 auto;
+
+        @include is-tablet {
+            max-width: 85%;
+        }
+
+        &[data-variant="contract"] {
+            width: 100%;
+            max-width: 100%;
+
+            .contract-view {
+                margin-top: 2rem;
+                border-top: 1px solid #ECECEF;
+                border-bottom: 1px solid #ECECEF;
+            }
+        }
+    }
+}

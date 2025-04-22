@@ -1,0 +1,61 @@
+.consultant-project {
+    .submit-drawings {
+        &.consultant-project-box {
+            padding: 2.29rem 2.64rem 3.29rem 3rem;
+            margin-top: 3.8rem;
+            flex-direction: column;
+        }
+
+        &__header {
+            font-size: 1.71rem;
+            font-weight: 600;
+            margin-bottom: 2.21rem;
+        }
+
+        &__title {
+            font-weight: 600;
+            margin: 2.9rem 0 1.45rem;
+            @include left-line(4px, 2.5rem, 3rem, $green-text);
+        }
+
+        .dropzone {
+            padding: 3.7rem 4.3rem 4.2rem;
+            font-size: .93rem;
+
+            &__img {
+                margin-bottom: 1.4rem;
+                width: 3.14rem;
+            }
+        }
+
+        .file-list {
+            margin-bottom: 0;
+
+            &__item-name {
+                max-width: initial;
+            }
+        }
+
+        .textarea {
+            margin-top: 1.85rem;
+            animation: fade-in .15s ease-in-out;
+
+            &__header {
+                line-height: initial;
+                margin-bottom: 0;
+            }
+
+            &__input {
+                min-height: 8.8rem;
+            }
+        }
+
+        &__buttons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2.93rem;
+        }
+    }
+}

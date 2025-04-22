@@ -1,0 +1,17 @@
+.invalid-route {
+    @include block;
+    width: fit-content;
+    color: $red-text;
+    font-size: 1.29rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 #0000001F;
+    position: absolute;
+    bottom: 7.15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: default;
+    pointer-events: none;
+    animation: fade-out .5s 5s forwards ease-in;
+}

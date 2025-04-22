@@ -1,0 +1,54 @@
+.pm-photos {
+    &__item {
+        margin-bottom: 2rem;
+
+        &-img {
+            width: 100%;
+            min-height: 150px;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 7px;
+            display: block;
+            margin-bottom: 1.07rem;
+            cursor: pointer;
+            @include box-shadow-on-hover;
+
+            @include is-tablet {
+                min-height: initial;
+                max-height: initial;
+                height: 15.57rem;
+            }
+        }
+
+        &-desc {
+            font-size: 11px;
+            color: $brighter-main-text-color;
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+
+            @include is-tablet {
+                font-size: .79rem;
+            }
+        }
+
+        &-col {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-type {
+            margin-right: .75rem;
+        }
+
+        &-name {
+            color: $main-text-color;
+            font-weight: 500;
+            word-break: break-word;
+        }
+
+        &-date {
+            margin-left: 1rem;
+        }
+    }
+}

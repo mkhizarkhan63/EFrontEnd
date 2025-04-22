@@ -1,0 +1,159 @@
+.subheader-with-wizard {
+    .subheader {
+        position: static;
+        padding: 0;
+        border-bottom: .36rem solid #ECECEF;
+        min-height: 18.29rem;
+
+        &__left {
+            min-height: 12.71rem;
+            padding-left: 8.4%;
+        }
+
+        .left {
+            &__return {
+                padding-left: 0;
+                top: -1.78rem;
+            }
+
+            &__name {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+
+            &__sub-name {
+                background-color: $navy-blue-text-bg;
+                color: $navy-blue-text;
+                font-size: 1.09rem;
+                width: fit-content;
+                height: 2.43rem;
+                padding: 0 .97rem;
+                border-radius: .21rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: capitalize;
+                margin: .9rem 0 0;
+
+                &[data-status="draft"],
+                &[data-status="noneDesign"],
+                &[data-status="none"] {
+                    color: $yellow-text;
+                    background-color: $yellow-text-bg;
+                }
+
+                &[data-status="reviewing"],
+                &[data-status="adminReviewDesign"],
+                &[data-status="finalReviewDesign"],
+                &[data-status="rejectedDesign"],
+                &[data-status="rejected"] {
+                    color: $red-text;
+                    background-color: $red-text-bg;
+                }
+
+                &[data-status="openBids"],
+                &[data-status="chooseContractor"] {
+                    color: $navy-blue-text;
+                    background-color: $navy-blue-text-bg;
+                }
+
+                &[data-status="readyToSign"],
+                &[data-status="signed"],
+                &[data-status="liveInPm"],
+                &[data-status="completed"],
+                &[data-status="consultantReview"],
+                &[data-status="completedDesign"],
+                &[data-status="finalPaymentDesign"],
+                &[data-status="uploadDrawingsDesign"],
+                &[data-status="consultantReviewDesign"] {
+                    color: $green-text;
+                    background-color: $green-text-bg;
+                }
+
+                &[data-status="archived"] {
+                    color: $brighter-main-text-color;
+                    background-color: #89898921;
+                }
+
+                &:empty {
+                    padding: 0;
+                }
+            }
+        }
+
+        &__right {
+            min-height: 12.71rem;
+            padding: .2rem 7.8% 0 0;
+            align-items: center;
+
+            .btn {
+                margin: 0 0 .5rem 1.8rem;
+                padding: .5rem;
+                cursor: pointer;
+                transition: filter .15s ease-in;
+
+                &:hover {
+                    filter: brightness(.5);
+                }
+            }
+
+            .subheader-item {
+                /*!rtl:ignore*/
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                margin-left: 3rem;
+
+                &--contact {
+                    flex-shrink: 0;
+                }
+
+                &__title {
+                    font-size: .93rem;
+                    color: $brighter-main-text-color;
+                    margin: 0 0 .43rem;
+                }
+
+                &__text {
+                    color: $main-text-color;
+                    text-decoration: none;
+                    font-weight: 600;
+                    word-break: break-word;
+                    min-height: 1rem;
+                }
+
+                a {
+                    transition: color .12s ease-in;
+                    display: block;
+                    min-height: 1rem;
+
+                    &:hover {
+                        color: $green-text;
+                    }
+
+                    &:empty {
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            padding: 0 3% 0 8.4%;
+        }
+    }
+
+    + .wizard-page-content {
+        .project-creator {
+            padding-top: 2rem;
+        }
+    }
+}
+
+.wizard-page-content {
+    + .footer {
+        width: 114rem;
+        max-width: 85%;
+    }
+}

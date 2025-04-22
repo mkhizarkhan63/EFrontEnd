@@ -1,0 +1,115 @@
+.center-panel {
+    --center-document-scale: .2;
+
+    &__container {
+        height: 100%;
+        overflow-x: auto;
+        --ratio: calc(1 / var(--center-document-scale));
+
+        @media screen and (min-width: 768px) {
+            --center-document-scale: .35;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 900px) {
+            --center-document-scale: .5;
+        }
+
+        @media screen and (min-width: 1050px) {
+            --center-document-scale: .6;
+        }
+
+        @media screen and (min-width: 1250px) {
+            max-width: 55rem;
+        }
+
+        @media screen and (min-width: 1400px) {
+            --center-document-scale: .75;
+            max-width: 62rem;
+        }
+
+        @media screen and (min-width: 1500px) {
+            max-width: 65rem;
+        }
+
+        @media screen and (min-width: 1650px) {
+            --center-document-scale: .8;
+        }
+
+        @media screen and (min-width: 1720px) {
+            --center-document-scale: .9;
+            max-width: 70.5rem;
+        }
+
+        @media screen and (min-width: 1920px) {
+            --center-document-scale: .97;
+            max-width: 72.5rem;
+        }
+
+        @media screen and (min-width: 2000px) {
+            max-width: initial;
+        }
+
+        .document-container {
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0;
+        }
+
+        .docx-wrapper {
+            background: none;
+            padding: 3.57rem 0 0;
+            transform: scale(var(--center-document-scale));
+            transform-origin: 50% 0;
+
+            .docx {
+                margin: 0 1rem 1.79rem auto;
+                box-shadow: 0 0 calc(2.29rem * var(--ratio)) #0000000F;
+                border-radius: calc(12px * var(--ratio));
+
+                @media screen and (min-width: 768px) and (max-width: 1249px) {
+                    margin: 0 1rem 1.79rem 0;
+                }
+
+                @media screen and (min-width: 2000px) {
+                    margin: 0 1rem 1.79rem 0;
+                }
+            }
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        top: 3.57rem;
+        right: 5.1%;
+
+        .btn--circle {
+            width: 3.29rem;
+            height: 3.29rem;
+            box-shadow: 0 2px 6px #00000029;
+
+            .icon {
+                width: 1.14rem;
+                height: 1.14rem;
+
+                svg, image {
+                    width: 1.14rem;
+                    height: 1.14rem;
+                }
+
+                svg image {
+                    filter: var(--icon-gray);
+                }
+            }
+
+            &:first-child {
+                margin-bottom: 1.21rem;
+            }
+
+            &:disabled,
+            &:disabled:hover {
+                background-color: var(--gray);
+            }
+        }
+    }
+}

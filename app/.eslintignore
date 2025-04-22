@@ -1,0 +1,9 @@
+.eslintrc.js
+public
+make.ts
+makelib/**/*
+spec/**/*
+shims/**/*
+build/**/*
+src/api/**/*.dtos.ts
+src/api/Rest/dtos/*.ts

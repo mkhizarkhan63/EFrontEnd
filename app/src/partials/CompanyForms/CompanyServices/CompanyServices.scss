@@ -1,0 +1,103 @@
+.company-services {
+    .title {
+        font-weight: 600;
+    }
+
+    .form {
+        padding-bottom: 2rem !important;
+
+        &__body {
+
+            .previous-work-box {
+                padding-top: 2rem;
+                width: 74%;
+                max-width: 74%;
+
+                .checkbox-flex {
+                    padding-top: 2rem;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &-field {
+                        width: 270px;
+                        max-width: 270px;
+                    }
+                }
+
+                .checkbox-container {
+                    font-weight: 300;
+                }
+            }
+
+            .ownother-companies-box {
+                padding-top: 2rem;
+                width: 100%;
+                max-width: 100%;
+
+                .options {
+                    padding-top: 2rem;
+                }
+
+                .company-options {
+
+                    &-body {
+                        .checkbox-flex {
+                            padding-top: 2rem;
+                            display: flex;
+                            justify-content: space-between;
+
+                            &-field {
+                                width: 270px;
+                                max-width: 270px;
+                            }
+
+                            .checkbox-container {
+                                font-weight: 300;
+                            }
+                        }
+                    }
+
+                    .other-specialized-box {
+
+                        padding-top: 2rem;
+
+                        &__header {
+                            display: flex;
+                            column-gap: 2rem;
+                            align-items: center;
+                        }
+
+                        &__body {
+                            display: flex;
+                            justify-content: space-between;
+                            column-gap: 2em;
+
+                            .input-field {
+                                flex-grow: 1;
+
+                                .btn {
+                                    margin-top: 2.6rem;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+
+        }
+    }
+
+}
+
+.services {
+    margin-top: 2rem;
+    float: right;
+}
+
+
+
+
+

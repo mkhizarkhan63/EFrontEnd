@@ -1,0 +1,67 @@
+.project-step-biding.contractor-bid {
+    .tick {
+        margin-bottom: 0;
+        width: 6.21rem;
+    }
+
+    .what-will-happen {
+        margin: 2rem 0;
+
+        @include is-tablet {
+            margin: 2.5rem 0 .6rem;
+        }
+    }
+
+    .buttons {
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+
+        .btn {
+            @include is-tablet {
+                font-size: 1.07rem;
+            }
+        }
+
+        .btn[data-color="white"] {
+            margin-right: 1rem;
+
+            [data-icon-name="close-red"] {
+                filter: var(--icon-red);
+
+                &.left {
+                    margin-right: .3rem;
+                }
+
+                svg, image {
+                    width: 1.64rem;
+                    height: 1.64rem;
+                }
+            }
+
+            &:hover {
+                color: $red-text;
+            }
+
+            &:disabled {
+                background-color: #FFF;
+                color: $brighter-main-text-color;
+
+                .icon {
+                    filter: invert(.5) brightness(1);
+                }
+
+                &:hover {
+                    color: $brighter-main-text-color;
+                }
+            }
+        }
+    }
+
+    .logo-list-previous {
+        margin: 3rem 0 1.5rem;
+    }
+
+    .choose-tip {
+        margin-top: 0;
+    }
+}

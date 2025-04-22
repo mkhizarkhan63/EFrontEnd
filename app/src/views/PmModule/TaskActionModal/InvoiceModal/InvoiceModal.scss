@@ -1,0 +1,374 @@
+.side-modal[data-variant="task-action"] {
+    .side-modal[data-variant="invoice"] {
+        width: 52.35rem;
+        padding: 2.2rem 0 0;
+
+        .side-modal {
+            &__header {
+                margin-bottom: 2rem;
+            }
+
+            &__content {
+                padding: .7rem 2.28rem 0;
+            }
+        }
+
+        .bill-to {
+            margin-bottom: 4.7rem;
+
+            &__header, &__body {
+                display: flex;
+            }
+
+            &__header {
+                margin-bottom: .6rem;
+                color: $brighter-main-text-color;
+                font-size: 11px;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+
+            &__cell {
+                word-break: break-word;
+                margin-right: .5rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &--bill {
+                    flex: 1.5;
+                }
+
+                &--id {
+                    flex: 1;
+                    text-align: right;
+                }
+
+                &--invoice {
+                    flex: .75;
+                    text-align: right;
+                }
+
+                &--date {
+                    flex: 1.1;
+                    text-align: right;
+                }
+            }
+
+            &__body {
+                font-size: 12px;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .invoice-box {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            word-break: break-word;
+
+            &__right {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &__avatar {
+                width: 2.64rem;
+                height: 2.64rem;
+                border-radius: 50%;
+                object-fit: cover;
+                position: relative;
+                margin-right: .5rem;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/blue_avatar.svg");
+                }
+            }
+
+            &__name {
+                font-size: 15px;
+                font-weight: 500;
+                margin-bottom: .8rem;
+
+                @include is-tablet {
+                    font-size: 1.29rem;
+                }
+            }
+
+            &__desc {
+                color: $brighter-main-text-color;
+                font-size: 12px;
+                margin-bottom: .8rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .invoice-desc {
+            &__header, &__body {
+                display: flex;
+            }
+
+            &__header {
+                padding-bottom: 1.3rem;
+                color: $brighter-main-text-color;
+                border-bottom: 1px solid #E3E3E3;
+                font-size: 11px;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+
+            &__cell {
+                word-break: break-word;
+                margin-right: .5rem;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &--desc {
+                    flex: 2.5;
+                }
+
+                &--project {
+                    flex: .8;
+                    text-align: right;
+                }
+
+                &--stage {
+                    flex: .9;
+                    text-align: right;
+                }
+
+                &--subtotal {
+                    flex: .65;
+                    text-align: right;
+                }
+            }
+
+            &__body {
+                font-size: 13px;
+                font-weight: 500;
+                padding: 1.35rem 0 1.5rem;
+                border-bottom: 1px solid #E3E3E3;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+
+                .invoice-desc__cell {
+                    line-height: 20px;
+
+                    @include is-tablet {
+                        line-height: 2rem;
+                    }
+
+                    &--desc {
+                        font-size: 14px;
+                        font-weight: 600;
+
+                        @include is-tablet {
+                            font-size: 1.14rem;
+                        }
+                    }
+                }
+            }
+
+            &[data-is-penalty="true"] {
+                .invoice-desc__body {
+                    padding: 1rem 0;
+                    border-bottom: 0;
+
+                    &--penalty {
+                        border-bottom: 1px solid #E3E3E3;
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+
+        .pay-to {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            padding: 1.8rem 0 2rem;
+            border-bottom: 1px solid #E3E3E3;
+
+            &__left {
+                margin-right: 1rem;
+
+                &-title {
+                    margin-bottom: .6rem;
+                    color: $brighter-main-text-color;
+                    font-size: 11px;
+
+                    @include is-tablet {
+                        font-size: 1rem;
+                    }
+                }
+
+                .invoice-box__avatar {
+                    box-shadow: 0 2px 6px #0000002F;
+
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/example_logo.jpg");
+                    }
+                }
+            }
+
+            &__right {
+                display: flex;
+                flex-direction: column;
+                margin-top: .3rem;
+
+                &-col {
+                    display: grid;
+                    grid-template-columns: 1fr 55%;
+                    justify-content: flex-end;
+                    text-align: right;
+                    word-break: break-word;
+                    margin-bottom: 1.4rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &__title {
+                font-size: 13px;
+                color: $brighter-main-text-color;
+
+                @include is-tablet {
+                    font-size: 1.14rem;
+                }
+            }
+
+            &__value {
+                font-size: 13px;
+                color: $navy-blue-text;
+                font-weight: 500;
+                margin-left: 1rem;
+
+                @include is-tablet {
+                    font-size: 1.14rem;
+                }
+            }
+
+            &__date {
+                font-size: 13px;
+                font-weight: 500;
+
+                @include is-tablet {
+                    font-size: 1.14rem;
+                }
+            }
+        }
+
+        .payment-method {
+            padding: 3.1rem 0 2rem;
+
+            &__title {
+                font-size: 15px;
+                font-weight: 500;
+                margin-bottom: 1rem;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+            }
+
+            &__desc {
+                font-size: 14px;
+                line-height: 22px;
+                color: $brighter-main-text-color;
+                margin-bottom: 1.7rem;
+                word-break: break-word;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                    line-height: 1.79rem;
+                }
+            }
+
+            &__row {
+                display: flex;
+                align-items: center;
+                margin-top: 3.8rem;
+
+                .vat-checkbox {
+                    margin-left: 1.1rem;
+                    user-select: none;
+
+                    .checkbox-container {
+                        color: $navy-blue-text;
+                    }
+                }
+            }
+
+            .btn {
+                font-size: 13px;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+
+                svg, image {
+                    width: 12px;
+                    height: 17px;
+
+                    @include is-tablet {
+                        width: .86rem;
+                        height: 1.21rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#app[data-is-print="true"] {
+    @media print {
+        .header,
+        .left-panel,
+        .right-panel,
+        .pm-module-view__content,
+        .buttons-menu {
+            display: none;
+        }
+
+        [data-variant="invoice"] {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+            border: none;
+
+            .side-modal__header,
+            .payment-method .btn.btn--main {
+                display: none;
+            }
+
+            img {
+                overflow: hidden !important;
+            }
+
+            .vat-checkbox {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,184 @@
+.slider {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__thumbnails {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 0 2rem;
+        padding: 0;
+        list-style-type: none;
+
+        &-item {
+            width: 100%;
+            height: 4.36rem;
+            cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all .1s ease-in;
+            position: relative;
+
+            @include is-tablet {
+                height: 7.36rem;
+                border-radius: 9px;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                pointer-events: none;
+                border: 5px solid transparent;
+                transition: border .12s ease-in;
+            }
+
+            &[data-is-active="true"] {
+                &:after {
+                    border: 3px solid #63D461;
+
+                    @include is-tablet {
+                        border: 5px solid #63D461;
+                    }
+                }
+            }
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__main-view {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__selected-img {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+            overflow: hidden;
+            animation: fade-in .16s ease-in;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: .12s ease-in;
+        opacity: 0;
+
+        .btn--circle {
+            width: 5.5rem;
+            height: 5.5rem;
+            background-color: rgba(#000, .15);
+            border: 0;
+
+            &[data-color="white"] {
+                box-shadow: 0 2px 12px #00000019;
+            }
+
+            .icon {
+                filter: brightness(0) invert(1);
+
+                > div {
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                svg, image {
+                    width: 1.12rem;
+                    height: 1.9rem;
+                }
+            }
+
+            &:hover {
+                image {
+                    filter: none;
+                }
+            }
+        }
+
+        &--left {
+            /*!rtl:ignore*/
+            left: 3.2rem;
+
+            &:hover {
+                /*!rtl:ignore*/
+                transform: translate(-.25rem, -50%);
+            }
+
+            svg {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &--right {
+            /*!rtl:ignore*/
+            right: 3.2rem;
+
+            &:hover {
+                /*!rtl:ignore*/
+                transform: translate(.25rem, -50%);
+            }
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        bottom: 1.2rem;
+        max-width: 50%;
+
+        .dot {
+            width: .71rem;
+            height: .71rem;
+            border-radius: 50%;
+            background-color: #FFF;
+            opacity: .42;
+            margin: 0 .32rem;
+            transition: opacity .13s ease-in;
+            cursor: pointer;
+
+            &[data-is-active="true"] {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.64rem;
+        font-weight: 600;
+        margin: 2rem 0 .8rem;
+    }
+
+    &__subtitle {
+        font-size: 1.14rem;
+        color: $brighter-main-text-color;
+        margin: 0 0 1.7rem;
+    }
+}

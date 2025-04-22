@@ -1,0 +1,154 @@
+.projectImages {
+
+    .section {
+        padding-bottom: 3em;
+        border-bottom: 1px solid $input-border-color;
+    }
+
+    .section:last-child {
+        border-bottom: none;
+    }
+
+    .form__section-field {
+        text-align: left;
+        font: normal normal 600 14px/19px Axiforma;
+        letter-spacing: 0px;
+        color: $dark-grey-text;
+        opacity: 1;
+        padding: 42px 0 15px 0;
+    }
+
+    .form__section-content {
+        text-align: left;
+        letter-spacing: 0px;
+        color: $dark-grey-text;
+        opacity: 1;
+    }
+
+    &_searchfield {
+        position: relative;
+
+        .input-text-header {
+            display: none;
+        }
+
+        .tick {
+            display: none;
+        }
+
+        .icon-box {
+            position: absolute;
+            top: 10px;
+            left: 96%;
+            width: 8px;
+            height: 7px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+
+            &__svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &__image {
+                width: 16px;
+                height: 16px;
+            }
+
+            @include is-tablet {
+                top: 18px;
+                left: 97%;
+            }
+
+            @include is-pc {}
+
+        }
+    }
+
+    &_chipflex {
+        display: flex;
+        align-items: center;
+        font: normal normal medium 14px/25px Axiforma;
+        color: $navy-blue-text;
+        opacity: 1;
+        position: relative;
+        column-gap: 10px;
+        padding-top: 13px;
+        padding-bottom: 3em;
+
+        .icon-setting {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .selectedOption {
+            position: absolute;
+            left: 2em;
+        }
+
+        .input-text,
+        .input-text-header {
+            width: 8em;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+
+
+        }
+
+        .input-text-input {
+            border: 0;
+            height: 20px;
+
+            @include is-tablet {
+                height: 40px;
+            }
+
+            .input-placeholder {
+                color: $navy-blue-text;
+            }
+        }
+
+        .icon-box {
+            padding: 4px !important;
+
+            @include is-tablet {
+                padding-top: 0.5em;
+            }
+
+            &__image {
+                width: 9px;
+            }
+        }
+
+
+    }
+
+    .form__section-field2 {
+        position: relative;
+        padding-top: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 16px;
+
+        &_subfields {
+            flex-grow: 1;
+
+            &_btn {
+                margin-top: 2.4em;
+            }
+        }
+    }
+
+    .form__section-chipflex {
+        display: flex;
+        flex-flow: wrap;
+        column-gap: 7px;
+        padding-top: 13px;
+
+        .selectedChips-single {
+            margin-top: 2%;
+        }
+    }
+}

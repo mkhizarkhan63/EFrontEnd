@@ -1,0 +1,39 @@
+.project-documents {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #E8E8E8;
+
+    &__title {
+        font-size: 1.29rem;
+        font-weight: 600;
+        margin-bottom: 1.8rem;
+        padding: 2.21rem 2.21rem 0;
+
+        &-num {
+            color: $brighter-main-text-color;
+            font-size: .93rem;
+            font-weight: 400;
+        }
+    }
+
+    .reviews-files {
+        flex-direction: column-reverse;
+        justify-content: initial;
+        flex: 1;
+        padding: 0 1.5rem 0 2.21rem;
+        margin-right: .71rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &__btn {
+            margin: .5rem 0 1rem;
+        }
+    }
+}

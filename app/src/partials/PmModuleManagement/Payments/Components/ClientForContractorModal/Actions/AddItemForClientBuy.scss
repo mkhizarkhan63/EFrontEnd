@@ -1,0 +1,122 @@
+.material-delivery {
+    padding: 2.15rem 2.2rem 0 2rem;
+
+    &__header {
+        font-size: 1.14rem;
+        font-weight: 500;
+        margin-bottom: .6rem;
+    }
+
+    &__text {
+        font-size: .93rem;
+        color: $brighter-main-text-color;
+    }
+
+    &__form {
+        padding-top: 1.45rem;
+
+        &-row {
+            display: grid;
+            grid-template-columns: 64% 34%;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .input-text-header {
+            font-size: .93rem;
+            font-weight: 500;
+        }
+
+        .input-text-and-select {
+            .input-text-header {
+                position: absolute;
+                top: -2.3rem;
+                left: 0;
+            }
+        }
+
+        &-box {
+            @include block;
+            margin: 1.1rem 0 1.9rem;
+
+            .textarea {
+                &__header {
+                    display: none;
+                }
+
+                &__input {
+                    border: none;
+                    min-height: 85px;
+                    padding: 1.65rem 1.5rem 0;
+                    font-size: 11px;
+
+                    &:focus {
+                        border: none;
+                        box-shadow: none;
+                    }
+
+                    @include is-tablet {
+                        min-height: 6.6rem;
+                        font-size: .86rem;
+                    }
+                }
+
+                &__placeholder {
+                    left: 1.5rem;
+                    top: 1.65rem;
+                    font-size: 12px;
+
+                    @include is-tablet {
+                        font-size: .93rem;
+                    }
+                }
+            }
+
+            .input-placeholder {
+                font-size: 12px;
+
+                @include is-tablet {
+                    font-size: .86rem;
+                }
+            }
+
+            &-btns {
+                width: 100%;
+                padding: 0 1.2rem 1rem;
+                display: flex;
+                position: relative;
+
+                .dropzone {
+                    padding: 0;
+                }
+            }
+
+            &-btn-add {
+                position: absolute;
+                bottom: 1.2rem;
+                right: 1rem;
+
+                .btn[data-color="blue"] {
+                    background-color: var(--blue);
+                    box-shadow: 0 3px 6px #05D94E29;
+
+                    .icon {
+                        filter: var(--icon-white);
+                    }
+
+                    &:hover {
+                        background-color: var(--hover-blue);
+                    }
+
+                    &:disabled {
+                        background-color: $brighter-main-text-color;
+
+                        &:hover {
+                            background-color: $brighter-main-text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

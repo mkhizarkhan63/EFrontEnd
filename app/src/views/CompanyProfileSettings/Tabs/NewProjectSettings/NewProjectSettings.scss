@@ -1,0 +1,63 @@
+.contractor-settings--new-project {
+    padding: 0 .8rem 0 2.3rem;
+
+    .checkbox-multiple {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height: auto;
+        margin-bottom: .5rem;
+
+        &-option {
+            font-size: 1rem;
+            color: $dark-grey-text;
+            min-width: 12rem;
+            margin-right: 1rem;
+            margin-bottom: 1.93rem;
+            padding: 0;
+
+            @include is-tablet {
+                font-size: .93rem;
+                width: 20%;
+            }
+
+            .checkbox-multiple-checkbox {
+                width: 1.4rem;
+                height: 1.4rem;
+                margin: 0 1rem 0 0;
+
+                @include is-tablet {
+                    width: 1.14rem;
+                    height: 1.14rem;
+                }
+            }
+        }
+    }
+
+    .input-text {
+        &-header {
+            font-size: 1.07rem;
+            font-weight: 600;
+            margin-bottom: .93rem;
+        }
+
+        &-input {
+            margin-bottom: 2.43rem;
+
+            @include is-tablet {
+                width: 18.43rem;
+            }
+        }
+    }
+
+    .btn {
+        margin: 0 1.5rem .6rem auto;
+        padding: 1rem 1.5rem;
+        font-size: 1.21rem;
+
+        svg {
+            width: 1.33rem;
+            height: .93rem;
+        }
+    }
+}

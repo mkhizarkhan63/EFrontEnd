@@ -1,0 +1,194 @@
+.insurance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.55rem;
+
+    &__info {
+        font-size: .93rem;
+        font-weight: 500;
+        line-height: 1.36rem;
+        text-align: center;
+        margin-bottom: 1.3rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @include is-pc {
+            flex-direction: row;
+        }
+    }
+
+    &__box {
+        max-width: 33.6rem;
+        min-width: 25rem;
+        width: 100%;
+        @include block;
+        padding: 1rem 2rem 2rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+
+        &:first-of-type {
+            margin-bottom: 2rem;
+
+            .insurance__box-img {
+                margin-right: 1rem;
+            }
+        }
+
+        @include is-pc {
+            &:first-of-type {
+                margin: 0 3rem 0 0;
+            }
+        }
+
+        &-top {
+            display: flex;
+            align-items: center;
+            padding-bottom: .6rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #E3E3E3;
+        }
+
+        &-img {
+            flex-shrink: 0;
+            width: auto;
+            height: 3.93rem;
+            object-fit: contain;
+            margin-right: .4rem;
+        }
+
+        &-title {
+            flex: 1;
+            font-size: 1.29rem;
+            font-weight: 600;
+        }
+
+        &-years {
+            flex-shrink: 0;
+            font-size: 1.07rem;
+            font-weight: 500;
+            padding: .79rem .93rem .64rem .71rem;
+            border-radius: 3px;
+            background-color: $navy-blue-text-bg;
+        }
+
+        &-list {
+            list-style-type: none;
+            margin-bottom: .8rem;
+            flex: 1;
+
+            &-title {
+                font-size: .93rem;
+                font-weight: 500;
+                line-height: 1.64rem;
+                margin-bottom: .6rem;
+            }
+
+            &-item {
+                font-size: .93rem;
+                line-height: 1.71rem;
+                color: $brighter-main-text-color;
+                position: relative;
+                padding-left: 2rem;
+                margin-bottom: .95rem;
+                word-break: break-word;
+
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    top: .2rem;
+                    content: "";
+                    width: 1.14rem;
+                    height: 1.14rem;
+                    background-image: url("/assets/graphics/grey_tick.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                }
+            }
+        }
+
+        &-policy {
+            @include block;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-bottom: 1.3rem;
+
+            &-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1.8rem 1rem;
+
+                &:first-of-type {
+                    border-right: 1px solid #E3E3E3;
+                }
+            }
+
+            &-title {
+                font-size: 1.14rem;
+                font-weight: 500;
+                text-align: center;
+                color: $brighter-main-text-color;
+                margin-bottom: .5rem;
+            }
+
+            &-value {
+                font-size: 1.29rem;
+                font-weight: 600;
+                word-break: break-word;
+
+                &--green {
+                    color: $green-text;
+                }
+            }
+        }
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.85rem;
+        }
+
+        &-text {
+            font-size: .93rem;
+
+            &--min {
+                margin-right: .5rem;
+                color: $brighter-main-text-color;
+            }
+
+            &--bold {
+                color: $main-text-color;
+                font-weight: 500;
+            }
+
+            &--details {
+                color: $navy-blue-text;
+                text-align: right;
+            }
+        }
+
+        &-contact {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+            text-align: right;
+        }
+    }
+
+    &__provided {
+        font-size: .93rem;
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+
+        &-img {
+            width: 12rem;
+            margin-left: 1rem;
+        }
+    }
+}

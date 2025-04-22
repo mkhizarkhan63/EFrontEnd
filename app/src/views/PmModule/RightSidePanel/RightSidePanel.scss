@@ -1,0 +1,432 @@
+.right-side-panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    overflow-y: auto;
+    flex: 1;
+
+    @include is-tablet {
+        width: 6rem;
+        padding-top: .9rem;
+        flex: initial;
+        transition: width .05s ease-in-out;
+    }
+
+    &[data-is-open="true"] {
+        @include is-tablet {
+            width: 15.79rem;
+        }
+
+        @include is-pc {
+            width: 19.79rem;
+        }
+
+        .top-section {
+            &__header {
+                display: none;
+
+                @include is-tablet {
+                    display: initial;
+                }
+
+                .btn {
+                    .text {
+                        display: block;
+                    }
+
+                    &:after {
+                        display: block;
+                    }
+                }
+            }
+
+            &__btns {
+                .btn {
+                    width: 100%;
+                    justify-content: initial;
+
+                    .text {
+                        transition: .5s ease-in;
+                        display: block;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+
+        .bottom-section {
+            .btn {
+                justify-content: initial;
+                border-top: 1px solid transparent;
+
+                &:hover {
+                    color: $main-text-color;
+                }
+
+                .text {
+                    transition: .5s ease-in;
+                    display: block;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+
+    .top-section {
+        flex: 1;
+        padding: 0 7%;
+
+        @include is-tablet {
+            padding: 0 1.14rem;
+        }
+
+        &__header {
+            margin-bottom: 1.3rem;
+
+            .btn {
+                background-color: transparent;
+                color: $main-text-color;
+                box-shadow: none;
+                border-radius: 0;
+                display: inline-flex;
+                font-weight: 600;
+                font-size: .93rem;
+                min-height: initial;
+                width: 100%;
+                padding: .5rem 0;
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                .icon {
+                    filter: none;
+
+                    &.left {
+                        margin: 0;
+                    }
+                }
+
+                .text {
+                    flex: 1;
+                    text-align: initial;
+                    display: none;
+                    margin-left: .7rem;
+                }
+
+                &:after {
+                    content: "";
+                    background-image: url("/assets/graphics/arrow_right.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    width: .5rem;
+                    height: 1rem;
+                    display: none;
+                    margin-left: .7rem;
+                }
+
+                [data-icon-name="tools-icon"] {
+                    svg, image {
+                        width: 21px;
+                        height: 13px;
+
+                        @include is-tablet {
+                            width: 1.5rem;
+                            height: .93rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__btns {
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+                width: 100%;
+                height: 51px;
+                font-size: 12px;
+                font-weight: 500;
+                color: $main-text-color;
+                border: 1px solid #D6D5D5;
+                border-radius: 6px;
+                box-shadow: 0 4px 12px #00000012;
+                padding: 0 18px;
+                margin-bottom: 15px;
+                transition: .12s ease-in;
+
+                @include is-tablet {
+                    font-size: .86rem;
+                    width: 3.64rem;
+                    height: 3.64rem;
+                    padding: 0 1.29rem;
+                    margin-bottom: 1.1rem;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 6px #00000029;
+
+                    .icon {
+                        filter: brightness(1);
+                    }
+                }
+
+                &:disabled {
+                    box-shadow: none;
+                    color: $brighter-main-text-color;
+
+                    .icon {
+                        filter: invert(.5) brightness(1);
+                    }
+                }
+
+                .text {
+                    display: none;
+                    margin-left: 16px;
+
+                    @include is-tablet {
+                        margin-left: .7rem;
+                    }
+
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                .icon {
+                    width: 1.8rem;
+                    height: initial;
+
+                    &.left {
+                        margin: 0;
+                    }
+                }
+
+                [data-icon-name="client-observations"] {
+                    svg, image {
+                        width: 22px;
+                        height: 30px;
+
+                        @include is-tablet {
+                            width: 1.57rem;
+                            height: 2.14rem;
+                        }
+                    }
+                }
+
+                [data-icon-name="meetings"] {
+                    svg, image {
+                        width: 28px;
+                        height: 28px;
+
+                        @include is-tablet {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+
+                [data-icon-name="variation-orders"] {
+                    svg, image {
+                        width: 21px;
+                        height: 14px;
+
+                        @include is-tablet {
+                            width: 1.5rem;
+                            height: 1rem;
+                        }
+                    }
+                }
+
+                [data-icon-name="resolve-disputes"] {
+                    svg, image {
+                        width: 25px;
+                        height: 25px;
+
+                        @include is-tablet {
+                            width: 1.79rem;
+                            height: 1.79rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-section {
+        margin-top: 1rem;
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            font-weight: 500;
+            font-size: 12px;
+            color: $main-text-color;
+            border-top: 1px solid #E3E3E3;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 0 10.5%;
+            transition: .12s ease-in;
+
+            @include is-tablet {
+                height: 4.24rem;
+                font-size: .86rem;
+                padding: 0 2.29rem;
+            }
+
+            &:hover {
+                color: $main-text-color;
+
+                .icon {
+                    filter: none;
+                }
+
+                .text:after {
+                    opacity: 1;
+                }
+            }
+
+            &:disabled {
+                .text:after {
+                    opacity: 0;
+                }
+            }
+
+            .text {
+                display: none;
+                margin-left: 18px;
+                position: relative;
+
+                @include is-tablet {
+                    margin-left: .7rem;
+                }
+
+                &:after {
+                    background-color: $main-text-color;
+                }
+            }
+
+            .icon {
+                width: 1.8rem;
+                height: initial;
+
+                &.left {
+                    margin: 0;
+                }
+            }
+
+            [data-icon-name="contractor"] {
+                svg, image {
+                    width: 21px;
+                    height: 22px;
+
+                    @include is-tablet {
+                        width: 1.5rem;
+                        height: 1.57rem;
+                    }
+                }
+
+                .icon-box {
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        background-image: url("/assets/graphics/star_outline.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        right: -10px;
+                        width: 11px;
+                        height: 10px;
+
+                        @include is-tablet {
+                            width: .79rem;
+                            height: .71rem;
+                            right: -.5rem;
+                        }
+                    }
+                }
+            }
+
+            [data-icon-name="consultant"] {
+                svg, image {
+                    width: 21px;
+                    height: 30px;
+
+                    @include is-tablet {
+                        width: 1.5rem;
+                        height: 2.14rem;
+                    }
+                }
+
+                .icon-box {
+                    position: relative;
+
+                    &:after {
+                        content: "";
+                        background-image: url("/assets/graphics/star_outline.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 100%;
+                        position: absolute;
+                        display: block;
+                        top: 0;
+                        right: -10px;
+                        width: 11px;
+                        height: 10px;
+
+                        @include is-tablet {
+                            width: .79rem;
+                            height: .71rem;
+                            right: -.5rem;
+                        }
+                    }
+                }
+            }
+
+            [data-icon-name="settings"] {
+                filter: var(--icon-dark-gray);
+
+                svg, image {
+                    width: 21px;
+                    height: 21px;
+
+                    @include is-tablet {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+
+            [data-icon-name="note"] {
+                filter: var(--icon-dark-gray);
+
+                svg, image {
+                    width: 15px;
+                    height: 19px;
+
+                    @include is-tablet {
+                        width: 1.07rem;
+                        height: 1.35rem;
+                    }
+                }
+            }
+        }
+
+        .btn-settings,
+        .btn-contract {
+            .btn:hover {
+                .icon {
+                    filter: var(--icon-dark-gray);
+                }
+            }
+        }
+    }
+}

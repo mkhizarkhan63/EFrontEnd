@@ -1,0 +1,211 @@
+.design-flow {
+    .subheader {
+        min-height: 7.86rem;
+        align-items: flex-end;
+
+        &__left, &__right {
+            display: none;
+        }
+
+        &__bottom {
+            padding: 0 0 0 8%;
+
+            @media screen and (min-width: 420px) {
+                padding: 0 0 0 14%;
+            }
+
+            @media screen and (min-width: 1920px) {
+                padding: 0 0 0 19rem;
+            }
+        }
+    }
+
+    .wizard {
+        padding-top: 3.15rem;
+        margin: 0 auto;
+        max-width: 116rem;
+        min-height: calc(7.86rem - .36rem);
+
+        &__step {
+            width: calc(100% / 3);
+            word-break: break-word;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 50%;
+                height: .36rem;
+                bottom: -.36rem;
+                background-color: $green-text;
+                left: 0;
+            }
+
+            &:not(:first-of-type) {
+                &:after {
+                    width: 90%;
+                    left: -50%;
+                }
+            }
+
+            &:nth-of-type(3) {
+                &:after {
+                    width: 100%;
+                    left: -60%;
+                }
+            }
+
+            &:nth-of-type(4) {
+                &:after {
+                    width: 60%;
+                    left: -60%;
+                    display: initial;
+                }
+
+                &[data-status="done"]:after {
+                    opacity: 1;
+                }
+            }
+
+            &[data-status="inProgress"]:after {
+                opacity: 1;
+            }
+
+            &[data-status="rejected"]:after {
+                opacity: 1;
+                background-color: $red-text;
+            }
+        }
+
+        .status {
+            width: 2.07rem;
+            height: 2.07rem;
+            border: .43rem solid $green-text;
+            background-color: #FFF;
+            position: absolute;
+            left: 0;
+            bottom: calc((-.36rem / 2) - (2.07rem / 2));
+
+            span {
+                font-size: 0;
+                color: transparent;
+            }
+
+            &[data-status="done"] {
+                background-color: $green-text;
+                border: 0;
+            }
+
+            &[data-status="wait"] {
+                color: $main-text-color;
+                background-color: #ECECEF;
+                border: 0;
+            }
+
+            &[data-status="rejected"] {
+                border: .43rem solid $red-text;
+            }
+        }
+    }
+
+    &__container {
+        max-width: 104.57rem;
+        width: 90%;
+        margin: 5.5rem auto 0;
+    }
+
+    &__box {
+        @include block;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title {
+            font-size: 2.14rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.3rem;
+        }
+
+        &-text {
+            font-size: 1.14rem;
+            line-height: 1.86rem;
+            color: $brighter-main-text-color;
+            width: 100%;
+            text-align: center;
+            word-break: break-word;
+            max-width: 40.36rem;
+        }
+
+        .payment {
+            @include block;
+            width: 100%;
+            max-width: 32.36rem;
+            padding: 1.86rem 1.5rem;
+            margin-top: 1.6rem;
+
+            @include is-tablet {
+                width: 32.36rem;
+                max-width: initial;
+            }
+
+            &-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1.5rem;
+                margin-bottom: 1.3rem;
+            }
+
+            &-title {
+                font-size: 1.28rem;
+                font-weight: 500;
+            }
+
+            &-value {
+                color: $green-text;
+                font-size: 1.71rem;
+                font-weight: 600;
+                word-break: break-word;
+                text-align: right;
+            }
+
+            &-text {
+                font-size: 1.14rem;
+                line-height: 1.86rem;
+                color: $brighter-main-text-color;
+                margin-bottom: 2.5rem;
+            }
+
+            &__btns-row {
+                margin-top: 4.5rem;
+                display: flex;
+                justify-content: space-between;
+
+                .btn {
+                    margin-top: 0;
+                }
+            }
+
+            .btn[data-color="green"] {
+                margin: 0 0 0 auto;
+                padding: .5rem 1rem;
+            }
+        }
+
+        .btn[data-color="white"] {
+            font-size: 1.07rem;
+        }
+    }
+
+    .wizard-page-content {
+        flex: 1;
+
+        + .footer {
+            max-width: 104.57rem;
+            width: 90%;
+            margin: 2.5rem auto 0;
+            padding: 3rem 0;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.budget {
+    @include block;
+    border: 1px solid #E8E8E8;
+    padding: 21px 19px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 19px;
+
+    @include is-tablet {
+        padding: 1.4rem 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__left {
+        margin-right: .5rem;
+    }
+
+    &__title {
+        font-size: 13px;
+        color: $brighter-main-text-color;
+        margin-bottom: 14px;
+
+        @include is-tablet {
+            font-size: .93rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__value {
+        font-size: 20px;
+        font-weight: 600;
+        word-break: break-word;
+
+        @include is-tablet {
+            font-size: 1.43rem;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 14px 18px;
+
+        @include is-tablet {
+            font-size: 1rem;
+            padding: 1rem 1.21rem;
+        }
+    }
+}

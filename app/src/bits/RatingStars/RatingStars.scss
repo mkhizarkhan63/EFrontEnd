@@ -1,0 +1,68 @@
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .stars {
+        &__icons {
+            margin-top: .95rem;
+            display: flex;
+            position: relative;
+
+            svg, image {
+                width: 1.55rem;
+                height: 1.55rem;
+                margin-right: .95rem;
+            }
+
+            &-container {
+                display: flex;
+
+                .icon-box {
+                    filter: saturate(0);
+                    cursor: pointer;
+                    transition: .15s ease-in;
+
+                    &:hover ~ .icon-box {
+                        filter: saturate(0);
+                    }
+                }
+
+                &:hover .icon-box {
+                    filter: saturate(1);
+                }
+            }
+
+            @mixin star($value) {
+                @for $value from 1 through $value {
+                    > div,
+                    > .stars__icons-container > div {
+                        &:nth-child(#{$value}) {
+                            filter: saturate(1);
+                        }
+                    }
+                }
+            }
+
+            &[data-value-stars^="1"] {
+                @include star(1);
+            }
+
+            &[data-value-stars^="2"] {
+                @include star(2);
+            }
+
+            &[data-value-stars^="3"] {
+                @include star(3);
+            }
+
+            &[data-value-stars^="4"] {
+                @include star(4);
+            }
+
+            &[data-value-stars^="5"] {
+                @include star(5);
+            }
+        }
+    }
+}

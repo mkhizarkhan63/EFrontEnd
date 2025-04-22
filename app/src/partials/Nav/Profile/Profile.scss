@@ -1,0 +1,248 @@
+.profile {
+    &__top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 5px solid #F3F3F3;
+        padding: 1.6rem 1.6rem 2rem;
+
+        &[data-is-admin="true"] {
+            .profile__top-role {
+                margin-bottom: 0;
+            }
+        }
+
+        &-avatar {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            position: relative;
+            left: 0;
+            transition: .3s ease-in-out;
+
+            @include is-tablet {
+                width: 6.86rem;
+                height: 6.86rem;
+            }
+
+            &-icon {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &[data-is-double="true"] {
+                position: relative;
+                left: -2rem;
+            }
+
+            &--first {
+                .profile__top-avatar-icon {
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/blue_avatar.svg");
+                    }
+                }
+            }
+
+            &--second {
+                position: absolute;
+                top: 1.6rem;
+                left: calc(50% + 2rem);
+                transform: translateX(-50%);
+                z-index: -1;
+                animation: fade-in .2s ease;
+                box-shadow: 0 2px 6px #0000002F;
+
+                .profile__top-avatar-icon {
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/example_logo.jpg");
+                    }
+                }
+            }
+        }
+
+        &-name {
+            font-size: 1.07rem;
+            font-weight: 600;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        &-role {
+            font-size: 1rem;
+            color: $brighter-main-text-color;
+            margin: .6rem 0 2.2rem;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+
+        .cell {
+            &__title {
+                transition: color .2s ease;
+                @include text-button-on-hover;
+
+                &:hover {
+                    color: $navy-blue-text;
+                }
+            }
+        }
+    }
+
+    .cell {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &__icon {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            margin-right: .7rem;
+
+            &[data-icon="settings"] {
+                width: 1.07rem;
+                height: 1.07rem;
+                background-image: url("/assets/graphics/settings.svg");
+                position: relative;
+                top: 0;
+            }
+
+            &[data-icon="add"] {
+                width: 1.14rem;
+                height: 1.14rem;
+                background-image: url("/assets/graphics/plus_blue.svg");
+            }
+
+            &[data-icon="logout"] {
+                width: 1.19rem;
+                height: 1.08rem;
+                background-image: url("/assets/graphics/log_out.svg");
+            }
+        }
+
+        &__title {
+            font-size: 1rem;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+    }
+
+    &__bottom {
+        .company {
+            display: flex;
+            align-items: flex-start;
+            border-bottom: 1px solid #F5F5F5;
+            padding: 1.3rem 1.3rem 1.5rem;
+            @include background-on-hover;
+            cursor: pointer;
+
+            &[data-role="client"] {
+                .company__avatar-logo {
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/blue_avatar.svg");
+                    }
+                }
+            }
+
+            &__avatar {
+                width: 3.07rem;
+                height: 3.07rem;
+                border-radius: 50%;
+                overflow: hidden;
+                box-shadow: 0 2px 6px #0000002F;
+                margin-right: .9rem;
+
+                &-logo {
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    display: block;
+                    object-fit: cover;
+                    border-radius: 50%;
+
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/example_logo.jpg");
+                    }
+                }
+            }
+
+            &__texts {
+                font-size: .93rem;
+                flex: 1;
+                margin-top: .4rem;
+            }
+
+            &__name {
+                font-weight: 600;
+                word-break: break-word;
+            }
+
+            &__role {
+                font-size: 1rem;
+                margin-top: .5rem;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+
+                &[data-appearence="positive"] {
+                    color: $green-text;
+                }
+
+                &[data-appearence="wait"] {
+                    color: $navy-blue-text;
+                }
+
+                &[data-appearence="neutral"] {
+                    color: $brighter-main-text-color;
+                }
+            }
+
+            &__settings-icon {
+                width: 1.07rem;
+                height: 1.07rem;
+                margin-top: .4rem;
+                transition: filter .12s ease-in;
+
+                &:hover {
+                    filter: $blue-svg;
+                }
+            }
+        }
+
+        &-companies {
+            overflow: auto;
+            max-height: 26vh;
+        }
+
+        &-actions {
+            border-top: 1px solid #F5F5F5;
+
+            .cell {
+                padding: 1.6rem 1.3rem;
+                @include background-on-hover;
+
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid #F5F5F5;
+                }
+
+                &__icon {
+                    &[data-icon="settings"] {
+                        width: 1.14rem;
+                        height: 1.14rem;
+                        filter: brightness(0) saturate(100%) invert(17%) sepia(79%)
+                            saturate(1577%) hue-rotate(204deg) brightness(101%) contrast(90%);
+                    }
+                }
+            }
+        }
+    }
+}

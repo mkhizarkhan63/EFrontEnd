@@ -1,0 +1,16 @@
+.contractor-settings--subscription {
+    .subscription {
+        &__profile-info {
+            &--review {
+                color: $yellow-text;
+                background-color: $yellow-text-bg;
+            }
+        }
+    }
+
+    .review {
+        .btn {
+            margin: 2.7rem 0 3rem;
+        }
+    }
+}

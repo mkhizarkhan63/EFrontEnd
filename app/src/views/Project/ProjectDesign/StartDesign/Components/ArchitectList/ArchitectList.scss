@@ -1,0 +1,258 @@
+.architects-list {
+    &__top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3.3rem;
+    }
+
+    .search {
+        position: relative;
+        margin-right: 1rem;
+
+        .icon-box {
+            position: absolute;
+            top: 50%;
+            left: 1.5rem;
+            transform: translateY(-50%);
+
+            svg, image {
+                width: 18px;
+                height: 18px;
+
+                @include is-tablet {
+                    width: 1.28rem;
+                    height: 1.28rem;
+                }
+            }
+        }
+
+        .input-text {
+            @include is-pc {
+                width: 285px;
+            }
+
+            &-input {
+                padding-left: 3.5rem;
+                font-size: 12px;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+
+            &-header {
+                display: none;
+            }
+        }
+    }
+
+    &__btn-like {
+        position: relative;
+        min-height: 3.5em;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: #FFF;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        padding: .5rem 1.15rem;
+        user-select: none;
+
+        .btn {
+            padding: 0;
+            min-height: auto;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            pointer-events: none;
+
+            .icon {
+                filter: saturate(0);
+                transition: all .12s ease-in;
+                padding-left: .9rem;
+            }
+
+            svg, image {
+                width: 1.5rem;
+                height: 1.29rem;
+            }
+
+            .text {
+                font-size: 1rem;
+            }
+        }
+
+        &-count {
+            font-size: .93rem;
+            margin-left: .5rem;
+            pointer-events: none;
+            color: $brighter-main-text-color;
+        }
+
+        &:hover {
+            .icon {
+                filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+            }
+        }
+
+        &[data-checked="true"] {
+            .icon {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+
+        .infinite-scroll-component {
+            padding-bottom: 6rem;
+            overflow: visible !important;
+        }
+
+        .loading-container {
+            width: auto;
+            height: auto;
+            position: relative;
+            margin-top: 8rem;
+
+            &__loader {
+                top: 0;
+            }
+        }
+    }
+
+    &__table {
+        @include block;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .architect-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1.43rem 1.86rem;
+        border-bottom: 1px solid #E3E3E3;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+
+        &__company {
+            display: flex;
+            font-weight: 600;
+            align-items: center;
+            flex: 2.15;
+            word-break: break-word;
+
+            &-logo {
+                display: block;
+                width: 4.21rem;
+                height: 4.21rem;
+                border-radius: 50%;
+                box-shadow: 0 2px 6px #0000002F;
+                margin-right: 1rem;
+                flex-shrink: 0;
+                position: relative;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/example_logo.jpg");
+                }
+            }
+        }
+
+        &__cell {
+            word-break: break-word;
+            padding: 0 1rem;
+            flex: 1;
+
+            &:first-of-type, &:last-of-type {
+                padding: 0;
+            }
+
+            &-title {
+                font-size: 10px;
+                font-weight: 500;
+                margin-bottom: .9rem;
+
+                @include is-tablet {
+                    font-size: .86rem;
+                }
+            }
+
+            &-value {
+                font-size: 11px;
+                font-weight: 600;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+
+            &--established {
+                flex: .7;
+            }
+
+            &--engineers {
+                flex: .5;
+            }
+
+            &--like {
+                flex: .5 0;
+
+                .btn {
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    margin: 0 0 0 auto;
+                    border: 1px solid $border-color;
+                    transition: box-shadow .12s ease-in;
+
+                    svg, image {
+                        width: 1.5rem;
+                        height: 1.29rem;
+                    }
+
+                    .icon {
+                        transition: none;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 2px 6px #00000029;
+
+                        .icon {
+                            filter: none;
+                        }
+                    }
+                }
+
+                &[data-liked="false"] {
+                    &:hover {
+                        .icon {
+                            transition: .12s ease-in-out;
+                            filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+                        }
+                    }
+                }
+            }
+
+            &--view {
+                flex: 1.2 0;
+                min-width: 10rem;
+
+                .btn {
+                    margin: 0 0 0 auto;
+                    font-size: 1.07rem;
+                    padding: .5rem 2.3rem;
+                }
+            }
+        }
+    }
+}

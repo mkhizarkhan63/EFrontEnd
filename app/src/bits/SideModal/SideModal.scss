@@ -1,0 +1,55 @@
+.side-modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    max-width: 100%;
+    height: calc(100% - $header-height);
+    max-height: fill-available;
+    border-left: 1px solid $border-color;
+    box-shadow: -30px 0 30px -30px #0000002C;
+    background: #FFF;
+    animation: context-appear .2s cubic-bezier(.175, .885, .32, 1.275);
+    overflow: auto;
+    padding: 2.2rem 0;
+    z-index: $zindex-sidebar;
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 0 1.8rem 2.28rem;
+
+        &-close {
+            margin-right: 1.25rem;
+            transition: filter .15s linear;
+
+            &:hover {
+                filter: brightness(.5);
+            }
+
+            svg, image {
+                width: .85rem;
+                height: .85rem;
+                cursor: pointer;
+            }
+        }
+
+        &-title {
+            font-size: 1.5rem;
+            color: $dark-grey-text;
+            font-weight: 600;
+
+            @include is-tablet {
+                font-size: 1.29rem;
+            }
+        }
+
+        &-subtitle {
+            color: $brighter-main-text-color;
+            font-size: .86rem;
+            font-weight: 500;
+            margin-top: .65rem;
+        }
+    }
+}

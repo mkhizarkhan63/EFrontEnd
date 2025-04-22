@@ -1,0 +1,42 @@
+$border-color: #E3E3E3;
+$input-border-color: #DBDADA;
+$main-text-color: #333333;
+$brighter-main-text-color: #898989;
+$green-text: #05D94E;
+$green-text-bg: rgba(#05D94E, .1);
+$navy-blue-text: #1E428A;
+$navy-blue-text-bg: rgba(#1E428A, .1);
+$dark-grey-text: #464646;
+$yellow-text: #E0A801;
+$yellow-text-bg: rgba(#E0A801, .1);
+$red-text: #EC5469;
+$red-text-bg: rgba(#EC5469, .1);
+$dark-bg-color: #F5F5FA;
+$hover-bg-color: #F5F5F5;
+$header-height: 5.64rem;
+$client-nav-height: 5.21rem;
+$subheader-height-mobile: 7rem;
+$subheader-height: 8.86rem;
+$right-sidebar-shadow: 0 17px 30px 0 #0000002C;
+$scrollbar-color: #EDEDED;
+$white-bg : #FFFFFF;
+$white-text-color : #FFFFFF;
+// all z-index values must be specified below (in order)
+$zindex-input-overflow: 1;
+$zindex-input-dropdown: 10;
+$zindex-shine: 30;  // shine when content is loading
+$zindex-popup: 40;
+$zindex-subheader: 50;
+$zindex-header: 55;
+$zindex-sidebar: 60; // sidebars (not from nav)
+$zindex-nav-dropdown: 70; // only for dropdowns from nav
+$zindex-loading: 80;
+$blue-svg:
+    brightness(0) saturate(100%) invert(17%) sepia(79%)
+    saturate(1577%) hue-rotate(204deg) brightness(101%) contrast(90%);
+$grey-hover-svg:
+    brightness(0) saturate(100%) invert(53%) sepia(43%)
+    saturate(7%) hue-rotate(324deg) brightness(94%) contrast(94%);
+$grey-svg:
+    brightness(0) saturate(100%) invert(13%) sepia(1%)
+    saturate(2985%) hue-rotate(318deg) brightness(0%) contrast(110%);

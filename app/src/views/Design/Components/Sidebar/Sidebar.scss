@@ -1,0 +1,32 @@
+.design-detail-right {
+    width: 90%;
+    padding: 3.65rem 1rem 2rem 2.2rem;
+    margin: 0 auto;
+    order: 1;
+    box-shadow: 0 3px 7px #00000012;
+    @include block;
+
+    @include is-tablet {
+        width: initial;
+        grid-row: 2/-1;
+        grid-column: 2/-1;
+        order: initial;
+        margin: initial;
+        border-radius: 0;
+        border: 0;
+        border-left: 1px solid #E8E8E8;
+    }
+
+    .services__items:empty {
+        display: none;
+    }
+
+    .stars__dropdown {
+        left: 22%;
+        pointer-events: none;
+
+        @media screen and (min-width: 375px) {
+            left: 74%;
+        }
+    }
+}

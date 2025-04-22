@@ -1,0 +1,31 @@
+.side-modal[data-variant="confirm-clear"] {
+    width: 37.14rem;
+    padding: 2.2rem 1rem;
+
+    .side-modal {
+        &__image {
+            display: block;
+            width: 13.71rem;
+            height: 13.71rem;
+            margin: 8.5rem auto .5rem;
+        }
+
+        &__text {
+            font-size: 1.07rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+
+        &__btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.4rem;
+
+            .btn {
+                padding: .5rem 1.8rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

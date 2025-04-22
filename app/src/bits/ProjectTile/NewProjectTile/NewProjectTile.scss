@@ -1,0 +1,224 @@
+.new-project-tile-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(1) {
+        margin-top: 30px;
+
+        @include is-tablet {
+            margin-top: 0;
+        }
+    }
+}
+
+.new-project-tile {
+    @include block;
+    @include box-shadow-on-hover;
+    padding: 1.6rem 1.78rem 1.86rem 1.64rem;
+    display: flex;
+    justify-content: flex-start;
+    font-size: .93rem;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    flex-grow: 1;
+
+    &[data-background="orange"] {
+        border: 2px solid $yellow-text;
+    }
+
+    &[data-background="green"] {
+        border: 2px solid $green-text;
+    }
+
+    &-label {
+        font-size: 1rem;
+        border-radius: 6px;
+        padding: .6rem .71rem 1.03rem;
+        color: #FFF;
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        z-index: 1;
+
+        &[data-background="orange"] {
+            background-color: $yellow-text;
+        }
+
+        &[data-background="green"] {
+            background-color: $green-text;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: .9rem;
+
+        &--middle {
+            margin-bottom: 1.3rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px solid rgba(112, 112, 112, .1);
+        }
+
+        &--last {
+            margin: .67rem 0 0;
+            align-items: center;
+        }
+    }
+
+    &__location {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+
+        &-title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            margin-bottom: .36rem;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-subtitle {
+            color: $brighter-main-text-color;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    &__days-left {
+        color: $navy-blue-text;
+        font-weight: 600;
+        margin-top: .2rem;
+    }
+
+    &__area {
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__meters {
+        color: $green-text;
+        font-size: 1.14rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        margin-bottom: .3rem;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__residential {
+        color: $brighter-main-text-color;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__bids {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+
+        &-value {
+            font-size: .93rem;
+            font-weight: 600;
+            padding-top: .5rem;
+            margin: 0;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-desc {
+            color: $brighter-main-text-color;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            line-height: normal;
+        }
+    }
+
+    &__levels {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .5rem;
+        overflow: hidden;
+
+        &-symbols {
+            font-weight: 600;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        &-desc {
+            color: $brighter-main-text-color;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+    }
+
+    &__date {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: .5rem;
+        flex-shrink: 0;
+
+        &-number {
+            font-weight: 600;
+        }
+
+        &-desc {
+            text-align: right;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    &__status {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .5rem;
+
+        &-desc {
+            font-weight: 600;
+            color: $navy-blue-text;
+        }
+
+        &-type {
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .btn[data-color="blue"] {
+        font-weight: 400;
+        font-size: 1.16rem;
+    }
+
+    .btn-reject {
+        .btn {
+            font-size: 1.07rem;
+        }
+    }
+}

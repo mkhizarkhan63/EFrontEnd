@@ -1,0 +1,81 @@
+.reviews-files {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 2rem 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+        gap: 1rem 2rem;
+        flex: 1;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &-doc-icon {
+            svg, image {
+                width: 1.55rem;
+                height: 2.07rem;
+            }
+        }
+
+        .btn {
+            margin-left: 1rem;
+
+            svg, image {
+                width: .71rem;
+                height: .79rem;
+            }
+        }
+    }
+
+    &__name {
+        font-size: .93rem;
+        line-height: 1.3rem;
+        color: $navy-blue-text;
+        margin: 0 0 .2rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__size {
+        font-size: .78rem;
+        color: $brighter-main-text-color;
+        margin: 0;
+    }
+
+    &__btn {
+        margin-top: .5rem;
+
+        .btn--main[data-color="white"] {
+            box-shadow: none;
+            border: none;
+            padding: 0;
+            font-size: .86rem;
+            font-weight: 500;
+            min-height: auto;
+
+            svg, image {
+                width: .85rem;
+                height: 1.2rem;
+            }
+
+            .icon {
+                filter: initial;
+            }
+
+            &:hover {
+                color: $main-text-color;
+
+                .icon {
+                    filter: brightness(0) saturate(100%) invert(53%) sepia(43%) saturate(7%)
+                        hue-rotate(324deg) brightness(94%) contrast(94%);
+                }
+            }
+        }
+    }
+}

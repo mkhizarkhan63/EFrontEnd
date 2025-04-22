@@ -1,0 +1,17 @@
+{
+    "reporter": "junit",
+    "reporterOptions": {
+        "mochaFile": "spec/output.xml",
+        "toConsole": false
+    },
+    "fixturesFolder": "spec/fixtures",
+    "downloadsFolder": "spec/downloads",
+    "integrationFolder": "spec/src",
+    "supportFile": false,
+    "screenshotsFolder": "spec/screenshots",
+    "videosFolder": "spec/videos",
+    "pluginsFile": "spec/plugins/index.ts",
+    "video": false,
+    "chromeWebSecurity": false,
+	"experimentalSessionAndOrigin": true
+}

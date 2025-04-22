@@ -1,0 +1,117 @@
+$box-unselected-color: #DBDADA;
+
+.buyproject_architect {
+    width: 79%;
+
+    @include is-tablet {
+        width: 72%;
+    }
+
+    @include is-pc {
+        width: 70% !important;
+    }
+
+    &_flex {
+        display: flex;
+        justify-content: space-between;
+        height: 121px;
+        padding: 27px 0px 4px 0px;
+
+        .spacer {
+            width: 1em;
+        }
+
+        &_sub {
+            display: flex !important;
+            justify-content: space-between;
+            width: 100%;
+
+            .minifields {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                .input-text {
+                    position: relative !important;
+
+                    input {
+                        padding-right: 23px;
+                    }
+                }
+
+                .icon {
+                    position: absolute;
+                    left: 5.7em;
+                    top: 1.6em;
+                    font-size: 13px;
+                    color: $box-unselected-color;
+
+                    @include is-tablet {
+                        left: 6.6em;
+                        top: 1.6em;
+                    }
+
+                    @include is-pc {
+                        left: 7.8em;
+                        top: 2.2em;
+                    }
+                }
+            }
+
+            
+        }
+
+        &_normal {
+            height: 50px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            border-radius: 6px;
+            opacity: 1;
+            margin-right: 10px;
+            flex: 1;
+
+            .normalfield {
+                position: relative;
+
+               
+
+                .input-text {
+                    position: relative !important;
+
+                    input {
+                        padding-right: 6em;
+                    }
+                }
+
+                .icon {
+                    position: absolute;
+                    // top: 4.5em;
+                    top: 36px;
+                    left: 18em;
+                    padding-left: 2px;
+                    color: $box-unselected-color;
+
+                    @include is-tablet {
+                        top: 3.7em;
+                        left: 15em;
+
+                    }
+                }
+            }
+
+            .monthfield {
+                .icon {
+
+                    top: 1.3em;
+                    left: 16.5em;
+
+                    @include is-tablet {
+                        top: 17px;
+                        left: 13.5em;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

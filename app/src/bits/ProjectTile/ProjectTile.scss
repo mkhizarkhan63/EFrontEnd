@@ -1,0 +1,188 @@
+.project-tile {
+    @include block;
+    @include box-shadow-on-hover;
+    padding: 1.71rem 1.71rem 2.29rem;
+    display: flex;
+    justify-content: flex-start;
+    font-size: .93rem;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 1.1rem;
+
+        &--first {
+            margin-bottom: 1.93rem;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &--btn {
+            margin: 0;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        &:last-of-type {
+            margin: 0;
+            align-items: center;
+        }
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+
+        &-step {
+            padding: .43rem .57rem .36rem;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-right: .71rem;
+            background-color: $navy-blue-text-bg;
+            color: $navy-blue-text;
+
+            &:empty {
+                padding: 0;
+            }
+
+            &[data-step="liveInPm"],
+            &[data-step="readyToSign"],
+            &[data-step="signed"] {
+                background-color: $green-text-bg;
+                color: $green-text;
+            }
+
+            &[data-step="reviewing"],
+            &[data-step="rejected"],
+            &[data-step="archived"] {
+                color: $red-text;
+                background-color: $red-text-bg;
+            }
+
+            &[data-step="chooseContractor"],
+            &[data-step="openBids"] {
+                background-color: $navy-blue-text-bg;
+                color: $navy-blue-text;
+            }
+        }
+
+        &-news {
+            color: #FFF;
+            font-size: .85rem;
+            width: 1.71rem;
+            height: 1.71rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $red-text;
+            flex-shrink: 0;
+
+            &[data-news="true"] {
+                opacity: 1;
+            }
+
+            &[data-news="false"] {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__id {
+        color: $brighter-main-text-color;
+        width: 40%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+    }
+
+    &__location {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+
+        &-title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            margin-bottom: .36rem;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-subtitle {
+            color: $brighter-main-text-color;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    &__days-left {
+        width: 40%;
+        color: $navy-blue-text;
+        font-weight: 600;
+        margin-top: .2rem;
+        text-align: right;
+
+        &-num {
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-height: 1rem;
+        }
+    }
+
+    &__area {
+        max-width: 100%;
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+    &__meters {
+        color: $green-text;
+        font-size: 1.14rem;
+        font-weight: 600;
+        margin-bottom: .3rem;
+        padding-top: .5rem;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__residential {
+        color: $brighter-main-text-color;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__levels {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &-symbols {
+            font-weight: 600;
+            padding-top: .5rem;
+            margin-bottom: .3rem;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-desc {
+            text-align: right;
+            color: $brighter-main-text-color;
+        }
+    }
+}

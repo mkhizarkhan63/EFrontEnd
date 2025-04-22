@@ -1,0 +1,157 @@
+.page {
+    width: 100%;
+    min-height: fill-available;
+    display: flex;
+    flex-direction: column;
+    background-color: #FAFBFF;
+
+    @include is-tablet {
+        height: 100%;
+    }
+
+    @media print {
+        height: auto;
+        max-height: initial;
+
+        .header,
+        .left-panel,
+        .right-panel,
+        .subheader {
+            display: none;
+        }
+
+        * {
+            overflow: visible !important;
+        }
+
+        .contract-view {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-panel {
+            background: #FFF;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+            .pdf-prev-container {
+                width: 100%;
+                max-width: 100%;
+                height: 100%;
+                margin: 0;
+
+                &__btns {
+                    display: none;
+                }
+            }
+
+            .pdf-preview-outer {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    max-width: 100%; // temp
+                }
+            }
+
+            .pdf-preview {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                display: block;
+                transform: none !important;
+
+                .pdf-page {
+                    width: 100%;
+
+                    canvas {
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: none;
+                        border-radius: 0;
+                    }
+
+                    &__content {
+                        box-shadow: none;
+
+                        &--custom {
+                            page-break-after: always;
+                            height: 11.7in;
+                        }
+                    }
+                }
+            }
+
+            .docx-wrapper {
+                background: #FFF;
+                position: absolute;
+                width: 100%;
+                height: auto;
+                top: 0;
+                left: 0;
+                z-index: 1111111;
+                padding: 0;
+                transform: none;
+
+                .docx {
+                    margin: 0;
+                    box-shadow: none;
+                    border-radius: none;
+                }
+            }
+        }
+    }
+
+    > .top-bar {
+        width: 100%;
+        height: 100px;
+    }
+
+    .view-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        overflow-x: auto;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        position: relative;
+        margin-top: 5.64rem;
+        height: auto;
+        min-height: calc(100% - 5.64rem);
+        animation: fade-in .2s ease-in;
+
+        &[data-is-lazy="true"] {
+            max-height: calc(100vh - 5.64rem);
+        }
+
+        @include is-tablet {
+            margin-top: 0;
+            height: initial;
+            overflow-x: hidden;
+
+            &[data-is-lazy="true"] {
+                max-height: 100%;
+            }
+        }
+
+        &__scroll {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        > div:not(.footer, .subheader-type, .paging, .subheader-project-creator, .subheader-register-company, .invalid-route) {
+            flex: 1;
+            min-height: 100%;
+        }
+    }
+
+    &-name {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}

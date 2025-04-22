@@ -1,0 +1,92 @@
+@keyframes circle-effect {
+    50% {
+        transform: scale(.4);
+        opacity: .3;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.loading-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: $zindex-loading;
+    background-color: #8F8F8F4A;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: fade-in .2s ease-in;
+
+    &__loader {
+        position: relative;
+        top: -1rem;
+        left: -1rem;
+
+        div {
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: 2px;
+            border-radius: 100%;
+            background-color: $navy-blue-text;
+            animation: circle-effect 1s infinite linear;
+            animation-fill-mode: both;
+
+            &:nth-child(1) {
+                top: 1.93rem;
+                left: 0;
+                animation-delay: -.96s;
+            }
+
+            &:nth-child(2) {
+                top: 1.36rem;
+                left: 1.36rem;
+                animation-delay: -.84s;
+            }
+
+            &:nth-child(3) {
+                top: 0;
+                left: 1.93rem;
+                animation-delay: -.72s;
+            }
+
+            &:nth-child(4) {
+                top: -1.36rem;
+                left: 1.36rem;
+                animation-delay: -.6s;
+            }
+
+            &:nth-child(5) {
+                top: -1.93rem;
+                left: 0;
+                animation-delay: -.48s;
+            }
+
+            &:nth-child(6) {
+                top: -1.36rem;
+                left: -1.36rem;
+                animation-delay: -.36s;
+            }
+
+            &:nth-child(7) {
+                top: 0;
+                left: -1.93rem;
+                animation-delay: -.24s;
+            }
+
+            &:nth-child(8) {
+                top: 1.36rem;
+                left: -1.36rem;
+                animation-delay: -.12s;
+            }
+        }
+    }
+}

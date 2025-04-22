@@ -1,0 +1,62 @@
+.design-levels {
+    &__row {
+        display: grid;
+        grid-template-columns: minmax(10rem, 1fr) 3.25fr;
+        gap: 1rem;
+        margin-bottom: 2.2rem;
+
+        @include is-tablet {
+            grid-template-columns: minmax(12rem, 1fr) 2.75fr;
+        }
+    }
+
+    &__title {
+        font-size: 1.29rem;
+        font-weight: 600;
+    }
+
+    .design-item {
+        display: grid;
+        grid-template-columns: minmax(10rem, 1fr) 3.25fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        align-items: center;
+
+        @include is-tablet {
+            grid-template-columns: minmax(12rem, 1fr) 2.75fr;
+        }
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: flex-start;
+            font-size: 1.29rem;
+        }
+
+        &__floor-type {
+            color: $brighter-main-text-color;
+            margin-bottom: .9rem;
+        }
+
+        &__floor-size {
+            font-weight: 500;
+            color: $navy-blue-text;
+            word-break: break-word;
+        }
+
+        &__right {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__room {
+            font-size: 1.14rem;
+            border: 1px solid #E8E8E8;
+            border-radius: 4px;
+            background: #FFF;
+            padding: 1.1rem 1.15rem .78rem 1.36rem;
+            margin: 0 .8rem .8rem 0;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.drawings-list {
+    list-style-type: none;
+    margin: 1rem 2.28rem 1.8rem;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 2.3rem;
+        gap: 1rem;
+
+        &-doc-icon {
+            width: 1.5rem;
+            height: auto;
+        }
+
+        &-name {
+            word-break: break-word;
+            color: $navy-blue-text;
+            font-size: .93rem;
+            line-height: 1.36rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+        }
+
+        &-download {
+            width: auto;
+            height: .93rem;
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(53%) sepia(43%) saturate(7%) hue-rotate(324deg) brightness(94%) contrast(94%);
+            transition: filter .12s ease-in;
+
+            &:hover {
+                filter: none;
+            }
+        }
+    }
+}

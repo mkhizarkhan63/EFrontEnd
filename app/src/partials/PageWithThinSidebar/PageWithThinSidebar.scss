@@ -1,0 +1,11 @@
+.page-with-thin-sidebar {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+
+    .footer {
+        width: 100%;
+        grid-area: 2/2;
+    }
+}

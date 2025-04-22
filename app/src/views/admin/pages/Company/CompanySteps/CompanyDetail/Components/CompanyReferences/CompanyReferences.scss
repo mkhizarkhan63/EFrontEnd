@@ -1,0 +1,92 @@
+.company-detail-box--references {
+    .title {
+        margin-bottom: 0;
+    }
+
+    .references {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.7rem;
+        margin-top: 3.25rem;
+
+        @include is-pc {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &[data-is-empty="true"] {
+            margin-top: 0;
+        }
+
+        &__item {
+            @include block;
+            padding: 2rem 1.75rem;
+
+            &-name {
+                font-size: 1.29rem;
+                font-weight: 600;
+                margin-bottom: .65rem;
+                word-break: break-word;
+            }
+
+            &-phone {
+                display: flex;
+                align-items: center;
+                font-size: .93rem;
+                font-weight: 600;
+                margin-bottom: 1.9rem;
+
+                &-num {
+                    color: $main-text-color;
+                    text-decoration: none;
+                    font-size: .93rem;
+                    font-weight: 600;
+                    word-break: break-word;
+                    display: flex;
+                    align-items: center;
+                    min-height: .93rem;
+                    transition: color .12s ease-in;
+
+                    &:hover {
+                        color: $green-text;
+                    }
+
+                    &:empty {
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+
+                svg, image {
+                    width: 1.5rem;
+                    height: 1.59rem;
+                    margin-right: .6rem;
+                }
+            }
+
+            &-info {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1.8rem 2rem;
+            }
+
+            &-title {
+                font-size: .93rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+                margin-bottom: .85rem;
+            }
+
+            &-text {
+                font-size: 1.07rem;
+                font-weight: 600;
+                word-break: break-word;
+            }
+        }
+
+        .no-data {
+            grid-column: span 2;
+        }
+    }
+}

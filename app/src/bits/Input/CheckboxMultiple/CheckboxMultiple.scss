@@ -1,0 +1,85 @@
+.checkbox-multiple {
+    position: relative;
+    color: #000;
+    font-size: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+
+    .checkbox-multiple-option {
+        width: calc(50% - 1.5rem);
+        padding: .75rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        cursor: pointer;
+        align-items: center;
+
+        &::selection {
+            background: unset;
+        }
+
+        &[data-is-disabled="true"] {
+            cursor: default;
+        }
+
+        .checkbox-multiple-input {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+
+        .checkbox-multiple-checkbox {
+            margin: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: .7rem;
+            height: .7rem;
+            border-radius: .2rem;
+            background-color: unset;
+            border: 1px solid #DBDBDB;
+            transition: background-color .1s ease-in;
+        }
+
+        &:hover {
+            .checkbox-multiple-checkbox {
+                background-color: rgb(212, 212, 212);
+            }
+        }
+
+        .checkbox-multiple-input:checked ~ .checkbox-multiple-checkbox {
+            position: relative;
+            background-color: $navy-blue-text;
+            border: 1px solid #FFF;
+            box-shadow: 0 0 0 1px $navy-blue-text;
+        }
+
+        .checkbox-multiple-checkbox:after {
+            content: "";
+            display: none;
+            margin-bottom: .1rem;
+            width: .25rem;
+            height: .5rem;
+            border: solid #FFF;
+            /*!rtl:begin:ignore*/
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            /*!rtl:end:ignore*/
+        }
+
+        .checkbox-multiple-input ~ .checkbox-multiple-checkbox:after {
+            display: block;
+        }
+
+        .checkbox-multiple-input[disabled] {
+            + .checkbox-multiple-checkbox {
+                background-color: $brighter-main-text-color;
+                box-shadow: 0 0 0 1px $brighter-main-text-color;
+            }
+        }
+    }
+}

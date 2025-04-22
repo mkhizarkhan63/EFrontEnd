@@ -1,0 +1,40 @@
+.first-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 3rem;
+
+    @include is-tablet {
+        transform: translateY(-2.2rem);
+        margin-top: 0;
+    }
+
+    &__tip-primary {
+        font-size: 1.57rem;
+        font-weight: 600;
+        line-height: 2.85rem;
+        color: $main-text-color;
+        margin-top: 2.65rem;
+    }
+
+    &__tip-secondary {
+        font-size: 1.14rem;
+        line-height: 2.07rem;
+        color: $brighter-main-text-color;
+    }
+
+    .btn--main {
+        margin-top: 2.65rem;
+    }
+
+    > .picture {
+        width: 24.43rem;
+        height: 15.64rem;
+        background-image: url("/assets/graphics/first_project_picture.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

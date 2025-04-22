@@ -1,0 +1,172 @@
+.side-modal[data-variant="project-scope"] {
+    width: 100%;
+    max-width: 72rem;
+    flex-direction: row;
+    padding: 0;
+
+    @include is-tablet {
+        width: 95%;
+    }
+
+    .side-modal {
+        &__header {
+            margin: 2.2rem 0 2.5rem 2.28rem;
+        }
+    }
+
+    .project-scope {
+        &__left {
+            width: 15.5rem;
+            height: 100%;
+            border-right: 1px solid #EAEAEA;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            overflow: auto;
+
+            @media screen and (min-width: 420px) {
+                width: 23.5rem;
+            }
+        }
+
+        &__right {
+            flex-grow: 1;
+            padding: 2.21rem;
+            overflow: auto;
+        }
+
+        &__title {
+            padding-bottom: 1.85rem;
+            margin: 0 2.25rem;
+            font-size: .93rem;
+            font-weight: 600;
+            border-bottom: 1px solid #F2F2F2;
+
+            &-header {
+                margin-right: .3rem;
+            }
+
+            &-type {
+                font-size: 1rem;
+                font-weight: 600;
+                color: $navy-blue-text;
+                margin-left: .3rem;
+            }
+        }
+
+        &__tab {
+            &-item {
+                display: flex;
+                align-items: center;
+                min-height: 4.7rem;
+                position: relative;
+                padding: 0 1.7rem;
+                cursor: pointer;
+
+                &:after {
+                    height: 1px;
+                    background-color: #F2F2F2;
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 2.25rem;
+                    right: 2.25rem;
+                }
+
+                &-img {
+                    width: 2rem;
+                    height: auto;
+                    object-fit: contain;
+                    max-height: 100%;
+                    margin: 0 .6rem;
+
+                    &[src=""],
+                    &:not([src]) {
+                        display: none;
+                    }
+                }
+
+                &-name {
+                    color: $dark-grey-text;
+                    font-size: .86rem;
+                    padding: .5rem;
+                    align-self: center;
+                    word-break: break-word;
+                }
+
+                &[data-is-active="true"] {
+                    background-color: #F4F4F8;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 4px;
+                        height: 100%;
+                        background-color: $navy-blue-text;
+                    }
+                }
+
+                &[data-is-active="false"] {
+                    &:hover {
+                        background-color: $hover-bg-color;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            &-header {
+                font-size: 1.07rem;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+
+                &:before {
+                    content: "";
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-right: 1.14rem;
+                    border-radius: 50%;
+                    background-color: $green-text;
+                    z-index: 10;
+                    background-image: url("/assets/graphics/white_tick.svg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+            }
+
+            .table {
+                border: none;
+                padding: .5rem 0 0;
+
+                &__body {
+                    .table__row {
+                        align-items: flex-start;
+                        border-bottom: 1px solid #E3E3E3;
+                    }
+
+                    .table__cell {
+                        line-height: 1.5rem;
+                        color: $brighter-main-text-color;
+                        font-size: .86rem;
+                        padding-top: 1.03rem;
+                        word-break: break-word;
+                    }
+
+                    .section {
+                        font-size: .93rem;
+                        color: $main-text-color;
+                        font-weight: 600;
+                    }
+
+                    .rates {
+                        color: $navy-blue-text;
+                    }
+                }
+            }
+        }
+    }
+}

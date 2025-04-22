@@ -1,0 +1,174 @@
+.side-modal[data-variant="add-observation"] {
+    width: 100%;
+    padding-bottom: 0;
+
+    @include is-tablet {
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: 1.1rem;
+        }
+
+        &__content {
+            flex: 1;
+            margin-right: .71rem;
+            overflow-y: auto;
+
+            .desc {
+                color: $brighter-main-text-color;
+                font-size: 13px;
+                line-height: 16px;
+                word-break: break-word;
+                margin-bottom: 2.9rem;
+                padding: 0 2.21rem 0 2rem;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                    line-height: 1.5rem;
+                }
+            }
+
+            .section {
+                font-size: 13px;
+                margin: 0 2.21rem 2.1rem 2rem;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+
+                &__row {
+                    margin-bottom: 1.1rem;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    .input-header {
+                        font-size: 12px;
+                        font-weight: 500;
+                        margin-top: 1.6rem;
+                        margin-bottom: 1rem;
+                        display: block;
+
+                        @include is-tablet {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .title {
+                font-size: 13px;
+                color: $brighter-main-text-color;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+
+            .value {
+                font-size: 13px;
+                font-weight: 500;
+                color: $main-text-color;
+                word-break: break-word;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+
+            .task-progress {
+                &__title {
+                    display: block;
+                    padding-top: 2rem;
+                }
+            }
+
+            .visit-site {
+                margin: 1.8rem 2.21rem 0 2rem;
+                padding: 0 0 22px;
+
+                @include is-tablet {
+                    padding: 0 0 2rem;
+                }
+
+                &__title {
+                    font-size: 1.14rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .task-bottom {
+                padding: 18px 0 22px;
+                margin: 0 2.21rem 0 2rem;
+                border-top: 1px solid #E3E3E3;
+
+                @include is-tablet {
+                    padding: 2.2rem 0 2rem;
+                }
+
+                .checkbox-container {
+                    color: $brighter-main-text-color;
+                    font-size: 12px;
+                    line-height: 1.45rem;
+                    font-weight: 400;
+
+                    @include is-tablet {
+                        font-size: .93rem;
+                    }
+
+                    &-option {
+                        align-items: flex-start;
+                    }
+
+                    &-input {
+                        flex-shrink: 0;
+                        margin-right: 1rem;
+                    }
+                }
+
+                &__btns {
+                    margin-top: 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .btn[data-color="white"] {
+                    .icon {
+                        filter: var(--icon-red);
+                    }
+
+                    svg, image {
+                        width: 1.64rem;
+                        height: 1.64rem;
+                    }
+
+                    &:hover {
+                        color: $red-text;
+                    }
+
+                    &:disabled {
+                        background-color: #FFF;
+                        color: $brighter-main-text-color;
+
+                        .icon {
+                            filter: invert(.5) brightness(1);
+                        }
+
+                        &:hover {
+                            color: $brighter-main-text-color;
+                        }
+                    }
+                }
+
+                &__btn-submit {
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
+    }
+}

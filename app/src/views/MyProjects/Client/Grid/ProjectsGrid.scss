@@ -1,0 +1,42 @@
+.projects {
+    position: relative;
+    width: 100%;
+    margin-top: 4rem;
+
+    > .grid {
+        width: 100%;
+        max-width: 89.2rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 28.4rem);
+        grid-auto-rows: minmax(150px, auto);
+        grid-gap: 2rem;
+        justify-content: center;
+
+        @include is-tablet {
+            grid-auto-rows: minmax(13.9rem, auto);
+        }
+    }
+
+    > .loading-grid {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        pointer-events: none;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity .3s;
+        max-height: 100%;
+        overflow: hidden;
+
+        &[data-is-visible="true"] {
+            opacity: 1;
+        }
+
+        > .skeleton-tile {
+            @extend .shines;
+            background-image: url("/assets/graphics/my_project_cell_skeleton.svg");
+            background-size: 100% 100%;
+        }
+    }
+}

@@ -1,0 +1,396 @@
+.company-employees {
+    .top-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3.7rem 0 2rem;
+
+        &__text {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+
+            &-num {
+                font-size: 1.28rem;
+                color: $brighter-main-text-color;
+                margin-left: .3rem;
+                font-weight: 500;
+            }
+        }
+
+        &__right {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: .2rem;
+
+            .search {
+                svg, image {
+                    width: 1.31rem;
+                    height: 1.31rem;
+                }
+            }
+
+            .filter {
+                position: relative;
+
+                .btn {
+                    margin-left: 2.3rem;
+                }
+
+                svg, image {
+                    width: 1.26rem;
+                    height: 1.16rem;
+                }
+
+                &[data-is-filter="true"] {
+                    @include filter-active;
+                }
+            }
+
+            .btn[data-color="blue"] {
+                margin-left: 3.3rem;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__owner {
+        @include block;
+        padding: .75rem 2.07rem 2.5rem;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+
+            .btn--circle {
+                box-shadow: 0 3px 6px #0000001A;
+                width: 3.29rem;
+                height: 3.29rem;
+                margin-top: .7rem;
+                flex-shrink: 0;
+                transition: box-shadow .12s ease-in;
+
+                .icon {
+                    filter: saturate(0);
+                }
+
+                svg, image {
+                    width: 1.21rem;
+                    height: 1.21rem;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+                }
+            }
+        }
+
+        &-title {
+            position: relative;
+            font-size: 1.07rem;
+            font-weight: 600;
+            width: 100%;
+            @include left-line(5px, 2.28rem, 2.07rem, $brighter-main-text-color);
+        }
+
+        &-name {
+            font-size: 1.64rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            word-break: break-word;
+        }
+
+        &-contact {
+            display: flex;
+            align-items: center;
+            gap: .7rem 2.5rem;
+            flex-wrap: wrap;
+
+            &-item {
+                display: flex;
+                align-items: center;
+                font-size: .93rem;
+                font-weight: 600;
+
+                svg, image {
+                    width: 1.5rem;
+                    height: 1.59rem;
+                    margin-right: .6rem;
+                }
+            }
+
+            &-link {
+                color: $main-text-color;
+                text-decoration: none;
+                font-size: .93rem;
+                font-weight: 600;
+                word-break: break-word;
+                display: flex;
+                align-items: center;
+                min-height: .93rem;
+                transition: color .12s ease-in;
+
+                &:hover {
+                    color: $green-text;
+                }
+
+                &:empty {
+                    pointer-events: none;
+                    cursor: default;
+                }
+            }
+        }
+
+        &-form {
+            @include block;
+            padding: 2.15rem 2.07rem 2.5rem;
+
+            .company-employees__owner {
+                &-title {
+                    margin-bottom: 3rem;
+                }
+
+                &-inputs {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+
+                    .input-text {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .btn {
+                margin: 3rem 0 0 auto;
+            }
+        }
+    }
+
+    &__tiles {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-gap: 2.1rem;
+        width: 90%;
+        margin: 1.7rem auto 1.6rem;
+
+        .company-employees__tile {
+            @include block;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 19.71rem;
+            position: relative;
+            padding: 2.71rem 2rem;
+            @include box-shadow-on-hover;
+
+            &[data-is-red="true"] {
+                border-color: $red-text;
+            }
+
+            &-avatar {
+                width: 4.43rem;
+                height: 4.43rem;
+                margin: 0 0 1.55rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: relative;
+                    border-radius: 50%;
+
+                    &[src=""],
+                    &:not([src]) {
+                        @include empty-img("/assets/graphics/blue_avatar.svg");
+                    }
+                }
+            }
+
+            &-name {
+                font-size: .93rem;
+                text-align: center;
+                word-break: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                white-space: initial;
+                color: $brighter-main-text-color;
+                margin: 0 0 .7rem;
+                overflow: hidden;
+            }
+
+            &-phone {
+                font-size: .93rem;
+                text-align: center;
+                word-break: break-word;
+                color: $brighter-main-text-color;
+                margin: 0 0 .7rem;
+                text-decoration: none;
+                transition: color .12s ease-in;
+
+                &:hover {
+                    color: $green-text;
+                }
+            }
+
+            &-title {
+                font-size: 1.28rem;
+                font-weight: 600;
+                color: $dark-grey-text;
+                margin: 0 0 1.98rem;
+            }
+
+            .btn {
+                margin: auto 0 0;
+            }
+        }
+    }
+
+    &__edit-btn {
+        .btn.btn--circle {
+            box-shadow: 0 3px 6px #0000001A;
+            width: 3.29rem;
+            height: 3.29rem;
+            margin-top: -.7rem;
+            flex-shrink: 0;
+            transition: box-shadow .12s ease-in;
+
+            .icon {
+                filter: saturate(0);
+            }
+
+            svg, image {
+                width: 1.21rem;
+                height: 1.21rem;
+            }
+
+            &:hover {
+                box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+            }
+        }
+    }
+
+    &__table {
+        @include block;
+        padding: 1.3rem 2.07rem;
+
+        &:empty {
+            display: none;
+        }
+
+        &-row {
+            display: flex;
+            align-items: center;
+            padding-bottom: 1.3rem;
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 1.3rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        .employee {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex: 1;
+
+            &__img {
+                width: 4.43rem;
+                height: 4.43rem;
+                object-fit: cover;
+                border-radius: 50%;
+                display: block;
+                position: relative;
+                overflow: hidden;
+                flex-shrink: 0;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/blue_avatar.svg");
+                }
+            }
+
+            &__name {
+                font-size: 1.14rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                word-break: break-word;
+            }
+
+            &__type {
+                font-size: .93rem;
+                font-weight: 500;
+                padding: .43rem .57rem .36rem .64rem;
+                border-radius: 3px;
+                color: $navy-blue-text;
+                background-color: $navy-blue-text-bg;
+                width: fit-content;
+            }
+        }
+
+        .employee-contact {
+            display: flex;
+            align-items: center;
+            gap: .7rem 4.5rem;
+            flex-wrap: wrap;
+            flex: 1;
+            padding-left: 1rem;
+            justify-content: flex-end;
+
+            &__item {
+                display: flex;
+                align-items: center;
+                font-size: .93rem;
+                font-weight: 600;
+
+                svg, image {
+                    width: 1.5rem;
+                    height: 1.59rem;
+                    margin-right: .6rem;
+                }
+            }
+
+            &__link {
+                color: $main-text-color;
+                text-decoration: none;
+                font-size: .93rem;
+                font-weight: 600;
+                word-break: break-word;
+                display: flex;
+                align-items: center;
+                min-height: .93rem;
+                transition: color .12s ease-in;
+
+                &:hover {
+                    color: $green-text;
+                }
+
+                &:empty {
+                    pointer-events: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

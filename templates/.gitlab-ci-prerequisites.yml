@@ -1,0 +1,16 @@
+include:
+  ## import workflow
+  - project: 'ebinaa/infrastructure/ci-steps'  
+    ref: master
+    file: '/CI/Workflow/.gitlab-branch-mr-no-duplicates.yml'    
+
+  ## import base scripts
+  - project: 'ebinaa/infrastructure/ci-steps'  
+    ref: master
+    file: '/CI/Build-Code/js/.gitlab-ci-install-deps.yml'
+
+  ## import cache settings
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-cache.yml'    
+      

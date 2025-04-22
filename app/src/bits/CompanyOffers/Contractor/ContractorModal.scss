@@ -1,0 +1,82 @@
+.table--company.table {
+    .modal {
+        position: absolute;
+        top: .71rem;
+        right: .71rem;
+
+        .btn {
+            width: 2.21rem;
+            min-height: 2.21rem;
+            height: 2.21rem;
+            box-shadow: 0 4px 12px #00000012;
+            border-color: #D8D8D8;
+        }
+
+        .icon {
+            &-box {
+                svg, image {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        .company__offer {
+            @include block;
+            position: absolute;
+            top: 3.5rem;
+            right: .5rem;
+            width: 20.14rem;
+            max-height: 43rem;
+            overflow: auto;
+            padding: 1.5rem 1.28rem;
+            color: $brighter-main-text-color;
+            font-weight: 400;
+            line-height: 1.7rem;
+            text-align: left;
+            box-shadow: 0 1px 11px #0000002C;
+            z-index: 6;
+            animation: fade-in .15s ease-in-out;
+
+            &-title {
+                color: $main-text-color;
+                font-size: 1.07rem;
+                font-weight: 600;
+                margin: 0 0 1.19rem;
+            }
+
+            &-text {
+                text-align: left;
+                font-size: 1.07rem;
+                margin-bottom: .43rem;
+                word-break: break-word;
+            }
+
+            &-phone {
+                display: flex;
+                align-items: center;
+                gap: 0 .5rem;
+                color: $main-text-color;
+                text-decoration: none;
+                word-break: break-word;
+                width: fit-content;
+                transition: color .12s ease-in;
+
+                &__num {
+                    font-weight: 600;
+                    font-size: .93rem;
+                    padding-bottom: .3rem;
+                }
+
+                &:hover {
+                    color: $green-text;
+                }
+
+                svg, image {
+                    width: 1.43rem;
+                    height: 1.43rem;
+                }
+            }
+        }
+    }
+}

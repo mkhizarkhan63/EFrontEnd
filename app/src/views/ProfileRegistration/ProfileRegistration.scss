@@ -1,0 +1,318 @@
+.registration {
+    &__title {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem 0;
+
+        @include is-tablet {
+            margin: 4.5rem 0 2.78rem;
+        }
+
+        &-h1 {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 1.3rem;
+            }
+        }
+
+        &-p {
+            font-size: 1.15rem;
+            color: $brighter-main-text-color;
+
+            @include is-tablet {
+                font-size: 1.23rem;
+            }
+        }
+    }
+
+    &__mobile-back {
+        @include is-tablet {
+            display: none;
+        }
+    }
+
+    &[data-type="consultant"] {
+        .form__header:before {
+            background-color: $green-text;
+        }
+    }
+
+    .form {
+        padding: 0 1.46rem;
+        margin-top: 0;
+
+        @include is-tablet {
+            padding: 0 2.46rem;
+        }
+
+        &__header {
+            font-size: 1.29rem;
+            margin: 2.3rem 0;
+            line-height: 1.36rem;
+            color: $dark-grey-text;
+            @include left-line(4px, 2.5rem, 1.5rem, $navy-blue-text);
+
+            @include is-tablet {
+                @include left-line(4px, 2.5rem, 2.5rem, $navy-blue-text);
+                margin: 2.3rem 0 1.6rem;
+            }
+        }
+
+        &__btns {
+            padding: 2.2rem 0 3rem;
+            align-items: center;
+            justify-content: space-between;
+
+            .btn--main[data-color="blue"] {
+                padding: .5rem 1.2rem .5rem 1.4rem;
+
+                svg, image {
+                    width: 1.36rem;
+                    height: .93rem;
+                }
+            }
+        }
+    }
+
+    .company-forms {
+        &--owner {
+            .form__btns {
+                justify-content: flex-end;
+            }
+        }
+
+        &--profile {
+            .form {
+                &__header {
+                    margin: 2.3rem 0;
+
+                    @include is-tablet {
+                        margin: 2.8rem 0 1.9rem;
+                    }
+                }
+
+                &-info {
+                    .input-text {
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                &-choices {
+                    width: calc(100% + (1.46rem * 2));
+                    margin: 1.3rem -1.46rem 2.2rem;
+
+                    @include is-tablet {
+                        width: calc(100% + (2.46rem * 2));
+                        margin: 1.3rem -2.46rem 2.2rem;
+                    }
+
+                    .form__header {
+                        margin: 2.8rem 0 1.1rem;
+                    }
+                }
+
+                &__btns {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        &--contractor-services {
+            .form {
+                &__header {
+                    margin: 2.8rem 0 2.6rem;
+                }
+
+                .checkbox-multiple {
+                    gap: 0 3rem;
+
+                    &-option {
+                        width: calc((100% - 3rem) / 2);
+                    }
+                }
+
+                .input-array {
+                    &-input {
+                        width: 100%;
+
+                        @include is-tablet {
+                            width: calc((100% - 3rem) / 2);
+                        }
+                    }
+                }
+
+                &__btns {
+                    padding-top: 4rem;
+                }
+            }
+        }
+
+        &--consultant-services {
+            .form {
+                &__header {
+                    margin: 2.8rem 0 1.2rem;
+                }
+
+                &__subheader {
+                    margin: 3.4rem 0 1.9rem;
+                }
+
+                &__btns {
+                    padding: 4rem 0 2.2rem;
+                }
+            }
+
+            .product-list {
+                margin-bottom: 3.4rem;
+
+                .form__subheader {
+                    margin: 3rem 0 1.8rem;
+                }
+
+                &__item {
+                    @include is-tablet {
+                        width: 30rem;
+                    }
+                }
+            }
+
+            .supervision-services {
+                margin-top: 3.8rem;
+
+                .form__subheader {
+                    margin: 2.8rem 0 .9rem;
+                }
+            }
+        }
+
+        &--history {
+            .form {
+                &__header {
+                    margin: 2.8rem 0 2.7rem;
+                }
+
+                &__btns {
+                    padding-top: 4rem;
+                }
+            }
+        }
+
+        &--resource {
+            .form {
+                &__header {
+                    margin: 2.3rem 0;
+
+                    @include is-tablet {
+                        margin: 2.8rem 0 3.3rem;
+                    }
+                }
+
+                &-resources {
+                    .form__header {
+                        margin: 2.8rem 0 1.3rem;
+                    }
+                }
+
+                &__btns {
+                    padding-top: 3.5rem;
+                }
+            }
+        }
+
+        &--documents {
+            .form {
+                &__header {
+                    margin: 2.3rem 0;
+
+                    @include is-tablet {
+                        margin: 2.8rem 0 3.3rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .registration-container {
+        .page-with-sidebar[data-page="page-registration"] {
+            .side-bar {
+                position: fixed;
+                top: 5.64rem;
+                left: 0;
+                overflow: auto;
+                background-color: #FAFBFF;
+                width: 100%;
+                min-height: calc(100vh - 5.64rem);
+                padding: 30px 35px;
+                z-index: 11;
+                pointer-events: none;
+
+                .side-bar-step {
+                    pointer-events: all;
+                }
+            }
+
+            .registration__mobile-back {
+                margin: 20px 0;
+                outline: none;
+
+                .btn {
+                    font-size: 16px;
+                    color: initial;
+
+                    .icon {
+                        margin: 0 14px 0 0;
+
+                        svg, image {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+
+                    .text:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &[data-is-creating="true"] {
+            .page-with-sidebar[data-page="page-registration"] {
+                .side-bar {
+                    pointer-events: none;
+
+                    .side-bar-step {
+                        pointer-events: none;
+
+                        &:nth-child(1) {
+                            pointer-events: all;
+                        }
+                    }
+                }
+            }
+        }
+
+        &[data-mobile-menu-is-visible="true"] {
+            overflow: hidden;
+
+            .page-with-sidebar[data-page="page-registration"] {
+                .registration {
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &[data-mobile-menu-is-visible="false"] {
+            .page-with-sidebar[data-page="page-registration"] {
+                .side-bar {
+                    display: none;
+                }
+            }
+        }
+    }
+}

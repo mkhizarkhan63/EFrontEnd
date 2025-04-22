@@ -1,0 +1,233 @@
+.page[data-name="inviting-contractors"] {
+    .subheader {
+        position: static;
+
+        @include is-tablet {
+            position: fixed;
+        }
+
+        .left__name {
+            white-space: initial;
+            text-overflow: initial;
+            overflow: initial;
+
+            &-text {
+                margin-right: .4rem;
+                white-space: initial;
+                text-overflow: initial;
+                overflow: initial;
+            }
+
+            &-num {
+                font-size: 1.29rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+            }
+        }
+
+        .logo-list-previous {
+            margin-bottom: 0;
+        }
+
+        .contractor-submitted {
+            font-size: 1.14rem;
+            margin-left: 1rem;
+        }
+
+        .btn {
+            font-size: 1.07rem;
+            margin-left: 15px;
+            padding: .5rem 1.1rem;
+
+            @include is-tablet {
+                margin-left: 3rem;
+                padding: .5rem 1.3rem;
+            }
+        }
+    }
+
+    .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+
+        &__scroll {
+            min-width: 768px;
+
+            @include is-tablet {
+                min-width: initial;
+            }
+        }
+    }
+
+    .inviting-contractors {
+        width: 94%;
+        max-width: 89.3rem;
+        margin: 2.5rem auto 0;
+        display: flex;
+        flex-direction: column;
+
+        @include is-tablet {
+            margin: 11.36rem auto 0;
+            width: 90%;
+        }
+
+        .infinite-scroll-component {
+            padding-bottom: 6rem;
+            overflow: visible !important;
+        }
+
+        .loading-container {
+            width: auto;
+            height: auto;
+            position: relative;
+            margin-top: 8rem;
+
+            &__loader {
+                top: 0;
+            }
+        }
+
+        &__table {
+            @include block;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        .contractor-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1.43rem 1.86rem 1.7rem;
+            border-bottom: 1px solid #E3E3E3;
+
+            &:last-of-type {
+                border-bottom: 0;
+            }
+
+            &__company {
+                display: flex;
+                font-weight: 600;
+                align-items: center;
+                flex: 3;
+                word-break: break-word;
+
+                &-logo {
+                    display: block;
+                    width: 4.21rem;
+                    height: 4.21rem;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 6px #0000002F;
+                    margin-right: 1rem;
+                    flex-shrink: 0;
+                    position: relative;
+
+                    &[src=""], &:not([src]) {
+                        @include empty-img("/assets/graphics/example_logo.jpg");
+                    }
+                }
+            }
+
+            &__cell {
+                word-break: break-word;
+                padding: 0 1rem;
+                flex: 1;
+
+                &:first-of-type, &:last-of-type {
+                    padding: 0;
+                }
+
+                &-title {
+                    font-size: 10px;
+                    font-weight: 500;
+                    margin-bottom: .9rem;
+
+                    @include is-tablet {
+                        font-size: .86rem;
+                    }
+                }
+
+                &-value {
+                    font-size: 11px;
+                    font-weight: 600;
+
+                    @include is-tablet {
+                        font-size: .93rem;
+                    }
+                }
+
+                &--established {
+                    flex: .7;
+                }
+
+                &--projects {
+                    flex: 1.3;
+                }
+
+                &--engineers {
+                    flex: .8;
+                }
+
+                &--labors {
+                    flex: .6;
+                }
+
+                &--view {
+                    flex: 2.2;
+                    min-width: 10rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: .5rem 1.5rem;
+
+                    @include is-tablet {
+                        flex: 2.8;
+                    }
+
+                    .btn[data-color="transparent"] {
+                        font-weight: 500;
+
+                        @include is-tablet {
+                            font-size: .93rem;
+                        }
+                    }
+
+                    .btn-invite {
+                        .btn {
+                            min-width: 10.79rem;
+                            padding: .5rem 1rem;
+
+                            .icon {
+                                filter: initial;
+                            }
+
+                            svg, image {
+                                width: 1.14rem;
+                                height: .79rem;
+                            }
+
+                            @include is-tablet {
+                                font-size: 1.07rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding: 3rem 0;
+        width: 94%;
+        max-width: 89.3rem;
+
+        @include is-tablet {
+            width: 90%;
+        }
+    }
+}

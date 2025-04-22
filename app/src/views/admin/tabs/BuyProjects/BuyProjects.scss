@@ -1,0 +1,188 @@
+.buyprojects-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10em;
+
+
+    &-left {
+        padding-left: 20px;
+        height: auto;
+        width: 322px;
+
+        .buyproject-side-bar {
+
+            border: none;
+        }
+    }
+
+    &-right {
+
+        padding-top: 5em;
+        width: 954px;
+        padding-left: 5em;
+        flex-grow: 1;
+
+        .headers {
+            display: flex;
+            height: 7em;
+
+            .icon-box {
+                cursor: pointer;
+                width: 3em;
+
+
+
+            }
+
+            .buyprojects-title {
+
+                &-subheading {
+                    padding-top: 1em;
+                    color: $dark-grey-text;
+                }
+            }
+        }
+
+
+        //main content container
+
+        .buyproject-cards {
+            @include block;
+            position: relative;
+            padding: 25px 0 20px 22px;
+            border: 1px solid #E8E8E8;
+            width: 60em;
+            display: flex;
+            flex-direction: column;
+            @include show-page-animation;
+
+            &-container {
+                width: 100%;
+
+                &_mainheader {
+
+                    cursor: default;
+
+
+                    &_highlight {
+                        height: 3em;
+                        max-height: 10em;
+                        background: $navy-blue-text;
+                        display: flex;
+                        flex-direction: column;
+                        width: 0.8%;
+                        position: absolute;
+                        top: 8px;
+                        left: 0;
+                    }
+
+                    &_header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .btn {
+                            display: none;
+                        }
+
+                    }
+
+
+                    &_title {
+                        font-size: 16px;
+                        font-weight: 600;
+
+                        @include is-tablet {
+                            font-size: 1.14rem;
+                        }
+                    }
+
+                    &[data-is-completed="true"] {
+                        cursor: pointer;
+
+                        .buyproject-cards-container_mainheader_highlight {
+
+                            background: $green-text;
+                        }
+
+                        .buyproject-cards-container_mainheader_header {
+                            .btn {
+                                display: none;
+                            }
+                        }
+                    }
+
+
+
+
+                }
+
+                //main body
+                &_body {
+                    width: 100%;
+
+                    &_content {
+                        width: 100%;
+                    }
+
+                }
+
+                //footer
+                &_footer {
+                    margin-top: 11%;
+                    width: 58em;
+
+
+
+
+                    Button {
+                        float: right;
+                        width: 138px;
+                        height: 46px;
+                        font-size: 15px;
+                        margin-right: 1em;
+                        border-radius: 6px;
+                        opacity: 1;
+                        white-space: nowrap;
+                    }
+
+                    .back-btn {
+                        Button {
+                            float: left;
+                        }
+                    }
+                }
+            }
+
+
+
+            &[data-type="cards"] {
+                padding: 1.65rem 1.7rem 2.03rem 1.5rem;
+            }
+
+
+
+            &[data-is-closed="true"] {
+
+                .btn {
+                    transform: rotateZ(180deg);
+
+                }
+
+                .buyproject-cards_container_body {
+                    opacity: 0;
+                    max-height: 0;
+                    overflow: hidden;
+                    @include show-page-animation;
+                }
+
+
+
+            }
+
+
+        }
+    }
+}
+
+

@@ -1,0 +1,68 @@
+.side-modal[data-variant="services-agreement"] {
+    max-width: 37.14rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: 1.5rem;
+        }
+
+        &__subheader {
+            color: $navy-blue-text;
+            font-weight: 500;
+            margin: .45rem 0 1.2rem;
+            @include left-line(5px, 2.5rem, 2.3rem, $navy-blue-text);
+        }
+
+        &__graphic {
+            width: 17.14rem;
+            height: 14.42rem;
+            margin: 2.3rem auto 3rem;
+            display: flex;
+            transform: translateX(-8%);
+        }
+
+        &__content {
+            flex: 1;
+            padding: .5rem 1.5rem 1rem 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+            .content-flex {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+
+                .content {
+                    line-height: 1.5rem;
+                }
+            }
+
+
+            .input-text {
+                margin-bottom: 2rem;
+
+                &-input {
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .btn[data-color="blue"] {
+                margin: 4rem 0 0 auto;
+            }
+        }
+
+        &__footer {
+            .agree-sign-contract {
+                float: right;
+                padding-right: 3.4rem;
+                padding-top: 2rem;
+            }
+
+        }
+    }
+}

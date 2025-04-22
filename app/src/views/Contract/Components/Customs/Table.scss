@@ -1,0 +1,373 @@
+.pdf-table {
+    border-collapse: collapse;
+    font-size: .9em;
+    line-height: 1.4em;
+    width: 100%;
+
+    &__thead {
+        &-img {
+            &:not(:empty) {
+                display: block;
+                width: 5.3em;
+                height: 5.3em;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .table-header {
+        font-size: .88em;
+        padding: 1.4em .6em;
+    }
+
+    tr {
+        &:not(.pdf-table__thead-img) {
+            border-bottom: 1px solid $brighter-main-text-color;
+        }
+
+        th,
+        td {
+            padding: 1.2em .6em;
+            white-space: pre-line;
+            word-break: break-word;
+        }
+
+        [data-is-underline="true"] {
+            color: $navy-blue-text;
+            border-bottom: 1px solid $navy-blue-text;
+        }
+    }
+
+    &[data-hide-borders="true"] {
+        tr {
+            border: none;
+        }
+    }
+}
+
+.pdf-contact-table {
+    margin-bottom: 2em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid $brighter-main-text-color;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 0 1.3em .6em;
+
+        &__img {
+            display: block;
+            width: 4.8em;
+            height: 4.8em;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                position: relative;
+                border-radius: 50%;
+
+                &[src=""], &:not([src]) {
+                    @include empty-img("/assets/graphics/blue_avatar.svg");
+                }
+            }
+        }
+
+        &__data {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 1.05em;
+        }
+
+        &__type {
+            font-size: .9em;
+        }
+
+        &__name {
+            font-size: 1.08em;
+            font-weight: 600;
+            margin-top: .5em;
+            text-align: left;
+            word-break: break-word;
+        }
+    }
+
+    .pdf-table {
+        font-size: .9em;
+
+        .table-header {
+            padding-bottom: 1em;
+        }
+
+        tr {
+            th,
+            td {
+                padding: .2em .6em;
+
+                .highlighted {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &--consultant,
+    &--contractor {
+        .pdf-table {
+            tbody {
+                tr:nth-of-type(3) {
+                    td {
+                        padding: 1.7em .6em .5em;
+                    }
+                }
+            }
+        }
+    }
+
+    &--client {
+        .pdf-table {
+            tr {
+                th,
+                td {
+                    .highlighted {
+                        margin: 0 0 .5em;
+                    }
+                }
+            }
+        }
+    }
+
+    &--ebinaa {
+        border-bottom: none;
+
+        .pdf-table {
+            border-collapse: collapse;
+            font-size: .9em;
+            line-height: 1.4em;
+
+            &__thead {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 0 0 1.3em .6em;
+
+                &-text {
+                    flex: 1;
+                    margin-left: .6em;
+
+                    .table-header {
+                        font-size: 1.2em;
+                        font-weight: 600;
+                        color: $main-text-color;
+                        padding-bottom: 0;
+                    }
+                }
+
+                &-img {
+                    &:not(:empty) {
+                        width: 4.6em;
+                        height: 4.2em;
+                        border-radius: 0;
+                        overflow: hidden;
+
+                        img {
+                            object-fit: contain;
+                            border-radius: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pdf-acceptance-table {
+    border-bottom: 1px solid $brighter-main-text-color;
+
+    .pdf-table {
+        margin: .7em 0;
+
+        &[data-hide-borders="true"] {
+            .pdf-table__thead-text {
+                border-bottom: 1px solid $brighter-main-text-color;
+
+                td {
+                    padding: 1.4em .6em;
+                }
+            }
+        }
+    }
+}
+
+.pdf-scope-of-work-table {
+    .pdf-table {
+        margin: .7em 0;
+
+        tbody {
+            tr {
+                td {
+                    &:nth-of-type(2) {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pdf-contractor-materials-table,
+.pdf-client-materials-table {
+    .pdf-table {
+        tbody {
+            tr {
+                td {
+                    &:nth-of-type(1) {
+                        font-weight: 600;
+                    }
+
+                    .value-yes {
+                        color: $navy-blue-text;
+                    }
+
+                    .value-no {
+                        color: $brighter-main-text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pdf-material-specs {
+    &__desc {
+        font-weight: 600;
+    }
+
+    &__accept {
+        margin-top: .85em;
+        font-weight: 500;
+    }
+
+    .pdf-table {
+        tbody {
+            tr {
+                td:nth-of-type(1),
+                td:nth-of-type(3) {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.pdf-payments-table {
+    .pdf-table {
+        tbody {
+            tr {
+                td {
+                    &:nth-of-type(4) {
+                        color: $navy-blue-text;
+                    }
+
+                    .highlighted {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pdf-schedule-table {
+    margin-bottom: 2em;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        font-weight: 600;
+        margin-bottom: .7em;
+
+        &-left {
+            width: 14%;
+            font-size: .9em;
+            padding: 0 .6em;
+        }
+
+        &--last {
+            margin-top: 2em;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+        font-size: .9em;
+
+        &-left {
+            width: 16%;
+            color: $navy-blue-text;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: .6em;
+            line-height: 1.2em;
+        }
+
+        .days {
+            display: block;
+            margin-top: 2em;
+            color: $main-text-color;
+        }
+    }
+
+    .pdf-table {
+        tbody tr {
+            border-bottom: 1px solid $brighter-main-text-color;
+
+            td {
+                padding: 1.06em .6em;
+            }
+        }
+    }
+}
+
+.pdf-signboard-table {
+    margin-bottom: 2.5em;
+    margin-top: 2em;
+
+    .pdf-table {
+        tr {
+            td {
+                &:nth-of-type(1) {
+                    padding: 0 .6em .3em 0;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                }
+
+                &:nth-of-type(2) {
+                    padding: 0 0 .3em .6em;
+                }
+            }
+        }
+    }
+}

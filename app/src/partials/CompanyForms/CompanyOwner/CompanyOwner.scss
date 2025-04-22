@@ -1,0 +1,27 @@
+.company-forms--owner {
+    .form {
+        &__section-first {
+            animation: fade-in .15s ease-in;
+            margin-bottom: .3rem;
+        }
+
+        .checkbox-radio {
+            margin-bottom: 1.9rem;
+        }
+
+        .input-container {
+            margin: 0 0 2.7rem;
+            padding-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 1.8rem 1rem;
+            border-bottom: 1px solid $border-color;
+            align-items: flex-end;
+
+            @include is-tablet {
+                gap: 1.8rem 2.71rem;
+            }
+        }
+    }
+}

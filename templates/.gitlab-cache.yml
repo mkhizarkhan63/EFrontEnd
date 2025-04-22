@@ -1,0 +1,4 @@
+include:
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Quality/js/.gitlab-ci-cache.yml'    

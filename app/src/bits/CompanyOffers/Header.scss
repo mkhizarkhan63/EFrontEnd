@@ -1,0 +1,131 @@
+.table--company {
+    .table__header {
+        display: flex;
+        flex-direction: column;
+        width: 12rem;
+        height: calc(50.33rem - 3.93rem);
+        text-align: right;
+        font-size: .86rem;
+        font-weight: 500;
+        background-color: $dark-bg-color;
+        transition: height .4s ease;
+        margin-top: 2rem;
+        border: 1px solid $border-color;
+        border-radius: 6px 0 0 6px;
+
+        .headers {
+            overflow: hidden;
+        }
+
+        .table__row {
+            display: grid;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 1.57rem 1.35rem;
+
+            &-toggle {
+                display: flex;
+                align-items: center;
+                align-self: flex-start;
+                font-weight: 600;
+                padding: .5rem 0 0;
+
+                .toggle {
+                    width: 3rem;
+                    height: 1.71rem;
+                    margin: 0 .5rem;
+                    flex-shrink: 0;
+
+                    .checkbox-toggle:after {
+                        height: 1.2rem;
+                        width: 1.2rem;
+                        bottom: 50%;
+                        transform: translateY(50%);
+                    }
+
+                    input:checked ~ .checkbox-toggle:after {
+                        transform: translate(1.2rem, 50%);
+                    }
+                }
+            }
+
+            &--price {
+                grid-template-rows: 3.2rem repeat(auto-fill, 1.9rem);
+                grid-gap: .5rem;
+                height: 15.6rem;
+            }
+
+            &--top {
+                grid-template-rows: 5.5rem repeat(auto-fill, 1.9rem);
+                grid-gap: .7rem;
+                height: 13.6rem;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            &--project {
+                grid-template-rows: 2rem 2rem;
+                grid-gap: .9rem;
+                height: 7.8rem;
+            }
+
+            &--about {
+                grid-template-rows: 2rem 2rem 2rem 3rem;
+                grid-gap: .5rem;
+                height: 10.2rem;
+            }
+
+            &--select {
+                height: 12.8rem;
+            }
+
+            &--badges {
+                grid-template-rows: auto;
+                grid-gap: .5rem;
+                height: 12.8rem;
+            }
+        }
+
+        .arrow {
+            width: 7px;
+            height: auto;
+            margin-right: 1rem;
+
+            &--top {
+                position: relative;
+                top: -.1rem;
+            }
+        }
+
+        .only-on-opened {
+            display: block;
+        }
+
+        .only-on-closed {
+            display: none;
+        }
+    }
+
+    &[data-type="consultant"] {
+        .table__header {
+            height: 33.2rem;
+
+            .table__row--about {
+                padding: 2rem 1.35rem 0;
+                grid-gap: .7rem;
+                margin-top: 0;
+                height: 10.2rem;
+                border-bottom: none;
+            }
+
+            .table__row--top {
+                height: 16rem;
+                border-bottom: 1px solid #E3E3E3;
+            }
+
+            .table__row--select {
+                height: 7rem;
+            }
+        }
+    }
+}

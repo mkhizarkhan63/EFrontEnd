@@ -1,0 +1,79 @@
+.side-modal[data-variant="view-activity"] {
+    width: 37.14rem;
+
+    .side-modal {
+        &__content {
+            flex: 1;
+            padding: .5rem 2.2rem 0 2.3rem;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+    }
+
+    .employee-box {
+        @include block;
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.8rem;
+
+        &__data {
+            margin-left: 1rem;
+        }
+
+        &__img {
+            width: 4.43rem;
+            height: 4.43rem;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+
+            &[src=""],
+            &:not([src]) {
+                @include empty-img("/assets/graphics/blue_avatar.svg");
+            }
+        }
+
+        &__name {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+            margin-bottom: .5rem;
+        }
+
+        &__role {
+            font-size: 1.29rem;
+            font-weight: 600;
+        }
+    }
+
+    .activities-length {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $navy-blue-text;
+        margin: 2.6rem 0 .6rem;
+        @include left-line(5px, 2.5rem, 2.3rem, $navy-blue-text);
+    }
+
+    .activities-list {
+        overflow-y: auto;
+        flex: 1;
+
+        &__item {
+            font-size: .93rem;
+            border-bottom: 1px solid #F2F2F2;
+            padding: 1.7rem 1.2rem 1.7rem 0;
+
+            &-desc {
+                font-weight: 600;
+                line-height: 1.3rem;
+                margin-bottom: .5rem;
+            }
+
+            &-date {
+                color: $brighter-main-text-color;
+            }
+        }
+    }
+}

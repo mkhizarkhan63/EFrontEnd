@@ -1,0 +1,5 @@
+include:
+  ## import docker build and publish
+  - project: 'ebinaa/infrastructure/ci-steps'
+    ref: master
+    file: '/CI/Build-Docker/.gitlab-ci-build-publish-docker.yml'    

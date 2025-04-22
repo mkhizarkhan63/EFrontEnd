@@ -1,0 +1,38 @@
+.projectFeatures {
+    padding-top: 1.5em;
+
+    &_content {
+        padding-top: 20px;
+    }
+
+    &_body_flex {
+
+        display: flex;
+        justify-content: space-between;
+        column-gap: 16px;
+
+        .input-text {
+            flex-grow: 1;
+        }
+
+        .btn {
+            margin-top: 2.6em;
+            height: 20px;
+
+            @include is-tablet {
+                margin-top: 3em;
+            }
+        }
+    }
+
+    &_chip_flex {
+        display: flex;
+        flex-flow: wrap;
+        column-gap: 7px;
+        padding-top: 13px;
+
+        .selectedChips-single {
+            margin-top: 2%;
+        }
+    }
+}

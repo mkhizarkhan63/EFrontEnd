@@ -1,0 +1,48 @@
+.details-list {
+    &__header {
+        font-size: 1.14rem;
+        margin-bottom: 1.4rem;
+
+        .optional-text {
+            color: $brighter-main-text-color;
+            margin-left: .3rem;
+        }
+    }
+
+    &__items {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-size: 1rem;
+            line-height: 1.36rem;
+            font-weight: 500;
+            color: $dark-grey-text;
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: .8rem;
+            word-break: break-word;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+
+            &:before {
+                position: absolute;
+                left: 0;
+                content: "";
+                width: 1.29rem;
+                height: 1.29rem;
+                background-image: url("/assets/graphics/grey_tick.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+            }
+        }
+    }
+
+    &__item-blue {
+        color: $navy-blue-text;
+    }
+}

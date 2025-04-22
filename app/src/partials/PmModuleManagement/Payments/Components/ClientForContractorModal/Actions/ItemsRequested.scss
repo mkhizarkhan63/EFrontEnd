@@ -1,0 +1,18 @@
+.items-requested {
+    &__header {
+        font-size: 1.14rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        padding: 1.7rem 2.2rem 0 2rem;
+
+        &--purchased {
+            padding: 1.8rem 2.2rem 0 2rem;
+        }
+    }
+
+    &__text {
+        font-size: .93rem;
+        color: $brighter-main-text-color;
+        padding: 0 2.2rem 1.8rem 2rem;
+    }
+}

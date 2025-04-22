@@ -1,0 +1,346 @@
+.contractor-bid-contract {
+    .right-panel-summary {
+        height: calc(100vh - $header-height - 9.4rem);
+        padding: 2.07rem 1.5rem 2.07rem 2.39rem;
+        margin-right: .57rem;
+        display: flex;
+        flex-direction: column;
+        animation: fade-in .2s ease-in;
+        overflow: hidden auto;
+
+        &__back-btn {
+            margin-bottom: 2.1rem;
+
+            .btn--main {
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+                min-height: initial;
+                padding: 0;
+                color: $dark-grey-text;
+                font-size: 1.29rem;
+                font-weight: 600;
+
+                svg, image {
+                    width: 1.36rem;
+                    height: .93rem;
+                }
+
+                .icon svg image {
+                    filter: var(--icon-gray);
+                }
+            }
+
+            &:hover .icon {
+                transform: translateX(-.3rem);
+            }
+        }
+
+        &__content {
+            flex-grow: 1;
+            overflow: hidden auto;
+            padding-right: .5rem;
+            width: calc(100% + .79rem);
+        }
+
+        &__progress {
+            &-step {
+                display: flex;
+                position: relative;
+                padding-bottom: 2rem;
+
+                &[data-is-active="true"] {
+                    .right-panel-summary__progress-num {
+                        background-color: $green-text;
+                    }
+
+                    &:after {
+                        background-color: $green-text;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: .3rem;
+                    top: 0;
+                    bottom: 0;
+                    left: calc(2.29rem / 2 - .15rem);
+                    background-color: #ECECEF;
+                }
+
+                &:nth-child(3) {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+            &-num {
+                width: 2.29rem;
+                height: 2.29rem;
+                margin-right: 1rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                background-color: #ECECEF;
+                color: #FFF;
+                z-index: 2;
+            }
+
+            &-title {
+                font-weight: 600;
+                margin-top: .65rem;
+            }
+
+            &-desc {
+                margin: .64rem 0 1rem;
+                line-height: 1.3rem;
+                color: $brighter-main-text-color;
+
+                &:empty {
+                    display: none;
+                }
+            }
+
+            &-labels {
+                margin-bottom: 1.1rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+
+                &:empty {
+                    display: none;
+                }
+            }
+
+            &-label {
+                font-size: .93rem;
+                padding: 0 .57rem;
+                margin: 0 .86rem .86rem 0;
+                border-radius: .35rem;
+                color: rgba($brighter-main-text-color, .7);
+                display: flex;
+                align-items: center;
+                gap: .25rem;
+                min-height: 2.07rem;
+                border: 1px solid rgba($brighter-main-text-color, .4);
+
+                &[data-is-active="true"] {
+                    color: $green-text;
+                    font-weight: 600;
+                    border: 1px solid $green-text;
+
+                    &:after {
+                        content: "";
+                        background-image: url("/assets/graphics/white_tick.svg");
+                        width: 2.07rem;
+                        height: 1.8rem;
+                        background-size: 2.07rem 1.8rem;
+                        background-repeat: no-repeat;
+                        filter: brightness(0) saturate(100%) invert(74%) sepia(68%)
+                            saturate(2824%) hue-rotate(87deg) brightness(92%) contrast(98%);
+                    }
+                }
+            }
+        }
+
+        &__sign-btn {
+            margin-top: 1rem;
+
+            .btn {
+                margin: 0 0 0 auto;
+            }
+        }
+
+        .right-panel {
+            &__header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                svg, image {
+                    width: 4.29rem;
+                    height: 4.29rem;
+                }
+            }
+
+            &__title {
+                font-size: 1.14rem;
+                font-weight: 600;
+                margin: 1rem 0 .8rem;
+            }
+
+            &__sub-title {
+                color: $brighter-main-text-color;
+                text-align: center;
+                line-height: 1.5rem;
+                margin-bottom: 1.8rem;
+            }
+
+            &__invoice {
+                padding: 2.5rem 0 2rem;
+                border-top: 1px dashed #C3C3C3;
+                border-bottom: 1px dashed #C3C3C3;
+                margin-bottom: 2.15rem;
+
+                &-title {
+                    font-size: 1.14rem;
+                    font-weight: 600;
+                    margin-bottom: 1.7rem;
+                }
+
+                &-text {
+                    color: $brighter-main-text-color;
+                    margin-bottom: .86rem;
+                    display: flex;
+                    gap: 0 .3rem;
+                    flex-wrap: wrap;
+                    word-break: break-word;
+                }
+
+                &-desc {
+                    flex-shrink: 0;
+                }
+
+                &-id {
+                    color: $dark-grey-text;
+                }
+
+                &-hash {
+                    margin-right: .3rem;
+                    color: $brighter-main-text-color;
+                }
+
+                &-btns {
+                    margin-top: 1.4rem;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 0 1rem;
+
+                    .btn {
+                        box-shadow: 0 4px 12px #00000012;
+                        font-size: 1.07rem;
+                    }
+                }
+
+                &-btn-pay {
+                    .btn {
+                        padding-left: 1.5rem;
+                    }
+                }
+            }
+
+            &__detail {
+                padding: 2rem 0 1.6rem;
+                border-top: 1px dashed #C3C3C3;
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                &-title {
+                    font-size: 1.14rem;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                }
+
+                &-sub-title {
+                    margin-bottom: 1.4rem;
+                    color: $navy-blue-text;
+                    font-weight: 600;
+                }
+
+                &--sub {
+                    padding-top: 2.4rem;
+
+                    .right-panel__detail-title {
+                        margin-bottom: 1.3rem;
+                    }
+                }
+            }
+
+            &__contact {
+                display: flex;
+                gap: .3rem;
+                margin-bottom: .55rem;
+
+                &-title {
+                    color: $brighter-main-text-color;
+                    min-width: 3.3rem;
+                }
+
+                &-text {
+                    color: $main-text-color;
+                    text-decoration: none;
+                    font-weight: 600;
+                    word-break: break-word;
+                    transition: color .12s ease-in;
+
+                    &--link {
+                        &:hover {
+                            color: $green-text;
+                        }
+                    }
+                }
+            }
+
+            &__signature {
+                color: $dark-grey-text;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                padding-top: 1.5rem;
+                position: relative;
+                border-top: 1px dashed $border-color;
+
+                &-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0 1rem;
+
+                    &-text {
+                        color: $dark-grey-text;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        line-height: 1.36rem;
+                        text-align: left;
+                    }
+
+                    .btn {
+                        color: $dark-grey-text;
+
+                        .text:after {
+                            background-color: $dark-grey-text;
+                        }
+                    }
+                }
+
+                &-canvas div {
+                    width: 100%;
+                    max-width: 100%;
+                    height: 6.4rem;
+                    max-height: 6.4rem;
+                    border: 1px dotted $input-border-color;
+                    margin-top: 1rem;
+                    border-radius: .43rem;
+                    overflow: hidden;
+                }
+
+                &-desc {
+                    color: $brighter-main-text-color;
+                    font-size: .93rem;
+                    font-weight: 400;
+                    line-height: 1.2rem;
+                    margin: 1.2rem 0 1rem;
+
+                    .btn {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

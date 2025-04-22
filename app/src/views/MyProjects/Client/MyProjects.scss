@@ -1,0 +1,57 @@
+.my-projects {
+    width: 100%;
+    height: auto;
+    flex: 1;
+    padding: 3.9rem 0 0;
+
+    @include is-tablet {
+        margin-top: $client-nav-height;
+    }
+
+    > .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 89.2rem;
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    .grid {
+        width: 89.2rem;
+        max-width: 85%;
+    }
+
+    .infinite-scroll-component {
+        padding-bottom: 6rem;
+        overflow: visible !important;
+    }
+
+    .loading-container {
+        width: auto;
+        height: auto;
+        position: relative;
+        margin-top: 8rem;
+
+        &__loader {
+            top: 0;
+        }
+    }
+
+    ~ .paging {
+        width: 89.2rem;
+        max-width: 85%;
+        padding-top: 2.5rem;
+        margin: auto auto 0;
+    }
+
+    ~ .footer {
+        width: 89.2rem;
+        max-width: 85%;
+        margin: 2.5rem auto 0;
+
+        @include is-tablet {
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,305 @@
+.consultant-project {
+    .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+
+        .page-with-sidebar {
+            min-width: 650px;
+            display: grid;
+
+            @include is-tablet {
+                min-width: initial;
+            }
+        }
+    }
+
+    .page-with-sidebar {
+        grid-template-columns: 19.79rem minmax(0, 1fr) 28.57rem;
+        grid-template-rows: 8.86rem auto auto;
+
+        @include is-tablet {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: 24.79rem minmax(0, 1fr) 28.57rem;
+        }
+    }
+
+    &[data-type="submitDrawings"] {
+        .page-with-sidebar {
+            min-width: 700px;
+            grid-template-columns: minmax(18rem, 20%) minmax(0, 1fr) minmax(18rem, 25%);
+
+            @include is-tablet {
+                min-width: initial;
+            }
+
+            @include is-pc {
+                grid-template-columns: 24.79rem minmax(0, 1fr) 28.57rem;
+            }
+        }
+
+        .container {
+            grid-column: 2 / 3;
+        }
+
+        .footer {
+            grid-area: 3 / 2 / auto / 3;
+        }
+
+        .project-documents {
+            max-width: 24.79rem;
+            width: 20%;
+            min-width: 18rem;
+
+            @include is-pc {
+                width: 24.79rem;
+                min-width: initial;
+                max-width: initial;
+            }
+        }
+
+        .submit-drawings-right {
+            max-width: 28.57rem;
+            width: 25%;
+            min-width: 18rem;
+
+            @include is-pc {
+                width: 28.57rem;
+                min-width: initial;
+                max-width: initial;
+            }
+        }
+    }
+
+    .subheader {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto;
+        grid-gap: 0 5rem;
+        padding: .5rem 2.2rem 1rem 1.2rem;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        position: static;
+
+        @include is-tablet {
+            position: fixed;
+        }
+
+        &__left {
+            width: auto;
+            height: auto;
+            padding-left: 2rem;
+        }
+
+        &__right {
+            width: auto;
+            height: auto;
+
+            .property {
+                /*!rtl:ignore*/
+                text-align: right;
+                min-width: 5.1rem;
+                margin: 0 .5rem 0 2.3rem;
+
+                &__text {
+                    font-weight: 600;
+                    font-size: .93rem;
+                    line-height: 1.3rem;
+                    word-break: break-word;
+
+                    &-area {
+                        color: $green-text;
+                        font-size: 1.14rem;
+                        font-weight: 600;
+                        word-break: break-word;
+                    }
+
+                    &-governorate {
+                        font-size: 1.14rem;
+                        font-weight: 600;
+                        word-break: break-word;
+                    }
+                }
+
+                &__title {
+                    font-size: .93rem;
+                    color: $brighter-main-text-color;
+                    margin-top: .3rem;
+                }
+            }
+        }
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: 89.29rem;
+        width: 90%;
+        grid-column: 2 / -1;
+
+        @include is-tablet {
+            margin: 8.86rem auto 0;
+        }
+    }
+
+    .consultant-project-box {
+        @include block;
+        width: 90%;
+        max-width: 60.43rem;
+        margin: 4.5rem auto 0;
+
+        @include is-tablet {
+            display: flex;
+        }
+
+        &__project {
+            max-width: 26.29rem;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 2rem 3rem;
+
+            &-container {
+                flex: 1;
+                min-width: 20.7rem;
+            }
+
+            &-title {
+                width: 100%;
+                font-size: 1.29rem;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            &-text {
+                width: 100%;
+                font-size: 1.07rem;
+                font-weight: 600;
+                text-align: center;
+                line-height: 1.79rem;
+                padding: 1.79rem 0;
+                border-bottom: 1px dashed #C3C3C3;
+            }
+
+            &-scope-btn {
+                width: 100%;
+                padding: 1.79rem 0;
+                border-bottom: 1px dashed #C3C3C3;
+
+                .btn {
+                    margin: 0 auto;
+                    font-weight: 400;
+                }
+            }
+
+            &-buttons {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 2.43rem;
+
+                .btn[data-color="white"] {
+                    font-size: 1.07rem;
+                    padding: .5rem 1.5rem;
+                    margin: 0 1rem;
+                }
+
+                .btn[data-color="green"] {
+                    padding: .5rem 1.05rem;
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+
+    .detail-list {
+        width: 100%;
+        padding: 2.43rem 0;
+        border-bottom: 1px dashed #C3C3C3;
+
+        &__title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            margin-bottom: 2.25rem;
+        }
+    }
+
+    .project-documents {
+        width: 19.79rem;
+        left: 0;
+        grid-row: 2 / -1;
+        grid-column: 1 / 2;
+
+        @include is-tablet {
+            height: calc(100vh - 8.86rem - $header-height);
+            position: fixed;
+            margin-top: 8.86rem;
+            width: 24.79rem;
+        }
+    }
+
+    .design-icons {
+        width: 100%;
+        padding: 1.79rem 0;
+        border-bottom: 1px dashed #C3C3C3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem 1.2rem;
+    }
+
+    .design-icon {
+        flex-shrink: 0;
+
+        &--built-up {
+            img {
+                width: 1.78rem;
+                height: 1.78rem;
+            }
+        }
+
+        &--bedroom {
+            img {
+                width: 1.78rem;
+                height: 1.57rem;
+            }
+        }
+
+        &--toilets {
+            img {
+                width: 1.14rem;
+                height: 2rem;
+            }
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    .submit-drawings-right {
+        width: 28.57rem;
+        right: 0;
+        grid-row: 2/-1;
+        grid-column: 3/-1;
+        background-color: #FFF;
+        border-left: 1px solid #E8E8E8;
+
+        @include is-tablet {
+            height: calc(100vh - 8.86rem - $header-height);
+            position: fixed;
+            margin-top: 8.86rem;
+        }
+    }
+
+    .footer {
+        grid-area: 3 / 2 / auto / -1;
+        align-self: flex-end;
+        max-width: 89.29rem;
+        width: 90%;
+    }
+}

@@ -1,0 +1,151 @@
+.stars-container {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin: .64rem .55rem 0 0;
+
+    @include is-tablet {
+        flex-flow: row nowrap;
+    }
+
+    .stars {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        transition: all .5s;
+
+        .stars__icons {
+            margin: 0 .43rem 0 0;
+
+            svg, image {
+                width: 1.1rem;
+                height: 1.1rem;
+                margin-right: .74rem;
+            }
+        }
+
+        &__icons {
+            margin-top: .6rem;
+            display: flex;
+            position: relative;
+
+            &:hover {
+                ~ .stars__dropdown {
+                    display: flex;
+                }
+            }
+
+            svg, image {
+                width: .87rem;
+                height: .87rem;
+                margin-right: .55rem;
+            }
+
+            &-container {
+                display: flex;
+            }
+        }
+
+        &__value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $brighter-main-text-color;
+        }
+
+        &__dropdown {
+            @include block;
+            display: none;
+            margin: 1rem;
+            width: 14rem;
+            padding: 1rem;
+            flex-direction: column;
+            justify-content: space-around;
+            box-shadow: 0 1px 11px #00000021;
+            position: absolute;
+            z-index: 1;
+            top: -2.7rem;
+            left: 74%;
+            animation: fade-in .15s ease-in;
+            font-size: .86rem;
+
+            &-item {
+                margin-top: 1.21rem;
+                font-size: .86rem;
+
+                &:first-of-type {
+                    margin: 0;
+                }
+            }
+
+            .stars__icons {
+                margin: 0;
+
+                &-container {
+                    margin: .3rem 0 .8rem;
+                }
+
+                svg, image {
+                    width: .8rem;
+                    height: .8rem;
+                    margin-right: .55rem;
+                }
+            }
+
+            &:after {
+                content: "";
+                width: 1rem;
+                height: 1rem;
+                background-color: #FFF;
+                border: 1px solid $border-color;
+                border-width: 0 0 1px 1px;
+                position: absolute;
+                left: -.5rem;
+                top: 1.8rem;
+                transform: rotate(45deg);
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.stars {
+    .stars__icons {
+        > div,
+        > .stars__icons-container > div {
+            filter: saturate(0);
+        }
+
+        @mixin star($value) {
+            @for $value from 1 through $value {
+                > div,
+                > .stars__icons-container > div {
+                    &:nth-child(#{$value}) {
+                        filter: saturate(1);
+                    }
+                }
+            }
+        }
+
+        &[data-value-stars^="1"] {
+            @include star(1);
+        }
+
+        &[data-value-stars^="2"] {
+            @include star(2);
+        }
+
+        &[data-value-stars^="3"] {
+            @include star(3);
+        }
+
+        &[data-value-stars^="4"] {
+            @include star(4);
+        }
+
+        &[data-value-stars^="5"] {
+            @include star(5);
+        }
+    }
+}

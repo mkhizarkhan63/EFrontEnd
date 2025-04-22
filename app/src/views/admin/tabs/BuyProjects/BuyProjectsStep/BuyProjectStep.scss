@@ -1,0 +1,105 @@
+.buyproject-side-bar {
+    display: flex;
+    flex-direction: column;
+    /* Arrange items vertically */
+    justify-content: flex-start;
+    /* Align items at the start */
+    border-bottom: 1px solid #ECECEF;
+    // margin: 0 0 1.7rem;
+    width: 322px;
+    // align-items: stretch;
+    padding-top: 11em;
+
+    .buttons-menu {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        &__item {
+            position: relative;
+            width: 20em;
+            margin-right: 0;
+            padding-right: 10px;
+            margin-top: 2px;
+
+            @include is-tablet {
+                padding-right: 3rem;
+            }
+
+            &:after {
+                bottom: 0;
+                transition: .12s ease-in-out;
+                background-color: $white-bg;
+                width: 0;
+                height: 0;
+            }
+
+            &-num {
+                width: 1.71rem;
+                height: 1.71rem;
+                border-radius: 50%;
+                font-size: .93rem;
+                font-weight: 500;
+                background-color: $white-bg;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $border-color;
+                padding-top: 2px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translateY(50%);
+                transition: .12s ease-in-out;
+
+                @include is-tablet {
+                    padding-top: 0;
+                }
+            }
+
+            .btn {
+                padding: .8rem 0 1.3rem 2.5rem;
+                margin-right: 0;
+                font-size: 1.14rem;
+                min-height: initial;
+                color: $dark-grey-text;
+                cursor: pointer;
+
+            }
+
+
+
+            &[data-is-active="true"] {
+                .buttons-menu__item-num {
+                    background-color: $navy-blue-text;
+                    color:  $white-text-color;
+                }
+
+                .btn--main {
+                    color: #000;
+                }
+            }
+
+            &[data-is-chosen="true"] {
+                .buttons-menu__item-num {
+                    background-color: $navy-blue-text;
+                    color: $white-text-color;
+                    // @include empty-img("/assets/graphics/green_tick.svg");
+                }
+
+                .btn--main {
+                    color: #000;
+                }
+            }
+
+            &[data-is-completed="true"] {
+                .buttons-menu__item-num {
+                    @include empty-img("/assets/graphics/green_tick.svg");
+                }
+
+
+            }
+        }
+    }
+
+}

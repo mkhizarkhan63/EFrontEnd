@@ -1,0 +1,52 @@
+.log-list {
+    @include block;
+    margin: 2.64rem 0 1rem;
+    padding: 1.86rem 2.07rem 0;
+
+    &__title {
+        margin: 0 0 2.62rem;
+        font-size: 1.07rem;
+        font-weight: 600;
+    }
+
+    .log-entry {
+        border-bottom: 1px solid rgb(112, 112, 112, .1);
+        margin-bottom: 2.05rem;
+
+        &__text {
+            margin: 0 0 1.95rem;
+            font-size: 1.07rem;
+            font-weight: 500;
+            word-break: break-word;
+
+            .account-type {
+                margin-right: .3rem;
+
+                &[data-type="client"] {
+                    color: $brighter-main-text-color;
+                }
+
+                &[data-type="consultant"] {
+                    color: $green-text;
+                }
+
+                &[data-type="contractor"],
+                &[data-type="admin"],
+                &[data-type="superAdmin"] {
+                    color: $navy-blue-text;
+                }
+            }
+        }
+
+        &__date {
+            margin: 0 0 1.54rem;
+            font-size: .86rem;
+            color: $brighter-main-text-color;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+    }
+}

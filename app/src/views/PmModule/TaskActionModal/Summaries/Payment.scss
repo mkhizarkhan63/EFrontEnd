@@ -1,0 +1,90 @@
+.payment-summary {
+    width: 100%;
+    border-top: 1px solid #E8E8E8;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 18px 2.21rem 18px 2rem;
+    background-color: #FAFBFF;
+
+    @include is-tablet {
+        padding: 1.7rem 2.21rem 2.3rem 2rem;
+    }
+
+    &[data-status="rejected"] {
+        background-color: $red-text-bg;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: flex-start;
+        margin-bottom: 1.3rem;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        margin: .35rem 1rem 0 0;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 53% 42%;
+        justify-content: space-between;
+        margin-bottom: 1.35rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &-title {
+            font-size: 13px;
+            font-weight: 500;
+            word-break: break-word;
+            padding-right: 1rem;
+            border-right: 1px solid rgba(#707070, .3);
+
+            @include is-tablet {
+                font-size: 1.14rem;
+            }
+        }
+
+        &-value {
+            font-size: 13px;
+            font-weight: 600;
+            color: $navy-blue-text;
+            word-break: break-word;
+
+            @include is-tablet {
+                font-size: 1.14rem;
+            }
+        }
+
+        &-text {
+            font-size: 10px;
+            word-break: break-word;
+            padding-right: 1rem;
+            border-right: 1px solid rgba(#707070, .3);
+
+            @include is-tablet {
+                font-size: .79rem;
+            }
+        }
+
+        .btn {
+            width: fit-content;
+            font-weight: 500;
+            word-break: break-word;
+            text-align: initial;
+        }
+    }
+
+    &__desc {
+        font-size: 11px;
+        color: $brighter-main-text-color;
+        word-break: break-word;
+
+        @include is-tablet {
+            font-size: .78rem;
+        }
+    }
+}

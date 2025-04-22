@@ -1,0 +1,373 @@
+.project-details {
+    .subheader-with-wizard {
+        .subheader {
+            min-height: 7.86rem;
+            align-items: flex-end;
+
+            &__left,
+            &__right {
+                display: none;
+            }
+
+            &__bottom {
+                padding: 0 0 0 2.5rem;
+                max-width: 104.57rem;
+                margin: 0 auto;
+            }
+        }
+
+        .wizard {
+            padding-top: 2.3rem;
+            margin: 0 auto;
+            max-width: 116rem;
+            min-height: calc(7.86rem - .36rem);
+
+            &__step {
+                font-size: 1.14rem;
+                word-break: break-word;
+                padding-bottom: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                flex: 1;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 50%;
+                    height: .36rem;
+                    bottom: -.36rem;
+                    background-color: $green-text;
+                    left: 0;
+                }
+
+                &:not(:first-of-type) {
+                    &:after {
+                        width: 100%;
+                        left: -50%;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    &:after {
+                        width: 130%;
+                        left: -75%;
+                    }
+                }
+
+                &:nth-of-type(4) {
+                    &:after {
+                        width: 100%;
+                        left: -100%;
+                        display: initial;
+                    }
+
+                    &[data-status="done"]:after {
+                        opacity: 1;
+                    }
+                }
+
+                &[data-status="inProgress"]:after {
+                    opacity: 1;
+                }
+
+                &[data-status="rejected"]:after {
+                    opacity: 1;
+                    background-color: $red-text;
+                }
+
+                &--choose-partners {
+                    justify-content: initial;
+                    align-items: center;
+                    flex-flow: row wrap;
+
+                    .wizard__step-text {
+                        margin-right: 8%;
+                    }
+
+                    .choose-partners {
+                        display: flex;
+                        position: relative;
+                        top: -.2rem;
+
+                        &__img {
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            border-radius: 50%;
+                            box-shadow: 0 2px 6px #0000002F;
+                            object-fit: cover;
+                            position: relative;
+                            display: block;
+                            overflow: hidden;
+                            flex-shrink: 0;
+                            margin-right: 7px;
+
+                            @include is-tablet {
+                                margin-right: 1.5rem;
+                            }
+
+                            &[src=""],
+                            &:not([src]) {
+                                background-color: #FAFBFF;
+                                border: 1px dashed #D6D6D6;
+                                font-size: 0;
+
+                                &:after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    background-color: #FAFBFF;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+
+                            &[data-is-selected="true"] {
+                                border: none;
+
+                                &[src=""],
+                                &:not([src]) {
+                                    @include empty-img("/assets/graphics/example_logo.jpg");
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    font-size: 1.14rem;
+                    font-weight: 500;
+                }
+            }
+
+            .status {
+                width: 2.07rem;
+                height: 2.07rem;
+                border: .43rem solid $green-text;
+                background-color: #FFF;
+                position: absolute;
+                left: 0;
+                bottom: calc((-.36rem / 2) - (2.07rem / 2));
+
+                span {
+                    font-size: 0;
+                    color: transparent;
+                }
+
+                &[data-status="done"] {
+                    background-color: $green-text;
+                    border: 0;
+                }
+
+                &[data-status="wait"] {
+                    color: $main-text-color;
+                    background-color: #ECECEF;
+                    border: 0;
+                }
+
+                &[data-status="rejected"] {
+                    border: .43rem solid $red-text;
+                }
+            }
+        }
+    }
+
+    .wizard-page-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    &__container {
+        max-width: 104.57rem;
+        width: 90%;
+        margin: 5.5rem auto 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ECECEF;
+        margin: 0 0 1.7rem;
+        width: 100%;
+        align-items: stretch;
+
+        .buttons-menu {
+            margin: 0;
+
+            &__item {
+                position: relative;
+                margin-right: 0;
+                padding-right: 10px;
+
+                @include is-tablet {
+                    padding-right: 3rem;
+                }
+
+                &:after {
+                    bottom: 0;
+                    transition: .12s ease-in-out;
+                }
+
+                &-num {
+                    width: 1.71rem;
+                    height: 1.71rem;
+                    border-radius: 50%;
+                    font-size: .93rem;
+                    font-weight: 500;
+                    background-color: #FFF;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #E3E3E3;
+                    padding-top: 2px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateY(50%);
+                    transition: .12s ease-in-out;
+
+                    @include is-tablet {
+                        padding-top: 0;
+                    }
+                }
+
+                .btn {
+                    padding: .8rem 0 1.3rem 2.5rem;
+                    margin-right: 0;
+                    font-size: 1.14rem;
+                    min-height: initial;
+                }
+
+                &[data-is-active="true"] {
+                    .buttons-menu__item-num {
+                        background-color: $navy-blue-text;
+                        color: #FFF;
+                    }
+                }
+
+                &[data-is-chosen="true"] {
+                    .buttons-menu__item-num {
+                        @include empty-img("/assets/graphics/green_tick.svg");
+                    }
+                }
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            color: $main-text-color;
+            flex-shrink: 0;
+            font-size: 1.07rem;
+            min-height: 3.29rem;
+            width: fit-content;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .25s ease-in-out;
+
+            @include is-tablet {
+                min-width: max-content;
+            }
+
+            &-img {
+                margin-right: .7rem;
+                width: 1.21rem;
+                height: 1.21rem;
+            }
+
+            &:hover {
+                color: $navy-blue-text;
+            }
+        }
+    }
+
+    .project-step--bids {
+        margin-top: -2rem;
+    }
+
+    .table--company {
+        margin: 3rem auto 4rem;
+
+        .table__body {
+            .company {
+                width: 15.5rem;
+
+                &:first-of-type {
+                    .company__offer {
+                        right: -7.08rem;
+                    }
+                }
+            }
+
+            .invited {
+                width: 15.5rem;
+            }
+        }
+    }
+
+    .add-consultant {
+        &__title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            margin-right: .3rem;
+        }
+
+        &__optional {
+            font-size: 1.07rem;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .contractors-bids__btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &-info {
+            font-size: 1rem;
+            color: $brighter-main-text-color;
+        }
+
+        .btn {
+            margin: 0 0 0 2.5rem;
+        }
+    }
+
+    &[data-is-bids="true"] {
+        &[data-step="chooseContractor"],
+        &[data-step="openBids"] {
+            .view-content {
+                overflow-x: auto;
+
+                @include is-tablet {
+                    overflow-x: hidden;
+                }
+
+                &__scroll {
+                    min-width: 800px;
+
+                    @include is-tablet {
+                        min-width: initial;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            padding-bottom: 8rem;
+        }
+    }
+
+    .footer {
+        max-width: 104.57rem;
+        width: 90%;
+    }
+}

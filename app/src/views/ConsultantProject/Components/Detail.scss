@@ -1,0 +1,23 @@
+.consultant-project {
+    .detail {
+        display: grid;
+        grid-template-columns: 49% 49%;
+        justify-content: space-between;
+        margin-bottom: 1.4rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &__desc {
+            color: $brighter-main-text-color;
+            font-weight: 500;
+        }
+
+        &__value {
+            text-align: right;
+            font-weight: 500;
+            word-break: break-word;
+        }
+    }
+}

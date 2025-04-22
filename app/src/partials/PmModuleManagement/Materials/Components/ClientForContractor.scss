@@ -1,0 +1,28 @@
+.pm-materials {
+    .client-for-contractor {
+        .materials-table .table {
+            .status {
+                // box-shadow: 0 0 6px #00000029;
+                cursor: pointer;
+                transition: all .25s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 2px 4px #00000015;
+
+                    &[data-status="pending"],
+                    &[data-status="due"] {
+                        background-color: rgba($yellow-text, .15);
+                    }
+
+                    &[data-status="delay"] {
+                        background-color: rgba($red-text, .15);
+                    }
+
+                    &[data-status="completed"] {
+                        background-color: rgba($green-text, .15);
+                    }
+                }
+            }
+        }
+    }
+}

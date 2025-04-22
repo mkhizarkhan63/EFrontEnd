@@ -1,0 +1,156 @@
+.company-forms--documents {
+
+    form {
+        padding-bottom: 2rem !important;
+
+    }
+
+    .textarea {
+        &__header {
+            font-weight: 500;
+        }
+
+        &__input {
+            min-height: 12.9rem;
+        }
+    }
+
+    .form__textarea-name {
+        display: inline-block;
+    }
+
+    .input {
+        &-container {
+            margin-top: 2rem;
+
+            @include is-tablet {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, 48%);
+                grid-template-rows: 1fr;
+                grid-gap: 2.3rem 4%;
+            }
+
+            .uploader-item {
+                margin-bottom: 2rem;
+
+                @include is-tablet {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+
+    }
+
+    .uploader {
+        min-height: 5.43rem;
+        justify-content: center;
+
+        .dropzone {
+            flex-direction: row;
+            padding: 0 1.98rem;
+
+            &__img {
+                margin: 0 1.37rem 0 0;
+            }
+
+            &__desc {
+                color: $brighter-main-text-color;
+
+                @include is-tablet {
+                    font-size: .86rem;
+                }
+            }
+        }
+
+        &-item {
+            &-header {
+                font-size: 1rem;
+                color: $dark-grey-text;
+                margin: .5rem 0 1.2rem;
+
+                @include is-tablet {
+                    font-size: .93rem;
+                }
+            }
+
+            .file-list {
+                margin-bottom: 0;
+
+                &__item {
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+
+                    &-text {
+                        flex: 1;
+                    }
+
+                    &-name {
+                        max-width: initial;
+                    }
+                }
+            }
+        }
+    }
+
+    .certificates-header {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+        padding-bottom: 2rem;
+
+        .title {
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-464646);
+            text-align: left;
+            font: normal normal 600 14px/19px Axiforma;
+            letter-spacing: 0px;
+            color: #464646;
+            opacity: 1;
+        }
+    }
+
+    .certificates-section {
+
+        .title {
+            padding: 1rem 0 1rem 0;
+        }
+
+        padding: 1rem;
+        margin-top: 1rem;
+        border: 1px solid #DBDADA;
+        border-radius: 6px;
+
+        .CrNumber {
+            width: 48%;
+        }
+    }
+
+    .financial-legal-section {
+
+        padding-top: 2rem;
+
+    }
+
+    .marketing-section {
+        padding-top: 2rem;
+    }
+
+    .comment-section {
+        padding-top: 2rem;
+    }
+
+    .uploader-item {
+        padding-top: 1rem;
+    }
+
+    .documents-footer-content {
+        padding: 2rem 0 2rem 0;
+        text-align: left;
+        font: normal normal medium 13px/24px Axiforma;
+        letter-spacing: 0px;
+        color: #898989;
+        opacity: 1;
+    }
+}

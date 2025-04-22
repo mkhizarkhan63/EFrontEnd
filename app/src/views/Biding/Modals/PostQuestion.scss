@@ -1,0 +1,127 @@
+.side-modal[data-variant="post-question"] {
+    max-width: 37.14rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__header-number {
+            color: $brighter-main-text-color;
+            font-size: 1.07rem;
+            font-weight: 400;
+            margin-left: .3rem;
+        }
+    }
+
+    .post-question {
+        &__search {
+            position: absolute;
+            right: 2.3rem;
+            top: 2.2rem;
+            cursor: pointer;
+
+            svg, image {
+                width: 1.29rem;
+                height: 1.29rem;
+            }
+        }
+
+        &__content {
+            flex: 1;
+            padding: .43rem .79rem .43rem 2.3rem;
+            margin-right: .71rem;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: .79rem;
+            }
+
+            .post {
+                padding: 1.79rem 1.71rem 1.93rem;
+                margin-bottom: .93rem;
+                @include block;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &__date {
+                    color: $brighter-main-text-color;
+                    font-size: .86rem;
+                    margin-bottom: .86rem;
+                }
+
+                &__question {
+                    font-size: 1.07rem;
+                    font-weight: 600;
+                    line-height: 1.93rem;
+                    margin-bottom: .86rem;
+                    word-break: break-word;
+                }
+
+                &__answer {
+                    font-size: .86rem;
+                    line-height: 1.57rem;
+                    color: $brighter-main-text-color;
+                    margin-bottom: .79rem;
+                    word-break: break-word;
+
+                    &-date {
+                        font-size: .86rem;
+                        margin-bottom: 1.93rem;
+
+                        &-num {
+                            color: $brighter-main-text-color;
+                            margin-left: .3rem;
+                        }
+                    }
+
+                    &-waiting {
+                        font-size: .86rem;
+                        color: $green-text;
+                    }
+                }
+
+                &__btn {
+                    .btn {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        &__input {
+            padding: 0 2.3rem;
+            margin-top: 1.07rem;
+            position: relative;
+
+            .input-text {
+                &-header {
+                    display: none;
+                }
+
+                &-input {
+                    height: 4.8rem;
+                    padding: 2rem 5rem 2rem 2rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            .btn {
+                position: absolute;
+                right: 4.57rem;
+                top: 50%;
+                transform: translateY(-50%);
+
+                svg, image {
+                    width: 1.29rem;
+                    height: 1.29rem;
+                }
+            }
+        }
+    }
+}

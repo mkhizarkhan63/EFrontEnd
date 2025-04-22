@@ -1,0 +1,282 @@
+.page-with-sidebar[data-page="page-profile-settings"] {
+    .sidebar {
+        position: relative;
+        grid-area: 1/1;
+
+        @include is-tablet {
+            width: 23rem;
+            position: fixed;
+        }
+
+        &__header {
+            display: none;
+
+            @include is-tablet {
+                display: block;
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 4.57rem 0 3.07rem;
+            }
+        }
+
+        &__mobile-back {
+            @include is-tablet {
+                display: none;
+            }
+        }
+
+        &__tabs {
+            overflow: auto;
+            background-color: #FAFBFF;
+            width: 100%;
+            z-index: 11;
+
+            @include is-tablet {
+                background-color: transparent;
+                width: initial;
+                min-height: initial;
+                max-height: calc(100vh - $header-height - 9.64rem);
+            }
+        }
+
+        &__step {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 2.2rem 2rem 2.2rem 1.7rem;
+            margin: 0;
+            border: 1px solid transparent;
+            transition: color .15s ease-in;
+            position: relative;
+
+            @include is-tablet {
+                font-size: 1.07rem;
+                padding: 1.65rem 2rem 1.65rem 1.7rem;
+            }
+
+            .icon-box {
+                transform: none #{"/*rtl:scale(-1, 1)*/;"};
+                filter: brightness(1.8) grayscale(1);
+
+                svg, image {
+                    width: .56rem;
+                    height: .95rem;
+                }
+            }
+
+            &[data-is-active="true"] {
+                animation: tabChange .2s ease-in;
+                animation-fill-mode: forwards;
+                border-radius: 6px;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    width: 4px;
+                    border-radius: 6px 0 0 5px;
+                    background-color: $navy-blue-text;
+                    animation: fade-in .2s ease-in;
+                }
+
+                .icon-box {
+                    filter: none;
+                }
+            }
+        }
+    }
+
+    .client-settings,
+    .contractor-settings,
+    .consultant-settings,
+    .reviews[data-is-admin="false"] {
+        @include block;
+        grid-area: 1/2;
+        padding: 0 2.3rem 2.4rem;
+        margin: 30px 15px;
+        align-items: flex-start;
+        height: fit-content;
+        animation: fade-in .25s ease-in-out;
+
+        @include is-tablet {
+            max-width: 68.14rem;
+            margin-top: 9.57rem;
+        }
+    }
+
+    .reviews[data-is-admin="false"] {
+        align-items: stretch;
+
+        .reviews {
+            &__header {
+                font-size: 1.27rem;
+                margin: 2.5rem 0 3.2rem;
+                @include left-line(4px, 2.5rem, 2.3rem, $navy-blue-text);
+            }
+
+            &__top {
+                margin-bottom: 0;
+            }
+
+            &-items {
+                margin-bottom: 0;
+            }
+
+            &-item__project {
+                flex-wrap: wrap;
+
+                @include is-pc {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    gap: 1rem;
+                }
+
+                &-properties {
+                    width: 100%;
+
+                    @include is-pc {
+                        width: initial;
+                    }
+
+                    .property {
+                        @include is-pc {
+                            /*!rtl:ignore*/
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .client-settings,
+    .contractor-settings,
+    .consultant-settings {
+        &__header {
+            font-size: 1.27rem;
+            font-weight: 600;
+            color: $dark-grey-text;
+            position: relative;
+            margin: 2.5rem 0 2.8rem;
+            display: flex;
+            align-items: baseline;
+            @include left-line(4px, 2.5rem, 2.3rem, $navy-blue-text);
+        }
+
+        &__subheader {
+            font-size: 1.07rem;
+            font-weight: 600;
+            margin: 0 0 1.78rem;
+        }
+
+        &__top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            @include is-tablet {
+                align-items: center;
+            }
+
+            .btn {
+                margin: .8rem 0 0 auto;
+                font-size: 1.07rem;
+            }
+        }
+
+        .services {
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid $border-color;
+            width: 100%;
+
+            &__container {
+                max-width: 40rem;
+                width: 100%;
+            }
+        }
+
+        .engineers {
+            margin-top: 2rem;
+            width: 100%;
+
+            &__grid {
+                max-width: 40.6rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .footer {
+        max-width: 68.14rem;
+        width: calc(100% - 2 * 15px);
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .settings-container {
+        .page-with-sidebar[data-page="page-profile-settings"] {
+            .sidebar {
+                &__mobile-back {
+                    margin: 30px 15px 15px;
+
+                    .btn {
+                        font-size: 16px;
+                        color: initial;
+
+                        .icon {
+                            margin: 0 14px 0 0;
+
+                            svg, image {
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+
+                        .text:after {
+                            display: none;
+                        }
+                    }
+                }
+
+                &__tabs {
+                    height: calc(100vh - 5.64rem);
+                    position: fixed;
+                    top: 5.64rem;
+                    padding: 30px 22px;
+                }
+            }
+        }
+
+        &[data-mobile-menu-is-visible="true"] {
+            .page-with-sidebar[data-page="page-profile-settings"] {
+                .sidebar__mobile-back {
+                    display: none;
+                }
+            }
+
+            .contractor-settings {
+                display: none;
+            }
+        }
+
+        &[data-mobile-menu-is-visible="false"] {
+            .page-with-sidebar[data-page="page-profile-settings"] {
+                .sidebar__step {
+                    display: none;
+                }
+
+                .sidebar__tabs {
+                    min-height: 0;
+                    height: 0;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

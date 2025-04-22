@@ -1,0 +1,42 @@
+.pm-logs {
+    &__item {
+        border-bottom: 1px solid rgba(#707070, .1);
+        padding-bottom: 1.7rem;
+        margin-bottom: 1.22rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
+
+        &-desc {
+            font-size: 12px;
+            font-weight: 600;
+            word-break: break-word;
+            margin-bottom: 1.2rem;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-col {
+            width: 49%;
+            font-size: 11px;
+            color: $brighter-main-text-color;
+
+            @include is-tablet {
+                font-size: .79rem;
+            }
+
+            &--date {
+                text-align: right;
+            }
+        }
+    }
+}

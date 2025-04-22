@@ -1,0 +1,193 @@
+.wizard-page-content {
+    .table--bid-contractors {
+        max-width: 89.3rem;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 2.46rem 0 1.29rem;
+        background-color: transparent;
+        border: none;
+        border-radius: none;
+        position: relative;
+
+        .slider__btn {
+            &--right {
+                right: -3.5rem;
+
+                svg {
+                    transform: translateX(25%);
+                }
+            }
+
+            &--left {
+                left: -3.5rem;
+
+                svg {
+                    transform: rotate(-180deg) translateX(25%);
+                }
+            }
+        }
+
+        .table {
+            &__top {
+                font-size: 1.07rem;
+                font-weight: 600;
+                text-align: center;
+                border-radius: 6px 6px 0 0;
+                border: 1px solid $border-color;
+                border-bottom: none;
+                padding: 1.9rem 2rem;
+                background-color: #FFF;
+            }
+
+            &__bottom {
+                display: grid;
+                grid-template-columns: 11.3rem 1fr;
+
+                &[data-is-all-bids-submitted="false"] {
+                    .table__body {
+                        padding-top: 0;
+                    }
+
+                    .slider-columns-list {
+                        border-radius: 0 0 6px;
+                    }
+
+                    .table__header {
+                        margin-top: 0;
+                        border-radius: 0 0 0 6px;
+                    }
+                }
+            }
+
+            &__header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                min-width: 11.3rem;
+                font-size: .86rem;
+                font-weight: 500;
+                background-color: $dark-bg-color;
+                padding: 1.9rem 1.5rem;
+                margin-top: 2.64rem;
+                gap: 1.55rem 0;
+                border-radius: 6px 0 0 6px;
+                border: 1px solid $border-color;
+
+                .table__row {
+                    text-align: right;
+                    line-height: .93rem;
+                    border: none;
+
+                    &--contractors {
+                        font-size: .93rem;
+                        font-weight: 600;
+                    }
+
+                    &--price {
+                        line-height: 1.29rem;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &__body {
+                display: block;
+                padding-top: 2.64rem;
+                border-bottom-right-radius: 6px;
+                border: none;
+                border-bottom: 1px solid $border-color;
+                overflow-x: auto;
+
+                &::-webkit-scrollbar {
+                    height: .6rem;
+                }
+
+                .table__contractor {
+                    min-width: 13.07rem;
+                    background-color: #FFF;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    text-align: center;
+                    gap: 1.55rem 0;
+                    border-right: 1px solid $border-color;
+                    padding: 1.9rem .7rem;
+                    position: relative;
+
+                    &-row {
+                        font-size: .93rem;
+
+                        &--contractor {
+                            font-size: 1rem;
+                            font-weight: 600;
+                        }
+
+                        &--price {
+                            font-size: 1.29rem;
+                            font-weight: 600;
+                            color: $navy-blue-text;
+                        }
+
+                        &--time {
+                            color: $brighter-main-text-color;
+                        }
+
+                        &--my-bid {
+                            font-size: 1rem;
+                            font-weight: 600;
+                            color: $green-text;
+
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                top: -1px;
+                                left: 0;
+                                width: 100%;
+                                height: 3px;
+                                background-color: $green-text;
+                            }
+                        }
+                    }
+
+                    &-unit {
+                        margin-left: .2rem;
+                    }
+
+                    &[data-is-win="true"] {
+                        color: #FFF;
+                        background-color: $green-text;
+                        background-image: url("/assets/graphics/winning_flares.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: relative;
+
+                        &:after {
+                            content: "";
+                            background-image: url("/assets/graphics/crown.svg");
+                            background-size: 3.86rem 2.64rem;
+                            width: 3.86rem;
+                            height: 2.64rem;
+                            position: absolute;
+                            top: -2.64rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+
+                        .table__contractor-row {
+                            &--price, &--time {
+                                color: #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "Debug Chrome/localhost",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}/app/src",
+			"disableNetworkCache": true,
+			"trace": true,
+			"skipFiles": [
+				"<node_internals>/**",
+				"node_modules/**"
+			],
+			"runtimeArgs": [
+				"--incognito",
+				"--disable-translate",
+				"--disable-plugins"
+			]
+		}
+	]
+}

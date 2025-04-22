@@ -1,0 +1,39 @@
+.design-list {
+    width: 100%;
+    margin-bottom: 6rem;
+
+    &:empty {
+        margin-bottom: 0;
+    }
+
+    &__header {
+        font-size: 1.29rem;
+        font-weight: 600;
+        margin: 2.2rem 0 1.64rem;
+
+        @include is-tablet {
+            margin: 3.21rem 0 1.64rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        .infinite-scroll-component {
+            padding-bottom: 6rem;
+            overflow: visible !important;
+        }
+
+        .loading-container {
+            width: auto;
+            height: auto;
+            position: relative;
+            margin-top: 8rem;
+
+            &__loader {
+                top: 0;
+            }
+        }
+    }
+}

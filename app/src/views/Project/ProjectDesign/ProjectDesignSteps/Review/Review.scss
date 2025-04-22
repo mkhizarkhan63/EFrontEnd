@@ -1,0 +1,28 @@
+.design-flow__container {
+    .review {
+        padding: 7rem 2rem;
+
+        &__icon {
+            margin-bottom: 4.2rem;
+
+            .icon-box {
+                filter: brightness(0) saturate(100%) invert(74%) sepia(68%)
+                    saturate(2824%) hue-rotate(87deg) brightness(92%) contrast(98%);
+            }
+
+            svg, image {
+                width: 5.43rem;
+                height: 5.43rem;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        .design-flow__box-text {
+            max-width: 32.36rem;
+            margin-bottom: 4.7rem;
+        }
+    }
+}

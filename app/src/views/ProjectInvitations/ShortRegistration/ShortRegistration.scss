@@ -1,0 +1,143 @@
+.short-registration {
+    margin: 3.1rem auto 0;
+    max-width: 72.5rem;
+    width: 95%;
+
+    .form {
+        @include block;
+        animation: fade-in .22s linear;
+        padding: 1.8rem 2.07rem 2rem;
+
+        &__header {
+            font-size: 1.07rem;
+            font-weight: 600;
+            margin: .45rem 0 2.25rem;
+            position: relative;
+            color: $dark-grey-text;
+            @include left-line(5px, 2.28rem, 2.07rem, $brighter-main-text-color);
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: $dark-grey-text;
+            margin-bottom: 2rem;
+
+            @include is-tablet {
+                flex-flow: row wrap;
+            }
+
+            .input {
+                &-container-flex {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex: 1;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    @include is-tablet {
+                        min-width: 31rem;
+                        align-items: initial;
+                    }
+                }
+
+                &-text {
+                    width: calc(50% - .5rem);
+                    margin-bottom: 1.45rem;
+
+                    @include is-tablet {
+                        width: calc(50% - 1.46rem);
+                    }
+
+                    &-header {
+                        font-size: .93rem;
+                    }
+                }
+            }
+        }
+
+        .governorates {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem 1.8rem;
+
+            @include is-tablet {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .governorate {
+            @include block;
+            padding: 2.4rem 2rem 1rem;
+            width: 100%;
+            max-width: 34rem;
+            animation: fade-in .15s ease-in;
+
+            @include is-tablet {
+                width: initial;
+                max-width: initial;
+            }
+
+            &__title {
+                margin-bottom: 2.3rem;
+                color: $navy-blue-text;
+                font-weight: 500;
+                position: relative;
+            }
+
+            .input-text--select {
+                width: 100%;
+            }
+
+            &__row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 1.2rem;
+
+                .input-text--select {
+                    width: 59%;
+                    margin: 0 1.2rem 0 1rem;
+
+                    .input-text__option {
+                        font-weight: 600;
+                    }
+                }
+
+                .input-text-header {
+                    margin: 0;
+                }
+            }
+
+            &__title-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-weight: 500;
+                margin-top: 2.5rem;
+                margin-bottom: 1.2rem;
+            }
+        }
+
+        &__btns {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 3.2rem;
+
+            .btn--main[data-color="white"] {
+                padding: .5rem 1.4rem;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+            }
+
+            .btn--main[data-color="green"] {
+                padding: .5rem 1.2rem .5rem .9rem;
+                margin-left: 1.4rem;
+            }
+        }
+    }
+}

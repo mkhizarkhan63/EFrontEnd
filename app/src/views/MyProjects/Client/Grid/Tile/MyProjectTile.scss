@@ -1,0 +1,169 @@
+.my-project-tile {
+    @include block;
+    padding: 2.1rem 1.65rem 2.2rem;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    @include box-shadow-on-hover;
+
+    @include is-tablet {
+        font-size: .93rem;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+
+        &--first {
+            gap: 1rem;
+        }
+
+        &--middle {
+            margin-top: .4rem;
+        }
+
+        &[data-is-floor="false"] {
+            gap: 0;
+
+            .my-project-tile__area {
+                width: 100%;
+            }
+
+            .my-project-tile__levels {
+                width: auto;
+            }
+        }
+    }
+
+    &__status {
+        padding: 5.5px 8px;
+        font-weight: 600;
+        position: relative;
+        top: -.4rem;
+        border-radius: 3px;
+        background-color: $navy-blue-text-bg;
+        color: $navy-blue-text;
+
+        &:empty {
+            padding: 0;
+        }
+
+        &[data-status="liveInPm"],
+        &[data-status="signed"],
+        &[data-status="finalPaymentDesign"],
+        &[data-status="readyToSign"] {
+            background-color: $green-text-bg;
+            color: $green-text;
+        }
+
+        &[data-status="draft"] {
+            background-color: $yellow-text-bg;
+            color: $yellow-text;
+        }
+
+        &[data-status="rejected"],
+        &[data-status="rejectedDesign"],
+        &[data-status="archived"] {
+            color: $red-text;
+            background-color: $red-text-bg;
+        }
+
+        &[data-status="chooseContractor"],
+        &[data-status="openBids"],
+        &[data-status="reviewing"] {
+            background-color: $navy-blue-text-bg;
+            color: $navy-blue-text;
+        }
+    }
+
+    &__reference-number {
+        color: $brighter-main-text-color;
+        width: 40%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: right;
+    }
+
+    &__location {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+
+        &-title {
+            font-size: 1.29rem;
+            font-weight: 600;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: .4rem;
+        }
+
+        &-subtitle {
+            color: $brighter-main-text-color;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    &__days-left {
+        max-width: 40%;
+        color: $navy-blue-text;
+        font-weight: 600;
+        margin-top: .2rem;
+        text-align: right;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__area {
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+    }
+
+    &__meters {
+        color: $green-text;
+        font-size: 1.14rem;
+        font-weight: 600;
+        margin-bottom: .3rem;
+        padding-top: .5rem;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__residential {
+        color: $brighter-main-text-color;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__levels {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        &-symbols {
+            font-weight: 600;
+            text-align: right;
+            padding-top: .5rem;
+            margin-bottom: .3rem;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        &-desc {
+            text-align: right;
+            color: $brighter-main-text-color;
+        }
+    }
+}

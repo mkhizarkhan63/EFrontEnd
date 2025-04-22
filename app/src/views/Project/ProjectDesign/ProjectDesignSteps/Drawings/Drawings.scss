@@ -1,0 +1,22 @@
+.design-flow__container {
+    .drawing {
+        padding: 13.7rem 2rem;
+
+        &__icon {
+            margin-bottom: 2.3rem;
+
+            svg, image {
+                width: 6.78rem;
+                height: 6.78rem;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        .btn {
+            margin-top: 4.3rem;
+        }
+    }
+}

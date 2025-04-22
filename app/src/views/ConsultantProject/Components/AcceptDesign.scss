@@ -1,0 +1,87 @@
+.consultant-project {
+    .accept-design {
+        &__project {
+            &-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 2.43rem;
+                border-bottom: 1px dashed #C3C3C3;
+
+                @include is-pc {
+                    flex-direction: row;
+                    align-items: initial;
+                }
+            }
+
+            &-img {
+                width: 7.29rem;
+                height: 5.14rem;
+                border-radius: .64rem;
+                font-size: 0;
+
+                @include is-pc {
+                    margin-right: 1.85rem;
+                }
+
+                &[src=""], &:not([src]) {
+                    display: none;
+                }
+            }
+
+            &-desc {
+                margin-top: 1rem;
+                text-align: center;
+
+                @include is-pc {
+                    text-align: initial;
+                }
+            }
+
+            &-text {
+                font-size: 1.07rem;
+                color: $brighter-main-text-color;
+                margin-bottom: .8rem;
+            }
+
+            &-title {
+                font-size: 1.29rem;
+                font-weight: 500;
+            }
+        }
+
+        &__text {
+            width: 100%;
+            font-size: 1.07rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.79rem;
+            padding: 1.3rem 0;
+            border-bottom: 1px dashed #C3C3C3;
+        }
+
+        .detail-list {
+            padding: 2.43rem 0 1.5rem;
+        }
+
+        .input-text {
+            margin-top: 2rem;
+            width: 100%;
+            animation: fade-in .15s ease-in-out;
+
+            &-header {
+                text-align: center;
+
+                .description {
+                    margin-left: 0;
+                }
+            }
+
+            &-input {
+                width: 100%;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}

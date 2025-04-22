@@ -1,0 +1,40 @@
+.texteditor__toolbar {
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth fade in/out */
+    pointer-events: none;
+    /* Disable interaction while hidden */
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.texteditor__toolbar--visible {
+    opacity: 1;
+    /* Make toolbar visible */
+    pointer-events: auto;
+    /* Allow interaction */
+}
+
+.texteditor__toolbar--hidden {
+    opacity: 0;
+    /* Make toolbar invisible */
+    pointer-events: none;
+    /* Disable interaction */
+}
+
+.texteditor__toolbar-button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.texteditor__toolbar-button:hover {
+    background: #f0f0f0;
+}

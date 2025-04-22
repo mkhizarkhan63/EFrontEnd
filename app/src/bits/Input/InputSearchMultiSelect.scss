@@ -1,0 +1,15 @@
+input.search-input {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 10px;
+    font-family: inherit;
+    border-radius: .3rem;
+    border: 1px solid #dbdada;
+    transition: .2s;
+    outline: none;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 22 21">
+  <g id="Info" transform="translate(0.283)">
+    <g id="Ellipse_17" data-name="Ellipse 17" transform="translate(-0.283)" fill="#fff" stroke="#8e8e8e" stroke-width="1" stroke-dasharray="2 2" opacity="0.546">
+      <ellipse cx="11" cy="10.5" rx="11" ry="10.5" stroke="none"/>
+      <ellipse cx="11" cy="10.5" rx="10.5" ry="10" fill="none"/>
+    </g>
+    <path id="Union_18" data-name="Union 18" d="M0,9.264V3.4a.736.736,0,1,1,1.472,0V9.264A.736.736,0,1,1,0,9.264ZM0,.722a.721.721,0,1,1,.721.722A.721.721,0,0,1,0,.722Z" transform="translate(10.245 5.5)" fill="#999"/>
+  </g>
+</svg>

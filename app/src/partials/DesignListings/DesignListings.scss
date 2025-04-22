@@ -1,0 +1,195 @@
+.design-listings {
+    width: 95%;
+    max-width: 83.2rem;
+    margin: 0 auto;
+
+    @include is-pc {
+        width: 90%;
+    }
+
+    &__top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3.3rem;
+    }
+
+    .search {
+        position: relative;
+        margin-right: 1rem;
+        width: 100%;
+
+        .icon-box {
+            position: absolute;
+            top: 50%;
+            left: 1.5rem;
+            transform: translateY(-50%);
+
+            svg, image {
+                width: 18px;
+                height: 18px;
+
+                @include is-tablet {
+                    width: 1.28rem;
+                    height: 1.28rem;
+                }
+            }
+        }
+
+        .input-text {
+            width: 100%;
+
+            &-input {
+                padding-left: 3.5rem;
+                font-size: 12px;
+
+                @include is-tablet {
+                    font-size: 1rem;
+                }
+            }
+
+            &-header {
+                display: none;
+            }
+        }
+    }
+
+    .filter-box {
+        @include block;
+        padding: 1.7rem;
+        margin-top: 1.21rem;
+
+        &__fields {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        &__field {
+            width: 15.7rem;
+            margin: 0 2.14rem 1rem 0;
+
+            &-title {
+                font-size: .93rem;
+                font-weight: 600;
+            }
+
+            .input-text-header {
+                margin-bottom: .7rem;
+            }
+
+            .input-counter-container {
+                width: 100%;
+
+                .input-counter {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__btns {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+
+            .btn[data-color="transparent"] {
+                margin-right: 2rem;
+                color: $main-text-color;
+
+                .text {
+                    &:after {
+                        background-color: $main-text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__btn-like {
+        position: relative;
+        min-height: 3.5em;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: #FFF;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        padding: .5rem 1.15rem;
+        user-select: none;
+        flex-shrink: 0;
+
+        .btn {
+            padding: 0;
+            min-height: auto;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+            pointer-events: none;
+
+            .icon {
+                filter: saturate(0);
+                transition: all .12s ease-in;
+                padding-left: .9rem;
+            }
+
+            svg, image {
+                width: 1.5rem;
+                height: 1.29rem;
+            }
+
+            .text {
+                font-size: 1rem;
+            }
+        }
+
+        &-count {
+            font-size: .93rem;
+            margin-left: .5rem;
+            pointer-events: none;
+            color: $brighter-main-text-color;
+        }
+
+        &:hover {
+            .icon {
+                filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+            }
+        }
+
+        &[data-checked="true"] {
+            .icon {
+                filter: saturate(1);
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.29rem;
+        font-weight: 600;
+        margin-top: 3rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.3rem;
+
+        .infinite-scroll-component {
+            padding-bottom: 6rem;
+            overflow: visible !important;
+        }
+
+        .loading-container {
+            width: auto;
+            height: auto;
+            position: relative;
+            margin-top: 8rem;
+
+            &__loader {
+                top: 0;
+            }
+        }
+    }
+}

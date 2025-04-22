@@ -1,0 +1,14 @@
+@mixin left-line($width, $height, $left, $color) {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        top: 50%;
+        left: 0;
+        transform: translate(-$left, -50%);
+    }
+}

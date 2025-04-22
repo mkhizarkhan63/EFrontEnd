@@ -1,0 +1,54 @@
+.input-text-and-select {
+    width: 100%;
+    padding: 1.25rem 0;
+    font-size: .86rem;
+    font-family: inherit;
+    border-radius: .3rem;
+    border: 1px solid $input-border-color;
+    transition: .2s;
+    outline: none;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    position: relative;
+
+    &:focus {
+        border: 1px solid rgb(202, 202, 202);
+        box-shadow: 0 3px 5px 0 #4D4D4D21;
+    }
+
+    .input-text {
+        position: static;
+        word-break: keep-all;
+
+        &-input {
+            border: none;
+            background: transparent;
+            padding: 1.25rem .5rem 1.25rem 1.25rem;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            overflow: hidden;
+
+            &:focus {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        &--select {
+            .input-text-input {
+                padding: 1.25rem 1.25rem 1.25rem .5rem;
+            }
+
+            .tick {
+                right: 1rem;
+            }
+        }
+
+        &__option {
+            color: $brighter-main-text-color;
+            padding-right: 1rem;
+        }
+    }
+}

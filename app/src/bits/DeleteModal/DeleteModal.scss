@@ -1,0 +1,69 @@
+.side-modal[data-variant="delete"] {
+    max-width: 37.14rem;
+    width: 100%;
+
+    @include is-tablet {
+        max-width: initial;
+        width: 37.14rem;
+    }
+
+    .side-modal {
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        &__delete-icon {
+            border-radius: 50%;
+            border: 1px solid #E1E1E1;
+            width: 6.21rem;
+            height: 6.21rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg, image {
+                width: 2.29rem;
+                height: 2.43rem;
+            }
+
+            image {
+                filter: invert(59%) sepia(61%) saturate(5146%) hue-rotate(320deg) brightness(96%) contrast(93%);
+            }
+
+            &[data-is-accept="true"] {
+                svg, image {
+                    width: 4.29rem;
+                    height: 4.29rem;
+                }
+
+                image {
+                    filter: $blue-svg;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.14rem;
+            font-weight: 500;
+            margin-top: 2rem;
+        }
+
+        &__desc {
+            width: 60%;
+            margin-top: 1.15rem;
+            line-height: 1.36rem;
+            text-align: center;
+            color: $brighter-main-text-color;
+        }
+
+        &__buttons {
+            display: flex;
+            margin-top: 1.5rem;
+            column-gap: 1.6rem;
+        }
+    }
+}

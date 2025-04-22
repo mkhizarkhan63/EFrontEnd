@@ -1,0 +1,64 @@
+.engineers {
+    &__title {
+        color: $dark-grey-text;
+        font-size: 1.29rem;
+        font-weight: 500;
+        display: flex;
+        margin-bottom: 2.21rem;
+        margin-top: 2rem;
+
+        &-num {
+            color: $brighter-main-text-color;
+            font-size: 1.14rem;
+            margin-left: .4rem;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        max-width: 39.86rem;
+        width: 100%;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 4.29rem 1fr;
+        align-items: center;
+        gap: 0 1.1rem;
+
+        &-img {
+            display: block;
+            border-radius: 50%;
+            width: 4.29rem;
+            height: 4.29rem;
+            box-shadow: 0 3px 6px #00000029;
+            object-fit: cover;
+            position: relative;
+            overflow: hidden;
+
+            &[src=""], &:not([src]) {
+                @include empty-img("/assets/graphics/blue_avatar.svg");
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: .6rem;
+            word-break: break-word;
+        }
+
+        &-name {
+            font-size: 1.07rem;
+            font-weight: 500;
+            color: $dark-grey-text;
+        }
+
+        &-role {
+            color: $brighter-main-text-color;
+        }
+    }
+}

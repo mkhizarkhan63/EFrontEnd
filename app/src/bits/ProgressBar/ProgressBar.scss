@@ -1,0 +1,22 @@
+.progress-bar {
+    background-color: #E8E5E5;
+    position: relative;
+
+    &-value {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &[data-is-color="orange"] {
+            background-color: $yellow-text;
+        }
+
+        &[data-is-color="green"] {
+            background-color: $green-text;
+        }
+
+        &[data-is-color="red"] {
+            background-color: $red-text;
+        }
+    }
+}

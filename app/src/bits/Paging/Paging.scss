@@ -1,0 +1,65 @@
+.paging {
+    margin: auto 0 2.5rem;
+    padding-top: 2.5rem;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    justify-content: flex-end;
+    font-size: 1.1rem;
+
+    @include is-tablet {
+        font-size: 1rem;
+    }
+
+    .first-page {
+        display: none;
+
+        &[data-is-visible="true"] {
+            display: flex;
+        }
+    }
+
+    &-button {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin: 0 .2rem;
+        border-radius: 50%;
+        font-weight: 400;
+        color: $brighter-main-text-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+
+        @include is-tablet {
+            width: 2.14rem;
+            height: 2.14rem;
+        }
+
+        &[data-is-current="true"] {
+            color: #FFF;
+            transition: .2s ease-in-out;
+            background-color: $navy-blue-text;
+            box-shadow: 0 4px 23px rgba(30, 66, 138, .122);
+        }
+
+        &:not([data-is-current="true"]) {
+            &:hover {
+                color: $navy-blue-text;
+            }
+        }
+    }
+
+    &-dots {
+        width: 2.14rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:before {
+            color: $brighter-main-text-color;
+            content: "...";
+        }
+    }
+}

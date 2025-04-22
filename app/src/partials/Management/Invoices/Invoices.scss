@@ -1,0 +1,223 @@
+.invoices {
+    &__header {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 3.5rem 0 2.65rem;
+
+        &-num {
+            font-size: 1.29rem;
+            font-weight: 500;
+            color: $brighter-main-text-color;
+        }
+    }
+
+    .table {
+        padding: 0 2rem;
+
+        &__header {
+            font-weight: 500;
+            border-bottom: none;
+
+            .table__cell {
+                padding: 1.9rem 1rem 1.15rem .5rem;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    min-width: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            .table__row {
+                align-items: initial;
+
+                &:first-of-type {
+                    border-top: 1px solid $border-color;
+                }
+            }
+
+            .table__cell {
+                padding: .9rem 1rem 1rem 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    min-width: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+
+                .invoice {
+                    &__number {
+                        font-size: .93rem;
+                        font-weight: 600;
+                        margin-bottom: .64rem;
+                    }
+
+                    &__desc {
+                        font-size: .86rem;
+                        color: $brighter-main-text-color;
+                    }
+                }
+
+                .date {
+                    color: $brighter-main-text-color;
+                }
+
+                .price {
+                    font-weight: 500;
+                }
+
+                .status-sub {
+                    font-weight: 500;
+
+                    &[data-status="paid"] {
+                        color: $green-text;
+                    }
+
+                    &[data-status="unpaid"] {
+                        color: $red-text;
+                    }
+                }
+
+                .btn {
+                    font-size: .86rem;
+                    font-weight: 500;
+                    margin: 0 0 0 auto;
+
+                    .text {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+
+    .table-subscriptions {
+        margin-bottom: 1.5rem;
+
+        .table {
+            &__header {
+                .table__cell {
+                    padding: 1.4rem 1rem 1.15rem 0;
+
+                    @include is-pc {
+                        padding-left: 1rem;
+                    }
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    &:last-of-type {
+                        min-width: 3rem;
+                        padding-left: 0;
+                        padding-right: 0;
+
+                        @include is-pc {
+                            min-width: auto;
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+            }
+
+            &__body {
+                .table__cell {
+                    padding: 1.2rem 1rem 1.5rem 0;
+
+                    @include is-pc {
+                        padding-left: 1rem;
+                    }
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    &:last-of-type {
+                        min-width: 3rem;
+                        padding-left: 0;
+                        padding-right: 0;
+
+                        @include is-pc {
+                            min-width: auto;
+                            padding-left: 1rem;
+                        }
+                    }
+
+                    .type {
+                        font-size: .93rem;
+                        font-weight: 600;
+                    }
+
+                    .status {
+                        font-size: .79rem;
+                        font-weight: 500;
+                        width: fit-content;
+                        padding: .57rem .64rem .36rem .71rem;
+                        margin: 0 0 0 auto;
+                        border-radius: 3px;
+                        color: $green-text;
+                        background-color: $green-text-bg;
+
+                        &[data-status="active"] {
+                            color: $green-text;
+                            background-color: $green-text-bg;
+                        }
+
+                        &[data-status="rejected"] {
+                            color: $red-text;
+                            background-color: $red-text-bg;
+                        }
+
+                        &[data-status="review"] {
+                            color: $navy-blue-text;
+                            background-color: $navy-blue-text-bg;
+                        }
+                    }
+
+                    .buttons {
+                        display: flex;
+                        gap: .25rem 1.5rem;
+                        align-items: center;
+                        justify-content: flex-end;
+                        flex-wrap: wrap;
+
+                        .btn {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

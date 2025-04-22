@@ -1,0 +1,17 @@
+.slider-columns {
+    &-list {
+        min-width: 100%;
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        border-top: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-radius: 0 6px 6px 0;
+        background: repeating-linear-gradient(120deg, #F7F7F8, #F7F7F8 5px, #FFF 4px, #FFF 18px);
+    }
+
+    &-item {
+        list-style-type: none;
+    }
+}

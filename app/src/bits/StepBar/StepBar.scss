@@ -1,0 +1,67 @@
+.side-bar {
+    position: relative;
+    grid-area: 1/1;
+    width: 20rem;
+    top: calc($header-height + 4.5rem);
+
+    @include is-tablet {
+        position: fixed;
+    }
+
+    &-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3.5rem;
+        cursor: pointer;
+        font-size: 14px;
+
+        @include is-tablet {
+            font-size: 1.07rem;
+            margin-bottom: 2.97rem;
+        }
+
+        .done,
+        .in-progress,
+        .wait {
+            display: inline-block;
+            text-align: center;
+            line-height: 2.07rem;
+            position: relative;
+            width: 2.07rem;
+            height: 2.07rem;
+            font-size: 1.14rem;
+            font-weight: 500;
+            border-radius: 50%;
+            margin-right: 1rem;
+            border: 1px solid $border-color;
+            transition: all .15s ease-in;
+        }
+
+        .done {
+            background-color: $green-text;
+            color: #FFF;
+
+            ~ .side-bar-step-name {
+                color: $brighter-main-text-color;
+            }
+
+            span {
+                @include tick-icon-centered;
+            }
+        }
+
+        .in-progress {
+            background-color: $navy-blue-text;
+            color: #FFF;
+        }
+
+        .wait {
+            background-color: #FFF;
+            color: $brighter-main-text-color;
+
+            ~ .side-bar-step-name {
+                color: $brighter-main-text-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,277 @@
+.design-detail-top {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    position: relative;
+    min-height: 300px;
+    height: 83vw;
+    max-height: 1300px;
+
+    @include is-tablet {
+        height: calc(100vh - $header-height);
+        min-height: initial;
+    }
+
+    &__back {
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        width: 100%;
+        background: transparent linear-gradient(0deg, #00000000 0%, #0000008F 100%) 0% 0% no-repeat;
+        padding: 2.4rem 14px;
+        z-index: $zindex-subheader;
+        pointer-events: none;
+
+        @include is-tablet {
+            padding: 2.4rem 3rem 3.6rem;
+        }
+
+        .btn[data-color="white"] {
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            background-color: transparent;
+            color: #FFF;
+            pointer-events: initial;
+
+            @include is-tablet {
+                font-size: 1.29rem;
+            }
+
+            &:hover {
+                color: #FFF;
+
+                .icon svg {
+                    transform: translateX(-.3rem);
+                }
+            }
+
+            .icon {
+                margin-right: 1.2rem;
+                filter: var(--icon-white);
+
+                svg {
+                    transition: .15s ease-in;
+                }
+
+                svg, image {
+                    width: 1.83rem;
+                    height: 1.43rem;
+
+                    @include is-tablet {
+                        width: 1.33rem;
+                        height: .93rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider {
+        height: 100%;
+
+        &__selected-img {
+            img {
+                border-radius: 0;
+                width: 100%;
+            }
+        }
+
+        &__dots {
+            position: absolute;
+            bottom: 93px;
+
+            @include is-tablet {
+                bottom: 13rem;
+            }
+
+            @include is-pc {
+                bottom: 11rem;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                opacity: .33;
+                margin: 0 .54rem;
+                transform: translateX(-50%);
+
+                @include is-tablet {
+                    width: 1rem;
+                    height: 1rem;
+                }
+
+                &[data-is-active="true"] {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 2% 5px;
+        background-color: rgba($main-text-color, .77);
+
+        @include is-tablet {
+            padding: 0 1.1% 1rem 3.15%;
+        }
+
+        &__left {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include is-tablet {
+                width: initial;
+                justify-content: initial;
+            }
+        }
+
+        &__item {
+            color: #FFF;
+            font-size: 11px;
+            padding: 10px 9px 3px;
+            position: relative;
+            cursor: pointer;
+
+            @include is-tablet {
+                font-size: 1.43rem;
+                padding: 2.7rem 0 1.7rem;
+                margin-right: 5.2rem;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 3px;
+                background-color: #FFF;
+                top: 0;
+                left: 0;
+                transition: width .3s ease-in-out;
+
+                @include is-tablet {
+                    height: .5rem;
+                }
+            }
+
+            &[data-is-active="true"]:after {
+                width: 100%;
+            }
+
+            &:hover {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            background-color: #FFF;
+            border: 1px solid $border-color;
+            color: $main-text-color;
+            flex-shrink: 0;
+            font-size: 1.07rem;
+            min-height: 3.29rem;
+            width: fit-content;
+            border-radius: 6px;
+            padding: .5rem 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 12px #00000012;
+            transition: all .25s ease-in-out;
+
+            @include is-tablet {
+                min-width: max-content;
+            }
+
+            &-container {
+                margin-right: auto;
+            }
+
+            &-img {
+                margin-right: .5rem;
+                width: 1.64rem;
+                height: 1.64rem;
+            }
+
+            &:hover {
+                color: $navy-blue-text;
+            }
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            flex-basis: 100%;
+            padding-top: 1rem;
+
+            @include is-tablet {
+                flex: 1;
+                flex-basis: initial;
+            }
+
+            .btn {
+                @include is-tablet {
+                    min-width: max-content;
+                }
+            }
+        }
+
+        &__btn-like {
+            margin: 0 2rem;
+
+            @include is-tablet {
+                margin: 0 2.4rem;
+            }
+
+            .btn {
+                width: 3.6rem;
+                height: 3.6rem;
+                background-color: rgba(#FFF, .3);
+
+                .icon {
+                    filter: var(--icon-white);
+                    transition: all .12s ease-in;
+                }
+
+                svg, image {
+                    width: 1.5rem;
+                    height: 1.29rem;
+                }
+
+                &:hover {
+                    background-color: #FFF;
+
+                    .icon {
+                        filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+                    }
+                }
+            }
+
+            &[data-liked="true"] {
+                .btn {
+                    background-color: #FFF;
+
+                    .icon {
+                        filter: invert(40%) sepia(100%) saturate(475%) hue-rotate(304deg) brightness(96%) contrast(93%);
+                    }
+                }
+            }
+        }
+    }
+}

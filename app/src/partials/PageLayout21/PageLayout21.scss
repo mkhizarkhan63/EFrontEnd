@@ -1,0 +1,51 @@
+.page-layout-21 {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-top: 5.64rem;
+    height: 100%;
+    flex: 1;
+
+    @include is-tablet {
+        overflow: hidden;
+        padding-top: 0;
+        height: initial;
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+        overflow: auto;
+
+        @include is-tablet {
+            min-width: initial;
+            flex-flow: row nowrap;
+            overflow: hidden;
+        }
+    }
+
+    &__content {
+        @include is-tablet {
+            flex: 1;
+            overflow: hidden;
+        }
+    }
+
+    &__details {
+        @include is-tablet {
+            width: 29.14rem;
+            overflow: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: .8rem;
+        }
+
+        .scroll-container {
+            overflow: auto;
+            overflow-x: hidden;
+            height: 100%;
+        }
+    }
+}

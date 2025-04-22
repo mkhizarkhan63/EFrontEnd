@@ -1,0 +1,119 @@
+.company-design {
+    padding-top: 2rem;
+
+    .form {
+        &__body {
+            .title {
+                font-weight: 600;
+                padding-bottom: 1rem;
+            }
+
+            .municipality-container {
+                display: flex;
+                margin-top: 2rem;
+                border-radius: 8px;
+                border: 1px solid $border-color;
+
+
+
+                .left-box {
+                    background-color: #f1f2f8;
+
+                    display: flex;
+                    flex-direction: column;
+                    width: 250px;
+                    position: relative;
+
+                    .services-content {
+                        padding: 1rem;
+                        cursor: pointer;
+
+                        &__flex {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 1rem;
+
+                            .icon-image {
+                                .icon-box {
+                                    &__svg {
+                                        width: 30px;
+                                        height: 30px;
+
+                                        &__image {
+                                            width: 30px;
+                                            height: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .right-box {
+                    .content {
+                        padding: 3rem;
+
+                        &__title {
+                            font-size: larger;
+                        }
+
+                        &__text {
+                            padding-top: 1rem;
+                        }
+
+                        .input-text {
+                            width: 150px;
+                        }
+                    }
+                }
+            }
+
+            .additionalservices-container {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+
+                .title {
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+                .content {
+                    .flex {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+
+                        .icon {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 10px;
+                            width: 25%;
+
+                            .icon-box {
+                                width: 30px;
+                                height: 30px;
+
+                                &__svg {
+                                    width: 30px;
+                                    height: 30px;
+
+                                    &__image {
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .input-text {
+                            width: 30%;
+                            padding-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

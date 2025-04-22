@@ -1,0 +1,19 @@
+.close {
+    margin-right: 1.25rem;
+    cursor: pointer;
+    transition: filter .15s linear;
+
+    svg, image {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        @include is-tablet {
+            width: .86rem;
+            height: .86rem;
+        }
+    }
+
+    &:hover {
+        filter: brightness(.5);
+    }
+}

@@ -1,0 +1,16 @@
+.company-forms--marketing {
+    .form {
+
+        .input {
+            &-container-grid {
+                @include is-tablet {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    grid-gap: 2.1rem 2.71rem;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,58 @@
+.textarea {
+    &__header {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.36rem;
+        text-align: left;
+        margin-bottom: .8rem;
+
+        @include is-tablet {
+            font-size: .93rem;
+        }
+
+        .description {
+            margin-left: .3rem;
+            color: $brighter-main-text-color;
+            font-size: .93rem;
+        }
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 1.25rem;
+        left: 1.25rem;
+        pointer-events: none;
+        font-size: .86rem;
+        color: $brighter-main-text-color;
+    }
+
+    &__input {
+        resize: none;
+        width: 100%;
+        padding: 1.25rem;
+        font-size: .86rem;
+        font-family: inherit;
+        border-radius: .3rem;
+        border: 1px solid $input-border-color;
+        background: #FFF;
+        transition: .2s;
+        outline: none;
+        word-break: break-word;
+
+        &:focus {
+            border: 1px solid rgb(202, 202, 202);
+            box-shadow: 0 3px 5px 0 #4D4D4D21;
+        }
+    }
+}
+
+[dir="rtl"] {
+    textarea[dir="ltr"] {
+        /*!rtl:ignore*/
+        direction: rtl;
+    }
+}

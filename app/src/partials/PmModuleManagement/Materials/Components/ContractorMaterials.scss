@@ -1,0 +1,18 @@
+.materials-images__item {
+    .btn {
+        font-size: 13px;
+        font-weight: 600;
+        color: $main-text-color;
+        word-break: break-word;
+        text-align: initial;
+
+        @include is-tablet {
+            font-size: .93rem;
+            font-weight: 500;
+        }
+
+        .text:after {
+            background-color: $main-text-color;
+        }
+    }
+}

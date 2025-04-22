@@ -1,0 +1,57 @@
+.notification {
+    display: flex;
+    padding: 1.36rem 0 1.1rem;
+
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #F5F5F5;
+    }
+
+    &__dot {
+        width: 1.07rem;
+        height: 1.07rem;
+        margin-right: 1.1rem;
+        border-radius: 50%;
+        border: .29rem solid rgba(#FFF, .83);
+
+        &[data-status="sign"] {
+            background-color: $green-text;
+        }
+
+        &[data-status="project"] {
+            background-color: $navy-blue-text;
+        }
+
+        &[data-status="profile"] {
+            background-color: $brighter-main-text-color;
+        }
+    }
+
+    &__text {
+        flex: 1;
+    }
+
+    &__message {
+        color: $brighter-main-text-color;
+        margin-bottom: .5rem;
+        font-size: .98rem;
+        font-weight: 500;
+        line-height: 1.29rem;
+
+        &-id {
+            font-weight: 600;
+            color: $main-text-color;
+            word-break: break-word;
+        }
+
+        &[data-highlight="projectChange"] {
+            .notification__message-status {
+                color: $green-text;
+            }
+        }
+    }
+
+    &__time {
+        font-size: .86rem;
+        color: $brighter-main-text-color;
+    }
+}

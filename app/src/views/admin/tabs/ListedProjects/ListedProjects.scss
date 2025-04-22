@@ -1,0 +1,275 @@
+.listedprojects-list {
+    width: 85%;
+    max-width: 89.3rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include show-page-animation;
+
+    .top-header {
+        margin-bottom: 2.6rem;
+
+        &__right {
+            padding-top: .2rem;
+
+            .search {
+                position: relative;
+                margin-left: 1rem;
+
+                .icon-box {
+                    position: absolute;
+                    top: 50%;
+                    left: 1rem;
+                    transform: translateY(-50%);
+
+                    svg,
+                    image {
+                        width: 1.1rem;
+                        height: 1.1rem;
+                    }
+                }
+
+                .input-text {
+                    &-input {
+                        padding-left: 2.75rem;
+                    }
+
+                    &-header {
+                        display: none;
+                    }
+                }
+            }
+
+            .filter {
+                position: relative;
+
+                svg,
+                image {
+                    width: 1.26rem;
+                    height: 1.16rem;
+                }
+
+                &[data-is-filter="true"] {
+                    @include filter-active;
+                }
+            }
+        }
+    }
+
+    .statuses {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        column-gap: 1.36rem;
+
+        &__item {
+            @include block;
+            padding: 1.7rem;
+            flex: 1;
+            min-width: 8rem;
+            max-width: 14.28rem;
+            margin-bottom: 1.43rem;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            @include box-shadow-on-hover;
+
+            &--first {
+                flex: .66;
+                margin-left: 0;
+            }
+
+            &--penultimate {
+                flex: .5;
+            }
+
+            &--last {
+                flex: .55;
+            }
+
+            &[data-is-selected="true"] {
+                box-shadow: 0 2px 8px 0 #0000001F;
+                border: 1px solid rgba($brighter-main-text-color, .5);
+            }
+        }
+
+        &__title {
+            font-size: .93rem;
+            color: $brighter-main-text-color;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        &__number {
+            font-size: 1.43rem;
+            font-weight: 600;
+            word-break: break-word;
+
+            &--yellow {
+                color: $yellow-text;
+            }
+
+            &--red {
+                color: $red-text;
+            }
+
+            &--blue {
+                color: $navy-blue-text;
+            }
+
+            &--green {
+                color: $green-text;
+            }
+
+            &--gray {
+                color: $brighter-main-text-color;
+            }
+        }
+    }
+
+    .table {
+        &__cell {
+            overflow-wrap: anywhere;
+        }
+
+        &__header {
+            font-size: .79rem;
+            font-weight: 500;
+            border-bottom: none;
+
+            .table__cell {
+                padding-left: 0;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:nth-of-type(5) {
+                    min-width: 8rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    min-width: 3rem;
+                    padding: .9rem 0;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding: .9rem 0 .9rem 1rem;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            .table__row {
+                &:first-of-type {
+                    border-top: 1px solid $border-color;
+
+                    .table__cell {
+                        padding: .9rem 1rem .9rem 0;
+
+                        @include is-pc {
+                            padding-left: 1rem;
+                        }
+
+                        &:last-of-type {
+                            padding-right: 0;
+                        }
+                    }
+                }
+
+                .table__cell {
+                    padding: 1.3rem 1rem .9rem 0;
+
+                    @include is-pc {
+                        padding-left: 1rem;
+                    }
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    &:nth-of-type(5) {
+                        min-width: 8rem;
+
+                        @include is-pc {
+                            min-width: auto;
+                            padding-left: 1rem;
+                        }
+                    }
+
+                    &:last-of-type {
+                        padding: .9rem 0;
+                        min-width: 3rem;
+
+                        @include is-pc {
+                            min-width: auto;
+                            padding: .9rem 0 .9rem 1rem;
+                        }
+                    }
+                }
+
+                .project {
+                    font-size: .93rem;
+                    font-weight: 600;
+                }
+                .company {
+                    font-size: .93rem;
+                    font-weight: 600;
+                }
+              
+
+                .date {
+                    font-size: .86rem;
+                    color: $brighter-main-text-color;
+                }
+
+                .status {
+                    font-size: .79rem;
+                    width: fit-content;
+                    padding: .57rem;
+                    font-weight: 500;
+                    margin: 0 auto auto 0;
+                    border-radius: 3px;
+                    color: $navy-blue-text;
+                    background-color: $navy-blue-text-bg;
+
+                    &[data-status="draft"],
+                    &[data-status="none"] {
+                        color: $yellow-text;
+                        background-color: $yellow-text-bg;
+                    }
+
+                  
+                    &[data-status="archived"] {
+                        color: $brighter-main-text-color;
+                        background-color: #89898921;
+                    }
+
+                    &:empty {
+                        padding: 0;
+                    }
+                }
+
+                .btn {
+                    font-size: .86rem;
+                    font-weight: 500;
+                    margin: 0 0 0 auto;
+
+                    .text {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}

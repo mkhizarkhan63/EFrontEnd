@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Metropolis';
+    src: url('./Metropolis/Metropolis-SemiBold.eot');
+    src: local('Metropolis Semi Bold'), local('Metropolis-SemiBold'),
+        url('./Metropolis/Metropolis-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./Metropolis/Metropolis-SemiBold.woff2') format('woff2'),
+        url('./Metropolis/Metropolis-SemiBold.woff') format('woff'),
+        url('./Metropolis/Metropolis-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('Metropolis-Medium.eot');
+    src: local('Metropolis Medium'), local('Metropolis-Medium'),
+        url('./Metropolis/Metropolis-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./Metropolis/Metropolis-Medium.woff2') format('woff2'),
+        url('./Metropolis/Metropolis-Medium.woff') format('woff'),
+        url('./Metropolis/Metropolis-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('./Metropolis/Metropolis-Bold.eot');
+    src: local('Metropolis Bold'), local('Metropolis-Bold'),
+        url('./Metropolis/Metropolis-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./Metropolis/Metropolis-Bold.woff2') format('woff2'),
+        url('./Metropolis/Metropolis-Bold.woff') format('woff'),
+        url('./Metropolis/Metropolis-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Kufi Arabic';
+    font-style: normal;
+    font-weight: 100;
+    src: url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.eot');
+    src: local(''),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.eot?#iefix') format('embedded-opentype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.woff2') format('woff2'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.woff') format('woff'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.ttf') format('truetype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-100.svg#NotoKufiArabic') format('svg');
+}
+
+@font-face {
+    font-family: 'Noto Kufi Arabic';
+    font-style: normal;
+    font-weight: 200;
+    src: url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.eot');
+    src: local(''),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.eot?#iefix') format('embedded-opentype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.woff2') format('woff2'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.woff') format('woff'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.ttf') format('truetype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-200.svg#NotoKufiArabic') format('svg');
+}
+
+@font-face {
+    font-family: 'Noto Kufi Arabic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.eot');
+    src: local(''),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.eot?#iefix') format('embedded-opentype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.woff2') format('woff2'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.woff') format('woff'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.ttf') format('truetype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-300.svg#NotoKufiArabic') format('svg');
+}
+
+@font-face {
+    font-family: 'Noto Kufi Arabic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.eot');
+    src: local(''),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.eot?#iefix') format('embedded-opentype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.woff2') format('woff2'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.woff') format('woff'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.ttf') format('truetype'),
+        url('./Noto-kufi/noto-kufi-arabic-v11-arabic-regular.svg#NotoKufiArabic') format('svg');
+}
+
+/* Axiforma */
+@font-face{
+    font-family:"Axiforma";
+    src: url("./Axiforma/5615695/5f975a29-7b30-4265-b8d3-6ac225fdd42a.woff2") format("woff2"),
+        url("./Axiforma/5615695/5aec47c9-9e14-40b9-aeb4-dbc27096f3bc.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:"Axiforma";
+    src: url("./Axiforma/5615711/609e5947-7d94-49a4-b4c7-11311739d47a.woff2") format("woff2"),
+        url("./Axiforma/5615711/8ecb3cd1-39ed-49e8-b9a0-196e76633d64.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Axiforma";
+    src: url("./Axiforma/5615719/5892a503-b9b4-4da3-8c96-cf7834c31e7c.woff2") format("woff2"),
+        url("./Axiforma/5615719/f32f49a8-213a-4017-bf62-8e2a31ebf983.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Axiforma";
+    src: url("./Axiforma/5615727/9f142eb7-974a-4db7-976a-f5f70e75b872.woff2") format("woff2"),
+        url("./Axiforma/5615727/d6e0838f-84af-4f9f-b4a1-334bdadc2361.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Axiforma";
+    src: url("./Axiforma/5615735/189a754b-5d96-4edd-bd72-3a7b97d0dba4.woff2") format("woff2"),
+        url("'./Axiforma/5615735/66254840-0333-42fb-a76e-1eade6a989a9.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

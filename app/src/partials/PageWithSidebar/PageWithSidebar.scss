@@ -1,0 +1,81 @@
+.page-with-sidebar {
+    @include is-tablet {
+        display: grid;
+    }
+
+    .error-list {
+        width: calc(100% - 2rem);
+
+        @include is-tablet {
+            width: calc(20rem + 12%);
+        }
+    }
+
+    .registration {
+        width: 100%;
+        padding: 0 15px;
+        flex: 1;
+
+        @include is-tablet {
+            grid-area: 1/2;
+            padding: 0;
+        }
+    }
+
+    &[data-page="page-registration"] {
+        max-width: 100%;
+        margin: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include is-tablet {
+            padding-left: 1.9%;
+            min-width: initial;
+            max-width: 85%;
+            display: grid;
+            grid-template-columns: 20rem minmax(0, 72.5rem);
+            grid-gap: 0 4.7%;
+            margin: 0 auto;
+        }
+
+        .footer {
+            align-self: flex-end;
+            width: 90%;
+            margin: 0 auto;
+
+            @include is-tablet {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-page="page-profile-settings"] {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include is-tablet {
+            padding-left: .5%;
+            max-width: 85%;
+            min-width: initial;
+            display: grid;
+            grid-template-columns: 23rem minmax(auto, 72.14rem);
+            grid-gap: 0 3.5%;
+            margin: 0 auto;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        justify-content: flex-end;
+
+        @include is-tablet {
+            grid-area: 2/2;
+            flex: initial;
+            justify-content: space-between;
+        }
+    }
+}

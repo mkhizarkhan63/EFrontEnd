@@ -1,0 +1,29 @@
+.draft-details {
+    @include block;
+    padding: 1.78rem 2.07rem 3.4rem;
+    margin: 2.42rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    &__title {
+        @include project-title;
+    }
+
+    &__info {
+        margin: 2.1rem 3.6rem 0 0;
+
+        &-value {
+            font-size: 1.14rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        &-label {
+            font-size: 1.23rem;
+            font-weight: 500;
+            color: $brighter-main-text-color;
+            margin-top: .7rem;
+        }
+    }
+}

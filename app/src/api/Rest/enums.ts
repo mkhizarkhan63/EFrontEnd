@@ -1,0 +1,1781 @@
+import { E } from '..';
+import { createMapper } from '../Types';
+import * as dtos from './dtos';
+
+/**
+ * This file have to contains all needed enums maps between front- and backend
+ */
+
+export const ConstructionLand = createMapper('constructionLand', [
+    [
+        dtos.construction.ConstructionLandType.none,
+        E.ConstructionLand.none,
+    ],
+    [
+        dtos.construction.ConstructionLandType.residential,
+        E.ConstructionLand.residential,
+    ],
+    [
+        dtos.construction.ConstructionLandType.commercial,
+        E.ConstructionLand.commercial,
+    ],
+]);
+
+export const LandType = createMapper('landType', [
+    [
+        dtos.design.LandType.none,
+        E.ConstructionLand.none,
+    ],
+    [
+        dtos.design.LandType.residential,
+        E.ConstructionLand.residential,
+    ],
+    [
+        dtos.design.LandType.commercial,
+        E.ConstructionLand.commercial,
+    ],
+]);
+
+export const ConstructionType = createMapper('constructionType', [
+    [
+        dtos.construction.ConstructionType.none,
+        E.ConstructionType.none,
+    ],
+    [
+        dtos.construction.ConstructionType.structureOnly,
+        E.ConstructionType.structureOnly,
+    ],
+    [
+        dtos.construction.ConstructionType.turnKey,
+        E.ConstructionType.turnKey,
+    ],
+]);
+
+export const DesignType = createMapper('designType', [
+    [
+        dtos.contractor.DesignType.none,
+        E.ConstructionType.none,
+    ],
+    [
+        dtos.contractor.DesignType.design,
+        E.ConstructionType.design,
+    ],
+    [
+        dtos.contractor.DesignType.supervision,
+        E.ConstructionType.supervision,
+    ],
+]);
+
+export const CompanyRelationship = createMapper('companyRelationship', [
+    [
+        dtos.contractor.CompanyRelationship.none,
+        E.CompanyRelationship.none,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.partner,
+        E.CompanyRelationship.partner,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.engineer,
+        E.CompanyRelationship.engineer,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.engineer,
+        E.CompanyRelationship.engineer,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.supervisor,
+        E.CompanyRelationship.supervisor,
+    ],
+]);
+
+export const CompanyStatus = createMapper('companyStatus', [
+    [
+        dtos.contractor.CompanyStatus.none,
+        E.CompanyStatus.none,
+    ],
+    [
+        dtos.contractor.CompanyStatus.draft,
+        E.CompanyStatus.draft,
+    ],
+    [
+        dtos.contractor.CompanyStatus.reviewing,
+        E.CompanyStatus.reviewing,
+    ],
+    [
+        dtos.contractor.CompanyStatus.approved,
+        E.CompanyStatus.approved,
+    ],
+    [
+        dtos.contractor.CompanyStatus.rejected,
+        E.CompanyStatus.rejected,
+    ],
+]);
+
+export const ContractorAffiliationType = createMapper('contractorAffiliationType', [
+    [
+        dtos.contractor.ContractorAffiliationType.none,
+        E.AffiliationType.none,
+    ],
+    [
+        dtos.contractor.ContractorAffiliationType.partner,
+        E.AffiliationType.partner,
+    ],
+    [
+        dtos.contractor.ContractorAffiliationType.engineer,
+        E.AffiliationType.engineer,
+    ],
+    [
+        dtos.contractor.ContractorAffiliationType.supervisor,
+        E.AffiliationType.supervisor,
+    ],
+]);
+
+export const ConsultantAffiliationType = createMapper('consultantAffiliationType', [
+    [
+        dtos.contractor.ConsultantAffiliationType.none,
+        E.AffiliationType.none,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.partner,
+        E.AffiliationType.partner,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.engineer,
+        E.AffiliationType.engineer,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.supervisor,
+        E.AffiliationType.supervisor,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.architect,
+        E.AffiliationType.architect,
+    ],
+]);
+
+export const TaskUpdateDraft = createMapper('taskUpdateDraft', [
+    [
+        dtos.workflow.ResourceDraftType.none,
+        E.TaskUpdateDraft.none,
+    ],
+    [
+        dtos.workflow.ResourceDraftType.task,
+        E.TaskUpdateDraft.task,
+    ],
+    [
+        dtos.workflow.ResourceDraftType.material,
+        E.TaskUpdateDraft.material,
+    ],
+]);
+
+export const ResourceType = createMapper('contractorAffiliationType', [
+    [
+        dtos.contractor.ResourceType.engineer,
+        E.ResourceType.engineer,
+    ],
+    [
+        dtos.contractor.ResourceType.labors,
+        E.ResourceType.labors,
+    ],
+    [
+        dtos.contractor.ResourceType.administration,
+        E.ResourceType.administration,
+    ],
+    [
+        dtos.contractor.ResourceType.machinery,
+        E.ResourceType.machinery,
+    ],
+    [
+        dtos.contractor.ResourceType.none,
+        E.ResourceType.none,
+    ],
+]);
+
+export const ConstructionLevel = createMapper('constructionLevel', [
+    [1, E.ConstructionLevel.ground],
+    [2, E.ConstructionLevel.p],
+    [3, E.ConstructionLevel.floor1],
+]);
+
+export const ContractorRelationType = createMapper('contractorRelationType', [
+    [
+        dtos.contractor.CompanyRelationship.engineer,
+        E.ContractorRelationType.engineer,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.partner,
+        E.ContractorRelationType.partner,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.supervisor,
+        E.ContractorRelationType.supervisor,
+    ],
+    [
+        dtos.contractor.CompanyRelationship.none,
+        E.ContractorRelationType.none,
+    ],
+]);
+
+export const MarketingService = createMapper('marketingService', [
+    [
+        dtos.contractor.MarketingService.none,
+        E.MarketingService.other,
+    ],
+    [
+        dtos.contractor.MarketingService.houzz,
+        E.MarketingService.houzz,
+    ],
+    [
+        dtos.contractor.MarketingService.tikTok,
+        E.MarketingService.tikTok,
+    ],
+    [
+        dtos.contractor.MarketingService.twitter,
+        E.MarketingService.twitter,
+    ],
+    [
+        dtos.contractor.MarketingService.behance,
+        E.MarketingService.behance,
+    ],
+    [
+        dtos.contractor.MarketingService.whatsapp,
+        E.MarketingService.whatsapp,
+    ],
+    [
+        dtos.contractor.MarketingService.dribbble,
+        E.MarketingService.dribbble,
+    ],
+    [
+        dtos.contractor.MarketingService.linkedin,
+        E.MarketingService.linkedIn,
+    ],
+    [
+        dtos.contractor.MarketingService.instagram,
+        E.MarketingService.instagram,
+    ],
+    [
+        dtos.contractor.MarketingService.pinterest,
+        E.MarketingService.pinterest,
+    ],
+    [
+        dtos.contractor.MarketingService.companyWebsite,
+        E.MarketingService.companyWebsite,
+    ],
+]);
+
+export const ContractorOrganization = createMapper('contractorOrganization', [
+    [
+        dtos.contractor.ContractorOrganization.omanHousingBank,
+        E.Organization.omanHousingBank,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.omanTenderBoard,
+        E.Organization.omanTenderBoard,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.others,
+        E.Organization.others,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.pdo,
+        E.Organization.pdo,
+    ],
+]);
+
+export const ConsultantOrganization = createMapper('consultantOrganization', [
+    [
+        dtos.contractor.ConsultantOrganization.none,
+        E.Organization.none,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanHousingBank,
+        E.Organization.omanHousingBank,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanTenderBoard,
+        E.Organization.omanTenderBoard,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.others,
+        E.Organization.others,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanSocietyOfEngineers,
+        E.Organization.omanSocietyOfEngineers,
+    ],
+]);
+
+export const PlanningSoftware = createMapper('planningSoftware', [
+    [
+        dtos.contractor.PlanningSoftware.excel,
+        E.PlanningSoftware.excel,
+    ],
+    [
+        dtos.contractor.PlanningSoftware.microsoftProject,
+        E.PlanningSoftware.microsoftProject,
+    ],
+    [
+        dtos.contractor.PlanningSoftware.other,
+        E.PlanningSoftware.other,
+    ],
+    [
+        dtos.contractor.PlanningSoftware.primavera,
+        E.PlanningSoftware.primavera,
+    ],
+]);
+
+export const ResourceKind = createMapper('resourceKind', [
+    [
+        dtos.contractor.ResourceType.none,
+        E.ResourceType.none,
+    ],
+    [
+        dtos.contractor.ResourceType.administration,
+        E.ResourceType.administration,
+    ],
+    [
+        dtos.contractor.ResourceType.engineer,
+        E.ResourceType.engineer,
+    ],
+    [
+        dtos.contractor.ResourceType.labors,
+        E.ResourceType.labors,
+    ],
+    [
+        dtos.contractor.ResourceType.machinery,
+        E.ResourceType.machinery,
+    ],
+]);
+
+export const SowAndStageStatus = createMapper('sowAndStageStatus', [
+    [
+        dtos.construction.SowAndStageStatus.none,
+        E.SowAndStageStatus.none,
+    ],
+    [
+        dtos.construction.SowAndStageStatus.drafted,
+        E.SowAndStageStatus.drafted,
+    ],
+    [
+        dtos.construction.SowAndStageStatus.live,
+        E.SowAndStageStatus.live,
+    ],
+    [
+        dtos.construction.SowAndStageStatus.inactive,
+        E.SowAndStageStatus.inactive,
+    ],
+]);
+
+export const StageTemplatePart = createMapper('StageTemplatePart', [
+    [
+        dtos.construction.StageTemplatePlanStage.none,
+        E.StageTableNames.none,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.mobilization,
+        E.StageTableNames.mobilization,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.structure,
+        E.StageTableNames.structure,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.internalFinishes,
+        E.StageTableNames.internalFinishes,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.externalFinishes,
+        E.StageTableNames.externalFinishes,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.handover,
+        E.StageTableNames.handover,
+    ],
+    [
+        dtos.construction.StageTemplatePlanStage.maintenance,
+        E.StageTableNames.maintenance,
+    ],
+]);
+
+export const ProjectStatus = createMapper('projectStatus', [
+    [
+        dtos.construction.ConstructionProjectStatus.none,
+        E.ProjectStatus.none,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.draft,
+        E.ProjectStatus.draft,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.reviewing,
+        E.ProjectStatus.reviewing,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.rejected,
+        E.ProjectStatus.rejected,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.openBids,
+        E.ProjectStatus.openBids,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.chooseContractor,
+        E.ProjectStatus.chooseContractor,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.bidSelected,
+        E.ProjectStatus.chooseContractor,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.readyToSign,
+        E.ProjectStatus.readyToSign,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.signed,
+        E.ProjectStatus.signed,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.liveInPm,
+        E.ProjectStatus.liveInPm,
+    ],
+    [
+        dtos.construction.ConstructionProjectStatus.archived,
+        E.ProjectStatus.archived,
+    ],
+]);
+
+export const ProjectStatisitcType = createMapper('projectStatisitcType', [
+    [
+        dtos.workflow.ProjectStatus.none,
+        E.PmProjectStatus.none,
+    ],
+    [
+        dtos.workflow.ProjectStatus.notStarted,
+        E.PmProjectStatus.notStarted,
+    ],
+    [
+        dtos.workflow.ProjectStatus.onTrack,
+        E.PmProjectStatus.onTrack,
+    ],
+    [
+        dtos.workflow.ProjectStatus.inDelay,
+        E.PmProjectStatus.inDelay,
+    ],
+    [
+        dtos.workflow.ProjectStatus.inMaintenance,
+        E.PmProjectStatus.inMaintenance,
+    ],
+    [
+        dtos.workflow.ProjectStatus.completed,
+        E.PmProjectStatus.completed,
+    ],
+]);
+
+export const FileExtensionType = createMapper('fileExtensionType', [
+    [
+        dtos.workflow.FileExtensionType.none,
+        E.FileExtensionType.none,
+    ],
+    [
+        dtos.workflow.FileExtensionType.image,
+        E.FileExtensionType.image,
+    ],
+    [
+        dtos.workflow.FileExtensionType.pdf,
+        E.FileExtensionType.pdf,
+    ],
+
+]);
+
+export const TaskCategory = createMapper('taskCategory', [
+    [
+        dtos.profile.TaskCategory.none,
+        E.TaskCategory.none,
+    ],
+    [
+        dtos.profile.TaskCategory.followUpTask,
+        E.TaskCategory.followUpTask,
+    ],
+    [
+        dtos.profile.TaskCategory.callContractor,
+        E.TaskCategory.callContractor,
+    ],
+    [
+        dtos.profile.TaskCategory.visitSite,
+        E.TaskCategory.visitSite,
+    ],
+    [
+        dtos.profile.TaskCategory.reviewProject,
+        E.TaskCategory.reviewProject,
+    ],
+]);
+
+export const TaskStatus = createMapper('taskStatus', [
+    [
+        dtos.workflow.TaskStatus.upcoming,
+        E.TaskStatus.upComing,
+    ],
+    [
+        dtos.workflow.TaskStatus.due,
+        E.TaskStatus.due,
+    ],
+    [
+        dtos.workflow.TaskStatus.inDelay,
+        E.TaskStatus.inDelay,
+    ],
+    [
+        dtos.workflow.TaskStatus.completed,
+        E.TaskStatus.completed,
+    ],
+    [
+        dtos.workflow.TaskStatus.pending,
+        E.TaskStatus.pending,
+    ],
+]);
+
+export const MaterialType = createMapper('materialType', [
+    [
+        dtos.pm.MaterialType.none,
+        E.MaterialType.none,
+    ],
+    [
+        dtos.pm.MaterialType.clientSubContractorMaterials,
+        E.MaterialType.clientSubContractorMaterials,
+    ],
+    [
+        dtos.pm.MaterialType.clientMaterialsForContractorInstallation,
+        E.MaterialType.clientMaterialsForContractorInstallation,
+    ],
+    [
+        dtos.pm.MaterialType.contractorMaterialsForClientApproval,
+        E.MaterialType.contractorMaterialsForClientApproval,
+    ],
+    [
+        dtos.pm.MaterialType.contractorMaterials,
+        E.MaterialType.contractorMaterials,
+    ],
+]);
+
+export const MaterialUserTaskType = createMapper('materialUserTaskType', [
+    [
+        dtos.workflow.MaterialUserTaskType.none,
+        E.MaterialUserTaskType.none,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.quantityRequest,
+        E.MaterialUserTaskType.quantityRequest,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.purchase,
+        E.MaterialUserTaskType.purchase,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.delivery,
+        E.MaterialUserTaskType.delivery,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.onSite,
+        E.MaterialUserTaskType.onSite,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.provideOptions,
+        E.MaterialUserTaskType.provideOptions,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.selectOption,
+        E.MaterialUserTaskType.selectOption,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.supplyNow,
+        E.MaterialUserTaskType.supplyNow,
+    ],
+    [
+        dtos.workflow.MaterialUserTaskType.confirmWork,
+        E.MaterialUserTaskType.confirmWork,
+    ],
+]);
+
+export const SubContractorMaterialStatus = createMapper('subContractorMaterialStatus', [
+    [
+        dtos.pm.SubContractorMaterialStatus.none,
+        E.SubContractorMaterialStatus.none,
+    ],
+    [
+        dtos.pm.SubContractorMaterialStatus.pending,
+        E.SubContractorMaterialStatus.pending,
+    ],
+    [
+        dtos.pm.SubContractorMaterialStatus.delay,
+        E.SubContractorMaterialStatus.delay,
+    ],
+    [
+        dtos.pm.SubContractorMaterialStatus.completed,
+        E.SubContractorMaterialStatus.completed,
+    ],
+]);
+
+export const StageStatus = createMapper('stageStatus', [
+    [
+        dtos.workflow.StageStatus.completed,
+        E.PmStageStatus.completed,
+    ],
+    [
+        dtos.workflow.StageStatus.currentStage,
+        E.PmStageStatus.currentStage,
+    ],
+    [
+        dtos.workflow.StageStatus.inDelay,
+        E.PmStageStatus.inDelay,
+    ],
+    [
+        dtos.workflow.StageStatus.upcoming,
+        E.PmStageStatus.upcoming,
+    ],
+]);
+
+export const BidStatus = createMapper('bidStatus', [
+    [
+        dtos.construction.BidStatus.none,
+        E.BidStatus.none,
+    ],
+    [
+        dtos.construction.BidStatus.draft,
+        E.BidStatus.draft,
+    ],
+    [
+        dtos.construction.BidStatus.continue,
+        E.BidStatus.continue,
+    ],
+    [
+        dtos.construction.BidStatus.submitted,
+        E.BidStatus.submitted,
+    ],
+    [
+        dtos.construction.BidStatus.archived,
+        E.BidStatus.archived,
+    ],
+    [
+        dtos.construction.BidStatus.expired,
+        E.BidStatus.expired,
+    ],
+]);
+
+export const OrganizationStatus = createMapper('organizationStatus', [
+    [
+        dtos.contractor.ContractorOrganization.none,
+        E.Organization.none,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.omanHousingBank,
+        E.Organization.omanHousingBank,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.omanTenderBoard,
+        E.Organization.omanTenderBoard,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.pdo,
+        E.Organization.pdo,
+    ],
+    [
+        dtos.contractor.ContractorOrganization.others,
+        E.Organization.others,
+    ],
+]);
+
+export const OrganizationConsultantStatus = createMapper('organizationConsultantStatus', [
+    [
+        dtos.contractor.ConsultantOrganization.none,
+        E.Organization.none,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanHousingBank,
+        E.Organization.omanHousingBank,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanTenderBoard,
+        E.Organization.omanTenderBoard,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.omanSocietyOfEngineers,
+        E.Organization.omanSocietyOfEngineers,
+    ],
+    [
+        dtos.contractor.ConsultantOrganization.others,
+        E.Organization.others,
+    ],
+]);
+
+export const LinkedProfileStatus = createMapper('linkedProfileStatus', [
+    [
+        dtos.contractor.LinkedProfileStatus.none,
+        E.LinkedProfileStatus.none,
+    ],
+    [
+        dtos.contractor.LinkedProfileStatus.pending,
+        E.LinkedProfileStatus.pending,
+    ],
+    [
+        dtos.contractor.LinkedProfileStatus.approved,
+        E.LinkedProfileStatus.approved,
+    ],
+]);
+
+export const RegisteredAt = createMapper('registeredAt', [
+    [
+        dtos.contractor.ConsultantAffiliationType.none,
+        E.AffiliationType.none,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.engineer,
+        E.AffiliationType.engineer,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.partner,
+        E.AffiliationType.partner,
+    ],
+    [
+        dtos.contractor.ConsultantAffiliationType.supervisor,
+        E.AffiliationType.supervisor,
+    ],
+]);
+
+export const NotificationType = createMapper('notificationType', [
+    [
+        dtos.notification.NotificationType.none,
+        E.MessageType.none,
+    ],
+    [
+        dtos.notification.NotificationType.projectChange,
+        E.MessageType.projectChange,
+    ],
+    [
+        dtos.notification.NotificationType.system,
+        E.MessageType.system,
+    ],
+    [
+        dtos.notification.NotificationType.updateEmail,
+        E.MessageType.updateEmail,
+    ],
+    [
+        dtos.notification.NotificationType.userInvitation,
+        E.MessageType.userInvitation,
+    ],
+    [
+        dtos.notification.NotificationType.companyInvitation,
+        E.MessageType.companyInvitation,
+    ],
+    [
+        dtos.notification.NotificationType.ownerInvitation,
+        E.MessageType.ownerInvitation,
+    ],
+    [
+        dtos.notification.NotificationType.referralInvitation,
+        E.MessageType.referralInvitation,
+    ],
+    [
+        dtos.notification.NotificationType.shortCompanyInvitation,
+        E.MessageType.shortCompanyInvitation,
+    ],
+    [
+        dtos.notification.NotificationType.pmTask,
+        E.MessageType.pmTask,
+    ],
+    [
+        dtos.notification.NotificationType.pmMaterialTask,
+        E.MessageType.pmMaterialTask,
+    ],
+]);
+
+export const RoleInCompany = createMapper('roleInCompany', [
+    [
+        dtos.profile.ContextType.none,
+        E.RoleInCompany.client,
+    ],
+    [
+        dtos.profile.ContextType.client,
+        E.RoleInCompany.client,
+    ],
+    [
+        dtos.profile.ContextType.consultant,
+        E.RoleInCompany.consultant,
+    ],
+    [
+        dtos.profile.ContextType.contractor,
+        E.RoleInCompany.contractor,
+    ],
+    [
+        dtos.profile.ContextType.supplier,
+        E.RoleInCompany.supplier,
+    ],
+    [
+        dtos.profile.ContextType.admin,
+        E.RoleInCompany.admin,
+    ],
+]);
+
+export const ProjectStartingStep = createMapper('projectStartingStep', [
+    [
+        dtos.construction.ProjectStartingStep.none,
+        E.ProjectStartingStep.none,
+    ],
+    [
+        dtos.construction.ProjectStartingStep.design,
+        E.ProjectStartingStep.design,
+    ],
+    [
+        dtos.construction.ProjectStartingStep.build,
+        E.ProjectStartingStep.build,
+    ],
+]);
+
+export const ContractorViewType = createMapper('contractorViewType', [
+    [
+        dtos.construction.ContractorViewType.none,
+        E.ContractorViewType.none,
+    ],
+    [
+        dtos.construction.ContractorViewType.myProjects,
+        E.ContractorViewType.myProjects,
+    ],
+    [
+        dtos.construction.ContractorViewType.newProjects,
+        E.ContractorViewType.newProjects,
+    ],
+    [
+        dtos.construction.ContractorViewType.invitedNewProjects,
+        E.ContractorViewType.invitedNewProjects,
+    ],
+]);
+
+export const ContractSubject = createMapper('contractSubject', [
+    [
+        dtos.contract.Subject.none,
+        E.ContractSubjects.none,
+    ],
+    [
+        dtos.contract.Subject.client,
+        E.ContractSubjects.client,
+    ],
+    [
+        dtos.contract.Subject.consultant,
+        E.ContractSubjects.consultant,
+    ],
+    [
+        dtos.contract.Subject.contractor,
+        E.ContractSubjects.contractor,
+    ],
+]);
+
+export const FloorLevel = createMapper('floorLevel', [
+    [
+        dtos.design.FloorType.none,
+        E.FloorType.none,
+    ],
+    [
+        dtos.design.FloorType.basement,
+        E.FloorType.basement,
+    ],
+    [
+        dtos.design.FloorType.floor,
+        E.FloorType.floor,
+    ],
+    [
+        dtos.design.FloorType.penthouse,
+        E.FloorType.penthouse,
+    ],
+    [
+        dtos.design.FloorType.ground,
+        E.FloorType.ground,
+    ],
+]);
+
+export const RoomType = createMapper('roomType', [
+    [
+        dtos.design.RoomType.none,
+        E.RoomType.none,
+    ],
+    [
+        dtos.design.RoomType.masterBedRoom,
+        E.RoomType.masterBedroom,
+    ],
+    [
+        dtos.design.RoomType.bedRoom,
+        E.RoomType.bedroom,
+    ],
+    [
+        dtos.design.RoomType.livingRoom,
+        E.RoomType.livingRoom,
+    ],
+    [
+        dtos.design.RoomType.maidRoom,
+        E.RoomType.maidRoom,
+    ],
+    [
+        dtos.design.RoomType.majlis,
+        E.RoomType.majilis,
+    ],
+    [
+        dtos.design.RoomType.kitchen,
+        E.RoomType.kitchen,
+    ],
+    [
+        dtos.design.RoomType.dining,
+        E.RoomType.dining,
+    ],
+    [
+        dtos.design.RoomType.toilet,
+        E.RoomType.toilet,
+    ],
+    [
+        dtos.design.RoomType.garage,
+        E.RoomType.garage,
+    ],
+    [
+        dtos.design.RoomType.bathRoom,
+        E.RoomType.bathroom,
+    ],
+    [
+        dtos.design.RoomType.guestRoom,
+        E.RoomType.guestRoom,
+    ],
+    [
+        dtos.design.RoomType.guestDining,
+        E.RoomType.guestDining,
+    ],
+    [
+        dtos.design.RoomType.multiPurpose,
+        E.RoomType.multiPurpose,
+    ],
+    [
+        dtos.design.RoomType.laundry,
+        E.RoomType.laundry,
+    ],
+    [
+        dtos.design.RoomType.store,
+        E.RoomType.store,
+    ],
+    [
+        dtos.design.RoomType.balconies,
+        E.RoomType.balconies,
+    ],
+    [
+        dtos.design.RoomType.balcony,
+        E.RoomType.balcony,
+    ],
+    [
+        dtos.design.RoomType.openKitchen,
+        E.RoomType.openKitchen,
+    ],
+    [
+        dtos.design.RoomType.closedKitchen,
+        E.RoomType.closedKitchen,
+    ],
+    [
+        dtos.design.RoomType.pantry,
+        E.RoomType.pantry,
+    ],
+    [
+        dtos.design.RoomType.driverRoom,
+        E.RoomType.driverRoom,
+    ],
+    [
+        dtos.design.RoomType.outdoorGrill,
+        E.RoomType.outdoorGrill,
+    ],
+    [
+        dtos.design.RoomType.gym,
+        E.RoomType.gym,
+    ],
+    [
+        dtos.design.RoomType.rooftopSeating,
+        E.RoomType.rooftopSeating,
+    ],
+    [
+        dtos.design.RoomType.informalSeating,
+        E.RoomType.informalSeating,
+    ],
+    [
+        dtos.design.RoomType.familySeating,
+        E.RoomType.familySeating,
+    ],
+    [
+        dtos.design.RoomType.receptionHall,
+        E.RoomType.receptionHall,
+    ],
+    [
+        dtos.design.RoomType.office,
+        E.RoomType.office,
+    ],
+    [
+        dtos.design.RoomType.library,
+        E.RoomType.library,
+    ],
+    [
+        dtos.design.RoomType.swimmingPool,
+        E.RoomType.swimmingPool,
+    ],
+    [
+        dtos.design.RoomType.storage,
+        E.RoomType.storage,
+    ],
+]);
+
+export const ProfileType = createMapper('profileType', [
+    [
+        dtos.contractor.CompanyType.consultant,
+        E.ProfileType.consultant,
+    ],
+    [
+        dtos.contractor.CompanyType.contractor,
+        E.ProfileType.contractor,
+    ],
+]);
+
+export const CompaniesStatus = createMapper('companiesStatus', [
+    [
+        dtos.contractor.CompanyStatus.draft,
+        E.CompaniesStatus.draft,
+    ],
+    [
+        dtos.contractor.CompanyStatus.reviewing,
+        E.CompaniesStatus.adminReview,
+    ],
+    [
+        dtos.contractor.CompanyStatus.approved,
+        E.CompaniesStatus.approved,
+    ],
+    [
+        dtos.contractor.CompanyStatus.rejected,
+        E.CompaniesStatus.rejected,
+    ],
+    [
+        dtos.contractor.CompanyStatus.invited,
+        E.CompaniesStatus.invited,
+    ],
+]);
+
+export const AffiliationType = createMapper('affiliationType', [
+    [
+        dtos.contractor.AffiliationType.none,
+        E.AffiliationType.none,
+    ],
+    [
+        dtos.contractor.AffiliationType.partner,
+        E.AffiliationType.partner,
+    ],
+    [
+        dtos.contractor.AffiliationType.engineer,
+        E.AffiliationType.engineer,
+    ],
+    [
+        dtos.contractor.AffiliationType.supervisor,
+        E.AffiliationType.supervisor,
+    ],
+    [
+        dtos.contractor.AffiliationType.architect,
+        E.AffiliationType.architect,
+    ],
+    [
+        dtos.contractor.AffiliationType.owner,
+        E.AffiliationType.owner,
+    ],
+]);
+
+export const ReviewStatus = createMapper('reviewStatus', [
+    [
+        dtos.contractor.ReviewStatus.none,
+        E.ReviewStatus.none,
+    ],
+    [
+        dtos.contractor.ReviewStatus.approved,
+        E.ReviewStatus.approved,
+    ],
+    [
+        dtos.contractor.ReviewStatus.reviewing,
+        E.ReviewStatus.reviewing,
+    ],
+    [
+        dtos.contractor.ReviewStatus.rejected,
+        E.ReviewStatus.rejected,
+    ],
+]);
+
+export const CompanyType = createMapper('companyType', [
+    [
+        dtos.contractor.CompanyType.none,
+        E.RoleInCompany.none,
+    ],
+    [
+        dtos.contractor.CompanyType.consultant,
+        E.RoleInCompany.consultant,
+    ],
+    [
+        dtos.contractor.CompanyType.contractor,
+        E.RoleInCompany.contractor,
+    ],
+]);
+
+export const ActorType = createMapper('actorType', [
+    [
+        dtos.construction.ActorType.client,
+        E.RoleInCompany.client,
+    ],
+    [
+        dtos.construction.ActorType.contractor,
+        E.RoleInCompany.contractor,
+    ],
+    [
+        dtos.construction.ActorType.consultant,
+        E.RoleInCompany.consultant,
+    ],
+    [
+        dtos.construction.ActorType.none,
+        E.RoleInCompany.none,
+    ],
+    [
+        dtos.construction.ActorType.supplier,
+        E.RoleInCompany.supplier,
+    ],
+]);
+
+export const DesignStatus = createMapper('designStatus', [
+    [
+        dtos.construction.DesignProjectStatus.none,
+        E.DesignProjectStatus.noneDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.adminReview,
+        E.DesignProjectStatus.adminReviewDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.consultantReview,
+        E.DesignProjectStatus.consultantReviewDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.advancePayment,
+        E.DesignProjectStatus.advancePaymentDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.uploadDrawings,
+        E.DesignProjectStatus.uploadDrawingsDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.finalPayment,
+        E.DesignProjectStatus.finalPaymentDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.completed,
+        E.DesignProjectStatus.completedDesign,
+    ],
+    [
+        dtos.construction.DesignProjectStatus.rejected,
+        E.DesignProjectStatus.rejectedDesign,
+    ],
+]);
+
+export const AdminProjectView = createMapper('adminProjectView', [
+    [
+        dtos.construction.AdminProjectView.none,
+        E.AdminProjectView.none,
+    ],
+    [
+        dtos.construction.AdminProjectView.construction,
+        E.AdminProjectView.construction,
+    ],
+    [
+        dtos.construction.AdminProjectView.design,
+        E.AdminProjectView.design,
+    ],
+]);
+
+export const DesignTrigger = createMapper('designTrigger', [
+    [
+        dtos.construction.DesignProjectTrigger.none,
+        E.DesignProjectTrigger.none,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.accept,
+        E.DesignProjectTrigger.accept,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.adminReview,
+        E.DesignProjectTrigger.adminReview,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.consultantReview,
+        E.DesignProjectTrigger.consultantReview,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.payment,
+        E.DesignProjectTrigger.payment,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.reject,
+        E.DesignProjectTrigger.reject,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.submitDrawings,
+        E.DesignProjectTrigger.submitDrawings,
+    ],
+    [
+        dtos.construction.DesignProjectTrigger.uploadDrawings,
+        E.DesignProjectTrigger.uploadDrawings,
+    ],
+]);
+
+export const InvitationStatus = createMapper('invitationStatus', [
+    [
+        dtos.construction.InvitationStatus.none,
+        E.InvitationStatus.none,
+    ],
+    [
+        dtos.construction.InvitationStatus.active,
+        E.InvitationStatus.active,
+    ],
+    [
+        dtos.construction.InvitationStatus.declined,
+        E.InvitationStatus.declined,
+    ],
+    [
+        dtos.construction.InvitationStatus.approved,
+        E.InvitationStatus.approved,
+    ],
+]);
+
+export const InvitationType = createMapper('invitationType', [
+    [
+        dtos.construction.InvitationType.none,
+        E.InvitationType.none,
+    ],
+    [
+        dtos.construction.InvitationType.design,
+        E.InvitationType.design,
+    ],
+    [
+        dtos.construction.InvitationType.supervision,
+        E.InvitationType.supervision,
+    ],
+    [
+        dtos.construction.InvitationType.bid,
+        E.InvitationType.bid,
+    ],
+]);
+
+export const ConsultantStatusView = createMapper('consultantStatusView', [
+    [
+        dtos.construction.ConsultantStatusView.none,
+        E.ProjectStatus.none,
+    ],
+    [
+        dtos.construction.ConsultantStatusView.waitingForClient,
+        E.ProjectStatus.signed,
+    ],
+    [
+        dtos.construction.ConsultantStatusView.uploadDrawings,
+        E.ProjectStatus.uploadDrawings,
+    ],
+    [
+        dtos.construction.ConsultantStatusView.signContract,
+        E.ProjectStatus.readyToSign,
+    ],
+    [
+        dtos.construction.ConsultantStatusView.activeContract,
+        E.ProjectStatus.liveInPm,
+    ],
+    [
+        dtos.construction.ConsultantStatusView.closed,
+        E.ProjectStatus.archived,
+    ],
+]);
+
+export const ContractStatus = createMapper('contractStatus', [
+    [
+        dtos.contract.ContractStatus.none,
+        E.ContractStatus.none,
+    ],
+    [
+        dtos.contract.ContractStatus.readyToSign,
+        E.ContractStatus.readyToSign,
+    ],
+    [
+        dtos.contract.ContractStatus.signed,
+        E.ContractStatus.signed,
+    ],
+    [
+        dtos.contract.ContractStatus.liveInPm,
+        E.ContractStatus.liveInPm,
+    ],
+    [
+        dtos.contract.ContractStatus.archived,
+        E.ContractStatus.archived,
+    ],
+]);
+
+export const NotesAndTasksAffiliationType = createMapper('notesAndTasksAffiliationType', [
+    [
+        dtos.profile.NoteTaskAffilationType.none,
+        E.NoteTaskAffiliationType.none,
+    ],
+    [
+        dtos.profile.NoteTaskAffilationType.company,
+        E.NoteTaskAffiliationType.company,
+    ],
+    [
+        dtos.profile.NoteTaskAffilationType.project,
+        E.NoteTaskAffiliationType.project,
+    ],
+    [
+        dtos.profile.NoteTaskAffilationType.user,
+        E.NoteTaskAffiliationType.user,
+    ],
+]);
+
+export const WorkflowActorType = createMapper('workflowActorType', [
+    [
+        dtos.workflow.ActorType.none,
+        E.WorkflowActorType.none,
+    ],
+    [
+        dtos.workflow.ActorType.client,
+        E.WorkflowActorType.client,
+    ],
+    [
+        dtos.workflow.ActorType.contractor,
+        E.WorkflowActorType.contractor,
+    ],
+    [
+        dtos.workflow.ActorType.consultant,
+        E.WorkflowActorType.consultant,
+    ],
+    [
+        dtos.workflow.ActorType.supplier,
+        E.WorkflowActorType.supplier,
+    ],
+]);
+
+export const WorkflowActionType = createMapper('workflowActionType', [
+    [
+        dtos.workflow.ActionType.none,
+        E.WorkflowActionType.none,
+    ],
+    [
+        dtos.workflow.ActionType.checklist,
+        E.WorkflowActionType.checklist,
+    ],
+    [
+        dtos.workflow.ActionType.datePicker,
+        E.WorkflowActionType.datePicker,
+    ],
+    [
+        dtos.workflow.ActionType.payment,
+        E.WorkflowActionType.payment,
+    ],
+    [
+        dtos.workflow.ActionType.empty,
+        E.WorkflowActionType.empty,
+    ],
+]);
+
+export const sowItemCategory = createMapper('sowItemCategory', [
+    [
+        dtos.construction.SowItemCategory.none,
+        E.SowItemCategory.none,
+    ],
+    [
+        dtos.construction.SowItemCategory.contractorStructuralMepMaterials,
+        E.SowItemCategory.contractorStructuralMepMaterials,
+    ],
+    [
+        dtos.construction.SowItemCategory.clientSubcontractedScopeAndMaterials,
+        E.SowItemCategory.clientSubcontractedScopeAndMaterials,
+    ],
+    [
+        dtos.construction.SowItemCategory.clientMaterialsForContractorInstallation,
+        E.SowItemCategory.clientMaterialsForContractorInstallation,
+    ],
+    [
+        dtos.construction.SowItemCategory.clientMaterialsInstalledByEither,
+        E.SowItemCategory.clientMaterialsInstalledByEither,
+    ],
+    [
+        dtos.construction.SowItemCategory.payment,
+        E.SowItemCategory.payment,
+    ],
+    [
+        dtos.construction.SowItemCategory.notApplicable,
+        E.SowItemCategory.notApplicable,
+    ],
+]);
+
+export const linkedProfileStatus = createMapper('linkedProfileStatus', [
+    [
+        dtos.contractor.LinkedProfileStatus.none,
+        E.LinkedProfileStatus.none,
+    ],
+    [
+        dtos.contractor.LinkedProfileStatus.pending,
+        E.LinkedProfileStatus.pending,
+    ],
+    [
+        dtos.contractor.LinkedProfileStatus.approved,
+        E.LinkedProfileStatus.approved,
+    ],
+]);
+
+export const sowItemVisibility = createMapper('sowItemVisibility', [
+    [
+        dtos.construction.SowItemVisibility.none,
+        E.SowItemVisibility.none,
+    ],
+    [
+        dtos.construction.SowItemVisibility.masterItem,
+        E.SowItemVisibility.masterItem,
+    ],
+    [
+        dtos.construction.SowItemVisibility.hidden,
+        E.SowItemVisibility.hidden,
+    ],
+]);
+
+export const sowItemChangeStatus = createMapper('sowItemChangeStatus', [
+    [
+        dtos.construction.SowItemChangeStatus.none,
+        E.SowItemChangeStatus.none,
+    ],
+    [
+        dtos.construction.SowItemChangeStatus.unchanged,
+        E.SowItemChangeStatus.unchanged,
+    ],
+    [
+        dtos.construction.SowItemChangeStatus.changed,
+        E.SowItemChangeStatus.changed,
+    ],
+    [
+        dtos.construction.SowItemChangeStatus.removed,
+        E.SowItemChangeStatus.removed,
+    ],
+]);
+
+export const WorkflowActorTypePm = createMapper('workflowActorTypePm', [
+    [
+        dtos.workflow.ActorType.none,
+        E.WorkflowActorType.none,
+    ],
+    [
+        dtos.workflow.ActorType.client,
+        E.WorkflowActorType.client,
+    ],
+    [
+        dtos.workflow.ActorType.consultant,
+        E.WorkflowActorType.consultant,
+    ],
+    [
+        dtos.workflow.ActorType.contractor,
+        E.WorkflowActorType.contractor,
+    ],
+    [
+        dtos.workflow.ActorType.supplier,
+        E.WorkflowActorType.supplier,
+    ],
+]);
+
+export const MaterialSubmissionType = createMapper('materialSubmissionType', [
+    [
+        dtos.workflow.MaterialSubmissionType.none,
+        E.MaterialSubmissionType.none,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.materialQuantitiesRequest,
+        E.MaterialSubmissionType.materialQuantitiesRequest,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.materialsPurchased,
+        E.MaterialSubmissionType.materialsPurchased,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.materialsDelivered,
+        E.MaterialSubmissionType.materialsDelivered,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.confirmMaterialsOnSite,
+        E.MaterialSubmissionType.confirmMaterialsOnSite,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.materialOptions,
+        E.MaterialSubmissionType.materialOptions,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.selectOption,
+        E.MaterialSubmissionType.selectOption,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.subContracted,
+        E.MaterialSubmissionType.subContracted,
+    ],
+    [
+        dtos.workflow.MaterialSubmissionType.completedWork,
+        E.MaterialSubmissionType.completedWork,
+    ],
+]);
+
+export const SowItemVisibility = createMapper('sowItemVisibility', [
+    [
+        dtos.workflow.SowItemVisibility.none,
+        E.SowItemVisibility.none,
+    ],
+    [
+        dtos.workflow.SowItemVisibility.masterItem,
+        E.SowItemVisibility.masterItem,
+    ],
+    [
+        dtos.workflow.SowItemVisibility.hidden,
+        E.SowItemVisibility.hidden,
+    ],
+]);
+
+export const PmSowItemCategory = createMapper('pmSowItemCategory', [
+    [
+        dtos.workflow.SowItemCategory.none,
+        E.SowItemCategory.none,
+    ],
+    [
+        dtos.workflow.SowItemCategory.contractorStructuralMepMaterials,
+        E.SowItemCategory.contractorStructuralMepMaterials,
+    ],
+    [
+        dtos.workflow.SowItemCategory.clientSubcontractedScopeAndMaterials,
+        E.SowItemCategory.clientSubcontractedScopeAndMaterials,
+    ],
+    [
+        dtos.workflow.SowItemCategory.clientMaterialsForContractorInstallation,
+        E.SowItemCategory.clientMaterialsForContractorInstallation,
+    ],
+    [
+        dtos.workflow.SowItemCategory.clientMaterialsInstalledByEither,
+        E.SowItemCategory.clientMaterialsInstalledByEither,
+    ],
+    [
+        dtos.workflow.SowItemCategory.payment,
+        E.SowItemCategory.payment,
+    ],
+    [
+        dtos.workflow.SowItemCategory.notApplicable,
+        E.SowItemCategory.notApplicable,
+    ],
+]);
+
+export const TaskUpdateType = createMapper('taskUpdateType', [
+    [
+        dtos.workflow.TaskUpdateType.none,
+        E.TaskUpdateType.none,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.siteObservation,
+        E.TaskUpdateType.siteObservation,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.contractualNote,
+        E.TaskUpdateType.contractualNote,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.risksConcerns,
+        E.TaskUpdateType.risksConcerns,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.generalUpdates,
+        E.TaskUpdateType.generalUpdates,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.messageToContractor,
+        E.TaskUpdateType.messageToContractor,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.messageToConsultant,
+        E.TaskUpdateType.messageToConsultant,
+    ],
+    [
+        dtos.workflow.TaskUpdateType.messageToClient,
+        E.TaskUpdateType.messageToClient,
+    ],
+]);
+
+export const RateType = createMapper('rateType', [
+    [
+        dtos.workflow.RateType.none,
+        E.RateType.none,
+    ],
+    [
+        dtos.workflow.RateType.no,
+        E.RateType.no,
+    ],
+    [
+        dtos.workflow.RateType.rm,
+        E.RateType.rm,
+    ],
+    [
+        dtos.workflow.RateType.squaredMeter,
+        E.RateType.squaredMeter,
+    ],
+]);
+
+export const ResourceTypeMaterial = createMapper('resourceTypeMaterial', [
+    [
+        dtos.workflow.ResourceType.none,
+        E.ResourceTypeMaterial.none,
+    ],
+    [
+        dtos.workflow.ResourceType.taskUpdate,
+        E.ResourceTypeMaterial.taskUpdate,
+    ],
+    [
+        dtos.workflow.ResourceType.materialOption,
+        E.ResourceTypeMaterial.materialOption,
+    ],
+    [
+        dtos.workflow.ResourceType.materialQuantityRequest,
+        E.ResourceTypeMaterial.materialQuantityRequest,
+    ],
+    [
+        dtos.workflow.ResourceType.materialTaskUpdate,
+        E.ResourceTypeMaterial.materialTaskUpdate,
+    ],
+]);
+
+export const ActionType = createMapper('actionType', [
+    [
+        dtos.workflow.ActionType.checklist,
+        E.ActionType.checklist,
+    ],
+    [
+        dtos.workflow.ActionType.datePicker,
+        E.ActionType.datePicker,
+    ],
+    [
+        dtos.workflow.ActionType.empty,
+        E.ActionType.empty,
+    ],
+    [
+        dtos.workflow.ActionType.none,
+        E.ActionType.none,
+    ],
+    [
+        dtos.workflow.ActionType.payment,
+        E.ActionType.payment,
+    ],
+]);
+
+export const SubmitStatus = createMapper('submitStatus', [
+    [
+        dtos.workflow.SubmitStatus.none,
+        E.SubmitStatus.none,
+    ],
+    [
+        dtos.workflow.SubmitStatus.approved,
+        E.SubmitStatus.approved,
+    ],
+    [
+        dtos.workflow.SubmitStatus.rejected,
+        E.SubmitStatus.rejected,
+    ],
+    [
+        dtos.workflow.SubmitStatus.submitted,
+        E.SubmitStatus.submitted,
+    ],
+]);
+
+export const PaymentType = createMapper('paymentType', [
+    [
+        dtos.pm.PaymentType.none,
+        E.PaymentType.none,
+    ],
+    [
+        dtos.pm.PaymentType.consultantPayment,
+        E.PaymentType.consultantPayment,
+    ],
+    [
+        dtos.pm.PaymentType.contractorPayment,
+        E.PaymentType.contractorPayment,
+    ],
+]);
+
+export const MaterialWorkflowType = createMapper('materialWorkflowType', [
+    [
+        dtos.workflow.MaterialWorkflowType.none,
+        E.MaterialWorkflowType.none,
+    ],
+    [
+        dtos.workflow.MaterialWorkflowType.clientMaterialsForContractorInstallation,
+        E.MaterialWorkflowType.clientMaterialsForContractorInstallation,
+    ],
+    [
+        dtos.workflow.MaterialWorkflowType.contractorMaterialsForClientApproval,
+        E.MaterialWorkflowType.contractorMaterialsForClientApproval,
+    ],
+    [
+        dtos.workflow.MaterialWorkflowType.clientSubContractors,
+        E.MaterialWorkflowType.clientSubContractors,
+    ],
+    [
+        dtos.workflow.MaterialWorkflowType.contractorMaterials,
+        E.MaterialWorkflowType.contractorMaterials,
+    ],
+]);
+
+export const SpecialProfileMode = createMapper('specialProfileMode', [
+    [
+        dtos.profile.SpecialProfileMode.none,
+        E.SpecialProfileMode.none,
+    ],
+    [
+        dtos.profile.SpecialProfileMode.simpleContractorCreation,
+        E.SpecialProfileMode.simpleContractorCreation,
+    ],
+    [
+        dtos.profile.SpecialProfileMode.simpleConsultantCreation,
+        E.SpecialProfileMode.simpleConsultantCreation,
+    ],
+]);
+
+export const ConsultantType = createMapper('consultantType', [
+    [
+        dtos.design.ConsultantType.none,
+        E.ConsultantType.none,
+    ],
+    [
+        dtos.design.ConsultantType.architect,
+        E.ConsultantType.architect,
+    ],
+    [
+        dtos.design.ConsultantType.developer,
+        E.ConsultantType.developer,
+    ],
+]);
+
+export const PropertyType = createMapper('propertyType', [
+    [
+        dtos.design.PropertyType.none,
+        E.PropertyType.none,
+    ],
+    [
+        dtos.design.PropertyType.villa,
+        E.PropertyType.villa,
+    ],
+    [
+        dtos.design.PropertyType.twinVilla,
+        E.PropertyType.twinVilla,
+    ],
+    [
+        dtos.design.PropertyType.apartment,
+        E.PropertyType.apartment,
+    ],
+    [
+        dtos.design.PropertyType.townHouse,
+        E.PropertyType.townHouse,
+    ],
+    [
+        dtos.design.PropertyType.farmHouse,
+        E.PropertyType.farmHouse,
+    ],
+]);

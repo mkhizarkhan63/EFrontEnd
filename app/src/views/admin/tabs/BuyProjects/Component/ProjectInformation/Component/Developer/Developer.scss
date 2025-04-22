@@ -1,0 +1,45 @@
+.buyproject_developer {
+    width: 83.5% !important;
+
+
+    &_flex {
+
+        display: flex;
+        justify-content: space-between;
+        width: 92%;
+        padding-right: 1px;
+        padding-top: 2em;
+
+        column-gap: 8px;
+
+        @include is-tablet {
+            column-gap: 10px;
+        }
+
+        .inputText {
+            width: 253px;
+
+            .inputDate__field_flex {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                .spacer {
+                    width: 10%;
+                }
+
+                &__dd {
+                    flex-grow: 1;
+
+                    .inputText__field {
+                        padding-top: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include is-tablet {
+        width: 74% !important;
+    }
+}

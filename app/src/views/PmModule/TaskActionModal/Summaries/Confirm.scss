@@ -1,0 +1,30 @@
+.confirm {
+    width: 100%;
+    border-top: 1px solid #E8E8E8;
+    border-bottom: 1px solid #E8E8E8;
+    padding: 1.4rem 2.21rem 1.5rem 2rem;
+    background-color: #FAFBFF;
+
+    &[data-status="rejected"] {
+        background-color: $red-text-bg;
+    }
+
+    &__title {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 1rem;
+
+        @include is-tablet {
+            font-size: .93rem;
+        }
+    }
+
+    &__desc {
+        font-size: 11px;
+        color: $brighter-main-text-color;
+
+        @include is-tablet {
+            font-size: .79rem;
+        }
+    }
+}

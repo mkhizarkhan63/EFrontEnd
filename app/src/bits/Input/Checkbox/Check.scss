@@ -1,0 +1,70 @@
+.checkbox-container {
+    position: relative;
+    display: flex;
+    width: var(--width-checkbox-radio);
+    color: #000;
+    font-size: .94rem;
+    font-weight: 500;
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    .checkbox-container-option {
+        display: flex;
+        cursor: pointer;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+
+        .checkbox-container-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: .2rem;
+            background-color: unset;
+            border: 1px solid #DBDBDB;
+            margin-right: .66rem;
+            transition: background-color .1s ease-in;
+
+            @include is-tablet {
+                width: 1.14rem;
+                height: 1.14rem;
+            }
+        }
+
+        &:hover .checkbox-container-input {
+            background-color: rgb(212, 212, 212);
+        }
+
+        input:checked ~ .checkbox-container-input {
+            position: relative;
+            background-color: $navy-blue-text;
+            border: 1px solid #FFF;
+            box-shadow: 0 0 0 1px $navy-blue-text;
+        }
+
+        .checkbox-container-input:after {
+            content: "";
+            display: none;
+            width: .25rem;
+            height: .5rem;
+            margin-bottom: .1rem;
+            border: solid #FFF;
+            /*!rtl:begin:ignore*/
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            /*!rtl:end:ignore*/
+        }
+
+        input ~ .checkbox-container-input:after {
+            display: block;
+        }
+    }
+}

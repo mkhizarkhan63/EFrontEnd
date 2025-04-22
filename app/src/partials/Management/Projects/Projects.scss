@@ -1,0 +1,182 @@
+.company-projects {
+    .top-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 3.7rem 0 2.6rem;
+
+        &__text {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+
+            &-num {
+                font-size: 1.28rem;
+                color: $brighter-main-text-color;
+                margin-left: .3rem;
+                font-weight: 500;
+            }
+        }
+
+        &__right {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: .2rem;
+
+            .search {
+                svg, image {
+                    width: 1.31rem;
+                    height: 1.31rem;
+                }
+            }
+
+            .filter {
+                position: relative;
+
+                .btn {
+                    margin-left: 2.3rem;
+                }
+
+                svg, image {
+                    width: 1.26rem;
+                    height: 1.16rem;
+                }
+
+                &[data-is-filter="true"] {
+                    @include filter-active;
+                }
+            }
+
+            .btn[data-color="blue"] {
+                margin-left: 3.3rem;
+            }
+        }
+    }
+
+    .table {
+        padding: 0 2rem;
+
+        &__header {
+            font-weight: 500;
+            border-bottom: none;
+
+            .table__cell {
+                padding: 1.7rem 1rem 1.15rem 0;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    min-width: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            .table__row {
+                align-items: initial;
+
+                &:first-of-type {
+                    border-top: 1px solid $border-color;
+                }
+            }
+
+            .table__cell {
+                padding: 1.2rem 1rem 1.7rem 0;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    min-width: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+
+                .location {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .43rem;
+                    word-break: break-word;
+                    font-size: .93rem;
+                    font-weight: 600;
+
+                    &__governorate {
+                        color: $brighter-main-text-color;
+                        font-size: .86rem;
+                        font-weight: 400;
+                    }
+                }
+
+                .status {
+                    font-size: .79rem;
+                    font-weight: 500;
+                    width: fit-content;
+                    padding: .57rem;
+                    margin: 0 auto auto 0;
+                    border-radius: 3px;
+                    color: $green-text;
+                    background-color: $green-text-bg;
+
+                    &[data-status="reviewing"] {
+                        color: $red-text;
+                        background-color: $red-text-bg;
+                    }
+
+                    &[data-status="openBids"],
+                    &[data-status="chooseContractor"] {
+                        color: $navy-blue-text;
+                        background-color: $navy-blue-text-bg;
+                    }
+
+                    &[data-status="readyToSign"],
+                    &[data-status="signed"],
+                    &[data-status="liveInPm"] {
+                        color: $green-text;
+                        background-color: $green-text-bg;
+                    }
+
+                    &[data-status="draft"],
+                    &[data-status="archived"] {
+                        color: $brighter-main-text-color;
+                        background-color: #89898921;
+                    }
+                }
+
+                .btn {
+                    font-size: .86rem;
+                    font-weight: 500;
+                    margin: 0 0 0 auto;
+
+                    .text {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}

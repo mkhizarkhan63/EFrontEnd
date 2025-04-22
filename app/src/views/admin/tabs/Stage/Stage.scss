@@ -1,0 +1,285 @@
+.stage-management {
+    width: 85%;
+    max-width: 89.3rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include show-page-animation;
+
+    .top-header {
+        margin-bottom: 1.5rem;
+
+        &__right {
+            .btn {
+                margin-left: 1rem;
+            }
+        }
+
+        &__text {
+            &-optional {
+                font-size: 1.28rem;
+                color: $brighter-main-text-color;
+                margin-left: .3rem;
+            }
+        }
+
+        .filter {
+            .btn {
+                border: 1px solid transparent;
+                padding: .8rem;
+                border-radius: 6px;
+                transition: .12s ease-in-out;
+
+                .icon {
+                    filter: brightness(0);
+                }
+
+                svg, image {
+                    width: 1.21rem;
+                    height: 1.21rem;
+                }
+            }
+
+            &[data-is-active="true"] {
+                .btn {
+                    border: 1px solid $navy-blue-text;
+
+                    .icon {
+                        filter: var(--icon-blue);
+                    }
+                }
+            }
+        }
+    }
+
+    .filter-container {
+        transform-origin: top;
+
+        &[data-is-open="true"] {
+            max-height: 500rem;
+            transition: max-height .2s ease-in-out;
+        }
+
+        &[data-is-open="false"] {
+            max-height: 0;
+            overflow: hidden;
+
+            .filter-box {
+                opacity: 0;
+            }
+        }
+
+        .filter-box {
+            @include block;
+            padding: 1.7rem;
+            transition: .12s ease-in-out;
+
+            &__top {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &__title {
+                flex: 1;
+                font-size: 1.07rem;
+                font-weight: 500;
+            }
+
+            &__bottom {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+        }
+
+        .input-counter-container {
+            margin: 1.5rem 1.3rem 0 0;
+
+            &:nth-of-type(3) {
+                margin-right: 2rem;
+            }
+
+            .input-counter {
+                width: 11rem;
+                margin-top: .8rem;
+
+                @include is-tablet {
+                    width: 12.2rem;
+                }
+            }
+
+            label {
+                font-size: .93rem;
+            }
+        }
+
+        .checkboxes-group {
+            display: flex;
+            align-self: flex-end;
+            margin-top: 2rem;
+
+            .checkbox-container {
+                width: auto;
+                margin: 0 3rem 1.5rem 0;
+                font-size: 1rem;
+                font-weight: 400;
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &-input {
+                    width: 1.14rem;
+                    height: 1.14rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        .btn--main {
+            margin-right: 2rem;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+        }
+
+        .close {
+            margin-right: 0;
+        }
+    }
+
+    .table {
+        margin-top: 1.4rem;
+
+        .title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        &__header {
+            border-bottom: none;
+
+            .table__cell {
+                &:not(:first-of-type) {
+                    padding-left: 0;
+
+                    @include is-pc {
+                        padding-left: 1rem;
+                    }
+                }
+
+                &:nth-of-type(1), &:nth-of-type(4) {
+                    word-break: break-word;
+                }
+
+                &:nth-of-type(7) {
+                    min-width: 5.4rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+
+                &:last-of-type {
+                    min-width: 3.5rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            .table__row:first-of-type {
+                border-top: 1px solid $border-color;
+            }
+
+            .table__cell {
+                padding: 1.7rem 1rem 1.3rem 0;
+                word-break: break-word;
+
+                @include is-pc {
+                    padding-left: 1rem;
+                }
+
+                &:first-of-type {
+                    padding-left: 0;
+                }
+
+                &:last-of-type {
+                    padding: .8rem 0 .5rem;
+                    min-width: 3.5rem;
+
+                    @include is-pc {
+                        min-width: auto;
+                        padding-left: 1rem;
+                    }
+                }
+
+                .template {
+                    font-weight: 600;
+                }
+
+                .action {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: .2rem 0;
+
+                    &__item {
+                        .btn {
+                            font-size: .86rem;
+                            font-weight: 500;
+                            margin: 0 0 0 auto;
+
+                            .text {
+                                text-align: end;
+                            }
+                        }
+
+                        &--red {
+                            .btn {
+                                color: $red-text;
+
+                                .text:after {
+                                    background-color: $red-text;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .status {
+            width: fit-content;
+            min-width: 4.43rem;
+            font-size: .79rem;
+            font-weight: 500;
+            text-align: center;
+            padding: .5rem .6rem;
+            margin: -1rem 0 -1rem auto;
+            border-radius: 5px;
+
+            &[data-status="live"] {
+                color: $green-text;
+                background-color: $green-text-bg;
+            }
+
+            &[data-status="inactive"] {
+                color: $brighter-main-text-color;
+                background-color: #89898921;
+            }
+
+            &[data-status="drafted"] {
+                color: $navy-blue-text;
+                background-color: $navy-blue-text-bg;
+            }
+        }
+    }
+}

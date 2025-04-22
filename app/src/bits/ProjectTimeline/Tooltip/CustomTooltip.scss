@@ -1,0 +1,81 @@
+.tooltip-container {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    animation: fade-in .15s ease-in-out;
+
+    .tooltip {
+        width: 130px;
+        box-shadow: 0 3px 6px #00000029;
+        background-color: #FFF;
+        padding: 1.14rem;
+
+        @media screen and (min-width: 450px) {
+            width: 15.6rem;
+        }
+
+        &__top {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            margin-bottom: 1.1rem;
+            border-bottom: 1px solid #E8E8E8;
+        }
+
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__text {
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: .5rem;
+
+            @include is-tablet {
+                font-size: .86rem;
+            }
+
+            &--date {
+                text-align: right;
+            }
+
+            &--subtitle {
+                color: $brighter-main-text-color;
+                font-weight: 400;
+                margin: 0 0 .5rem;
+            }
+
+            &[data-type="#ec5469"] {
+                color: $red-text;
+            }
+        }
+
+        &__row {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            margin-bottom: .85rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &[data-type="#ec5469"] {
+            .tooltip__row {
+                margin-bottom: 1rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

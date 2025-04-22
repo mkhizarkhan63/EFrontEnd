@@ -1,0 +1,65 @@
+$profile-submitted-width: 68.1rem;
+$profile-submitted-maxwidth: 85%;
+
+.profile-submitted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    + .footer {
+        width: 85%;
+        max-width: 85%;
+
+        @include is-tablet {
+            width: $profile-submitted-width;
+            max-width: $profile-submitted-maxwidth;
+        }
+    }
+
+    &__container {
+        @include block;
+        width: 85%;
+        max-width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        padding: 3.9rem 5rem 5.3rem;
+
+        @include is-tablet {
+            width: $profile-submitted-width;
+            max-width: $profile-submitted-maxwidth;
+        }
+    }
+
+    &__icon {
+        svg, image {
+            width: 4.8em;
+            height: 4.8rem;
+        }
+    }
+
+    &__header {
+        font-size: 2.24rem;
+        font-weight: 600;
+        margin: 2rem 0 1.1rem;
+    }
+
+    &__subheader {
+        width: 75%;
+        font-size: 1.14rem;
+        color: $brighter-main-text-color;
+        padding-bottom: 2.9rem;
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    &__text {
+        font-size: 1.14rem;
+        color: $brighter-main-text-color;
+        margin: 2.85rem 0 1.9rem;
+    }
+}

@@ -1,0 +1,61 @@
+.pdf-commitment {
+    text-align: left;
+    margin-top: 3.3em;
+    padding-bottom: 3em;
+
+    &--first {
+        border-bottom: 1px solid $brighter-main-text-color;
+    }
+
+    &__text {
+        font-size: .93em;
+        line-height: 1.4em;
+        margin-bottom: 3.3em;
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        padding-right: 2.4em;
+        text-align: center;
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: .8em;
+
+        img {
+            width: 3.5em;
+            height: 3.5em;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+
+            &[src=""],
+            &:not([src]) {
+                width: 0;
+                height: 0;
+            }
+
+            &:nth-of-type(2) {
+                transform: translateX(-1.2em);
+                z-index: 1;
+            }
+        }
+    }
+
+    &__person-label {
+        font-size: .9em;
+        margin-bottom: .5em;
+    }
+
+    &__person-name {
+        font-size: 1.2em;
+        font-weight: 500;
+        max-width: 100%;
+        word-break: break-word;
+    }
+}

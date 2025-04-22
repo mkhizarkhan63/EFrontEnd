@@ -1,0 +1,11 @@
+@mixin tick-icon-centered {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("/assets/graphics/white_tick.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

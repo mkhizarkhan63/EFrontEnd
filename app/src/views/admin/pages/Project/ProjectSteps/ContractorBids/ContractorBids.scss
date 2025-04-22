@@ -1,0 +1,134 @@
+.contractors-bids {
+    margin-top: 3rem;
+
+    .services-tip {
+        margin: 3rem 0 2rem;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-gap: 0 2rem;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    &__btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 3rem 1.7rem;
+        background-color: #FFF;
+        border-top: 1px solid #E8E8E8;
+        z-index: 7;
+
+        @include is-tablet {
+            padding: 1.5rem 7.86rem 1.7rem;
+        }
+
+        .btn {
+            margin: 0 0 0 auto;
+            padding-left: 1.6rem;
+        }
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ECECEF;
+        margin: 0 0 1.7rem;
+        width: 100%;
+        align-items: stretch;
+
+        .buttons-menu {
+            margin: 0;
+
+            &__item {
+                position: relative;
+                margin-right: 0;
+                padding-right: 10px;
+
+                @include is-tablet {
+                    padding-right: 3rem;
+                }
+
+                &:after {
+                    bottom: 0;
+                    transition: .12s ease-in-out;
+                }
+
+                &-num {
+                    width: 1.71rem;
+                    height: 1.71rem;
+                    border-radius: 50%;
+                    font-size: .93rem;
+                    font-weight: 500;
+                    background-color: #FFF;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid #E3E3E3;
+                    padding-top: 2px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateY(50%);
+                    transition: .12s ease-in-out;
+
+                    @include is-tablet {
+                        padding-top: 0;
+                    }
+                }
+
+                .btn {
+                    padding: .8rem 0 1.3rem 2.5rem;
+                    margin-right: 0;
+                    font-size: 1.14rem;
+                    min-height: initial;
+                }
+
+                &[data-is-active="true"] {
+                    .buttons-menu__item-num {
+                        background-color: $navy-blue-text;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            color: $main-text-color;
+            flex-shrink: 0;
+            font-size: 1.07rem;
+            min-height: 3.29rem;
+            width: fit-content;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .25s ease-in-out;
+
+            @include is-tablet {
+                min-width: max-content;
+            }
+
+            &-img {
+                margin-right: .7rem;
+                width: 1.21rem;
+                height: 1.21rem;
+            }
+
+            &:hover {
+                color: $navy-blue-text;
+            }
+        }
+    }
+
+    .table--company {
+        margin: 3rem auto 4rem;
+    }
+}

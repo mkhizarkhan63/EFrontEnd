@@ -1,0 +1,276 @@
+.sow-view {
+    .view-content {
+        overflow-x: auto;
+
+        @include is-tablet {
+            overflow-x: hidden;
+        }
+
+        &__scroll {
+            min-width: 550px;
+
+            @include is-tablet {
+                min-width: initial;
+            }
+        }
+    }
+}
+
+.subheader-type--sow {
+    .subheader {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 50% 50%;
+        grid-gap: 0 5rem;
+        padding: 1rem 2.2rem 1rem 1.2rem;
+        position: static;
+
+        @include is-tablet {
+            position: fixed;
+        }
+
+        &__left {
+            width: auto;
+            height: auto;
+            overflow: hidden;
+            padding-left: 2rem;
+
+            .left__return {
+                margin: 3rem 1.2rem 0 0;
+            }
+        }
+
+        &__right {
+            width: auto;
+            height: auto;
+            grid-row: span 2;
+
+            .subheader-item {
+                margin: 0 1.5rem .3rem 0;
+                text-align: right;
+
+                @include is-pc {
+                    margin: 0 4.1rem .3rem 0;
+                }
+
+                &__label {
+                    font-size: .93rem;
+                    margin: 0;
+                }
+
+                &__value {
+                    font-size: 1.07rem;
+                    font-weight: 600;
+                    margin: .7rem 0 0;
+                }
+            }
+
+            .btn--main {
+                margin-bottom: .8rem;
+
+                &[data-color="green"] {
+                    margin-left: 2.5rem;
+                }
+            }
+        }
+
+        &__bottom {
+            position: relative;
+            left: 5rem;
+
+            .sow-labels {
+                display: flex;
+                align-items: center;
+
+                &__status {
+                    width: fit-content;
+                    padding: .72rem 1rem;
+                    border-radius: 5px;
+                    font-size: 1.07rem;
+                    min-width: 4.43rem;
+                    margin: 0 1rem 0 0;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-weight: 500;
+
+                    &[data-status="live"] {
+                        color: $green-text;
+                        background-color: $green-text-bg;
+                    }
+
+                    &[data-status="inactive"] {
+                        color: $brighter-main-text-color;
+                        background-color: #89898921;
+                    }
+
+                    &[data-status="drafted"] {
+                        color: $navy-blue-text;
+                        background-color: $navy-blue-text-bg;
+                    }
+                }
+
+                &__master-sow {
+                    background-color: $navy-blue-text;
+                    color: #FFF;
+                    width: fit-content;
+                    padding: .72rem 1rem;
+                    border-radius: 5px;
+                    font-size: 1.07rem;
+                    min-width: 4.43rem;
+                    margin: 0 1rem 0 0;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.sow {
+    width: 89.2rem;
+    max-width: 90%;
+    margin: 0 auto;
+
+    @include is-tablet {
+        max-width: 80%;
+        margin: $subheader-height auto 0;
+    }
+
+    .contract-name {
+        margin: 2rem 0 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+
+        .input-text {
+            flex-grow: 1;
+        }
+
+        .btn {
+            margin: 0 0 .1rem 1.5rem;
+            animation: fade-in .2s ease-in;
+        }
+    }
+
+    .top-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0 1.4rem;
+
+        &__text {
+            font-size: 1.07rem;
+            font-weight: 600;
+            margin: 0;
+
+            .grey-text {
+                font-size: .93rem;
+                font-weight: 500;
+                color: $brighter-main-text-color;
+                margin-left: .3rem;
+            }
+        }
+
+        .btn-animate {
+            animation: fade-in .15s ease-in;
+        }
+
+        .btn {
+            font-size: 1.07rem;
+        }
+    }
+
+    .table {
+        padding: 0;
+
+        &__header {
+            font-size: .79rem;
+            padding: 0 1.43rem;
+            border-bottom: none;
+        }
+
+        &__body {
+            font-size: .86rem;
+
+            .table__row:first-of-type {
+                border-top: 1px solid $border-color;
+            }
+
+            .items {
+                font-size: .93rem;
+                font-weight: 600;
+                word-break: break-word;
+            }
+        }
+
+        &__row {
+            padding: 0 1.43rem;
+        }
+
+        .specs,
+        .workflows,
+        .visits {
+            color: $brighter-main-text-color;
+        }
+
+        .category {
+            color: #000;
+        }
+
+        .action {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: .8rem 1.3rem;
+            margin: .3rem 0;
+
+            .button {
+                .btn {
+                    .icon {
+                        padding-left: .2rem;
+
+                        svg image {
+                            filter: var(--icon-dark-gray);
+                        }
+                    }
+
+                    &:hover {
+                        .icon svg image {
+                            filter: brightness(.5);
+                        }
+                    }
+                }
+
+                &--edit {
+                    svg, image {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+
+                &--delete {
+                    svg, image {
+                        width: 12px;
+                        height: 13px;
+                    }
+                }
+            }
+
+            .btn {
+                font-size: .86rem;
+                font-weight: 500;
+
+                .text {
+                    text-align: end;
+                }
+            }
+        }
+    }
+
+    + .footer {
+        width: 89.2rem;
+        max-width: 80%;
+    }
+}

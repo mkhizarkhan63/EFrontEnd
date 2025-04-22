@@ -1,0 +1,62 @@
+.contractor-settings--subscription {
+    .contractor-settings {
+        &__header {
+            margin: 2.5rem 0 2.2rem;
+        }
+    }
+
+    .subscription {
+        &__profile-info {
+            padding: .5rem;
+            font-size: .93rem;
+            font-weight: 600;
+        }
+
+        &__title {
+            &-main {
+                font-size: 1.14rem;
+                font-weight: 600;
+                line-height: 1.4rem;
+                margin: 3.1rem 0 2.1rem;
+            }
+
+            &-sub {
+                font-size: 1.07rem;
+                font-weight: 600;
+                line-height: 1.3rem;
+                margin-bottom: 1.3rem;
+            }
+        }
+
+        &__list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                position: relative;
+                font-size: .93rem;
+                line-height: 1.36rem;
+                color: $brighter-main-text-color;
+                padding-left: 1.6rem;
+                margin-bottom: 1.2rem;
+
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    content: "";
+                    width: 1.14rem;
+                    height: 1.14rem;
+                    background-image: url("/assets/graphics/grey_tick.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                }
+            }
+        }
+
+        .btn {
+            margin-bottom: 3.6rem;
+        }
+    }
+}

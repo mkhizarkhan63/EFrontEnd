@@ -1,0 +1,163 @@
+.buyprojectlevelContainer_header_inputTextWithIcon {
+    position: relative;
+    height: 50px;
+
+    &__inputtxt {
+        background: $white-bg 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        opacity: 1;
+        width: 9em;
+
+        input {
+            padding: 0 40px 0 10px;
+        }
+
+        .input-text-header {
+            display: none;
+        }
+
+        .icon {
+            position: absolute;
+            top: .9em;
+            left: 5em;
+            padding-left: 6px;
+            width: 13px;
+            height: 13px;
+            text-align: right;
+            font-size: 13px;
+            font-family: Axiforma;
+            letter-spacing: 0px;
+            color: #898989;
+            opacity: 1;
+
+            @include is-tablet {
+                top: 1.3em;
+                left: 7em;
+            }
+
+            // @include is-pc {
+            //     // Add your PC-specific styles here
+            //     top: 33%;
+            //     left: 65%;
+            // }
+        }
+    }
+
+
+
+
+}
+
+.buyprojectlevelContainer_header_inputTextWithIcon_searchfield {
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    width: 32em;
+
+    .input-text-header {
+        display: none;
+    }
+
+
+
+    .tick {
+        display: none;
+    }
+
+    .icon-box {
+        position: absolute;
+        top: 1.2em;
+        left: 93%;
+        width: 8px;
+        height: 7px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+
+        &__svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__image {
+            width: 13px;
+            height: 12px;
+        }
+
+
+    }
+
+}
+
+.buyprojectlevelContainer_header_delete_icon {
+
+    cursor: pointer;
+    margin-top: .7em;
+    
+
+    .icon-box {
+
+        &__svg {
+            width: 20px !important;
+            height: 20px !important;
+        }
+
+        &__image {
+            width: 20px;
+            height: 20px;
+        }
+
+
+    }
+
+}
+
+.gridContainer {
+    padding: 10px 0 25px 0px;
+    border-bottom: 1px solid $input-border-color;
+
+    .buyprojectlevelContainer_grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 4fr 0.5fr;
+        grid-gap: 0; 
+        &__row {
+            display: contents; 
+            align-items: left;
+
+            .buyprojectlevelContainer_header {
+                padding: 8px;
+                text-align: left;
+                font: normal normal medium 11px/57px Axiforma;
+                letter-spacing: 0px;
+                color: $main-text-color;
+                opacity: 1;
+
+                .title {
+                    letter-spacing: 0px;
+                    color: $main-text-color;
+                    opacity: 1;
+                    margin-top: 1em;
+                    font-size: 10px;
+
+                    @include is-tablet {
+                        font: normal normal 600 13px/24px Axiforma;
+                        margin-top: 0;
+                    }
+                }
+
+                &_flex {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    padding-top: 1em;
+                    column-gap: 1em;
+
+                }
+            }
+
+
+        }
+
+
+    }
+}

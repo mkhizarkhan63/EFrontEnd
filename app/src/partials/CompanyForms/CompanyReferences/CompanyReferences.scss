@@ -1,0 +1,72 @@
+.company-forms--references {
+    .form {
+        &__header {
+            margin: 0 0 1.8rem;
+            display: flex;
+            align-items: center;
+
+            .btn--circle {
+                margin-left: 1rem;
+                position: relative;
+                top: .2rem;
+
+                svg, image {
+                    width: 1.14rem;
+                    height: 1.14rem;
+                }
+            }
+        }
+
+        &__optional-text {
+            margin: 2.1rem 0 2.6rem;
+        }
+
+        .client {
+            @include block;
+            padding: 2rem;
+            margin-top: 1.86rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0 2rem;
+            animation: fade-in .15s ease-in;
+            position: relative;
+
+            .btn--circle {
+                position: absolute;
+                top: 1.2rem;
+                right: 1.9rem;
+                width: 3.2rem;
+                height: 3.2rem;
+
+                svg, image {
+                    width: .85rem;
+                    height: .85rem;
+                }
+            }
+
+            &__title {
+                width: 100%;
+                font-weight: 600;
+                margin: .42rem 0;
+                color: $navy-blue-text;
+            }
+
+            .input {
+                &-text {
+                    width: 100%;
+                    margin: 1.3rem 0 .2rem;
+
+                    @include is-tablet {
+                        width: calc((100% - 2rem) / 2);
+                    }
+                }
+
+                &-header {
+                    margin: 0;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

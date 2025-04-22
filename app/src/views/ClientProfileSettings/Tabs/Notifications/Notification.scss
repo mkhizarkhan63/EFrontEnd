@@ -1,0 +1,122 @@
+.page-with-sidebar[data-page="page-profile-settings"] {
+    .client-settings--notification {
+        border: none;
+        border-radius: none;
+        background: none;
+        padding: 0;
+
+        .client-settings {
+            &__header {
+                margin-bottom: 3.6rem;
+            }
+
+            &__content {
+                @include block;
+                width: 100%;
+                padding: 0 2.3rem 1.6rem;
+                margin-bottom: 2.1rem;
+            }
+
+            &__btn {
+                margin: 0 0 0 auto;
+
+                .btn {
+                    margin: 0 0 0 auto;
+                    padding: .5rem 1.28rem .5rem 1.64rem;
+
+                    image, svg {
+                        width: 1.33rem;
+                        height: .93rem;
+                    }
+                }
+            }
+        }
+
+        .notification-email {
+            width: 100%;
+            padding-bottom: .5rem;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(#707070, .15);
+
+            .client-settings__subheader {
+                font-size: 1.14rem;
+                margin-bottom: 1.4rem;
+            }
+
+            &__item {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 0 2.5rem;
+                margin-bottom: 2.5rem;
+
+                @include is-tablet {
+                    gap: 0 5.5rem;
+                }
+
+                &-title {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: $dark-grey-text;
+                    margin-bottom: 1rem;
+                }
+
+                &-desc {
+                    font-size: 1rem;
+                    color: $brighter-main-text-color;
+
+                    @include is-tablet {
+                        font-size: .93rem;
+                    }
+                }
+
+                .toggle {
+                    flex-shrink: 0;
+                }
+            }
+        }
+
+        .notifications-website {
+            .client-settings__subheader {
+                margin-bottom: .9rem;
+            }
+
+            &__desc {
+                font-size: .93rem;
+                color: $brighter-main-text-color;
+                margin-bottom: 2rem;
+            }
+
+            .checkbox-multiple {
+                max-width: 29.5rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                height: auto;
+                margin-bottom: .5rem;
+                gap: 0 1%;
+
+                &-option {
+                    font-size: .93rem;
+                    color: $dark-grey-text;
+                    width: 49.5%;
+                    min-width: 12rem;
+                    margin-bottom: 1.93rem;
+                    padding: 0;
+                }
+
+                &-checkbox {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    margin: 0 .8rem 0 0;
+                    flex-shrink: 0;
+
+                    @include is-tablet {
+                        width: 1.14rem;
+                        height: 1.14rem;
+                    }
+                }
+            }
+        }
+    }
+}

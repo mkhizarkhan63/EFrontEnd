@@ -1,0 +1,149 @@
+.chart-doughnut {
+    @include block;
+    border: 1px solid #E8E8E8;
+    padding: 16px 13px;
+
+    @include is-tablet {
+        padding: 1.4rem 1rem;
+    }
+
+    &__title {
+        color: $brighter-main-text-color;
+        font-size: 13px;
+        margin-bottom: 1rem;
+        padding-left: .5rem;
+
+        @include is-tablet {
+            font-size: .93rem;
+        }
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__chart {
+        position: relative;
+
+        &-center {
+            position: absolute;
+            left: 50%;
+            bottom: .5rem;
+            transform: translate(-50%, 0);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+
+            @media screen and (min-width: 375px) {
+                font-size: 13px;
+            }
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+
+            &-date {
+                font-size: 14px;
+                font-weight: 600;
+                margin-top: .5rem;
+                /*!rtl:ignore*/
+                direction: ltr;
+
+                @include is-tablet {
+                    font-size: 1.07rem;
+                }
+            }
+        }
+    }
+
+    &__legend {
+        margin-top: 2rem;
+        padding: 0 .5rem;
+        display: flex;
+        flex-direction: column;
+
+        &-row {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            @include is-tablet {
+                font-size: .86rem;
+            }
+        }
+
+        &-name {
+            color: $brighter-main-text-color;
+            margin-right: 1rem;
+        }
+
+        &-value {
+            font-weight: 500;
+            text-align: right;
+            word-break: break-word;
+        }
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 33.5vw;
+        aspect-ratio: 1.771 / 1;
+
+        @media screen and (min-width: 505px) {
+            max-height: 165px;
+        }
+
+        @include is-tablet {
+            max-height: 9.86rem;
+        }
+    }
+
+    &[data-type="histogram"] {
+        .chart-doughnut__legend-name {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #EEE;
+                margin-right: 7px;
+
+                @include is-tablet {
+                    width: .86rem;
+                    height: .86rem;
+                    margin-right: .5rem;
+                }
+            }
+
+            &[data-color="0"]:before {
+                background-color: $green-text;
+            }
+
+            &[data-color="1"]:before {
+                background-color: $red-text;
+            }
+        }
+    }
+
+    &[data-type="budget"] {
+        @include is-tablet {
+            padding: .7rem 1rem 1.2rem;
+        }
+
+        .chart-doughnut__legend {
+            margin-top: 1.5rem;
+        }
+    }
+}

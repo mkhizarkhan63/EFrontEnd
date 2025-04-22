@@ -1,0 +1,209 @@
+.process-box {
+    @include block;
+    margin: 2rem auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include is-tablet {
+        height: 36rem;
+    }
+
+    &__header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        @include is-tablet {
+            height: 6.6rem;
+        }
+    }
+
+    &__status-box {
+        position: relative;
+        width: calc((100% - 30%) / 4);
+        height: 100%;
+        display: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: .35rem solid $green-text;
+        padding: 1rem 0;
+        flex-grow: 1;
+
+        @include is-tablet {
+            display: flex;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 46.5%;
+            left: 0;
+            background-color: $border-color;
+        }
+
+        &:first-of-type {
+            &:after {
+                display: none;
+            }
+        }
+
+        &[data-status="inProgress"] {
+            border-bottom: .35rem solid $green-text;
+            width: 30%;
+            display: flex;
+        }
+
+        &[data-status="wait"] {
+            border-bottom: .35rem solid $border-color;
+            color: $brighter-main-text-color;
+        }
+
+        &[data-status="archived"] {
+            border-bottom: .35rem solid $yellow-text;
+        }
+
+        &[data-status="rejected"] {
+            border-bottom: .35rem solid $red-text;
+        }
+
+        .status {
+            width: 2.2rem;
+            height: 2.2rem;
+            position: relative;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFF;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFF;
+            margin: .78rem .9rem 1.14rem 11.2%;
+
+            @include is-tablet {
+                font-size: 1.07rem;
+                width: 2.07rem;
+                min-width: 2.07rem;
+                height: 2.07rem;
+            }
+
+            &[data-status="done"] {
+                background-color: $green-text;
+            }
+
+            &[data-status="inProgress"] {
+                background-color: $navy-blue-text;
+                margin-left: 6.1%;
+            }
+
+            &[data-status="rejected"] {
+                background-color: $red-text;
+            }
+
+            &[data-status="archived"] {
+                background-color: $yellow-text;
+            }
+
+            &[data-status="wait"] {
+                color: $main-text-color;
+                border: 1px solid $border-color;
+            }
+
+            .done {
+                @include tick-icon-centered;
+            }
+        }
+    }
+
+    &__status-text {
+        display: flex;
+        flex-direction: column;
+        padding-right: .6rem;
+
+        * {
+            margin: .36rem 0;
+        }
+    }
+
+    &__status-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        max-width: 100%;
+
+        @include is-tablet {
+            font-size: 1.07rem;
+        }
+    }
+
+    &__status-description {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: $brighter-main-text-color;
+        max-width: 100%;
+
+        @include is-tablet {
+            font-size: .93rem;
+        }
+    }
+
+    &__status-image {
+        display: none;
+
+        @include is-tablet {
+            width: auto;
+            max-width: 52%;
+            max-height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            order: 2;
+            padding-right: .6rem;
+        }
+
+        svg {
+            height: 2.43rem;
+            width: 2.43rem;
+            margin-right: .21rem;
+
+            image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        span {
+            flex: 1;
+            font-weight: 500;
+            font-size: 1.07rem;
+            color: $brighter-main-text-color;
+            margin: .4rem .21rem 0 0;
+        }
+
+        + .process-box__status-text {
+            padding-right: .2rem;
+            min-width: calc(48% - 5.04rem);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex: 1;
+        padding: 4rem 0;
+
+        @include is-tablet {
+            padding: 0;
+        }
+    }
+}

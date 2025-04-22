@@ -1,0 +1,17 @@
+@mixin before-icon($url, $width: 1rem, $height: 1rem) {
+    &:before {
+        content: "";
+        background-image: url($url);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        display: block;
+        width: 14px;
+        height: 14px;
+
+        @include is-tablet {
+            width: $width;
+            height: $height;
+        }
+    }
+}

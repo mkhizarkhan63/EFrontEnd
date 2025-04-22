@@ -1,0 +1,181 @@
+.project-creator {
+    width: 100%;
+    background-color: #FAFBFF;
+    padding-top: 9rem;
+    color: $dark-grey-text;
+
+    .form {
+        @include block;
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 1.8rem 2.2rem;
+        background-color: #FFF;
+        transition: all .2s ease-in;
+
+        @include is-tablet {
+            width: 32.7rem;
+            max-width: 32.7rem;
+        }
+
+        .input-text .input-text-input {
+            height: 3.2rem;
+        }
+
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            margin: 17px 0;
+
+            @include is-tablet {
+                margin: 1.2rem 0;
+            }
+
+            > .input-text {
+                width: calc(50% - .5rem);
+            }
+
+            &--last {
+                margin-bottom: 17px;
+
+                @include is-tablet {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            &--subsection {
+                margin-top: 2.1rem;
+
+                .input-text-header {
+                    font-size: .93rem;
+                    font-weight: 400;
+                    margin-bottom: .9rem;
+                }
+            }
+        }
+
+        .textarea__input {
+            min-height: 5rem;
+        }
+
+        &__section-header {
+            font-size: 1.26rem;
+            font-weight: 600;
+            line-height: 1.93rem;
+            margin: 0 -1.4rem 1.2rem 0;
+        }
+
+        &__section-subheader {
+            font-size: .94rem;
+            margin-bottom: .9rem;
+            animation: fade-in .2s ease-in;
+        }
+
+        &__section-info {
+            font-size: .86rem;
+            line-height: 1.36rem;
+            color: $brighter-main-text-color;
+        }
+
+        .uploader {
+            margin-bottom: 2rem;
+
+            .dropzone {
+                padding: 15px 20px;
+
+                @include is-tablet {
+                    padding: 1.2rem 4.3rem;
+                }
+            }
+
+            ~ .file-list {
+                margin: 0 0 1.5rem;
+
+                .select-all {
+                    margin: 1.5rem 0;
+
+                    @include is-tablet {
+                        margin: 1.5rem 0 .7rem;
+                    }
+                }
+
+                .file-list__too-large {
+                    top: -1.4rem;
+                }
+
+                &__item {
+                    margin-bottom: .4rem;
+
+                    &-name {
+                        font-size: .9rem;
+                    }
+
+                    &-icon {
+                        width: 1.3rem;
+                        height: auto;
+                    }
+                }
+            }
+
+            .dropzone__img {
+                width: 2.2rem;
+            }
+        }
+
+        .checkbox-radio {
+            margin: 1.6rem 0;
+        }
+
+        &__tip {
+            font-size: .94rem;
+            margin: 2.5rem 0 1.7rem;
+            color: $brighter-main-text-color;
+        }
+
+        &__bottom-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin: 2rem 0 0;
+
+            .btn--main {
+                &[data-color="green"] {
+                    margin: 0 1.5rem;
+                }
+            }
+        }
+    }
+
+    &[data-is-admin="true"] {
+        .form {
+            &__section-header {
+                @include left-line(4px, 2.5rem, 2.2rem, $green-text);
+
+                &:before {
+                    transform: translate(-2.2rem, -52%);
+                }
+
+                &--proj-type {
+                    margin-top: 2.5rem;
+                }
+            }
+
+            &__row {
+                &-client-details {
+                    margin: 1.2rem 0 2.6rem;
+                }
+
+                &--last {
+                    margin-bottom: 2.6rem;
+                }
+            }
+
+            .toggle-text {
+                margin: 0 0 1.7rem;
+            }
+        }
+    }
+
+    .file-list__item-name {
+        max-width: 100%;
+    }
+}

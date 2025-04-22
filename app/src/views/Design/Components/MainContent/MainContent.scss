@@ -1,0 +1,70 @@
+.design-detail-main {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    width: 90%;
+    max-width: 82.71rem;
+    margin: 3.7rem auto 0;
+
+    &__quote {
+        font-size: 14px;
+        font-weight: 600;
+        font-style: italic;
+        line-height: 25px;
+        width: 80%;
+        margin: 0 auto;
+
+        @include is-tablet {
+            width: initial;
+            font-size: 1.86rem;
+            line-height: 3.36rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.29rem;
+        font-weight: 600;
+        margin-bottom: 1.79rem;
+    }
+
+    &__list {
+        @include is-pc {
+            margin-bottom: 6rem;
+
+            &:empty {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .start-design-box {
+        max-width: 100%;
+        padding: 4.71rem 2rem;
+        margin: 2.93rem 0 4.35rem;
+        background-color: $navy-blue-text;
+        border-radius: .43rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #FFF;
+        text-align: center;
+
+        &__header {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+
+            @include is-tablet {
+                font-size: 2.57rem;
+            }
+        }
+
+        &__subheader {
+            font-size: 1.29rem;
+        }
+
+        .btn {
+            margin-top: 2.75rem;
+        }
+    }
+}

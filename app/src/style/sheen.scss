@@ -1,0 +1,31 @@
+$rotate: -16deg;
+
+@keyframes shine {
+    from {
+        transform: rotate($rotate);
+    }
+
+    to {
+        transform: translateY(300%) rotate($rotate);
+    }
+}
+
+.shines {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -100px;
+        right: -100px;
+        top: -150%;
+        height: 200px;
+        background:
+            linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 100%);
+        transform: rotate($rotate);
+        animation: shine 2s infinite;
+        z-index: $zindex-shine;
+    }
+}

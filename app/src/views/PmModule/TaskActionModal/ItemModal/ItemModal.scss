@@ -1,0 +1,121 @@
+.side-modal[data-variant="task-action"], .pm-materials {
+    .side-modal[data-variant="item-modal"] {
+        width: 48.5rem;
+        padding-bottom: 0;
+
+        .side-modal {
+            &__header {
+                margin: 0 2.21rem .3rem 2.28rem;
+                word-break: break-word;
+
+                &-title {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    align-items: center;
+                    font-size: 14px;
+                    margin-top: .1rem;
+
+                    @include is-tablet {
+                        font-size: 1.07rem;
+                    }
+
+                    &:before {
+                        content: "";
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        margin: -.1rem 14px 0 0;
+                        border-radius: 50%;
+                        background-color: $green-text;
+                        z-index: 10;
+                        background-image: url("/assets/graphics/white_tick.svg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+
+                        @include is-tablet {
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+
+            &__content {
+                width: calc(100% - .71rem);
+                flex: 1;
+                padding: .5rem 1.5rem 1rem 2.3rem;
+                margin-right: .71rem;
+                overflow-y: auto;
+
+                .table {
+                    border: 0;
+                    border-radius: 0;
+                    padding: 0;
+                    margin-top: -.3rem;
+
+                    &__header {
+                        font-size: 10px;
+
+                        @include is-tablet {
+                            font-size: .79rem;
+                        }
+
+                        .table__cell {
+                            padding: 1.45rem .8rem 1.15rem;
+                        }
+                    }
+
+                    &__body {
+                        font-size: 11px;
+
+                        @include is-tablet {
+                            font-size: .86rem;
+                        }
+
+                        .table__row {
+                            align-items: flex-start;
+                            border-bottom: 1px solid #E3E3E3;
+                        }
+
+                        .table__cell {
+                            padding: 1.3rem .8rem;
+                            padding-top: 1.3rem;
+                            flex-direction: column;
+                        }
+
+                        .title-modal {
+                            font-weight: 600;
+                            line-height: 1.2rem;
+                            margin-bottom: .3rem;
+                        }
+
+                        .desc-modal {
+                            line-height: 1.5rem;
+                            color: $brighter-main-text-color;
+                        }
+
+                        .supplier {
+                            font-weight: 500;
+                        }
+
+                        .rates {
+                            font-weight: 500;
+                            color: $navy-blue-text;
+                        }
+                    }
+
+                    &__header, &__body {
+                        .table__cell {
+                            &:first-of-type {
+                                padding-left: 0;
+                            }
+
+                            &:last-of-type {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

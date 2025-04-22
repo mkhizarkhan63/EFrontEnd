@@ -1,0 +1,150 @@
+.side-modal[data-variant="estimate"] {
+    width: 100%;
+    padding-bottom: 0;
+    overflow: visible;
+
+    @include is-tablet {
+        width: 33.57rem;
+    }
+
+    .side-modal {
+        &__header {
+            margin-bottom: .75rem;
+        }
+
+        &__content {
+            flex: 1;
+            padding: .5rem 10px 1rem;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            @include is-tablet {
+                padding: .5rem 1.6rem 1rem 2.3rem;
+            }
+
+            .toggle-multiple {
+                width: 100%;
+                height: 7.14rem;
+
+                &-toggle {
+                    svg, image {
+                        width: 2.14rem;
+                        height: 1.78rem;
+                    }
+                }
+
+                &-toggle-name {
+                    font-size: .86rem;
+                    font-weight: 500;
+                    text-align: center;
+                    margin: .4rem 1.5rem 0;
+                }
+            }
+        }
+
+        &__title {
+            color: $dark-grey-text;
+            margin-bottom: 1rem;
+        }
+
+        &__top {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #E3E3E3;
+            margin-bottom: 2.5rem;
+
+            .btn {
+                margin: 1rem 0 0 auto;
+            }
+
+            .radio-multiple {
+                flex-direction: column;
+                margin: 1.5rem 0 2.5rem;
+                gap: 1rem;
+            }
+        }
+
+        &__row {
+            &-title {
+                font-size: 1.07rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+
+            &-desc {
+                color: $brighter-main-text-color;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__budget {
+            position: relative;
+            margin-bottom: 2.35rem;
+
+            &-omr {
+                position: absolute;
+                bottom: 1.25rem;
+                right: 1.8rem;
+                font-size: .93rem;
+                font-weight: 500;
+            }
+
+            .input-text-input {
+                padding-right: 5rem;
+            }
+        }
+
+        &__bottom {
+            &-row {
+                margin-bottom: 1.6rem;
+                position: relative;
+
+                &-unit {
+                    position: absolute;
+                    bottom: 1.25rem;
+                    right: 56%;
+                    font-size: .93rem;
+                    color: $brighter-main-text-color;
+
+                    @include is-tablet {
+                        right: 59%;
+                    }
+                }
+
+                &.construction {
+                    .input-text-input {
+                        padding-right: 5rem;
+                    }
+                }
+
+                &.month {
+                    .input-text-input {
+                        padding-right: 7rem;
+                    }
+                }
+            }
+
+            &-title {
+                font-size: 1.07rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            &-desc {
+                color: $brighter-main-text-color;
+                margin-bottom: 1rem;
+            }
+
+            .input-text {
+                width: 46%;
+
+                &-input {
+                    padding-right: 4rem;
+                }
+            }
+        }
+    }
+}

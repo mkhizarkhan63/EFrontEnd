@@ -1,0 +1,392 @@
+.company-forms--consultant-services {
+    .form {
+        &__header {
+            margin-bottom: 1.3rem;
+        }
+
+        &__subheader {
+            color: $dark-grey-text;
+            margin: 2.8rem 0 .9rem;
+            font-weight: 500;
+        }
+
+        .checkbox-multiple-option {
+            width: 50%;
+
+            &:nth-of-type(even) {
+                padding-left: 1.5rem;
+            }
+        }
+
+        .input-array {
+            &-input {
+                width: calc(50% - 1.41rem);
+            }
+
+            &-name {
+                margin: .3rem 0 .5rem;
+            }
+        }
+
+        &__add {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 1.1rem 0 1.5rem;
+
+            .btn {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .design-service {
+        animation: fade-in .15s ease-in;
+
+        .input-group {
+            @include block;
+            display: flex;
+            flex-wrap: nowrap;
+            max-width: 53.3rem;
+            margin-bottom: 2.5rem;
+
+            &__row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &__left {
+                background-color: #F0F2F7;
+                font-size: .95rem;
+                font-weight: 500;
+                width: 30%;
+                padding: 1rem 2.1rem .2rem 1.3rem;
+                position: relative;
+
+                @include is-tablet {
+                    width: 37%;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    border-style: solid;
+                    border-width: .9rem 0 .9rem .9rem;
+                    border-color: transparent #F0F2F7;
+                    display: block;
+                    width: 0;
+                    z-index: 1;
+                    right: calc(-.9rem + 1px);
+                    top: 4.5rem;
+                }
+
+                &-title {
+                    margin-bottom: 1.3rem;
+                    font-weight: 500;
+                }
+
+                .input-group__row {
+                    margin-bottom: 1rem;
+
+                    &-text {
+                        display: flex;
+                        align-items: center;
+                        gap: .7rem;
+                    }
+
+                    &-img {
+                        display: none;
+
+                        @include is-tablet {
+                            display: block;
+                            width: 2.14rem;
+                            height: 2.14rem;
+                            object-fit: contain;
+                            margin-right: .6rem;
+                        }
+
+                        @include is-pc {
+                            margin-right: 1.1rem;
+                        }
+                    }
+                }
+            }
+
+            &__right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                padding: 1rem .8rem 1rem 1.2rem;
+
+                @include is-pc {
+                    padding: 1rem 2.1rem 1rem 2.6rem;
+                }
+
+                .input-text-header {
+                    margin: 0;
+                }
+
+                .input-group__row {
+                    display: grid;
+                    grid-template-columns: 1fr 1.5rem 1fr 1.5rem 1.5fr;
+                    margin-bottom: 1.3rem;
+                    animation: fade-in .15s ease-in;
+
+                    @include is-pc {
+                        grid-template-columns: 1fr 2.5rem 1fr 2.5rem 1.5fr;
+                    }
+
+                    &--headers {
+                        font-weight: 500;
+
+                        .input-group__title {
+                            &-from {
+                                grid-column: 1 / 2;
+                            }
+
+                            &-to {
+                                grid-column: 3 / 4;
+                            }
+
+                            &-price {
+                                grid-column: 5 / 6;
+                            }
+                        }
+                    }
+
+                    &-sign {
+                        font-size: .9rem;
+                        justify-self: center;
+                    }
+
+                    &--last {
+                        grid-template-columns: 1fr 1.5rem 1fr 1.5rem 1.5fr;
+
+                        @include is-pc {
+                            grid-template-columns: 1fr 2.5rem 1fr 2.5rem 1.5fr;
+                        }
+
+                        .input-group__text {
+                            grid-column: 1 / span 2;
+                            padding-right: 1rem;
+                            text-align: right;
+                        }
+                    }
+
+                    .input-text-input {
+                        padding: 1.25rem .5rem;
+
+                        @include is-pc {
+                            padding: 1.25rem .9rem;
+                        }
+                    }
+                }
+            }
+
+            &__btn {
+                display: flex;
+                align-items: center;
+                margin-left: 1.3rem;
+
+                .btn {
+                    position: relative;
+                    top: -4%;
+
+                    svg, image {
+                        width: 1.14rem;
+                        height: 1.14rem;
+                    }
+
+                    &[data-color="gray"] {
+                        svg, image {
+                            width: .86rem;
+                            height: .86rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .product-list {
+        animation: fade-in .15s ease-in;
+
+        .form__subheader {
+            margin: 2.8rem 0 1.8rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            gap: 0 2rem;
+            align-items: center;
+            font-size: .95rem;
+            font-weight: 500;
+            margin-bottom: .5rem;
+
+            @include is-tablet {
+                width: 34rem;
+            }
+
+            .checkbox-container {
+                flex: 1;
+
+                &-option {
+                    gap: 1.6rem;
+                }
+
+                &-text {
+                    display: flex;
+                    align-items: center;
+                    gap: .7rem;
+                    color: $dark-grey-text;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    line-height: 1.1rem;
+
+                    @include is-tablet {
+                        font-size: .93rem;
+                    }
+
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        flex-shrink: 0;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 1.93rem;
+                        width: 2.6rem;
+                        height: 3.57rem;
+                    }
+                }
+            }
+
+            &[data-name="1"] {
+                .checkbox-container-text:before {
+                    background-image: url("/assets/graphics/landscape_design.svg");
+                    background-size: 1.93rem;
+                }
+            }
+
+            &[data-name="2"] {
+                .checkbox-container-text:before {
+                    background-image: url("/assets/graphics/quantity_surveying.svg");
+                    background-size: 2.15rem;
+                }
+            }
+
+            &[data-name="3"] {
+                .checkbox-container-text:before {
+                    background-image: url("/assets/graphics/interior_design.svg");
+                    background-size: 2.43rem 1.72rem;
+                }
+            }
+
+            &[data-name="4"] {
+                .checkbox-container-text:before {
+                    background-image: url("/assets/graphics/surveying.svg");
+                    background-size: 1.36rem 2.71rem;
+                }
+            }
+
+            &[data-name="Exterior 3D Design"] {
+                .checkbox-container-text:before {
+                    background-image: url("/assets/graphics/exterior_design.svg");
+                    background-size: 2.07rem 2.36rem;
+                }
+            }
+
+            .input-text-header {
+                margin: 0;
+            }
+
+            .input-text {
+                width: 11rem;
+            }
+        }
+    }
+
+    .supervision-services {
+        .form__header {
+            margin: 3.7rem 0 1.3rem;
+        }
+    }
+
+    .governorates {
+        .model-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 1.8rem;
+        }
+    }
+
+    .governorate {
+        @include block;
+        padding: 2.4rem 2rem 1rem;
+        width: 100%;
+        max-width: 34rem;
+        animation: fade-in .15s ease-in;
+
+        @include is-tablet {
+            width: 48.5%;
+            min-width: 28rem;
+        }
+
+        &__title {
+            margin-bottom: 2.3rem;
+            color: $navy-blue-text;
+            font-weight: 500;
+            position: relative;
+
+            .btn--circle {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                width: 3.2rem;
+                height: 3.2rem;
+
+                svg, image {
+                    width: .85rem;
+                    height: .85rem;
+                }
+            }
+        }
+
+        .input-text--select {
+            width: 100%;
+        }
+
+        &__row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 1.2rem;
+
+            .input-text--select {
+                width: 59%;
+                margin: 0 1.2rem 0 1rem;
+
+                .input-text__option {
+                    font-weight: 600;
+                }
+            }
+
+            .input-text-header {
+                margin: 0;
+            }
+        }
+
+        &__title-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-weight: 500;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+    }
+}

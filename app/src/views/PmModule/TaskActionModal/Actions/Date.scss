@@ -1,0 +1,108 @@
+.action-block {
+    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    padding: 18px 0 22px;
+    margin: 0 2.21rem 0 2rem;
+
+    @include is-tablet {
+        padding: 1.3rem 0 2rem;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: .6rem;
+
+        @include is-tablet {
+            font-size: 1.14rem;
+        }
+    }
+
+    &__desc {
+        font-size: 11px;
+        color: $brighter-main-text-color;
+        margin-bottom: 1.3rem;
+
+        @include is-tablet {
+            font-size: .78rem;
+        }
+    }
+
+    &__inputs {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        .react-datepicker__input-container input {
+            font-size: 11px;
+            cursor: pointer;
+
+            @include is-tablet {
+                font-size: .93rem;
+            }
+
+            &:disabled {
+                cursor: initial;
+            }
+        }
+
+        .input-text-header {
+            display: none;
+        }
+    }
+
+    &__input {
+        position: relative;
+
+        .icon-box {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 1rem;
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+
+            @include is-tablet {
+                width: 1rem;
+                height: 1rem;
+            }
+
+            svg, image {
+                width: 14px;
+                height: 14px;
+
+                @include is-tablet {
+                    width: 1rem;
+                    height: 1rem;
+                }
+            }
+        }
+
+        &--date {
+            .react-datepicker__input-container input {
+                border-radius: .43rem 0 0 .43rem;
+                border-right: 0;
+            }
+        }
+
+        &--time {
+            .react-datepicker__input-container input {
+                border-radius: 0 .43rem .43rem 0;
+                padding: 1.25rem 3rem 1.25rem 1.25rem;
+            }
+
+            .react-datepicker__time-container {
+                width: 100px;
+
+                .react-datepicker__time-box {
+                    width: 100%;
+                }
+            }
+
+            .react-datepicker__triangle {
+                left: -31px !important;
+                transform: translate(100px, 0) !important;
+            }
+        }
+    }
+}

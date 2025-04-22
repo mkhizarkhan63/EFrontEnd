@@ -1,0 +1,148 @@
+.requirement-tile {
+    width: 33.4rem;
+    height: 27.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    position: relative;
+    margin: 1.53rem 0;
+
+    @include is-tablet {
+        margin: 1.53rem;
+    }
+
+    &[data-requirement="structureOnly"] {
+        background-image: url("/assets/graphics/structure_only_picture.png");
+    }
+
+    &[data-requirement="turnKey"] {
+        background-image: url("/assets/graphics/turn_key_picture.png");
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        width: 3.36rem;
+        height: 3.36rem;
+        background-image: url("/assets/svg/tick_selected.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        opacity: 0;
+        transition: opacity .2s ease-in;
+    }
+
+    .bottom {
+        color: #FFF;
+        display: flex;
+        align-items: flex-start;
+        padding: 0 1.55rem 1.2rem;
+        position: relative;
+
+        &__radio {
+            position: relative;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 1px solid #FFF;
+            margin-right: .8rem;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: .5rem;
+            border-radius: 0 0 6px 6px;
+            background-color: $green-text;
+            opacity: 0;
+            transition: opacity .2s ease-in;
+        }
+
+        &__titles {
+            flex: 1;
+
+            &-primary {
+                font-size: 1.14rem;
+                font-weight: 600;
+                margin-bottom: .4rem;
+            }
+
+            &-secondary {
+                font-size: 1rem;
+
+                @include is-tablet {
+                    font-size: .94rem;
+                }
+            }
+        }
+
+        &__tip {
+            position: relative;
+
+            &-button {
+                font-size: 1rem;
+                font-family: inherit;
+                text-align: center;
+                line-height: .93rem;
+                color: #FFF;
+                background-color: transparent;
+                position: relative;
+                bottom: .4rem;
+                padding: .57rem .64rem .5rem;
+                outline: none;
+                border: 1px solid #FFF;
+                border-radius: .43rem;
+                white-space: pre-line;
+                transition: color .12s ease-in;
+                cursor: pointer;
+
+                @include is-tablet {
+                    font-size: .78rem;
+                }
+
+                &:hover {
+                    color: $green-text;
+                    border-color: $green-text;
+                }
+            }
+        }
+    }
+
+    &[data-is-selected="true"] {
+        &:before {
+            opacity: 1;
+            transition: opacity .2s ease-in;
+        }
+
+        .bottom {
+            &__radio {
+                border-color: $green-text;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 2px;
+                    top: 2px;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    background-color: $green-text;
+                }
+            }
+
+            &:before,
+            &:after {
+                opacity: 1;
+                transition: opacity .2s ease-in;
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.radio-multiple {
+    position: relative;
+    display: flex;
+    width: var(--width-checkbox-radio);
+    font-size: 1rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    @include is-tablet {
+        font-size: .94rem;
+    }
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    .radio-multiple-option {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        margin-right: 3rem;
+
+        &[data-is-disabled="true"] {
+            cursor: default;
+        }
+
+        .radio-multiple-checkbox {
+            content: "";
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: 0 .7rem 0 0;
+            border: 2px solid #FFF;
+            box-shadow: 0 0 0 1px $input-border-color;
+            border-radius: 50%;
+            background-clip: padding-box;
+            transition: ease-in-out .2s;
+
+            @include is-tablet {
+                width: 1.07rem;
+                height: 1.07rem;
+            }
+        }
+
+        &:hover .radio-multiple-checkbox {
+            box-shadow: 0 0 0 1px $navy-blue-text;
+            background-color: $navy-blue-text;
+        }
+
+        input:checked ~ .radio-multiple-checkbox {
+            box-shadow: 0 0 0 1px $navy-blue-text;
+            background-color: $navy-blue-text;
+        }
+
+        input:disabled {
+            &:checked ~ .radio-multiple-checkbox {
+                box-shadow: 0 0 0 1px $brighter-main-text-color;
+                background-color: $brighter-main-text-color;
+            }
+
+            &:not(:checked):hover ~ .radio-multiple-checkbox {
+                background-color: initial;
+                box-shadow: 0 0 0 1px $input-border-color;
+            }
+        }
+    }
+}
